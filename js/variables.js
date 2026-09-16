@@ -4,11 +4,10 @@
 	URLs
 ==================================================*/
 
-let baseURL = "https://themachetazo.github.io/jazzguitarnomad/fretboard/";
-
-let dataURL = "";
-
 const isLocal = window.location.protocol === "file:" || window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+let baseURL = "https://nomadjazzguitar.github.io/lessons/";
+let dataURL = "";
 
 //Para que funcione el pintado y guardado de la imagen renderizada del mastil en drawFretdoard en local, los achivos de imagenes del mastil tienen que estar en un servidor
 if (isLocal) dataURL = baseURL;
@@ -17,8 +16,8 @@ const dataURL_Images = dataURL + "img/";
 const dataURL_Users = dataURL;
 const dataURL_Library = dataURL + "projects/";
 const dataURL_Multimedia = dataURL_Library + "multimedia/";
+const dataURL_Samples = dataURL + "samples/";
 
-const dataURL_Samples = "https://themachetazo.github.io/jazzguitarnomad/samples/";
 
 /*==================================================
 	CONFIGURACIÓN GENERAL DE LA APLICACIÓN
