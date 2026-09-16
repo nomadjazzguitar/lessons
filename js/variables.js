@@ -9,7 +9,7 @@ const isLocal = window.location.protocol === "file:" || window.location.hostname
 let baseURL = "https://nomadjazzguitar.github.io/lessons/";
 let dataURL = "";
 
-//Para que funcione el pintado y guardado de la imagen renderizada del mastil en drawFretdoard en local, los achivos de imagenes del mastil tienen que estar en un servidor
+//Para que funcione el pintado y guardado de la imagen renderizada del mastil de ctx.getImageData en local, los achivos de imagenes del mastil tienen que estar en un servidor
 if (isLocal) dataURL = baseURL;
 
 const dataURL_Images = dataURL + "img/";
@@ -122,6 +122,7 @@ let xmlUsersVersion = "1.0";
 let isUserActive = true;
 
 let isAdmin = false;
+let k = "admin";
 
 let lib = null;
 
@@ -147,7 +148,6 @@ let xmlCreated = "";
 let libraryName = "Sin Nombre";
 let libraryDesc = "Descripción";
 
-let k = "admin";
 
 /*==================================================
 	IMÁGENES
@@ -232,6 +232,7 @@ let ACORDES = [];
 let history = [];
 const maxHistory = 50;
 
+
 /*==================================================
 	PLAYER y SCORE
 ==================================================*/
@@ -296,7 +297,6 @@ let recordingTimer = null;
 let camerasInfo = [];
 
 let resources = {
-
 	video: [],
 	audio: [],
 	midi: [],
@@ -307,11 +307,11 @@ let resources = {
 	html: [],
 	link: [],
 	iframe: []
-
 };
 
 let midiData = null;
 let midiSynths = [];
+
 
 /*==================================================
 	REFERENCIAS DOM: LAYOUT, LOADING
@@ -370,6 +370,7 @@ const menuSelectorIcon = document.getElementById("menuSelectorIcon");
 const videoInfo = document.getElementById("videoInfo");
 const recordingTimeElement = document.getElementById("recordingTime");
 const audioMeterLevel = document.getElementById("audioMeterLevel");
+
 
 /*==================================================
 	REFERENCIAS DOM: CONTROLES DEL DIAPASÓN
@@ -430,6 +431,7 @@ const topLibraryInfo = document.getElementById("topLibraryInfo");
 const topScroll = document.getElementById("topScroll");
 const topProjectGuest = document.getElementById("topProjectGuest");
 
+
 /*==================================================
 	REFERENCIAS DOM: BARRA DE HERRAMIENTAS
 ==================================================*/
@@ -441,6 +443,7 @@ const btnUndo = document.getElementById("btnUndo");
 const btnDisplay = document.getElementById("btnDisplay");
 const btnRotate = document.getElementById("btnRotate");
 const chkFretboardZoom = document.getElementById("chkFretboardZoom");
+
 
 /*==================================================
 	REFERENCIAS DOM: PROYECTOS
@@ -562,6 +565,7 @@ const sliderScoreStaveMargin = document.getElementById("sliderScoreStaveMargin")
 
 const chkEditSound = document.getElementById("chkEditSound");
 
+
 /*==================================================
 	REFERENCIAS DOM: MULTIMEDIA
 ==================================================*/
@@ -589,16 +593,14 @@ const localVideo = document.getElementById("localVideo");
 
 const videoTitle = document.getElementById("videoTitle");
 
+
 /*==================================================
 	INSTRUMENTOS
 ==================================================*/
 
 const instrumentDefs = {
 
-    ////////////////////////////////////////////////////////////
     // PIANO SALAMANDER
-    ////////////////////////////////////////////////////////////
-
     piano: {
 
         urls: {
@@ -650,10 +652,7 @@ const instrumentDefs = {
 
     },
 
-    ////////////////////////////////////////////////////////////
     // GUITARRA CLÁSICA
-    ////////////////////////////////////////////////////////////
-
     cguitar: {
 
         urls: {
@@ -749,4 +748,4 @@ const scales = {
 	"B":  ["B",  "C#", "D#", "E",  "F#", "G#", "A#"]
 
 };
-//scales["D"][0] // ->"D"
+//scales["Eb"][1] => "F"

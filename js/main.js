@@ -1307,23 +1307,9 @@ function saveHistory() {
 
 }
 
-function showProjectPanel(){
-
-	if (workspaceProjectsPanel.classList.contains("panelHidden")) {
-
-		openLibraryPanel();
-
-	}else{
-
-		closeLibraryPanel();
-	}
-}
-
 function openLibraryPanel(){
 
 	workspaceProjectsPanel.classList.remove("panelHidden");
-
-	btnShowProjectPanel.classList.add("active");
 
 	btnShowProjectPanel.title = "Ocultar librería";
 
@@ -1334,8 +1320,6 @@ function openLibraryPanel(){
 function closeLibraryPanel(){
 
 	workspaceProjectsPanel.classList.add("panelHidden");
-
-	btnShowProjectPanel.classList.remove("active");
 
 	btnShowProjectPanel.title = "Ver librería";
 

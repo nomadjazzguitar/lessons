@@ -773,7 +773,18 @@ cmbDiapason.addEventListener("change", () => {
 });
 
 btnShowProjectPanel.addEventListener("click", () => {
-	showProjectPanel();
+
+	if (workspaceProjectsPanel.classList.contains("panelHidden")) {
+
+		openLibraryPanel();
+
+	}else{
+
+		closeLibraryPanel();
+	}
+
+	if (isScoreVisible) scoreRender();
+
 });
 
 titleText.addEventListener("input", () => {
@@ -983,8 +994,6 @@ btnDisplay.addEventListener("click", () => {
 	displayMode = !displayMode;
 
 	btnDisplay.classList.toggle("active", displayMode);
-
-	setDisplayModeControlsDisabled();
 
 	if (!displayMode) setWorkspaceLayout();
 
