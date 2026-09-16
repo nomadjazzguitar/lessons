@@ -2465,7 +2465,12 @@ function createMultimediaElement(type, fileName) {
 	if (type === "link" || type === "iframe"){
 		resourceUrl = fileName;
 	}else{
-		resourceUrl = dataURL_Multimedia + type + "/" + fileName;
+
+		if (isLocal){
+			resourceUrl = dataURL_Multimedia.replace(baseURL,"") + type + "/" + fileName;
+		}else{
+			resourceUrl = dataURL_Multimedia + type + "/" + fileName;
+		}
 	}
 
 	switch (type) {
@@ -2588,6 +2593,8 @@ function createMultimediaElement(type, fileName) {
 			element.src = resourceUrl;
 
 			element.alt = fileName || "";
+
+			if (fileName.toLowerCase().endsWith(".svg")) element.style.backgroundColor = "#fff";
 
 			break;
 

@@ -781,7 +781,10 @@ function resetControlsValues(state){
 	}
 
 	titleText.value = projectTitle;
-	workspaceTitleText.textContent = cmbProjectCategory.value !== "" ? cmbProjectCategory.value + " - " : "";
+
+	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
+
+	workspaceTitleText.textContent = cat !== "" ? cat + " - " : "";
 	workspaceTitleText.textContent = projectTitle === "" ? workspaceTitleText.textContent + "Proyecto nuevo sin título" : workspaceTitleText.textContent + projectTitle;
 
 	chkShowTitle.checked = false;
