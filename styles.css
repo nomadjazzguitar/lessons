@@ -688,11 +688,7 @@ html {
 
 	overflow:hidden;
 
-	transition:
-		grid-template-columns .35s cubic-bezier(.4,0,.2,1);
-
 }
-
 
 #workspace:has(#workspaceProjectsPanel.panelHidden){
 
@@ -798,7 +794,6 @@ html {
 
 }
 
-
 #workspace.vertical #workspaceContentArea{
 
 	grid-template-columns:
@@ -813,7 +808,6 @@ html {
 
 }
 
-
 #workspace.contentOnly #workspaceContentArea{
 
 	grid-template-columns:1fr;
@@ -825,7 +819,6 @@ html {
 		"content";
 
 }
-
 
 #workspace.scoreOnly #workspaceContentArea{
 
@@ -974,7 +967,7 @@ html {
 
 .vextab-auto{
 
-	width:80%;
+	width:90%;
 
 	height:100%;
 
@@ -1012,6 +1005,12 @@ html {
 
 }
 
+#workspaceScore .vextab-auto > svg{
+
+	max-width:100%;
+	height:auto;
+
+}
 
 /* ===========================
    WORKSPACE MULTIMEDIA
@@ -1308,14 +1307,12 @@ html {
 
 	transform:translateX(0);
 
-	transition:
-		transform .35s cubic-bezier(.4,0,.2,1),
-		opacity .20s ease,
-		padding .35s ease;
-
 }
 
 #workspaceProjectsPanel.panelHidden{
+
+	width:0;
+	min-width:0;
 
 	padding-left:0;
 	padding-right:0;
