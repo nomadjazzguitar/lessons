@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects version="6.9" type="" created="12/08/2026" modified="16/09/2026" name="Pentatonicas" desc="curso 1">
+
+	<categories>
+		<category id="0001">Acordes</category>
+		<category id="2345">Escalas</category>
+		<category id="3090">Otros</category>
+		<category id="8490">Arpegios</category>
+		<category id="uqoca7">ID</category>
+		<category id="1ej5g7q">videos</category>
+	</categories>
+
+	<project id="d692856064174c9b89ca3425b5d73143" title="Cmaj7" category="0001" projectType="fretboard" fretboardType="chord">
+		<settings>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>13</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>0</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>cguitar</currentInstrument>
+			<fretNumbers>13</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>90</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>horizontal</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>latin</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#00aa00" text="" chord="0" order="1"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="0" order="2"/>
+			<note string="2" fret="4" color="#00aa00" text="" chord="0" order="3"/>
+			<note string="1" fret="5" color="#00aa00" text="" chord="0" order="4"/>
+			<note string="0" fret="3" color="#00aa00" text="" chord="0" order="5"/>
+			<note string="3" fret="10" color="#ffcc00" text="" chord="1" order="6"/>
+			<note string="2" fret="9" color="#ffcc00" text="" chord="1" order="7"/>
+			<note string="1" fret="8" color="#ffcc00" text="" chord="1" order="8"/>
+			<note string="0" fret="7" color="#ffcc00" text="" chord="1" order="9"/>
+		</notes>
+		<barres/>
+		<nutNotes/>
+		<resources/>
+	</project>
+
+	<project id="13fe802b847143fab6166c5d57222b92" title="tab" category="2345" projectType="fretboard" fretboardType="sequence">
+		<settings>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>blank</fretboardStyle>
+			<fretCount>6</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>3/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>0</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>cguitar</currentInstrument>
+			<fretNumbers>6</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="5" fret="1" color="#00aa00" text="" chord="" order="1"/>
+			<note string="5" fret="3" color="#00aa00" text="" chord="" order="2"/>
+			<note string="5" fret="4" color="#00aa00" text="" chord="" order="3"/>
+			<note string="4" fret="1" color="#00aa00" text="" chord="" order="4"/>
+			<note string="4" fret="3" color="#00aa00" text="" chord="" order="5"/>
+			<note string="4" fret="4" color="#00aa00" text="" chord="" order="6"/>
+			<note string="3" fret="1" color="#00aa00" text="" chord="" order="7"/>
+			<note string="3" fret="3" color="#00aa00" text="" chord="" order="8"/>
+			<note string="2" fret="1" color="#00aa00" text="" chord="" order="10"/>
+			<note string="2" fret="3" color="#00aa00" text="" chord="" order="11"/>
+			<note string="1" fret="1" color="#00aa00" text="" chord="" order="12"/>
+			<note string="1" fret="2" color="#00aa00" text="" chord="" order="13"/>
+			<note string="1" fret="4" color="#00aa00" text="" chord="" order="14"/>
+			<note string="0" fret="1" color="#00aa00" text="" chord="" order="15"/>
+			<note string="0" fret="3" color="#00aa00" text="" chord="" order="16"/>
+			<note string="0" fret="4" color="#00aa00" text="" chord="" order="17"/>
+		</notes>
+		<barres/>
+		<nutNotes>
+			<nutNote string="2" color="#00aa00" text="" chord="" order="9"/>
+		</nutNotes>
+		<resources/>
+	</project>
+
+	<project id="tw4j0" title="id" category="0001" projectType="fretboard" fretboardType="fretboard">
+		<settings>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>10</fretCount>
+			<displayMode>false</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>true</direccion>
+			<countBars>0</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>cguitar</currentInstrument>
+			<fretNumbers>10</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>90</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>false</notation>
+		</settings>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources/>
+	</project>
+
+	<project id="1bxi18k" title="cacas" category="1ej5g7q" projectType="video" fretboardType="chord">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="video" name="default-1bxi18k.webm" />
+		</resources>
+	</project>
+
+	<project id="1uyo1d5" title="gili" category="1ej5g7q" projectType="audio" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="video" name="default-1uyo1d5-hhfdh-(1).webm" />
+			<resource type="audio" name="default-1uyo1d5-Dont-Cry.mp3" />
+		</resources>
+	</project>
+
+	<project id="s8mv1x" title="oooooollooo" category="1ej5g7q" projectType="image" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="image" name="default-s8mv1x-ChatGPT-Image-26-feb-2026,-10_07_25.png" />
+		</resources>
+	</project>
+
+	<project id="v37wkt" title="1234" category="1ej5g7q" projectType="video" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="video" name="default-v37wkt-dfdfdfd.webm" />
+		</resources>
+	</project>
+
+	<project id="1k18pr0" title="capullo" category="1ej5g7q" projectType="document" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="pdf" name="default-1k18pr0-List-of-Phrasal-Verbs-_-C1-Advanced.pdf" />
+			<resource type="document" name="default-1k18pr0-dfndfndnvcn.docx" />
+		</resources>
+	</project>
+
+	<project id="mjvop6" title="link" category="0001" projectType="midi" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="midi" name="default-mjvop6-NONAME.MID" />
+			<resource type="link" name="https://es.wikipedia.org/wiki/Wikipedia:Portada" />
+		</resources>
+	</project>
+
+	<project id="1ap28bz" title="9999" category="uqoca7" projectType="pdf" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="audio" name="default-1ap28bz-bobby-matos---Mahjong.mp3" />
+			<resource type="pdf" name="default-1ap28bz-2026-Canal-Certificado-Servicios.pdf" />
+		</resources>
+	</project>
+
+	<project id="14dll84" title="777" category="8490" projectType="document" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="document" name="default-14dll84-Guitarras-y-Tiendas.txt" />
+		</resources>
+	</project>
+
+	<project id="f7oc5s" title="portfolio" category="uqoca7" projectType="link" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="link" name="https://view.genially.com/6958f29aae62ec746f090675" />
+		</resources>
+	</project>
+
+	<project id="1cqve1k" title="you" category="uqoca7" projectType="iframe" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="iframe" name="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TNdTvxHb9E0?si=WDTqxkWJG50Wm5Ao&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+		</resources>
+	</project>
+
+	<project id="3pe1zh" title="YouTube" category="uqoca7" projectType="link" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="link" name="https://youtu.be/TNdTvxHb9E0?si=JLjquy6ABo1qWatY" />
+		</resources>
+	</project>
+
+</projects>
