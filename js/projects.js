@@ -1061,6 +1061,8 @@ function renderLibrary() {
 
 				renderProject();
 
+				if (isMobile) closeLibraryPanel();
+
 			});
 
 			item.appendChild(openButton);
