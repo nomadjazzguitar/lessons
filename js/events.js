@@ -661,10 +661,13 @@ btnDelChord.addEventListener("click", () => {
 	delChord();
 });
 
-btnScoreDownloadImage.addEventListener("click", () => {
+btnScoreDownload.addEventListener("click", () => {
+	downloadScorePNG();
+	downloadScoreSVG();
+});
 
-	vexTab_saveSVGFiles();
-
+btnCopyScore.addEventListener("click", () => {
+	copyScore();
 });
 
 colorPicker.addEventListener("change", () => {

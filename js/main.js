@@ -1040,7 +1040,7 @@ function setControlsState() {
 		btnSaveAudio.disabled = renderDisabled;
 		btnCopyCanvas.disabled = renderDisabled;
 		btnDownloadCanvas.disabled = renderDisabled;
-		btnScoreDownloadImage.disabled = renderDisabled;
+		btnScoreDownload.disabled = renderDisabled;
 
 	} else {
 
@@ -1091,7 +1091,7 @@ function setControlsState() {
 
 	btnCopyCanvas.disabled = isMultimedia;
 	btnDownloadCanvas.disabled = isMultimedia;
-	btnScoreDownloadImage.disabled = isMultimedia;
+	btnScoreDownload.disabled = isMultimedia;
 	cmbAudioFormat.disabled = isMultimedia;
 	btnSaveAudio.disabled = isMultimedia;
 	btnRenderBuffer.disabled = isMultimedia;
@@ -1114,7 +1114,7 @@ function setControlsState() {
 
 		btnCopyCanvas.disabled = true;
 		btnDownloadCanvas.disabled = true;
-		btnScoreDownloadImage.disabled = true;
+		btnScoreDownload.disabled = true;
 
 		btnPlayStop.disabled = true;
 
@@ -1589,47 +1589,6 @@ function parseBoolean(value, defaultValue = false) {
 	}
 
 	return Boolean(value);
-}
-
-async function copyCanvasToClipboard() {
-
-    try {
-
-        const blob = await new Promise(resolve =>
-            canvas.toBlob(resolve, "image/png")
-        );
-
-        await navigator.clipboard.write([
-            new ClipboardItem({
-                "image/png": blob
-            })
-        ]);
-
-        showAlert("Imagen copiada al portapapeles.", "success");
-
-    }
-    catch (err) {
-
-        console.error(err);
-
-        showAlert("No ha sido posible copiar la imagen.", "error");
-
-    }
-
-}
-
-function downloadCanvas() {
-
-    const link = document.createElement("a");
-
-    const titulo = workspaceTitleText.textContent;
-
-    link.download = titulo + ".png";
-
-    link.href = canvas.toDataURL("image/png");
-
-    link.click();
-
 }
 
 function setLoadingProgress(percent,text){

@@ -510,7 +510,8 @@ const numBpm = document.getElementById("numBpm");
 const btnTime4 = document.getElementById("btnTime4");
 const btnTime3 = document.getElementById("btnTime3");
 
-const btnScoreDownloadImage = document.getElementById("btnScoreDownloadImage");
+const btnCopyScore = document.getElementById("btnCopyScore");
+const btnScoreDownload = document.getElementById("btnScoreDownload");
 const cmbChords = document.getElementById("cmbChords");
 
 const cmbNoteNames = document.getElementById("cmbNoteNames");

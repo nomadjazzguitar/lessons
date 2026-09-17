@@ -1,4 +1,351 @@
 
+"use strict";
+
+////////////////////////////////////////////////////////////
+//
+// FRETBOARD DOWNLOAD
+//
+////////////////////////////////////////////////////////////
+
+async function copyCanvasToClipboard() {
+
+    try {
+
+        const blob = await new Promise(resolve =>
+            canvas.toBlob(resolve, "image/png")
+        );
+
+        await navigator.clipboard.write([
+            new ClipboardItem({
+                "image/png": blob
+            })
+        ]);
+
+        showAlert("Imagen copiada al portapapeles.", "success");
+
+    }
+    catch (err) {
+
+        console.error(err);
+
+        showAlert("No ha sido posible copiar la imagen.", "error");
+
+    }
+
+}
+
+function downloadCanvas() {
+
+	const titulo = workspaceTitleText.textContent !== ""
+		? workspaceTitleText.textContent
+		: "fretboard";
+
+
+	////////////////////////////////////////////////////////////
+	// PNG
+	////////////////////////////////////////////////////////////
+
+	const linkPNG = document.createElement("a");
+
+	linkPNG.download = titulo + ".png";
+	linkPNG.href = canvas.toDataURL("image/png");
+
+	document.body.appendChild(linkPNG);
+	linkPNG.click();
+	document.body.removeChild(linkPNG);
+
+
+	////////////////////////////////////////////////////////////
+	// SVG
+	////////////////////////////////////////////////////////////
+
+	const pngData = canvas.toDataURL("image/png");
+
+	const svgText = `
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="${canvas.width}"
+     height="${canvas.height}"
+     viewBox="0 0 ${canvas.width} ${canvas.height}">
+	<image
+		width="${canvas.width}"
+		height="${canvas.height}"
+		href="${pngData}" />
+</svg>`.trim();
+
+	const blob = new Blob(
+		[svgText],
+		{
+			type: "image/svg+xml;charset=utf-8"
+		}
+	);
+
+	const url = URL.createObjectURL(blob);
+
+	const linkSVG = document.createElement("a");
+
+	linkSVG.download = titulo + ".svg";
+	linkSVG.href = url;
+
+	document.body.appendChild(linkSVG);
+	linkSVG.click();
+	document.body.removeChild(linkSVG);
+
+	URL.revokeObjectURL(url);
+
+}
+
+
+////////////////////////////////////////////////////////////
+//
+// SCORE DOWNLOAD
+//
+////////////////////////////////////////////////////////////
+
+function getScoreSVG() {
+
+	try {
+
+		const svg = document.querySelector(".vextab-auto .vex-canvas svg");
+
+		if (!svg) {
+
+			throw new Error("No se encontró ningún SVG de la partitura.");
+
+		}
+
+		return svg;
+
+	} catch (err) {
+
+		console.error(err);
+		showAlert(err.message, "error");
+
+		return null;
+
+	}
+
+}
+
+async function scoreToCanvas(svgElement) {
+
+	return new Promise((resolve, reject) => {
+
+		try {
+
+			const svg = new XMLSerializer().serializeToString(svgElement);
+
+			const blob = new Blob(
+				[svg],
+				{
+					type: "image/svg+xml;charset=utf-8"
+				}
+			);
+
+			const url = URL.createObjectURL(blob);
+
+			const img = new Image();
+
+			img.onload = () => {
+
+				const canvas = document.createElement("canvas");
+
+				const width =
+					svgElement.viewBox?.baseVal?.width ||
+					svgElement.width?.baseVal?.value ||
+					img.naturalWidth;
+
+				const height =
+					svgElement.viewBox?.baseVal?.height ||
+					svgElement.height?.baseVal?.value ||
+					img.naturalHeight;
+
+				canvas.width = width;
+				canvas.height = height;
+
+				const ctx = canvas.getContext("2d");
+
+				ctx.drawImage(
+					img,
+					0,
+					0,
+					canvas.width,
+					canvas.height
+				);
+
+				URL.revokeObjectURL(url);
+
+				resolve(canvas);
+
+			};
+
+			img.onerror = (err) => {
+
+				URL.revokeObjectURL(url);
+
+				reject(err);
+
+			};
+
+			img.src = url;
+
+		} catch (err) {
+
+			reject(err);
+
+		}
+
+	});
+
+}
+
+async function copyScore() {
+
+	const svg = getScoreSVG();
+
+	if (svg === null) return;
+
+	try {
+
+		const canvas = await scoreToCanvas(svg);
+
+		const blob = await new Promise((resolve, reject) => {
+
+			canvas.toBlob((blob) => {
+
+				if (blob) {
+
+					resolve(blob);
+
+				} else {
+
+					reject(new Error("No se pudo generar la imagen PNG."));
+
+				}
+
+			}, "image/png");
+
+		});
+
+		await navigator.clipboard.write([
+			new ClipboardItem({
+				"image/png": blob
+			})
+		]);
+
+		showAlert(
+			"Imagen de la partitura copiada al portapapeles.",
+			"success"
+		);
+
+	} catch (err) {
+
+		console.error(err);
+
+		showAlert(
+			"No ha sido posible copiar la imagen de la partitura.",
+			"error"
+		);
+
+	}
+
+}
+
+async function downloadScorePNG() {
+
+	const svg = getScoreSVG();
+
+	if (svg === null) return;
+
+	try {
+
+		const canvas = await scoreToCanvas(svg);
+
+		const titulo =
+			workspaceTitleText.textContent !== ""
+				? workspaceTitleText.textContent
+				: "score";
+
+		const link = document.createElement("a");
+
+		link.download = titulo + ".png";
+		link.href = canvas.toDataURL("image/png");
+
+		document.body.appendChild(link);
+
+		link.click();
+
+		document.body.removeChild(link);
+
+	} catch (err) {
+
+		console.error(err);
+
+		showAlert(
+			"No ha sido posible guardar la imagen PNG de la partitura.",
+			"error"
+		);
+
+	}
+
+}
+
+function downloadScoreSVG() {
+
+	const svg = getScoreSVG();
+
+	if (svg === null) return;
+
+	try {
+
+		const serializer = new XMLSerializer();
+
+		let svgText = serializer.serializeToString(svg);
+
+		// Añadir declaración XML
+		svgText =
+			'<?xml version="1.0" encoding="UTF-8"?>\n' +
+			svgText;
+
+		const blob = new Blob(
+			[svgText],
+			{
+				type: "image/svg+xml;charset=utf-8"
+			}
+		);
+
+		const url = URL.createObjectURL(blob);
+
+		const titulo =
+			workspaceTitleText.textContent !== ""
+				? workspaceTitleText.textContent
+				: "score";
+
+		const link = document.createElement("a");
+
+		link.download = titulo + ".svg";
+		link.href = url;
+
+		document.body.appendChild(link);
+
+		link.click();
+
+		document.body.removeChild(link);
+
+		URL.revokeObjectURL(url);
+
+	} catch (err) {
+
+		console.error(err);
+
+		showAlert(
+			"No ha sido posible guardar el archivo SVG de la partitura.",
+			"error"
+		);
+
+	}
+
+}
+
 ////////////////////////////////////////////////////////////
 // RENDER BUFFER
 ////////////////////////////////////////////////////////////
