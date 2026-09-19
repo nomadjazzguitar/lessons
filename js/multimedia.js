@@ -2787,7 +2787,7 @@ function createMultimediaElement(type, fileName) {
 
 			element = document.createElement("div");
 
-			element.className = "midi-player";
+			element.className = "midiPlayer";
 
 			const midiLink = document.createElement("a");
 			midiLink.href = resourceUrl;
@@ -2795,7 +2795,7 @@ function createMultimediaElement(type, fileName) {
 			midiLink.target = "_blank";
 
 			const midiLinkContainer = document.createElement("div");
-			midiLinkContainer.className = "midi-link";
+
 			midiLinkContainer.appendChild(midiLink);
 
 			element.appendChild(midiLinkContainer);
