@@ -36,9 +36,21 @@ async function copyCanvasToClipboard() {
 
 function downloadCanvas() {
 
-	const titulo = workspaceTitleText.textContent !== ""
-		? workspaceTitleText.textContent
-		: "fretboard";
+	const titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "fretboard";
+
+
+	////////////////////////////////////////////////////////////
+	// WEBP
+	////////////////////////////////////////////////////////////
+
+	const linkWEBP = document.createElement("a");
+
+	linkWEBP.download = titulo + ".webp";
+	linkWEBP.href = canvas.toDataURL("image/webp", 0.9);
+
+	document.body.appendChild(linkWEBP);
+	linkWEBP.click();
+	document.body.removeChild(linkWEBP);
 
 
 	////////////////////////////////////////////////////////////
@@ -62,15 +74,12 @@ function downloadCanvas() {
 	const pngData = canvas.toDataURL("image/png");
 
 	const svgText = `
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="${canvas.width}"
-     height="${canvas.height}"
-     viewBox="0 0 ${canvas.width} ${canvas.height}">
-	<image
-		width="${canvas.width}"
-		height="${canvas.height}"
-		href="${pngData}" />
-</svg>`.trim();
+		<svg xmlns="http://www.w3.org/2000/svg"
+		     width="${canvas.width}"
+		     height="${canvas.height}"
+		     viewBox="0 0 ${canvas.width} ${canvas.height}">
+			<image width="${canvas.width} height="${canvas.height} href="${pngData}" />
+		</svg>`.trim();
 
 	const blob = new Blob(
 		[svgText],
@@ -675,9 +684,7 @@ async function renderChord(instrument,notas,stepTime,gate,repeticiones,countInBa
 
 
 ////////////////////////////////////////////////////////////
-//
 // REPRODUCIR BUFFER
-//
 ////////////////////////////////////////////////////////////
 
 function playBuffer() {
@@ -690,10 +697,7 @@ function playBuffer() {
 
     }
 
-    ////////////////////////////////////////////////////////////
     // Detener reproducción actual
-    ////////////////////////////////////////////////////////////
-
     player.stop();
 
     if (audioPlayer) {
@@ -706,9 +710,7 @@ function playBuffer() {
 
     }
 
-    ////////////////////////////////////////////////////////////
     // Crear reproductor
-    ////////////////////////////////////////////////////////////
 
     audioPlayer = new Tone.Player().toDestination();
 
@@ -716,17 +718,13 @@ function playBuffer() {
         audioBuffer
     );
 
-    ////////////////////////////////////////////////////////////
     // Reproducir
-    ////////////////////////////////////////////////////////////
 
     audioPlayer.start();
 
     player.playing = true;
 
-    ////////////////////////////////////////////////////////////
     // Detectar final
-    ////////////////////////////////////////////////////////////
 
     audioPlayer.onstop = () => {
 
@@ -763,9 +761,7 @@ function stopBuffer() {
 }
 
 ////////////////////////////////////////////////////////////
-//
 // GUARDAR ARCHIVO DE AUDIO
-//
 ////////////////////////////////////////////////////////////
 
 async function saveAudio(formato = "mp3"){
@@ -822,9 +818,7 @@ async function saveAudio(formato = "mp3"){
 }
 
 ////////////////////////////////////////////////////////////
-//
 // AUDIOBUFFER -> WAV
-//
 ////////////////////////////////////////////////////////////
 
 function audioBufferToWav(buffer) {
@@ -910,9 +904,7 @@ function audioBufferToWav(buffer) {
 }
 
 ////////////////////////////////////////////////////////////
-//
 // ESCRIBIR TEXTO EN CABECERA WAV
-//
 ////////////////////////////////////////////////////////////
 
 function writeString(view, offset, text) {
@@ -926,9 +918,7 @@ function writeString(view, offset, text) {
 }
 
 ////////////////////////////////////////////////////////////
-//
 // AUDIOBUFFER -> MP3
-//
 ////////////////////////////////////////////////////////////
 
 function audioBufferToMp3(buffer) {
@@ -1096,79 +1086,6 @@ function audioBufferToMp3(buffer) {
 }
 
 
-
-////////////////////////////////////////////////////////////
-//
-// MIDI
-//
-////////////////////////////////////////////////////////////
-
-async function playMidi(filePath) {
-
-	await Tone.start();
-
-	// Si todavía no hemos cargado el MIDI, lo cargamos
-	if (!midiData) {
-
-		midiData = await Midi.fromUrl(filePath);
-
-		// Limpiar cualquier reproducción anterior
-		Tone.Transport.stop();
-		Tone.Transport.cancel();
-
-		// Crear un sintetizador por pista
-		midiData.tracks.forEach(track => {
-
-			if (track.notes.length === 0) {
-				return;
-			}
-
-			const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-
-			midiSynths.push(synth);
-
-			track.notes.forEach(note => {
-
-				Tone.Transport.schedule(time => {
-
-					synth.triggerAttackRelease(
-						note.name,
-						note.duration,
-						time,
-						note.velocity
-					);
-
-				}, note.time);
-
-			});
-
-		});
-
-	}
-
-	Tone.Transport.start();
-
-}
-
-function stopMidi() {
-
-	Tone.Transport.stop();
-
-	Tone.Transport.cancel();
-
-	Tone.Transport.position = 0;
-
-	midiSynths.forEach(synth => {
-
-		synth.releaseAll();
-		synth.dispose();
-
-	});
-
-	midiSynths = [];
-	midiData = null;
-
-}
 
 
 ////////////////////////////////////////////////////////////
@@ -2873,60 +2790,27 @@ function createMultimediaElement(type, fileName) {
 			element.className = "midi-player";
 
 			const midiLink = document.createElement("a");
-
 			midiLink.href = resourceUrl;
 			midiLink.innerHTML = "<i class='fa-solid fa-music'></i> " + (realName || "");
 			midiLink.target = "_blank";
 
-
-			const btnPlay = document.createElement("button");
-
-			btnPlay.innerHTML = "<i class='fa-solid fa-play'></i>";
-
-			btnPlay.title = "Reproducir MIDI";
-
-
-			const btnStop = document.createElement("button");
-
-			btnStop.innerHTML = "<i class='fa-solid fa-stop'></i>";
-
-			btnStop.title = "Detener MIDI";
-
-			btnStop.disabled = true;
-
-
-			btnPlay.addEventListener("click", async () => {
-
-				await playMidi(resourceUrl);
-
-				btnPlay.disabled = true;
-				btnStop.disabled = false;
-
-			});
-
-
-			btnStop.addEventListener("click", () => {
-
-				stopMidi();
-
-				btnPlay.disabled = false;
-				btnStop.disabled = true;
-
-			});
-
-
 			const midiLinkContainer = document.createElement("div");
-
 			midiLinkContainer.className = "midi-link";
-
 			midiLinkContainer.appendChild(midiLink);
-
 
 			element.appendChild(midiLinkContainer);
 
-			element.appendChild(btnPlay);
+			const sectionMidi = document.createElement("section");
+			sectionMidi.id = "sectionMidi";
 
-			element.appendChild(btnStop);
+			if (isLocal) resourceUrl = dataURL_Multimedia + type + "/" + fileName;
+
+			sectionMidi.innerHTML = `
+				<midi-player src="${resourceUrl}" sound-font visualizer="#sectionMidi midi-visualizer"></midi-player>
+				<midi-visualizer src="${resourceUrl}"></midi-visualizer>
+			`;
+
+			element.appendChild(sectionMidi);
 
 			break;
 
@@ -3172,3 +3056,4 @@ async function renderMultimedia() {
 	}
 
 }
+
