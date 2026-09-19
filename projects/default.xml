@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<projects version="7.5" type="" created="12/08/2026" modified="16/09/2026" name="Librería defectuosa" desc="proyecto defecto que se engloba en la cuestion algebraica del teormea de pitagoras para algo">
+<projects version="7.9" user="" created="12/08/2026" modified="19/09/2026" name="Librería defectuosa" desc="proyecto defecto que se engloba en la cuestion algebraica del teormea de pitagoras para algo">
 
 	<categories>
 		<category id="0001">Acordes</category>
@@ -326,6 +326,39 @@
 		<barres/>
 		<nutNotes/>
 		<resources/>
+	</project>
+
+	<project id="etv9ij" title="svg" category="2345" projectType="image" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="image" name="default-etv9ij-partitura.svg" />
+			<resource type="image" name="default-etv9ij-0001---Cmaj7.png" />
+		</resources>
+	</project>
+
+	<project id="lmhbbb" title="otro SVG IMG" category="2345" projectType="image" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="image" name="default-lmhbbb-0001---Cmaj7.png" />
+			<resource type="image" name="default-lmhbbb-partitura.svg" />
+			<resource type="image" name="default-lmhbbb-partitura.png" />
+		</resources>
+	</project>
+
+	<project id="1sk10oz" title="a_midi 1" category="0001" projectType="midi" fretboardType="sequence">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="midi" name="default-1sk10oz-NONAME.MID" />
+		</resources>
 	</project>
 
 </projects>
