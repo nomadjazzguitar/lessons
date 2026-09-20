@@ -46,7 +46,7 @@ function downloadCanvas() {
 	const linkWEBP = document.createElement("a");
 
 	linkWEBP.download = titulo + ".webp";
-	linkWEBP.href = canvas.toDataURL("image/webp", 0.9);
+	linkWEBP.href = canvas.toDataURL("image/webp", 1);
 
 	document.body.appendChild(linkWEBP);
 	linkWEBP.click();
