@@ -2805,10 +2805,14 @@ function createMultimediaElement(type, fileName) {
 
 			if (isLocal) resourceUrl = dataURL_Multimedia + type + "/" + fileName;
 
+/*
 			sectionMidi.innerHTML = `
 				<midi-player src="${resourceUrl}" sound-font visualizer="#sectionMidi midi-visualizer"></midi-player>
 				<midi-visualizer src="${resourceUrl}"></midi-visualizer>
 			`;
+*/
+
+			sectionMidi.innerHTML = `<midi-player src="${resourceUrl}" sound-font visualizer="#sectionMidi midi-visualizer"></midi-player>`;
 
 			element.appendChild(sectionMidi);
 
@@ -2906,9 +2910,6 @@ function createMultimediaElement(type, fileName) {
 			break;
 */
 
-		// --------------------------------
-		// LINK
-		// --------------------------------
 
 		case "link":
 
@@ -2923,19 +2924,7 @@ function createMultimediaElement(type, fileName) {
 			break;
 
 
-		// --------------------------------
-		// iframe
-		// --------------------------------
-
 		case "iframe": {
-
-			if (!resourceUrl) {
-
-				showAlert("El código de inserción está vacío.","error");
-
-				return;
-
-			}
 
 			element = document.createElement("div");
 
