@@ -1080,10 +1080,16 @@ html {
 
 	display: block;
 
+/*
 	width: 90%;
 	max-width: 1200px;
+*/
+
+	width: auto;
+	max-width: 90%;
 
 	height: auto;
+	max-height: calc(100% - 20px);
 
 	margin: 10px auto;
 
@@ -1105,6 +1111,7 @@ html {
 
 	width: auto;
 	max-width: 90%;
+
 	height: auto;
 	max-height: calc(100% - 20px);
 
@@ -1176,26 +1183,6 @@ html {
 
 }
 
-#workspaceMultimedia .midiPlayer {
-
-	display: flex;
-
-	flex-direction: column;
-
-	align-items: center;
-
-	width: 90%;
-
-	margin: 10px auto;
-
-	padding: 6px;
-
-	box-sizing: border-box;
-
-	gap: 6px;
-
-}
-
 #workspaceMultimedia a {
 
 	font-size: 14px;
@@ -1252,6 +1239,122 @@ html {
 
 	transform: scale(1.01);
 
+}
+
+
+/* ===========================
+   MIDI
+=========================== */
+
+#workspaceMultimedia .midiPlayer {
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	width: 90%;
+
+	margin: 10px auto;
+
+	padding: 6px;
+
+	box-sizing: border-box;
+
+	gap: 6px;
+
+}
+
+#sectionMidi {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Custom player style */
+#sectionMidi midi-player {
+/*
+	display: block;
+	width: 100%;
+	margin: 4px 0;
+	box-sizing: border-box;
+*/
+
+	display: block;
+
+	width: 100%;
+	max-width: 600px;
+
+	min-height: 40px;
+
+	margin: 10px auto;
+
+	box-sizing: border-box;
+}
+
+/*
+#sectionMidi midi-player::part(control-panel) {
+  background: #ff5;
+  border: 2px solid #000;
+  border-radius: 10px 10px 0 0;
+}
+
+#sectionMidi midi-player::part(play-button) {
+  color: #353;
+  border: 2px solid #000;
+  background-color: #4d4;
+  border-radius: 20px;
+  transition: all 0.2s;
+  content: 'hello';
+}
+
+#sectionMidi midi-player::part(play-button):hover {
+  color: #0a0;
+  background-color: #5f5;
+  border-radius: 10px;
+}
+*/
+
+#sectionMidi midi-player::part(time) {
+  font-size:inherit;
+  color:#000;
+}
+
+#sectionMidi midi-player::part(seek-bar) {
+  accent-color:#000;
+}
+
+
+/* Custom visualizer style */
+#sectionMidi midi-visualizer .piano-roll-visualizer {
+  background: #eee;
+  margin: 4px;
+  overflow: auto;
+}
+
+#sectionMidi midi-visualizer svg rect.note {
+  opacity: 0.6;
+  stroke-width: 2;
+}
+
+#sectionMidi midi-visualizer svg rect.note[data-instrument="0"]{
+  fill: #e22;
+  stroke: #500;
+}
+
+#sectionMidi midi-visualizer svg rect.note[data-instrument="2"]{
+  fill: #2ee;
+  stroke: #055;
+}
+
+#sectionMidi midi-visualizer svg rect.note[data-is-drum="true"]{
+  fill: #888;
+  stroke: #888;
+}
+
+#sectionMidi midi-visualizer svg rect.note.active {
+  opacity: 0.9;
+  stroke: #000;
 }
 
 
@@ -2958,81 +3061,6 @@ input[type="range"] {
 	background:var(--color-red) !important;
 	color:#fff !important;
 
-}
-
-
-
-/* ===========================
-   MIDI
-=========================== */
-
-/* Custom player style */
-#sectionMidi midi-player {
-  display: block;
-  width: inherit;
-  margin: 4px;
-  margin-bottom: 0;
-}
-
-/*
-#sectionMidi midi-player::part(control-panel) {
-  background: #ff5;
-  border: 2px solid #000;
-  border-radius: 10px 10px 0 0;
-}
-
-#sectionMidi midi-player::part(play-button) {
-  color: #353;
-  border: 2px solid currentColor;
-  background-color: #4d4;
-  border-radius: 20px;
-  transition: all 0.2s;
-  content: 'hello';
-}
-
-#sectionMidi midi-player::part(play-button):hover {
-  color: #0a0;
-  background-color: #5f5;
-  border-radius: 10px;
-}
-
-*/
-#sectionMidi midi-player::part(time) {
-/*  font-family: monospace;*/
-  font:inherit;
-}
-
-/* Custom visualizer style */
-#sectionMidi midi-visualizer .piano-roll-visualizer {
-  background: #eee;
-  margin: 4px;
-  margin-top: 0;
-  overflow: auto;
-}
-
-#sectionMidi midi-visualizer svg rect.note {
-  opacity: 0.6;
-  stroke-width: 2;
-}
-
-#sectionMidi midi-visualizer svg rect.note[data-instrument="0"]{
-  fill: #e22;
-  stroke: #500;
-}
-
-#sectionMidi midi-visualizer svg rect.note[data-instrument="2"]{
-  fill: #2ee;
-  stroke: #055;
-}
-
-#sectionMidi midi-visualizer svg rect.note[data-is-drum="true"]{
-  fill: #888;
-  stroke: #888;
-}
-
-#sectionMidi midi-visualizer svg rect.note.active {
-  opacity: 0.9;
-  stroke: #000;
 }
 
 
