@@ -2949,7 +2949,9 @@ async function renderMultimedia() {
 
 	workspaceMultimedia.innerHTML = "";
 
-	if (isAdmin){
+	const pType = cmbProjectType.value !== "link" && cmbProjectType.value !== "iframe";
+
+	if (isAdmin && pType){
 
 		// ZONA DRAG & DROP ----------------------
 
