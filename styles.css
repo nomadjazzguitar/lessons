@@ -7,7 +7,7 @@
 	/*Oscuro*/
 
 	--color-main-text:#d5d5d5;
-	--color-highlight:#1268A8;
+	--color-highlight:#E06B00;
 	--color-dark-background:#262626;
 	--color-fretboard-background:#262626;
 	--color-light-background:#353333;
@@ -1633,7 +1633,7 @@ html {
 
 	background: var(--color-highlight);
 
-	color: var(--color-text);
+	color: #fff;
 
 	padding-left: 4px;
 
@@ -1664,7 +1664,6 @@ html {
 	font-weight: normal;
 
 	background: transparent;
-
 }
 
 .projectOpenButton.active:disabled,
@@ -1729,7 +1728,7 @@ html {
 .projectCategoryButton:hover {
 
 	background: var(--color-selected);
-	color: var(--color-text);
+	color: var(--color-highlight);
 
 }
 
@@ -2853,9 +2852,9 @@ input[type="range"] {
 .projectPanelHeader button:not(:disabled):hover,
 #videoContainer button:not(:disabled):hover {
 
-	color:var(--color-text);
+	color:#fff;
 	background:var(--color-highlight);
-	border:1px solid var(--color-back);
+/*	border:1px solid var(--color-back);*/
 
 	box-shadow:inset 2px 2px 4px rgba(0,0,0,.35);
 
@@ -3057,26 +3056,24 @@ input[type="range"] {
 
 #btnPlayStopMetronome:hover{
 	background:var(--color-highlight) !important;
-	color:var(--color-text) !important;
+	color:#fff !important;
 }
 
 .buttonPlay{
 
 	background:var(--color-highlight) !important;
-	color:var(--color-main-text);
-	border: 1px solid var(--color-main-text) !important;
+	color:#fff !important;
+/*	border: 1px solid var(--color-main-text) !important;*/
 
 }
 
 .buttonPlay:not(:disabled):hover{
-	border: 1px solid var(--color-back) !important;
+/*	border: 1px solid #fff !important;*/
 }
 
 .buttonStop{
-
 	background:var(--color-red) !important;
 	color:#fff !important;
-
 }
 
 
