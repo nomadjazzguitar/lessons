@@ -794,7 +794,9 @@ titleText.addEventListener("input", () => {
 
 	projectTitle = titleText.value.trim() || "Proyecto nuevo sin título";
 
-	workspaceTitleText.textContent = cmbProjectCategory.value !== "" ? cmbProjectCategory.value + " - " : "";
+	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
+
+	workspaceTitleText.textContent = cat !== "" ? cat + " - " : "";
 	workspaceTitleText.textContent = workspaceTitleText.textContent + projectTitle;
 
 	if (cmbProjectType.value === "fretboard"){

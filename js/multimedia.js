@@ -269,8 +269,7 @@ async function downloadScorePNG() {
 
 		const canvas = await scoreToCanvas(svg);
 
-		const titulo =
-			workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
+		const titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
 
 		const link = document.createElement("a");
 
@@ -322,8 +321,7 @@ function downloadScoreSVG() {
 
 		const url = URL.createObjectURL(blob);
 
-		const titulo =
-			workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
+		const titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
 
 		const link = document.createElement("a");
 
@@ -2901,7 +2899,7 @@ function createMultimediaElement(type, fileName) {
 
 			element = document.createElement("div");
 
-			element.className = "musicxml";
+			element.className = "score";
 			element.id = `musicXMLScore_${Date.now()}`;
 
 			loadMusicXML(resourceUrl, element);

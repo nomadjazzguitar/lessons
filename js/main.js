@@ -404,6 +404,7 @@ function setMenu(m){
 		topAudio,
 		topVideo,
 		topMultimedia,
+		topGuitarAmp,
 		topLibraryInfo,
 		topProjectGuest,
 		topUser
@@ -513,7 +514,8 @@ function setMenu(m){
 				topBuffer,
 				topAudio,
 				topVideo,
-				topMultimedia
+				topMultimedia,
+				topGuitarAmp
 			);
 
 			menuSelectorText.textContent = "MULTIMEDIA";
