@@ -69,17 +69,19 @@ let libraryWasClosed = false;
 
 let currentTheme = "dark";
 
+/*4CAF70*/
+
 const themes = {
 
 	dark: {
 		"--color-main-text": "#d5d5d5",
-		"--color-highlight": "#1268A8",
+		"--color-highlight": "#E06B00",
 		"--color-dark-background": "#262626",
 		"--color-fretboard-background": "#262626",
 		"--color-light-background": "#353333",
 		"--color-tools": "#413F3F",
 		"--color-border": "#404040",
-		"--color-red": "#c62828",
+		"--color-red": "#C62828",
 		"--color-text": "#ffffff",
 		"--color-back": "#000000",
 		"--color-medium": "#777777",
@@ -90,7 +92,7 @@ const themes = {
 
 	light: {
 		"--color-main-text": "#2A2A2A",
-		"--color-highlight": "#4CAF70",
+		"--color-highlight": "#1268A8",
 		"--color-dark-background": "#DDDDDD",
 		"--color-fretboard-background": "#FFFFFF",
 		"--color-light-background": "#F2F2F2",
