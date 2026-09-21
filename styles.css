@@ -1135,17 +1135,18 @@ html {
 
 }
 
-#workspaceMultimedia musicxml{
+#workspaceMultimedia .musicxml{
 
 	display: block;
 
 	width: 90%;
+	min-height:200px;
 
 	margin: 10px auto;
 
 	border: none;
 
-	background: #fff;
+	background-color:#fff;
 
 	border:1px solid var(--color-border);
 
