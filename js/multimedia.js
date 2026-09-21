@@ -2899,7 +2899,7 @@ function createMultimediaElement(type, fileName) {
 
 			element = document.createElement("div");
 
-			element.className = "score";
+			element.className = "musicxml";
 			element.id = `musicXMLScore_${Date.now()}`;
 
 			loadMusicXML(resourceUrl, element);
