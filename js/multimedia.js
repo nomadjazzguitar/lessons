@@ -270,9 +270,7 @@ async function downloadScorePNG() {
 		const canvas = await scoreToCanvas(svg);
 
 		const titulo =
-			workspaceTitleText.textContent !== ""
-				? workspaceTitleText.textContent
-				: "score";
+			workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
 
 		const link = document.createElement("a");
 
@@ -325,9 +323,7 @@ function downloadScoreSVG() {
 		const url = URL.createObjectURL(blob);
 
 		const titulo =
-			workspaceTitleText.textContent !== ""
-				? workspaceTitleText.textContent
-				: "score";
+			workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
 
 		const link = document.createElement("a");
 
@@ -2519,7 +2515,7 @@ async function selectMultimediaFiles() {
 
 		case "score":
 
-			input.accept = [".musicxml",".mxl"].join(",");
+			input.accept = [".musicxml",".mxl", ".xml"].join(",");
 
 			break;
 
@@ -2668,7 +2664,7 @@ function isValidFile(file, type) {
 
 		case "score":
 
-			return ["musicxml","mxl"].includes(extension) ||
+			return ["musicxml", "mxl", "xml"].includes(extension) ||
 				mime === "application/vnd.recordare.musicxml" ||
 				mime === "application/vnd.recordare.musicxml+xml";
 
@@ -2902,13 +2898,15 @@ function createMultimediaElement(type, fileName) {
 
 
 		case "score":
-/*
+
 			element = document.createElement("div");
 
-			element.textContent = fileName || "";
+			element.className = "musicxml";
+			element.id = `musicXMLScore_${Date.now()}`;
+
+			loadMusicXML(resourceUrl, element);
 
 			break;
-*/
 
 
 		case "link":
@@ -3048,3 +3046,11 @@ async function renderMultimedia() {
 
 }
 
+async function loadMusicXML(url, element) {
+
+	const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(element);
+
+	await osmd.load(url);
+
+	osmd.render();
+}

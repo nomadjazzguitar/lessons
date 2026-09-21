@@ -1697,3 +1697,10 @@ btnUploadFile.addEventListener("click", () => {
 	selectMultimediaFiles();
 
 });
+
+btnGuitarAmp.addEventListener("click", () => {
+
+	window.open("https://www.noise-box.es/#/amp", "_blank");
+
+});
+

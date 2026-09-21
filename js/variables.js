@@ -430,6 +430,8 @@ const topTitleViewMode = document.getElementById("topTitleViewMode");
 const topLibraryInfo = document.getElementById("topLibraryInfo");
 const topScroll = document.getElementById("topScroll");
 const topProjectGuest = document.getElementById("topProjectGuest");
+const topMultimedia = document.getElementById("topMultimedia");
+const topGuitarAmp = document.getElementById("topGuitarAmp");
 
 
 /*==================================================
@@ -582,6 +584,8 @@ const cmbMicrophone = document.getElementById("cmbMicrophone");
 
 const btnAbrirVideo = document.getElementById("btnAbrirVideo");
 const btnUploadFile = document.getElementById("btnUploadFile");
+
+const btnGuitarAmp = document.getElementById("btnGuitarAmp");
 
 const videoContainer = document.getElementById("videoContainer");
 const btnAudioMute = document.getElementById("btnAudioMute");
