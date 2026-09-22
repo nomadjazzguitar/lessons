@@ -3620,7 +3620,6 @@ input[type="range"] {
 
 	}
 
-
 	#workspaceScore{
 
 		padding:0;
@@ -3631,7 +3630,6 @@ input[type="range"] {
 		overflow:auto;
 
 	}
-
 
 	#workspaceScore .vextab-auto{
 
@@ -3732,6 +3730,10 @@ input[type="range"] {
 
 	}
 
+	#workspaceTitleText,
+	#libraryPanelHeaderTitle{
+		font-size:12px;
+	}
 
 	/* ==========================
 	   Otros botones
