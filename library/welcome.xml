@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library version="1.1" type="library" created="10/09/2026" modified="22/09/2026" name="Pentatonicas alteradas con b6" desc="En este curso vamos a explorar el uso de la escala pentatonica menor b6. Para ello utilizaremos ejercicios prácticos y patrones de escalas a plicados a standards de jazz.">
+
+	<categories>
+		<category id="r6y20u">Utilidades</category>
+	</categories>
+
+	<project id="1g6m9lf" title="score" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="score" content="welcome-1g6m9lf-Prueba-MusicXML.xml">			</resource>
+		</resources>
+	</project>
+
+	<project id="ejzbpm" title="txt" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[hf hfdhdsfhdf h]]&gt;">			</resource>
+		</resources>
+	</project>
+
+	<project id="13pvqhe" title="aFoto" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="image" content="welcome-13pvqhe-1fec0e76aed7409549d83047b7a56068.jpg">			</resource>
+		</resources>
+	</project>
+
+	<project id="15lew6c" title="notas" category="r6y20u" projectType="fretboard" fretboardType="sequence">
+		<settings>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>rosewood</fretboardStyle>
+			<fretCount>10</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>true</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>0</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="2" fret="3" color="#ffffff" text="" chord="" order="1"/>
+			<note string="3" fret="3" color="#ffffff" text="" chord="" order="2"/>
+			<note string="2" fret="6" color="#ffffff" text="" chord="" order="3"/>
+			<note string="3" fret="7" color="#ffffff" text="" chord="" order="4"/>
+			<note string="3" fret="7" color="#ffffff" text="" chord="" order="5"/>
+		</notes>
+		<barres/>
+		<nutNotes/>
+		<resources/>
+	</project>
+
+	<project id="10uth4f" title="cosas" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[JJJAJAJAJAJAJAAJAAJ JAJAJJA LOLOLOLOL sfs s dbs scb ]]&gt;">			</resource>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;KKKKKK&lt;h2&gt;]]&gt;">			</resource>
+			<resource type="image" content="welcome-10uth4f-ChatGPT-Image-26-feb-2026,-10_07_25.png">			</resource>
+		</resources>
+	</project>
+
+	<project id="rtln41" title="texto linea" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Hola, esto es una carta    kakakakaak]]&gt;">			</resource>
+			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;kkkkKKKK&lt;/h1&gt; &lt;p&gt;Jejeje&lt;/p&gt; &lt;br&gt; &lt;p style=&quot;color:red&quot;&gt;Tuuuuu&lt;/p&gt;]]&gt;">			</resource>
+		</resources>
+	</project>
+
+	<project id="1sgrfqj" title="wiki" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="link" content="https://es.wikipedia.org/wiki/Wikipedia">			</resource>
+		</resources>
+	</project>
+
+	<project id="t9aiip" title="musixXML" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="score" content="welcome-t9aiip-1.xml">			</resource>
+		</resources>
+	</project>
+
+	<project id="y8rmfd" title="MiMIDI" category="r6y20u" projectType="multimedia" fretboardType="">
+		<settings/>
+		<notes/>
+		<barres/>
+		<nutNotes/>
+		<resources>
+			<resource type="midi" content="welcome-y8rmfd-23.MID">			</resource>
+		</resources>
+	</project>
+
+	<project id="1uenjym" title="footprints" category="r6y20u" projectType="fretboard" fretboardType="chord">
+		<settings>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>17</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>true</rotated>
+			<bar>3/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>0</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>30</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="4" fret="9" color="#000000" text="" chord="0" order="1"/>
+			<note string="3" fret="10" color="#000000" text="" chord="0" order="2"/>
+			<note string="2" fret="9" color="#000000" text="" chord="0" order="3"/>
+			<note string="1" fret="10" color="#000000" text="" chord="0" order="4"/>
+			<note string="4" fret="8" color="#ff0000" text="" chord="1" order="5"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="1" order="6"/>
+			<note string="2" fret="8" color="#ff0000" text="" chord="1" order="7"/>
+			<note string="1" fret="8" color="#ff0000" text="" chord="1" order="8"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="2" order="9"/>
+			<note string="3" fret="6" color="#0080ff" text="" chord="2" order="10"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="2" order="11"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="2" order="12"/>
+			<note string="0" fret="6" color="#0080ff" text="" chord="2" order="13"/>
+			<note string="5" fret="5" color="#00aa00" text="" chord="3" order="14"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="3" order="15"/>
+			<note string="2" fret="6" color="#00aa00" text="" chord="3" order="16"/>
+			<note string="1" fret="8" color="#00aa00" text="" chord="3" order="17"/>
+			<note string="4" fret="3" color="#ffcc00" text="" chord="4" order="18"/>
+			<note string="3" fret="1" color="#ffcc00" text="" chord="4" order="19"/>
+			<note string="2" fret="2" color="#ffcc00" text="" chord="4" order="20"/>
+			<note string="1" fret="1" color="#ffcc00" text="" chord="4" order="21"/>
+			<note string="0" fret="1" color="#ffcc00" text="" chord="4" order="22"/>
+		</notes>
+		<barres/>
+		<nutNotes/>
+		<resources/>
+	</project>
+
+</library>
