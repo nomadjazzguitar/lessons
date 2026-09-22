@@ -3698,8 +3698,7 @@ input[type="range"] {
 	#btnDownloadCanvas,
 	#btnCopyScore,
 	#btnScoreDownload,
-	#btnNewProjectGuest,
-	#btnSaveMultimediaText{
+	#btnNewProjectGuest{
 		width: 30px;
 		min-width:auto;
 	}
