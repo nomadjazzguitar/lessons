@@ -800,7 +800,7 @@ titleText.addEventListener("input", () => {
 
 	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
 
-	workspaceTitleText.textContent = cat !== "" ? cat + " - " : "";
+	workspaceTitleText.textContent = cat !== "" ? cat + " > " : "";
 	workspaceTitleText.textContent = workspaceTitleText.textContent + projectTitle;
 
 	if (cmbProjectType.value === "fretboard"){
