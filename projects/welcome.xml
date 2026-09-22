@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<projects version="2.7" user="" created="16/09/2026" modified="22/09/2026" name="welcome" desc="">
+<library version="2.7" type="library" created="16/09/2026" modified="22/09/2026" name="welcome" desc="">
 
 	<categories>
 		<category id="r6y20u">Utilidades</category>
@@ -39,7 +39,7 @@
 		<settings>
 			<orientation>horizontal</orientation>
 			<fretboardStyle>rosewood</fretboardStyle>
-			<fretCount>1</fretCount>
+			<fretCount>10</fretCount>
 			<displayMode>true</displayMode>
 			<inlays>true</inlays>
 			<rotated>true</rotated>
@@ -52,7 +52,7 @@
 			<isFretboardVisible>true</isFretboardVisible>
 			<isScoreVisible>true</isScoreVisible>
 			<currentInstrument>piano</currentInstrument>
-			<fretNumbers>10</fretNumbers>
+			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
 			<bpm>90</bpm>
 			<key>C</key>
@@ -127,4 +127,4 @@
 		</resources>
 	</project>
 
-</projects>
+</library>

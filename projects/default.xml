@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<projects version="8.1" user="" created="12/08/2026" modified="20/09/2026" name="Librería defectuosa" desc="proyecto defecto que se engloba en la cuestion algebraica del teormea de pitagoras para algo">
+<library version="8.1" type="library" created="12/08/2026" modified="20/09/2026" name="Librería defectuosa" desc="proyecto defecto que se engloba en la cuestion algebraica del teormea de pitagoras para algo">
 
 	<categories>
 		<category id="0001">Acordes</category>
@@ -381,4 +381,4 @@
 		</resources>
 	</project>
 
-</projects>
+</library>
