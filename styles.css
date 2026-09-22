@@ -1041,8 +1041,7 @@ html {
 
 	grid-template-rows:1fr;
 
-	grid-template-areas:
-		"multimedia";
+	grid-template-areas:"multimedia";
 
 }
 
@@ -1072,6 +1071,7 @@ html {
 	margin: 10px auto;
 
 /*	text-align: center;*/
+	text-align: left;
 
 }
 
@@ -1270,7 +1270,7 @@ html {
 
 	flex-direction: column;
 
-	align-items: center;
+/*	align-items: center;*/
 
 	width: 90%;
 
