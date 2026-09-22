@@ -796,7 +796,7 @@ btnShowProjectPanel.addEventListener("click", () => {
 
 titleText.addEventListener("input", () => {
 
-	projectTitle = titleText.value.trim() || "Proyecto nuevo sin título";
+	projectTitle = titleText.value.trim() || "Sin Título";
 
 	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
 
