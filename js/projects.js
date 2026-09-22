@@ -1592,11 +1592,16 @@ function getFirstProject() {
 	}
 
 	return projects
+		.find(project => project.category === firstCategory.id) || null;
+
+/*
+	return projects
 		.filter(project => project.category === firstCategory.id)
 		.sort((a, b) =>
 			a.title.localeCompare(b.title, undefined, {
 				sensitivity: "base"
 			})
 		)[0] || null;
+*/
 
 }
