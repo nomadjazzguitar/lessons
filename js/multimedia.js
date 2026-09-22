@@ -2601,7 +2601,7 @@ async function saveFileToMultimedia(file, type) {
 		const name = file.name.substring(0,file.name.lastIndexOf(".")).replace(/[\s.]+/g,"-");
 		const extension = file.name.split(".").pop();
 
-		const lib = xmlProjects.substring(xmlProjects.lastIndexOf("/") + 1,xmlProjects.lastIndexOf("."));
+		const lib = xmlLibrary.substring(xmlLibrary.lastIndexOf("/") + 1,xmlLibrary.lastIndexOf("."));
 
 		const fileName = lib + "-" + currentProjectId + "-" + name + "." + extension;
 
@@ -3021,7 +3021,7 @@ async function renderMultimedia() {
 
 	}
 
-	const project = projects.find(project => project.id === currentProjectId);
+	const project = library.find(project => project.id === currentProjectId);
 
 	// RECURSOS ----------------------
 

@@ -26,7 +26,7 @@ async function initializeApp() {
 
 		setLoadingProgress(20, "Cargando proyectos...");
 
-		await loadXML("project",xmlProjects);
+		await loadXML("project",xmlLibrary);
 
 		await initializeProjects();
 
@@ -178,9 +178,9 @@ function setUserState(){
 
 	}
 
-	if (!isAdmin && user !== null) xmlProjects = dataURL_Library + user + ".xml";
+	if (!isAdmin && user !== null) xmlLibrary = dataURL_Library + user + ".xml";
 
-	if (lib !== null && isUserActive) xmlProjects = dataURL_Library + lib + ".xml";
+	if (lib !== null && isUserActive) xmlLibrary = dataURL_Library + lib + ".xml";
 
 }
 
@@ -219,7 +219,7 @@ function configureUserControls(){
 			topFretboardDownload.style.display = "none";
 			topScoreDownload.style.display = "none";
 
-			btnShowProjectPanel.style.display = "none";
+			btnShowLibraryPanel.style.display = "none";
 
 			btnUser.querySelector("i").className = "fa-solid fa-user-lock";
 			txtUserTitle.textContent = "Invitado";
@@ -230,7 +230,7 @@ function configureUserControls(){
 
 				setMenu("edit");
 
-				btnShowProjectPanel.style.display = "none";
+				btnShowLibraryPanel.style.display = "none";
 
 				btnUser.querySelector("i").className = "fa-solid fa-user-tie";
 				txtUserTitle.textContent = "Invitado";
@@ -271,7 +271,7 @@ function configureUserControls(){
 			btnMultimediaPopup.style.display = "none";
 
 			btnMenuSelector.disabled = false;
-			btnShowProjectPanel.disabled = false;
+			btnShowLibraryPanel.disabled = false;
 			btnFretboard.disabled = false;
 			btnFretboardPopup.disabled = false;
 			btnScore.disabled = false;
@@ -326,14 +326,16 @@ function configureUserControls(){
 
 		closeLibraryPanel();
 
-		closeTopControls();
-
 	} else {
 
 		cursor.style.display = "";
 
-		openTopControls();
+	}
 
+	if (isAdmin || user === null){
+		openTopControls();
+	}else{
+		closeTopControls();
 	}
 
 }
@@ -561,13 +563,13 @@ async function initializeProjects() {
     // INFORMACION DE LIBRERIA
     // --------------------------------
 
-    setLibraryInfo(xmlProjects);
+    setLibraryInfo(xmlLibrary);
 
     // --------------------------------
     // NO HAY BIBLIOTECA
     // --------------------------------
 
-    if (!projectsLoaded) {
+    if (!libraryLoaded) {
 
         initializeEmptyProject();
 
@@ -597,7 +599,7 @@ async function initializeProjects() {
 
     if (currentProjectId !== null && isUserActive) {
 
-        const project = projects.find(project => project.id === currentProjectId);
+        const project = library.find(project => project.id === currentProjectId);
 
         if (project) {
 
@@ -677,9 +679,9 @@ async function loadXML(type,file) {
 
 			case "project":
 
-				projectsLoaded = false;
-				projects = parseProjectsXml(xml);
-				projectsLoaded = true;
+				libraryLoaded = false;
+				library = parseLibraryXml(xml);
+				libraryLoaded = true;
 
 				break;
 
@@ -701,8 +703,8 @@ async function loadXML(type,file) {
 
 		} else if (type === "project") {
 
-			projects = [];
-			projectsLoaded = false;
+			library = [];
+			libraryLoaded = false;
 
 		}
 
@@ -1302,21 +1304,21 @@ function saveHistory() {
 
 function openLibraryPanel(){
 
-	workspaceProjectsPanel.classList.remove("panelHidden");
+	workspaceLibraryPanel.classList.remove("panelHidden");
 
-	btnShowProjectPanel.title = "Ocultar librería";
+	btnShowLibraryPanel.title = "Ocultar librería";
 
-	btnShowProjectPanel.innerHTML = "<i class='fa-solid fa-angles-left'></i>";
+	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-left'></i>";
 
 }
 
 function closeLibraryPanel(){
 
-	workspaceProjectsPanel.classList.add("panelHidden");
+	workspaceLibraryPanel.classList.add("panelHidden");
 
-	btnShowProjectPanel.title = "Ver librería";
+	btnShowLibraryPanel.title = "Ver librería";
 
-	btnShowProjectPanel.innerHTML = "<i class='fa-solid fa-angles-right'></i>";
+	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-right'></i>";
 
 }
 
@@ -2353,7 +2355,6 @@ async function parseUsersXml(xml) {
 			IDUser: node.getAttribute("IDUser"),
 			name: node.getAttribute("name"),
 			email: node.getAttribute("email"),
-			permits: node.getAttribute("permits"),
 			active: node.getAttribute("active") === "true",
 			alta: node.getAttribute("alta"),
 			baja: node.getAttribute("baja")
@@ -2390,7 +2391,6 @@ async function addUser(name, email) {
 			IDUser: IDUser,
 			name: name,
 			email: encrypted,
-			permits: "",
 			active: true,
 			alta: alta,
 			baja: ""
@@ -2401,7 +2401,7 @@ async function addUser(name, email) {
 
 		saveUsersXml();
 
-		const created = createLibrary(name,IDUser);
+		const created = createLibrary(name,"user");
 
 		showAlert(created
 			? "Usuario '" + name + "', con email '" + email + "' y librería creados."
@@ -2435,7 +2435,6 @@ function saveUsersXml() {
 			xml += ' name="' + escapeXml(user.name) + '"';
 			xml += ' email="' + escapeXml(user.email) + '"';
 			xml += ' active="' + user.active + '"';
-			xml += ' permits="' + escapeXml(user.permits) + '"';
 			xml += ' alta="' + escapeXml(user.alta) + '"';
 			xml += ' baja="' + escapeXml(user.baja) + '"';
 

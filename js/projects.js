@@ -24,7 +24,7 @@ function newProject() {
 
 	resetControlsValues("newProject");
 
-	projectPanel.querySelector(".projectOpenButton.active")?.classList.remove("active");
+	libraryPanel.querySelector(".projectOpenButton.active")?.classList.remove("active");
 
 	showAlert("Nuevo proyecto creado.", "info");
 
@@ -175,16 +175,16 @@ async function loadProject(project) {
 
 }
 
-function parseProjectsXml(xml) {
+function parseLibraryXml(xml) {
 
-	xmlVersion = xml.querySelector("projects")?.getAttribute("version") || "1.0";
-	xmlLibraryUser = xml.querySelector("projects")?.getAttribute("user") || "";
-	xmlCreated = xml.querySelector("projects")?.getAttribute("created") || "";
+	xmlVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
+	xmlLibraryUser = xml.querySelector("library")?.getAttribute("user") || "";
+	xmlCreated = xml.querySelector("library")?.getAttribute("created") || "";
 
-	libraryName = xml.querySelector("projects")?.getAttribute("name") || "Sin Nombre";
+	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
 	libraryNameText.value = libraryName;
 
-	libraryDesc = xml.querySelector("projects")?.getAttribute("desc") || "";
+	libraryDesc = xml.querySelector("library")?.getAttribute("desc") || "";
 	libraryDescText.value = libraryDesc;
 
 	categories = [];
@@ -412,7 +412,7 @@ function getCurrentProject() {
 		settings: {
 			orientation: orientation,
 			fretboardStyle: cmbDiapason.value,
-			fretCount: numberFrets.value,
+			fretCount: numFrets.value,
 			displayMode: displayMode,
 			inlays: chkInlays.checked,
 			rotated: rotated,
@@ -425,7 +425,7 @@ function getCurrentProject() {
 			isFretboardVisible: isFretboardVisible,
 			isScoreVisible: isScoreVisible,
 			currentInstrument: cmbSamplerInstrument.value,
-			fretNumbers: numFrets.value,
+			fretNumbers: numberFrets.value,
 			showFretNumbers: chkShowNumber.checked,
 			bpm: sliderBpm.value,
 			key: cmbKey.value,
@@ -676,7 +676,7 @@ function projectToXml(project, indent = "\t") {
 
 }
 
-function writeXMLProjects() {
+function writeLibraryXML() {
 
 	const today = new Date();
 	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
@@ -687,9 +687,9 @@ function writeXMLProjects() {
 
 	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
 	lines.push(
-		'<projects ' +
+		'<library ' +
 		`version="${escapeXml(xmlVersion)}" ` +
-		`user="${escapeXml(xmlLibraryUser)}" ` +
+		`type="library" ` +
 		`created="${escapeXml(xmlCreated)}" ` +
 		`modified="${escapeXml(date)}" ` +
 		`name="${escapeXml(libraryName)}" ` +
@@ -713,26 +713,26 @@ function writeXMLProjects() {
 	lines.push("");
 
 	// Proyectos
-	projects.forEach(project => {
+	library.forEach(project => {
 
 		lines.push(projectToXml(project));
 		lines.push("");
 
 	});
 
-	lines.push("</projects>");
+	lines.push("</library>");
 
 	return lines.join("\n");
 
 }
 
-async function openXMLProjectsFile() {
+async function openLibraryXMLFile() {
 
 	try {
 
 		if (!window.showOpenFilePicker) {
 
-			alert("Tu navegador no permite editar directamente el XML. Al guardar se descargará " + xmlProjects);
+			alert("Tu navegador no permite editar directamente el XML. Al guardar se descargará " + xmlLibrary);
 
 			return false;
 		}
@@ -759,9 +759,9 @@ async function openXMLProjectsFile() {
 		// GUARDAR HANDLE
 		// --------------------------------
 
-		projectsFileHandle = fileHandle;
+		libraryFileHandle = fileHandle;
 
-		xmlProjects = fileHandle.name;
+		xmlLibrary = fileHandle.name;
 
 
 		// --------------------------------
@@ -779,16 +779,16 @@ async function openXMLProjectsFile() {
 
 		const xml = parseXML(xmlText);
 
-		const loadedProjects = parseProjectsXml(xml);
+		const loadedProjects = parseLibraryXml(xml);
 
 
 		// --------------------------------
 		// REEMPLAZAR PROYECTOS
 		// --------------------------------
 
-		projects = loadedProjects;
+		library = loadedProjects;
 
-		projectsLoaded = true;
+		libraryLoaded = true;
 
 
 		// --------------------------------
@@ -817,7 +817,7 @@ async function openXMLProjectsFile() {
 		// ABRIR PRIMER PROYECTO
 		// --------------------------------
 
-		if (projects.length > 0) {
+		if (library.length > 0) {
 
 			const firstProject = getFirstProject();
 
@@ -853,8 +853,8 @@ async function openXMLProjectsFile() {
 
 		console.error("Error al abrir la biblioteca de proyectos:",error);
 
-		projects = [];
-		projectsLoaded = false;
+		library = [];
+		libraryLoaded = false;
 
 		return false;
 
@@ -865,7 +865,7 @@ async function openXMLProjectsFile() {
 function renderLibrary() {
 
 	// Eliminar todas las categorías actuales excepto la cabecera
-	projectPanel.querySelectorAll(".projectCategory").forEach(category => category.remove());
+	libraryPanel.querySelectorAll(".projectCategory").forEach(category => category.remove());
 
 	getSortedCategories().forEach(category => {
 
@@ -912,13 +912,13 @@ function renderLibrary() {
 		categoryContainer.appendChild(categoryButton);
 		categoryContainer.appendChild(list);
 
-		projectPanel.appendChild(categoryContainer);
+		libraryPanel.appendChild(categoryContainer);
 
 		// --------------------------------
 		// PROYECTOS DE LA CATEGORÍA
 		// --------------------------------
 /*
-		const categoryProjects = projects
+		const categoryProjects = library
 			.filter(project => project.category === category.id)
 			.sort((a, b) =>
 				a.title.localeCompare(
@@ -929,7 +929,7 @@ function renderLibrary() {
 			);
 */
 
-		const categoryProjects = projects.filter(project => project.category === category.id);
+		const categoryProjects = library.filter(project => project.category === category.id);
 
 		categoryProjects.forEach(project => {
 
@@ -1035,7 +1035,7 @@ function renderLibrary() {
 
 			openButton.appendChild(titleSpan);
 
-			const currentProject = projects.find(item => item.id === project.id);
+			const currentProject = library.find(item => item.id === project.id);
 
 			// Al pulsar, seleccionamos explícitamente
 			openButton.addEventListener("click", async () => {
@@ -1130,17 +1130,17 @@ async function saveCurrentProject() {
 
 	if (!project) return false;
 
-	const existingIndex = projects.findIndex(
+	const existingIndex = library.findIndex(
 		existing => existing.id === project.id
 	);
 
 	if (existingIndex >= 0) {
 
-		projects[existingIndex] = project;
+		library[existingIndex] = project;
 
 	} else {
 
-		projects.push(project);
+		library.push(project);
 
 	}
 
@@ -1152,7 +1152,7 @@ async function saveCurrentProject() {
 
 		renderLibrary();
 
-		setLibraryInfo(xmlProjects.substring(xmlProjects.indexOf("/") + 1));
+		setLibraryInfo(xmlLibrary.substring(xmlLibrary.indexOf("/") + 1));
 
 		openProjectCategory(project.category);
 
@@ -1166,14 +1166,14 @@ async function saveCurrentProject() {
 
 async function saveProjectsFile() {
 
-	const xmlText = writeXMLProjects();
+	const xmlText = writeLibraryXML();
 
 	// Chrome / Edge: guardar en el archivo elegido.
-	if (projectsFileHandle) {
+	if (libraryFileHandle) {
 
 		try {
 
-			const writable = await projectsFileHandle.createWritable();
+			const writable = await libraryFileHandle.createWritable();
 
 			await writable.write(xmlText);
 			await writable.close();
@@ -1196,7 +1196,7 @@ async function saveProjectsFile() {
 			{type:"application/xml;charset=utf-8"}
 		);
 
-		downloadBlob(blob,xmlProjects.substring(xmlProjects.lastIndexOf("/") + 1));
+		downloadBlob(blob,xmlLibrary.substring(xmlLibrary.lastIndexOf("/") + 1));
 
 		return true;
 
@@ -1230,7 +1230,7 @@ function downloadBlob(blob, filename) {
 
 async function deleteProject(id) {
 
-	const project = projects.find(p => p.id === id);
+	const project = library.find(p => p.id === id);
 
 	if (!project) return;
 
@@ -1239,7 +1239,7 @@ async function deleteProject(id) {
 	}
 
 	// Eliminar del array
-	projects = projects.filter(p => p.id !== id);
+	library = library.filter(p => p.id !== id);
 
 	// Guardar el XML
 	saveProjectsFile();
@@ -1418,7 +1418,7 @@ function deleteCategory() {
 		return;
 	}
 
-	const categoryProjects = projects.filter(
+	const categoryProjects = library.filter(
 		project => project.category === categoryId
 	);
 
@@ -1434,7 +1434,7 @@ function deleteCategory() {
 		}
 
 		// Si el proyecto abierto pertenece a esta categoría, crear uno nuevo
-		const openedProject = projects.find(
+		const openedProject = library.find(
 			project => project.id === currentProjectId
 		);
 
@@ -1443,7 +1443,7 @@ function deleteCategory() {
 		}
 
 		// Eliminar los proyectos de la categoría
-		projects = projects.filter(
+		library = library.filter(
 			project => project.category !== categoryId
 		);
 
@@ -1509,7 +1509,7 @@ async function renderProject(){
 
 }
 
-function createLibrary(fileName,usuario = "") {
+function createLibrary(fileName,type = "") {
 
 	const today = new Date();
 	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
@@ -1519,16 +1519,16 @@ function createLibrary(fileName,usuario = "") {
 	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
 
 	lines.push(
-		`<projects ` +
+		`<library ` +
 		`version="1.0" ` +
-		`user="${escapeXml(usuario)}" ` +
+		`type="${escapeXml(type)}" ` +
 		`created="${escapeXml(date)}" ` +
 		`modified="" ` +
 		`name="${escapeXml(fileName)}" ` +
 		`desc="">`
 	);
 
-	lines.push(`</projects>`);
+	lines.push(`</library>`);
 
 	const xmlContent = lines.join("\n");
 
@@ -1559,44 +1559,44 @@ function createLibrary(fileName,usuario = "") {
 
 function setLibraryInfo(fileName){
 
-	projectPanelHeaderTitle.textContent = libraryName === "" ? "Sin Nombre" : libraryName;
+	libraryPanelHeaderTitle.textContent = libraryName === "" ? "Sin Nombre" : libraryName;
 
 	let txtInfo = "";
 
 	if (isAdmin && xmlType === "Server"){
 		txtInfo = txtInfo + "<i><a href='";
-		txtInfo = txtInfo + xmlProjects + "' target='_blank'>Librería " + fileName.replace(dataURL_Library, "") + "</a></i><br>";
+		txtInfo = txtInfo + xmlLibrary + "' target='_blank'>Librería " + fileName.replace(dataURL_Library, "") + "</a></i><br>";
 		txtInfo = txtInfo + "</a></i><br>";
 	}
 
 	if (libraryDesc !== "") txtInfo = txtInfo + libraryDesc;
 
-	projectPanelInfo.innerHTML = txtInfo;
+	libraryPanelInfo.innerHTML = txtInfo;
 
-	if (txtInfo === "") projectPanelInfo.style.display = "none";
+	if (txtInfo === "") libraryPanelInfo.style.display = "none";
 
 }
 
 function getFirstProject() {
 
-	if (!projects || projects.length === 0) {
+	if (!library || library.length === 0) {
 		return null;
 	}
 
 	const firstCategory = getSortedCategories()
 		.find(category =>
-			projects.some(project => project.category === category.id)
+			library.some(project => project.category === category.id)
 		);
 
 	if (!firstCategory) {
 		return null;
 	}
 
-	return projects
+	return library
 		.find(project => project.category === firstCategory.id) || null;
 
 /*
-	return projects
+	return library
 		.filter(project => project.category === firstCategory.id)
 		.sort((a, b) =>
 			a.title.localeCompare(b.title, undefined, {

@@ -128,10 +128,10 @@ let k = "admin";
 
 let lib = null;
 
-let projectsLoaded = false;
+let libraryLoaded = false;
 
-let projects = [];
-let projectsFileHandle = null;
+let library = [];
+let libraryFileHandle = null;
 
 let currentProjectId = null;
 
@@ -139,12 +139,11 @@ let projectModified = false;
 
 let categories = [];
 
-let xmlProjects = dataURL_Library + "welcome.xml";
+let xmlLibrary = dataURL_Library + "welcome.xml";
 
 let xmlVersion = "1.0";
 let xmlType = "Server";
 
-let xmlLibraryUser = "";
 let xmlCreated = "";
 
 let libraryName = "Sin Nombre";
@@ -471,8 +470,9 @@ const otherProjectList = document.getElementById("otherProjectList");
 const cmbProjectCategory = document.getElementById("cmbProjectCategory");
 const btnNewCategory = document.getElementById("btnNewCategory");
 const btnDelCategory = document.getElementById("btnDelCategory");
-const projectPanelInfo = document.getElementById("projectPanelInfo");
-const projectPanelHeaderTitle = document.getElementById("projectPanelHeaderTitle");
+const libraryPanel = document.getElementById("libraryPanel");
+const libraryPanelInfo = document.getElementById("libraryPanelInfo");
+const libraryPanelHeaderTitle = document.getElementById("libraryPanelHeaderTitle");
 const libraryNameText = document.getElementById("libraryNameText");
 const libraryDescText = document.getElementById("libraryDescText");
 const btnNewChord = document.getElementById("btnNewChord");
@@ -492,11 +492,11 @@ const cursor = document.getElementById("cursorTool");
 const workspaceMultimedia = document.getElementById("workspaceMultimedia");
 const workspaceFretboard = document.getElementById("workspaceFretboard");
 const workspaceScore = document.getElementById("workspaceScore");
-const workspaceProjectsPanel = document.getElementById("workspaceProjectsPanel");
+const workspaceLibraryPanel = document.getElementById("workspaceLibraryPanel");
 const workspaceTitleText = document.getElementById("workspaceTitleText");
 
 const btnPlayStop = document.getElementById("btnPlayStop");
-const btnShowProjectPanel = document.getElementById("btnShowProjectPanel");
+const btnShowLibraryPanel = document.getElementById("btnShowLibraryPanel");
 const btnFretboardVisible = document.getElementById("btnFretboardVisible");
 const btnScoreVisible = document.getElementById("btnScoreVisible");
 const btnVertical = document.getElementById("btnVertical");

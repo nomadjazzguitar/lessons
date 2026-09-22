@@ -779,9 +779,9 @@ cmbDiapason.addEventListener("change", () => {
 
 });
 
-btnShowProjectPanel.addEventListener("click", () => {
+btnShowLibraryPanel.addEventListener("click", () => {
 
-	if (workspaceProjectsPanel.classList.contains("panelHidden")) {
+	if (workspaceLibraryPanel.classList.contains("panelHidden")) {
 
 		openLibraryPanel();
 
@@ -862,7 +862,7 @@ btnCreate.addEventListener("click", () => {
 
 	if (nombre !== null) {
 
-		if (createLibrary(nombre,"")) {
+		if (createLibrary(nombre,"library")) {
 
 			showAlert("Librería '" + libraryNameText.value + "' creada.", "success");
 
@@ -880,7 +880,7 @@ btnOpen.addEventListener("click", async () => {
 		}
 	}
 
-	if (await openXMLProjectsFile()){
+	if (await openLibraryXMLFile()){
 
 		libraryNameText.disabled = false;
 		libraryDescText.disabled = false;
@@ -905,7 +905,7 @@ btnShare.addEventListener("click", () => {
 	
 	if(currentProjectId !== null) {
 
-		const lib = xmlProjects.substring(xmlProjects.lastIndexOf("/") + 1).replace(/\.xml$/, "");
+		const lib = xmlLibrary.substring(xmlLibrary.lastIndexOf("/") + 1).replace(/\.xml$/, "");
 
 		const shareUrl = `${location.origin}${location.pathname}?lib=${lib}&id=${currentProjectId}`;
 
