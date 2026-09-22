@@ -105,7 +105,7 @@
 		<resources/>
 	</project>
 
-	<project id="tw4j0" title="id" category="0001" projectType="fretboard" fretboardType="fretboard">
+	<project id="tw4j0" title="id" category="0001" projectType="fretboard" fretboardType="sequence">
 		<settings>
 			<orientation>horizontal</orientation>
 			<fretboardStyle>maple</fretboardStyle>
@@ -138,7 +138,7 @@
 		<resources/>
 	</project>
 
-	<project id="1bxi18k" title="cacas" category="1ej5g7q" projectType="video" fretboardType="chord">
+	<project id="1bxi18k" title="cacas" category="1ej5g7q" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -148,7 +148,7 @@
 		</resources>
 	</project>
 
-	<project id="1uyo1d5" title="gili" category="1ej5g7q" projectType="audio" fretboardType="sequence">
+	<project id="1uyo1d5" title="gili" category="1ej5g7q" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -159,7 +159,7 @@
 		</resources>
 	</project>
 
-	<project id="s8mv1x" title="oooooollooo" category="1ej5g7q" projectType="image" fretboardType="sequence">
+	<project id="s8mv1x" title="oooooollooo" category="1ej5g7q" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -169,7 +169,7 @@
 		</resources>
 	</project>
 
-	<project id="v37wkt" title="1234" category="1ej5g7q" projectType="video" fretboardType="sequence">
+	<project id="v37wkt" title="1234" category="1ej5g7q" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -179,7 +179,7 @@
 		</resources>
 	</project>
 
-	<project id="1k18pr0" title="capullo" category="1ej5g7q" projectType="document" fretboardType="sequence">
+	<project id="1k18pr0" title="capullo" category="1ej5g7q" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -190,7 +190,7 @@
 		</resources>
 	</project>
 
-	<project id="mjvop6" title="link" category="0001" projectType="midi" fretboardType="sequence">
+	<project id="mjvop6" title="link" category="0001" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -201,7 +201,7 @@
 		</resources>
 	</project>
 
-	<project id="1ap28bz" title="9999" category="uqoca7" projectType="pdf" fretboardType="sequence">
+	<project id="1ap28bz" title="9999" category="uqoca7" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -212,7 +212,7 @@
 		</resources>
 	</project>
 
-	<project id="14dll84" title="777" category="8490" projectType="document" fretboardType="sequence">
+	<project id="14dll84" title="777" category="8490" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -222,7 +222,7 @@
 		</resources>
 	</project>
 
-	<project id="f7oc5s" title="portfolio" category="uqoca7" projectType="link" fretboardType="sequence">
+	<project id="f7oc5s" title="portfolio" category="uqoca7" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -232,7 +232,7 @@
 		</resources>
 	</project>
 
-	<project id="1cqve1k" title="you" category="uqoca7" projectType="iframe" fretboardType="sequence">
+	<project id="1cqve1k" title="you" category="uqoca7" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -242,7 +242,7 @@
 		</resources>
 	</project>
 
-	<project id="3pe1zh" title="YouTube" category="uqoca7" projectType="link" fretboardType="sequence">
+	<project id="3pe1zh" title="YouTube" category="uqoca7" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -252,7 +252,7 @@
 		</resources>
 	</project>
 
-	<project id="r6xon1" title="docus" category="3090" projectType="pdf" fretboardType="sequence">
+	<project id="r6xon1" title="docus" category="3090" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -262,7 +262,7 @@
 		</resources>
 	</project>
 
-	<project id="kvy983" title="DOCXS" category="3090" projectType="document" fretboardType="sequence">
+	<project id="kvy983" title="DOCXS" category="3090" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -273,7 +273,7 @@
 		</resources>
 	</project>
 
-	<project id="dil1gl" title="66666666666" category="3090" projectType="pdf" fretboardType="sequence">
+	<project id="dil1gl" title="66666666666" category="3090" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -284,7 +284,7 @@
 		</resources>
 	</project>
 
-	<project id="1gd6syc" title="opopopopopo" category="8490" projectType="fretboard" fretboardType="sequence">
+	<project id="1gd6syc" title="opopopopopo" category="8490" projectType="fretboard" fretboardType="chord">
 		<settings>
 			<orientation>horizontal</orientation>
 			<fretboardStyle>rosewood</fretboardStyle>
@@ -328,7 +328,7 @@
 		<resources/>
 	</project>
 
-	<project id="etv9ij" title="svg" category="2345" projectType="image" fretboardType="sequence">
+	<project id="etv9ij" title="svg" category="2345" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -339,7 +339,7 @@
 		</resources>
 	</project>
 
-	<project id="lmhbbb" title="otro SVG IMG" category="2345" projectType="image" fretboardType="sequence">
+	<project id="lmhbbb" title="otro SVG IMG" category="2345" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -351,7 +351,7 @@
 		</resources>
 	</project>
 
-	<project id="1sk10oz" title="a_midi 1" category="0001" projectType="midi" fretboardType="sequence">
+	<project id="1sk10oz" title="a_midi 1" category="0001" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -361,7 +361,7 @@
 		</resources>
 	</project>
 
-	<project id="la43oy" title="b_midi" category="0001" projectType="midi" fretboardType="sequence">
+	<project id="la43oy" title="b_midi" category="0001" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
@@ -371,7 +371,7 @@
 		</resources>
 	</project>
 
-	<project id="1jybxjq" title="c_audio" category="0001" projectType="audio" fretboardType="sequence">
+	<project id="1jybxjq" title="c_audio" category="0001" projectType="multimedia" fretboardType="">
 		<settings/>
 		<notes/>
 		<barres/>
