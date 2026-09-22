@@ -11,7 +11,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="score" name="welcome-1g6m9lf-Prueba-MusicXML.xml" />
+			<resource type="score" content="welcome-1g6m9lf-Prueba-MusicXML.xml" />
 		</resources>
 	</project>
 

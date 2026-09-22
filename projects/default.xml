@@ -144,7 +144,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="video" name="default-1bxi18k.webm" />
+			<resource type="video" content="default-1bxi18k.webm" />
 		</resources>
 	</project>
 
@@ -154,8 +154,8 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="video" name="default-1uyo1d5-hhfdh-(1).webm" />
-			<resource type="audio" name="default-1uyo1d5-Dont-Cry.mp3" />
+			<resource type="video" content="default-1uyo1d5-hhfdh-(1).webm" />
+			<resource type="audio" content="default-1uyo1d5-Dont-Cry.mp3" />
 		</resources>
 	</project>
 
@@ -165,7 +165,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="image" name="default-s8mv1x-ChatGPT-Image-26-feb-2026,-10_07_25.png" />
+			<resource type="image" content="default-s8mv1x-ChatGPT-Image-26-feb-2026,-10_07_25.png" />
 		</resources>
 	</project>
 
@@ -175,7 +175,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="video" name="default-v37wkt-dfdfdfd.webm" />
+			<resource type="video" content="default-v37wkt-dfdfdfd.webm" />
 		</resources>
 	</project>
 
@@ -185,8 +185,8 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="pdf" name="default-1k18pr0-List-of-Phrasal-Verbs-_-C1-Advanced.pdf" />
-			<resource type="document" name="default-1k18pr0-dfndfndnvcn.docx" />
+			<resource type="pdf" content="default-1k18pr0-List-of-Phrasal-Verbs-_-C1-Advanced.pdf" />
+			<resource type="document" content="default-1k18pr0-dfndfndnvcn.docx" />
 		</resources>
 	</project>
 
@@ -196,8 +196,8 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="midi" name="default-mjvop6-NONAME.MID" />
-			<resource type="link" name="https://es.wikipedia.org/wiki/Wikipedia:Portada" />
+			<resource type="midi" content="default-mjvop6-NONAME.MID" />
+			<resource type="link" content="https://es.wikipedia.org/wiki/Wikipedia:Portada" />
 		</resources>
 	</project>
 
@@ -207,8 +207,8 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="audio" name="default-1ap28bz-bobby-matos---Mahjong.mp3" />
-			<resource type="pdf" name="default-1ap28bz-2026-Canal-Certificado-Servicios.pdf" />
+			<resource type="audio" content="default-1ap28bz-bobby-matos---Mahjong.mp3" />
+			<resource type="pdf" content="default-1ap28bz-2026-Canal-Certificado-Servicios.pdf" />
 		</resources>
 	</project>
 
@@ -218,7 +218,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="document" name="default-14dll84-Guitarras-y-Tiendas.txt" />
+			<resource type="document" content="default-14dll84-Guitarras-y-Tiendas.txt" />
 		</resources>
 	</project>
 
@@ -228,7 +228,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="link" name="https://view.genially.com/6958f29aae62ec746f090675" />
+			<resource type="link" content="https://view.genially.com/6958f29aae62ec746f090675" />
 		</resources>
 	</project>
 
@@ -238,7 +238,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="iframe" name="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TNdTvxHb9E0?si=WDTqxkWJG50Wm5Ao&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+			<resource type="iframe" content="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TNdTvxHb9E0?si=WDTqxkWJG50Wm5Ao&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
 		</resources>
 	</project>
 
@@ -248,7 +248,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="link" name="https://youtu.be/TNdTvxHb9E0?si=JLjquy6ABo1qWatY" />
+			<resource type="link" content="https://youtu.be/TNdTvxHb9E0?si=JLjquy6ABo1qWatY" />
 		</resources>
 	</project>
 
@@ -258,7 +258,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="pdf" name="default-r6xon1-1.pdf" />
+			<resource type="pdf" content="default-r6xon1-1.pdf" />
 		</resources>
 	</project>
 
@@ -268,8 +268,8 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="document" name="default-kvy983-1.txt" />
-			<resource type="document" name="default-kvy983-1.docx" />
+			<resource type="document" content="default-kvy983-1.txt" />
+			<resource type="document" content="default-kvy983-1.docx" />
 		</resources>
 	</project>
 
@@ -279,8 +279,8 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="pdf" name="default-dil1gl-1---copia.pdf" />
-			<resource type="document" name="default-dil1gl-1---copia.docx" />
+			<resource type="pdf" content="default-dil1gl-1---copia.pdf" />
+			<resource type="document" content="default-dil1gl-1---copia.docx" />
 		</resources>
 	</project>
 
@@ -334,8 +334,8 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="image" name="default-etv9ij-partitura.svg" />
-			<resource type="image" name="default-etv9ij-0001---Cmaj7.png" />
+			<resource type="image" content="default-etv9ij-partitura.svg" />
+			<resource type="image" content="default-etv9ij-0001---Cmaj7.png" />
 		</resources>
 	</project>
 
@@ -345,9 +345,9 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="image" name="default-lmhbbb-0001---Cmaj7.png" />
-			<resource type="image" name="default-lmhbbb-partitura.svg" />
-			<resource type="image" name="default-lmhbbb-partitura.png" />
+			<resource type="image" content="default-lmhbbb-0001---Cmaj7.png" />
+			<resource type="image" content="default-lmhbbb-partitura.svg" />
+			<resource type="image" content="default-lmhbbb-partitura.png" />
 		</resources>
 	</project>
 
@@ -357,7 +357,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="midi" name="default-1sk10oz-NONAME.MID" />
+			<resource type="midi" content="default-1sk10oz-NONAME.MID" />
 		</resources>
 	</project>
 
@@ -367,7 +367,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="midi" name="default-la43oy-NONAME-2.MID" />
+			<resource type="midi" content="default-la43oy-NONAME-2.MID" />
 		</resources>
 	</project>
 
@@ -377,7 +377,7 @@
 		<barres/>
 		<nutNotes/>
 		<resources>
-			<resource type="audio" name="default-1jybxjq-David-Manley---Nothing-Personal.mp3" />
+			<resource type="audio" content="default-1jybxjq-David-Manley---Nothing-Personal.mp3" />
 		</resources>
 	</project>
 
