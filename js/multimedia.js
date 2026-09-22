@@ -3046,7 +3046,10 @@ async function renderMultimedia() {
 
 async function loadMusicXML(url, element) {
 
-	const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(element);
+	const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(element, {
+		autoResize: true,
+		drawTitle: true
+	});
 
 	await osmd.load(url);
 
