@@ -180,13 +180,7 @@ function setUserState(){
 
 	if (!isAdmin && user !== null) xmlProjects = dataURL_Library + user + ".xml";
 
-	if (lib !== null && isUserActive) {
-
-		xmlProjects = dataURL_Library + lib + ".xml";
-
-		appMode = "Guest";
-
-	}
+	if (lib !== null && isUserActive) xmlProjects = dataURL_Library + lib + ".xml";
 
 }
 

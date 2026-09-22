@@ -1497,12 +1497,13 @@ async function renderProject(){
 		if (menuOpen !== "projects") setMenu("projects");
 
 	}else{
-
-		if (projectType !== "fretboard" && appMode !== "Guest"){
+/*
+		if (projectType !== "fretboard" && isUserActive){
 			if (menuOpen !== "edit") setMenu("edit");
 		}else{
+*/
 			if (menuOpen !== "metronome") setMenu("metronome");
-		}
+//		}
 
 	}
 
