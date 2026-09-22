@@ -1150,6 +1150,7 @@ html {
 	max-width:100%;
 
 	height:auto;
+	min-height:40px;
 	max-height:calc(100% - 20px);
 
 	margin:10px 0;
