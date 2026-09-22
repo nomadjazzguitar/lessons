@@ -3091,19 +3091,24 @@ async function renderMultimedia() {
 	}
 
 }
+
 async function loadMusicXML(url, element) {
 
 	const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(element, {
-		autoResize: false,
+		autoResize: !isMobile,
 		drawTitle: true
 	});
 
 	await osmd.load(url);
 
-	osmd.zoom = isMobile ? 0.5 : 1;
+	osmd.zoom = !isMobile ? 1 : 0.5;
 
 	osmd.render();
 
-	element.querySelector("svg")?.style.setProperty("margin", "0 auto");
+	if (!isMobile) {
+
+		element.querySelector("svg")?.style.setProperty("margin", "0 auto");
+
+	}
 
 }
