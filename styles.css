@@ -870,6 +870,7 @@ html {
 	color:var(--color-main-text);
 
 	font-weight:700;
+	font-size:14px;
 
 	text-align:center;
 
@@ -1573,6 +1574,7 @@ html {
 }
 
 .libraryPanelHeader {
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -1622,6 +1624,7 @@ html {
 
 #libraryPanelHeaderTitle{
 	font-weight:700;
+	font-size:14px;
 }
 
 #libraryPanelInfo {
@@ -1636,7 +1639,6 @@ html {
 
 	overflow-wrap:break-word;
 
-	font-size:11px;
 }
 
 #libraryPanelInfo a{
@@ -2557,7 +2559,6 @@ html {
 
 	background:var(--color-tools);
 
-	border-bottom:1px solid var(--color-back);
 	border-right:1px solid var(--color-back);
 
 	opacity:0;
