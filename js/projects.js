@@ -1498,7 +1498,7 @@ async function renderProject(){
 
 	}else{
 
-		if (projectType !== "fretboard"){
+		if (projectType !== "fretboard" && appMode !== "Guest"){
 			if (menuOpen !== "edit") setMenu("edit");
 		}else{
 			if (menuOpen !== "metronome") setMenu("metronome");
