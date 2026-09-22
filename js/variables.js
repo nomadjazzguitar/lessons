@@ -140,7 +140,7 @@ let projectModified = false;
 let categories = [];
 
 let xmlLibrary = dataURL_Library + "welcome.xml";
-
+let xmlLibraryType = "library";
 let xmlVersion = "1.0";
 let xmlType = "Server";
 

@@ -689,7 +689,7 @@ function writeLibraryXML() {
 	lines.push(
 		'<library ' +
 		`version="${escapeXml(xmlVersion)}" ` +
-		`type="library" ` +
+		`type="${escapeXml(xmlLibraryType)}" ` +
 		`created="${escapeXml(xmlCreated)}" ` +
 		`modified="${escapeXml(date)}" ` +
 		`name="${escapeXml(libraryName)}" ` +
