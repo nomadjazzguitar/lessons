@@ -3091,17 +3091,17 @@ async function renderMultimedia() {
 	}
 
 }
-
 async function loadMusicXML(url, element) {
 
 	const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(element, {
-		autoResize: true,
+		autoResize: false,
 		drawTitle: true
 	});
 
-	//osmd.zoom = 0.8;
-
 	await osmd.load(url);
 
+	osmd.zoom = 0.5;
+
 	osmd.render();
+
 }
