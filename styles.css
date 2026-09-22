@@ -444,7 +444,7 @@ html {
 
 .app-alert.info i {
 
-	color: var(--color-highlight);
+	color: #1268A8;
 
 }
 
@@ -1078,12 +1078,6 @@ html {
 
 	width:90%;
 	margin:10px auto;
-
-	background:transparent;
-	color:var(--color-text);
-
-	font-family:inherit;
-	font-size:inherit;
 }
 
 #workspaceMultimedia #textAreaMultimedia {
@@ -1097,7 +1091,7 @@ html {
 
 	padding:12px;
 
-	background:transparent;
+	background:var(--color-back);
 	color:var(--color-text);
 
 	font-family:inherit;
