@@ -332,8 +332,9 @@ function configureUserControls(){
 
 	}
 
-	if (isAdmin || user === null){
+	if (!isMobile && (isAdmin || user === null)){
 		openTopControls();
+		
 	}else{
 		closeTopControls();
 	}

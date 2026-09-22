@@ -3100,8 +3100,10 @@ async function loadMusicXML(url, element) {
 
 	await osmd.load(url);
 
-	osmd.zoom = 0.5;
+	osmd.zoom = isMobile ? 0.5 : 1;
 
 	osmd.render();
+
+	element.querySelector("svg")?.style.setProperty("margin", "0 auto");
 
 }
