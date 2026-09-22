@@ -148,7 +148,7 @@ function setUserState(){
 
 		if (user !== null){
 
-			const currentUser = users.find(item => item.IDUser === user);
+			const currentUser = users.find(item => item.id === user);
 	
 			if (currentUser) {
 
@@ -2353,12 +2353,13 @@ async function parseUsersXml(xml) {
 
 		[...xml.querySelectorAll("user")].map(async node => ({
 
-			IDUser: node.getAttribute("IDUser"),
+			id: node.getAttribute("id"),
 			name: node.getAttribute("name"),
 			email: node.getAttribute("email"),
 			active: node.getAttribute("active") === "true",
 			alta: node.getAttribute("alta"),
-			baja: node.getAttribute("baja")
+			baja: node.getAttribute("baja"),
+			courses: node.getAttribute("courses")
 
 		}))
 
@@ -2385,16 +2386,17 @@ async function addUser(name, email) {
 
 		const alta = String(date.getDate()).padStart(2, "0") + "/" + String(date.getMonth() + 1).padStart(2, "0") + "/" + date.getFullYear();
 
-		const IDUser = generateIDKey();
+		const id = generateIDKey();
 
 		const userData = {
 
-			IDUser: IDUser,
+			id: id,
 			name: name,
 			email: encrypted,
 			active: true,
 			alta: alta,
-			baja: ""
+			baja: "",
+			courses: ""
 
 		};
 
@@ -2432,12 +2434,13 @@ function saveUsersXml() {
 
 			xml += '\t<user';
 
-			xml += ' IDUser="' + escapeXml(user.IDUser) + '"';
+			xml += ' id="' + escapeXml(user.id) + '"';
 			xml += ' name="' + escapeXml(user.name) + '"';
 			xml += ' email="' + escapeXml(user.email) + '"';
 			xml += ' active="' + user.active + '"';
 			xml += ' alta="' + escapeXml(user.alta) + '"';
 			xml += ' baja="' + escapeXml(user.baja) + '"';
+			xml += ' courses=""';
 
 			xml += ' />\n';
 

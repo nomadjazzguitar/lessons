@@ -766,7 +766,7 @@ async function playMusic(){
 		topControlsWasOpen = topControlsContainer.classList.contains("isOpen");
 		closeTopControls();
 
-		libraryWasClosed = workspaceProjectsPanel.classList.contains("panelHidden");
+		libraryWasClosed = workspaceLibraryPanel.classList.contains("panelHidden");
 		closeLibraryPanel();
 
 		if (isFretboardVisible) drawNotesAlpha(0.4);

@@ -177,14 +177,14 @@ async function loadProject(project) {
 
 function parseLibraryXml(xml) {
 
-	xmlVersion = xml.querySelector("type")?.getAttribute("version") || "1.0";
-	xmlLibraryType = xml.querySelector("type")?.getAttribute("user") || "";
-	xmlCreated = xml.querySelector("type")?.getAttribute("created") || "";
+	xmlVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
+	xmlLibraryType = xml.querySelector("library")?.getAttribute("user") || "";
+	xmlCreated = xml.querySelector("library")?.getAttribute("created") || "";
 
-	libraryName = xml.querySelector("type")?.getAttribute("name") || "Sin Nombre";
+	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
 	libraryNameText.value = libraryName;
 
-	libraryDesc = xml.querySelector("type")?.getAttribute("desc") || "";
+	libraryDesc = xml.querySelector("library")?.getAttribute("desc") || "";
 	libraryDescText.value = libraryDesc;
 
 	categories = [];
