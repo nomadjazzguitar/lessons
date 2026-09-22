@@ -157,7 +157,7 @@ async function loadProject(project) {
 
 				resources[type] = project.resources[type].map(resource => ({
 
-					name: resource.name || ""
+					content: resource.content || ""
 
 				}));
 
@@ -213,19 +213,11 @@ function parseProjectsXml(xml) {
 
 			const node = settingsNode?.querySelector(name);
 
-			if (!node) {
-
-				return fallback;
-
-			}
+			if (!node) return fallback;
 
 			const value = node.textContent.trim();
 
-			if (typeof fallback === "boolean") {
-
-				return value === "true";
-
-			}
+			if (typeof fallback === "boolean") return value === "true";
 
 			if (typeof fallback === "number") {
 
@@ -290,6 +282,7 @@ function parseProjectsXml(xml) {
 
 			resources: {
 
+				text: [],
 				video: [],
 				audio: [],
 				midi: [],
@@ -377,7 +370,7 @@ function parseProjectsXml(xml) {
 
 			project.resources[type].push({
 
-				name: resourceNode.getAttribute("name") || ""
+				content: resourceNode.getAttribute("content") || ""
 
 			});
 
@@ -484,7 +477,7 @@ function getCurrentProject() {
 
 				resourceList.map(resource => ({
 
-					name: resource.name || ""
+					content: resource.content || ""
 
 				}))
 
@@ -660,7 +653,7 @@ function projectToXml(project, indent = "\t") {
 				lines.push(
 					`${indent}\t\t<resource ` +
 					`type="${escapeXml(type)}" ` +
-					`name="${escapeXml(resource.name || "")}" />`
+					`content="${escapeXml(resource.content || "")}" />`
 				);
 
 			});
@@ -974,8 +967,7 @@ function renderLibrary() {
 
 			const resourceTypes = Object.keys(project.resources)
 				.filter(type =>
-					Array.isArray(project.resources[type]) &&
-					project.resources[type].length > 0
+					Array.isArray(project.resources[type]) && project.resources[type].length > 0
 				)
 /*
 				.map(type => type === "pdf" ? "document" : type)
@@ -992,6 +984,10 @@ function renderLibrary() {
 
 					case "fretboard":
 						iType = "<i class='fa-solid fa-guitar'></i>";
+						break;
+
+					case "text":
+						iType = "<i class='fa-solid fa-file-lines'></i>";
 						break;
 
 					case "video":

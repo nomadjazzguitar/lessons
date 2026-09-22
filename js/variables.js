@@ -299,6 +299,7 @@ let recordingTimer = null;
 let camerasInfo = [];
 
 let resources = {
+	text: [],
 	video: [],
 	audio: [],
 	midi: [],

@@ -895,6 +895,7 @@ function resetControlsValues(state){
 function initializeArrays(){
 
 	resources = {
+		text: [],
 		video: [],
 		audio: [],
 		midi: [],
@@ -1014,7 +1015,6 @@ function setControlsState() {
 		btnPlayStop.disabled = true;
 	}
 
-
 	// --------------------------------
 	// SCORE VISIBLE
 	// --------------------------------
@@ -1030,6 +1030,14 @@ function setControlsState() {
 
 
 	// --------------------------------
+	// FRETBOARD CONTROLS
+	// --------------------------------
+
+	workspaceControls.style.display = isMultimedia ? "none" : "";
+	workspaceMetronome.style.display = isMultimedia ? "none" : "";
+
+
+	// --------------------------------
 	// AUDIO / RENDER
 	// --------------------------------
 
@@ -1042,6 +1050,7 @@ function setControlsState() {
 		btnSaveAudio.disabled = renderDisabled;
 		btnCopyCanvas.disabled = renderDisabled;
 		btnDownloadCanvas.disabled = renderDisabled;
+		btnCopyScore.disabled = renderDisabled;
 		btnScoreDownload.disabled = renderDisabled;
 
 	} else {
@@ -1087,16 +1096,19 @@ function setControlsState() {
 
 	btnUploadFile.disabled = !isMultimedia;
 
+
 	// --------------------------------
 	// DESCARGAS SUPERIORES
 	// --------------------------------
 
 	btnCopyCanvas.disabled = isMultimedia;
 	btnDownloadCanvas.disabled = isMultimedia;
+	btnCopyScore.disabled = isMultimedia;
 	btnScoreDownload.disabled = isMultimedia;
 	cmbAudioFormat.disabled = isMultimedia;
 	btnSaveAudio.disabled = isMultimedia;
 	btnRenderBuffer.disabled = isMultimedia;
+
 
 	// --------------------------------
 	// GUEST + FRETBOARD

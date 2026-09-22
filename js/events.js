@@ -183,12 +183,16 @@ document.addEventListener("metronomeBeat", (e) => {
 		case "restart":
 		case "stop":
 
+			if (cmbProjectType.value !== "fretboard") workspaceMetronome.style.display = "none";
+
 			resetMetronomeTimeline();
 
 			break;
 
 		case "start":
 		case "tick":
+
+			if (cmbProjectType.value !== "fretboard") workspaceMetronome.style.display = "";
 
 			updateMetronomeTimeline(beat, subBeat);
 
@@ -1232,6 +1236,10 @@ cmbProjectType.addEventListener("change", () => {
 			return;
 
 		}
+
+	}else{
+
+		renderMultimedia();
 
 	}
 

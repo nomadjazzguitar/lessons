@@ -2369,73 +2369,17 @@ function stopRecordingTimer() {
 // MULTIMEDIA
 ////////////////////////////////////////////////////////////
 
-async function selectMultimediaFolder() {
-
-	try {
-
-		multimediaDirectory = await window.showDirectoryPicker();
-
-
-		// Comprobar que es la carpeta multimedia
-
-		if (multimediaDirectory.name !== "multimedia") {
-
-			alert("Debes seleccionar la carpeta 'multimedia'.");
-
-			multimediaDirectory = null;
-
-			return false;
-
-		}
-
-
-		// Crear las carpetas si no existen
-
-		const folders = [
-			"video",
-			"audio",
-			"midi",
-			"image",
-			"score",
-			"pdf",
-			"document",
-			"html"
-		];
-
-
-		for (const folder of folders) {
-
-			await multimediaDirectory.getDirectoryHandle(
-				folder,
-				{ create: true }
-			);
-
-		}
-
-
-		return true;
-
-	} catch (error) {
-
-		console.error("Error seleccionando la carpeta multimedia:", error);
-
-		multimediaDirectory = null;
-
-		return false;
-
-	}
-
-}
-
 async function selectMultimediaFiles() {
+
+	if (projectType === "text") return;
 
 	// --------------------------------
 	// TIPOS SIN ARCHIVO
 	// --------------------------------
 
-	if (projectType === "link" || projectType === "iframe") {
+	let content;
 
-		let content;
+	if (projectType === "link" || projectType === "iframe") {
 
 		if (projectType === "link") content = prompt("Introduzca la URL:");
 
@@ -2443,15 +2387,7 @@ async function selectMultimediaFiles() {
 
 		if (!content) return;
 
-		resources[projectType].push({
-
-			name: content.trim(),
-
-			path: content.trim(),
-
-			file: null
-
-		});
+		resources[projectType].push({content: content.trim()});
 
 		createMultimediaElement(projectType, content.trim());
 
@@ -2568,6 +2504,60 @@ async function selectMultimediaFiles() {
 
 }
 
+async function selectMultimediaFolder() {
+
+	try {
+
+		multimediaDirectory = await window.showDirectoryPicker();
+
+		// Comprobar que es la carpeta multimedia
+
+		if (multimediaDirectory.name !== "multimedia") {
+
+			alert("Debes seleccionar la carpeta 'multimedia'.");
+
+			multimediaDirectory = null;
+
+			return false;
+
+		}
+
+		// Crear las carpetas si no existen
+
+		const folders = [
+			"video",
+			"audio",
+			"midi",
+			"image",
+			"score",
+			"pdf",
+			"document",
+			"html"
+		];
+
+		for (const folder of folders) {
+
+			await multimediaDirectory.getDirectoryHandle(
+				folder,
+				{ create: true }
+			);
+
+		}
+
+		return true;
+
+	} catch (error) {
+
+		console.error("Error seleccionando la carpeta multimedia:", error);
+
+		multimediaDirectory = null;
+
+		return false;
+
+	}
+
+}
+
 async function saveFileToMultimedia(file, type) {
 
 	try {
@@ -2613,11 +2603,7 @@ async function saveFileToMultimedia(file, type) {
 		// GUARDAR REFERENCIA
 		// --------------------------------
 
-		resources[type].push({
-
-			name: fileName,
-
-		});
+		resources[type].push({content: fileName});
 
 		createMultimediaElement(type,fileName);
 
@@ -2717,21 +2703,35 @@ function createMultimediaElement(type, fileName) {
 
 	let element;
 	let resourceUrl = "";
+	let realName = "";
 
-	const realName = fileName.substring(fileName.indexOf("-", fileName.indexOf("-") + 1) + 1);
+	if (type !== "text"){
 
-	if (type === "link" || type === "iframe"){
-		resourceUrl = fileName;
-	}else{
+		realName = fileName.substring(fileName.indexOf("-", fileName.indexOf("-") + 1) + 1);
 
-		if (isLocal){
-			resourceUrl = dataURL_Multimedia.replace(baseURL,"") + type + "/" + fileName;
+		if (type === "link" || type === "iframe"){
+			resourceUrl = fileName;
 		}else{
-			resourceUrl = dataURL_Multimedia + type + "/" + fileName;
+	
+			if (isLocal){
+				resourceUrl = dataURL_Multimedia.replace(baseURL,"") + type + "/" + fileName;
+			}else{
+				resourceUrl = dataURL_Multimedia + type + "/" + fileName;
+			}
 		}
 	}
 
 	switch (type) {
+
+		case "text":
+
+			element = document.createElement("div");
+			element.id = "text";
+
+			element.innerHTML = fileName;
+
+			break;
+
 
 		case "video":
 
@@ -2945,7 +2945,7 @@ async function renderMultimedia() {
 
 	workspaceMultimedia.innerHTML = "";
 
-	const pType = cmbProjectType.value !== "link" && cmbProjectType.value !== "iframe";
+	const pType = cmbProjectType.value !== "text" && cmbProjectType.value !== "link" && cmbProjectType.value !== "iframe";
 
 	if (isAdmin && pType){
 
@@ -2974,7 +2974,6 @@ async function renderMultimedia() {
 
 		});
 
-
 		dropZone.addEventListener("dragleave", event => {
 
 			event.preventDefault();
@@ -2991,7 +2990,6 @@ async function renderMultimedia() {
 
 		});
 
-
 		dropZone.addEventListener("drop", async event => {
 
 			event.preventDefault();
@@ -3000,14 +2998,11 @@ async function renderMultimedia() {
 
 			dropZone.classList.remove("dragover");
 
-
 			const files = event.dataTransfer.files;
 
 			if (!files || files.length === 0) return;
 
-
 			const file = files[0];
-
 
 			// Seleccionar carpeta multimedia si no está seleccionada
 
@@ -3019,10 +3014,57 @@ async function renderMultimedia() {
 
 			}
 
-
 			await addDroppedResource(file);
 
 		});
+
+	}else if (isAdmin && cmbProjectType.value === "text"){
+
+		if (!workspaceMultimedia.querySelector("#textAreaContent")) {
+
+			const element = document.createElement("div");
+			element.id = "textMultimedia";
+
+			const textArea = document.createElement("textarea");
+			textArea.id = "textAreaMultimedia";
+			textArea.placeholder = "Escribe aquí...";
+
+			const btnSave = document.createElement("button");
+			btnSave.id = "btnSaveMultimediaText";
+			btnSave.innerHTML = "<i class='fa-solid fa-floppy-disk'></i><span>Guardar</span>";
+			btnSave.title = "Guardar texto en el proyecto";
+
+			btnSave.addEventListener("click", () => {
+
+				let text = textArea.value;
+
+				if (text === ""){
+
+					alert("El texto esta vacío.");
+
+					textArea.focus();
+
+				}else{
+
+					let xmlText = "<![CDATA[" + text + "]]>";
+
+					resources[cmbProjectType.value].push({content: xmlText});
+
+					createMultimediaElement(cmbProjectType.value,text);
+
+					element.remove();
+
+				}
+
+			});
+
+			element.appendChild(textArea);
+			element.appendChild(btnSave);
+
+			workspaceMultimedia.appendChild(element);
+
+			textArea.focus();
+		}
 
 	}
 
@@ -3036,7 +3078,7 @@ async function renderMultimedia() {
 
 		for (const resource of project.resources[type]) {
 
-			createMultimediaElement(type, resource.name);
+			createMultimediaElement(type, resource.content);
 
 		}
 
@@ -3050,6 +3092,8 @@ async function loadMusicXML(url, element) {
 		autoResize: true,
 		drawTitle: true
 	});
+
+	//osmd.zoom = 0.8;
 
 	await osmd.load(url);
 
