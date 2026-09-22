@@ -2558,6 +2558,28 @@ async function selectMultimediaFolder() {
 
 }
 
+async function addDroppedResource(file) {
+
+	// --------------------------------
+	// COMPROBAR ARCHIVO
+	// --------------------------------
+
+	if (!isValidFile(file,projectType)) {
+
+		showAlert("El archivo no corresponde al formato del proyecto.","info");
+
+		return;
+
+	}
+
+	// --------------------------------
+	// GUARDAR ARCHIVO
+	// --------------------------------
+
+	await saveFileToMultimedia(file,projectType);
+
+}
+
 async function saveFileToMultimedia(file, type) {
 
 	try {
@@ -2677,33 +2699,12 @@ function isValidFile(file, type) {
 
 }
 
-async function addDroppedResource(file) {
-
-	// --------------------------------
-	// COMPROBAR ARCHIVO
-	// --------------------------------
-
-	if (!isValidFile(file,projectType)) {
-
-		showAlert("El archivo no corresponde al formato del proyecto.","info");
-
-		return;
-
-	}
-
-	// --------------------------------
-	// GUARDAR ARCHIVO
-	// --------------------------------
-
-	await saveFileToMultimedia(file,projectType);
-
-}
-
-function createMultimediaElement(type, fileName) {
+function createMultimediaElement(type, content) {
 
 	let element;
 	let resourceUrl = "";
 	let realName = "";
+	let fileName = content;
 
 	if (type !== "text"){
 
@@ -2726,9 +2727,9 @@ function createMultimediaElement(type, fileName) {
 		case "text":
 
 			element = document.createElement("div");
-			element.id = "text";
+			element.id = "textMultimedia";
 
-			element.innerHTML = fileName;
+			element.innerHTML = content.replace(/^<!\[CDATA\[|\]\]>$/g, "");
 
 			break;
 
@@ -3018,16 +3019,37 @@ async function renderMultimedia() {
 
 		});
 
-	}else if (isAdmin && cmbProjectType.value === "text"){
+	}
 
-		if (!workspaceMultimedia.querySelector("#textAreaContent")) {
+	const project = projects.find(project => project.id === currentProjectId);
+
+	// RECURSOS ----------------------
+
+	if (project?.resources) {
+
+		for (const type of Object.keys(project.resources)) {
+
+			for (const resource of project.resources[type]) {
+
+				createMultimediaElement(type, resource.content);
+
+			}
+
+		}
+
+	}
+
+
+	if (isAdmin && cmbProjectType.value === "text"){
+
+		if (!workspaceMultimedia.querySelector("#textAreaMultimedia")) {
 
 			const element = document.createElement("div");
 			element.id = "textMultimedia";
 
 			const textArea = document.createElement("textarea");
 			textArea.id = "textAreaMultimedia";
-			textArea.placeholder = "Escribe aquí...";
+			textArea.placeholder = "Escribe aquí texto normal o HTML...";
 
 			const btnSave = document.createElement("button");
 			btnSave.id = "btnSaveMultimediaText";
@@ -3064,22 +3086,6 @@ async function renderMultimedia() {
 			workspaceMultimedia.appendChild(element);
 
 			textArea.focus();
-		}
-
-	}
-
-	const project = projects.find(project => project.id === currentProjectId);
-
-	if (!project || !project.resources) return;
-
-	// RECURSOS ----------------------
-
-	for (const type of Object.keys(project.resources)) {
-
-		for (const resource of project.resources[type]) {
-
-			createMultimediaElement(type, resource.content);
-
 		}
 
 	}

@@ -1221,13 +1221,7 @@ cmbProjectType.addEventListener("change", () => {
 
 	if ((oldType === "fretboard" && projectType !== "fretboard") || (oldType !== "fretboard" && projectType === "fretboard")) {
 
-		if (projectType !== "fretboard") isScoreVisible = false;
-
-		if (newProject()) {
-
-			renderProject();
-
-		} else {
+		if (!newProject()) {
 
 			cmbProjectType.value = oldType;
 
@@ -1237,7 +1231,13 @@ cmbProjectType.addEventListener("change", () => {
 
 		}
 
-	}else{
+	}
+
+	if (projectType === "fretboard") {
+
+		renderProject();
+
+	} else {
 
 		renderMultimedia();
 

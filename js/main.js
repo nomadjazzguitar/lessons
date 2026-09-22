@@ -782,6 +782,8 @@ function resetControlsValues(state){
 
 	}
 
+	if (projectType === "multimedia") projectType = "video";
+
 	titleText.value = projectTitle;
 
 	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
@@ -869,9 +871,9 @@ function resetControlsValues(state){
 	cmbProjectType.value = projectType;
 
 	cmbFretboardType.value = fretboardType;
-	cmbFretboardTypeGuest.value = fretboardType;
+	cmbFretboardTypeGuest.value = cmbFretboardType.value;
 
-	changeFretboardType();
+	if (fretboardType === "fretboard") isScoreVisible = false;
 
 	btnDisplay.classList.toggle("active", displayMode);
 
@@ -915,32 +917,6 @@ function initializeArrays(){
 	noteOrder = 0;
 	aSequence = [];
 	aChords = [];
-
-}
-
-function changeFretboardType() {
-
-	switch (fretboardType) {
-
-		case "fretboard":
-
-			isScoreVisible = false;
-
-			setWorkspaceLayout();
-
-			break;
-
-		case "sequence":
-
-			break;
-
-		case "chord":
-
-			break;
-
-	}
-
-	setControlsState();
 
 }
 

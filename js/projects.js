@@ -54,8 +54,7 @@ async function loadProject(project) {
 
 	projectType = project.projectType ?? "fretboard";
 
-	fretboardType = project.fretboardType ?? "sequence";
-
+	fretboardType = project.fretboardType === "" ? "sequence" : project.fretboardType;
 
 	// --------------------------------
 	// SETTINGS
@@ -151,7 +150,7 @@ async function loadProject(project) {
 
 	if (project.resources) {
 
-		for (const type of Object.keys(resources)) {
+		for (const type of Object.keys(project.resources)) {
 
 			if (Array.isArray(project.resources[type])) {
 
@@ -406,9 +405,9 @@ function getCurrentProject() {
 
 		category: cmbProjectCategory.value,
 
-		projectType: cmbProjectType.value,
+		projectType: cmbProjectType.value === "fretboard" ? "fretboard" : "multimedia",
 
-		fretboardType: cmbFretboardType.value,
+		fretboardType: cmbProjectType.value === "fretboard" ? cmbFretboardType.value : "",
 
 		settings: {
 			orientation: orientation,
@@ -639,7 +638,6 @@ function projectToXml(project, indent = "\t") {
 		Array.isArray(project.resources[type]) &&
 		project.resources[type].length > 0
 	);
-
 	if (hasResources) {
 
 		lines.push(`${indent}\t<resources>`);
@@ -653,7 +651,10 @@ function projectToXml(project, indent = "\t") {
 				lines.push(
 					`${indent}\t\t<resource ` +
 					`type="${escapeXml(type)}" ` +
-					`content="${escapeXml(resource.content || "")}" />`
+					`content="` +
+					`${escapeXml(resource.content || "")}` +
+					`">` +
+					`${indent}\t\t</resource>`
 				);
 
 			});
@@ -968,23 +969,19 @@ function renderLibrary() {
 			const resourceTypes = Object.keys(project.resources)
 				.filter(type =>
 					Array.isArray(project.resources[type]) && project.resources[type].length > 0
-				)
-/*
-				.map(type => type === "pdf" ? "document" : type)
-				.filter((type, index, array) => array.indexOf(type) === index);
-*/
+				);
 
-			if (resourceTypes.length > 1) {
+			if (project.projectType === "fretboard") {
+
+				iType = "<i class='fa-solid fa-guitar'></i>";
+
+			} else if (resourceTypes.length > 1) {
 
 				iType = "<i class='fa-solid fa-photo-film'></i>";
 
-			} else {
+			} else if (resourceTypes.length === 1) {
 
-				switch (project.projectType){
-
-					case "fretboard":
-						iType = "<i class='fa-solid fa-guitar'></i>";
-						break;
+				switch (resourceTypes[0]){
 
 					case "text":
 						iType = "<i class='fa-solid fa-file-lines'></i>";
