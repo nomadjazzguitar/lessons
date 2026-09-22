@@ -14,7 +14,7 @@ if (isLocal) dataURL = baseURL;
 
 const dataURL_Images = dataURL + "img/";
 const dataURL_Users = dataURL;
-const dataURL_Library = dataURL + "projects/";
+const dataURL_Library = dataURL + "library/";
 const dataURL_Multimedia = dataURL_Library + "multimedia/";
 const dataURL_Samples = dataURL + "samples/";
 
