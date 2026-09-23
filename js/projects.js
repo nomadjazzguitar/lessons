@@ -696,9 +696,7 @@ function writeLibraryXML() {
 //	lines.push("");
 
 	// Descripción
-	lines.push("\t<desc>");
-	lines.push(`\t\t${escapeXml(libraryDesc)}"`);
-	lines.push("\t</desc>");
+	lines.push(`\t<desc>${escapeXml(libraryDesc)}</desc>`);
 
 	// Categorías
 	lines.push("\t<categories>");
@@ -1509,7 +1507,7 @@ async function renderProject(){
 
 }
 
-function createLibrary(fileName,type = "") {
+function createLibrary(fileName,type) {
 
 	const today = new Date();
 	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
@@ -1524,8 +1522,7 @@ function createLibrary(fileName,type = "") {
 		`type="${escapeXml(type)}" ` +
 		`created="${escapeXml(date)}" ` +
 		`modified="" ` +
-		`name="${escapeXml(fileName)}" ` +
-		`desc="">`
+		`name="${escapeXml(fileName)}">`
 	);
 
 	lines.push(`</library>`);
@@ -1543,7 +1540,7 @@ function createLibrary(fileName,type = "") {
 
 	link.href = url;
 
-	link.download = (usuario === "" ? fileName : usuario) + ".xml";
+	link.download = fileName + ".xml";
 
 	document.body.appendChild(link);
 

@@ -2404,7 +2404,7 @@ async function addUser(name, email) {
 
 		saveUsersXml();
 
-		const created = createLibrary(name,"user");
+		const created = createLibrary(id,"user");
 
 		showAlert(created
 			? "Usuario '" + name + "', con email '" + email + "' y librería creados."
