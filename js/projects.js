@@ -841,17 +841,6 @@ function renderLibrary() {
 		// --------------------------------
 		// PROYECTOS DE LA CATEGORÍA
 		// --------------------------------
-/*
-		const categoryProjects = library
-			.filter(project => project.category === category.id)
-			.sort((a, b) =>
-				a.title.localeCompare(
-					b.title,
-					"es",
-					{sensitivity: "base"}
-				)
-			);
-*/
 
 		const categoryProjects = library.filter(project => project.category === category.id);
 
@@ -893,7 +882,7 @@ function renderLibrary() {
 			const resourceTypes = [
 				...new Set(
 					project.resources
-						.filter(resource => resource.content)
+						.filter(resource => resource.content && resource.type !== "text")
 						.map(resource => resource.type)
 				)
 			];
@@ -938,7 +927,7 @@ function renderLibrary() {
 						iType = "<i class='fa-solid fa-file-audio'></i>";
 						break;
 
-					case "score":
+					case "musicxml":
 						iType = "<i class='fa-solid fa-music'></i>";
 						break;
 

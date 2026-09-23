@@ -2688,7 +2688,7 @@ async function selectMultimediaFiles() {
 
 			break;
 
-		case "score":
+		case "musicxml":
 
 			input.accept = [".musicxml",".mxl", ".xml"].join(",");
 
@@ -2768,7 +2768,7 @@ async function selectMultimediaFolder() {
 			"audio",
 			"midi",
 			"image",
-			"score",
+			"musicxml",
 			"pdf",
 			"document",
 			"html"
@@ -3082,7 +3082,7 @@ function isValidFile(file, type) {
 			return mime.startsWith("image/") ||
 				["png","jpg","jpeg","gif","bmp","webp","svg"].includes(extension);
 
-		case "score":
+		case "musicxml":
 
 			return ["musicxml", "mxl", "xml"].includes(extension) ||
 				mime === "application/vnd.recordare.musicxml" ||
@@ -3324,7 +3324,7 @@ function createMultimediaElement(type, content, width) {
 			break;
 
 
-		case "score":
+		case "musicxml":
 
 			element = document.createElement("div");
 
