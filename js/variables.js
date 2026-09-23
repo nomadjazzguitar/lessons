@@ -162,10 +162,10 @@ let libraryCreated = "";
 let libraryLevel = 1;
 
 const difficultyLevels = [
-	{ name: "Básico", icon: "fa-thermometer-quarter", class: "difficultyEasy" },
-	{ name: "Medio", icon: "fa-thermometer-half", class: "difficultyMedium" },
-	{ name: "Intermedio", icon: "fa-thermometer-three-quarters", class: "difficultyHard" },
-	{ name: "Avanzado", icon: "fa-thermometer-full", class: "difficultyVeryHard" }
+	{ name: "Básico", class: "difficultyEasy" },
+	{ name: "Medio", class: "difficultyMedium" },
+	{ name: "Intermedio", class: "difficultyHard" },
+	{ name: "Avanzado", class: "difficultyVeryHard" }
 ];
 
 let categories = [];

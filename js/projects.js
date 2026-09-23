@@ -805,12 +805,21 @@ function renderLibrary() {
 		categoryButton.setAttribute("aria-expanded", "false");
 
 		const title = document.createElement("span");
+/*
+		if (libraryType === "library"){
 
-		title.textContent = category.name;
+//			title.innerHTML = `<i class="fa-solid fa-circle-minus projectsPending"></i> ${category.name}`;
+			title.innerHTML = `<i class="fa-solid fa-circle-check projectsFinished"></i> ${category.name}`;
+
+		}else{
+*/			
+			title.innerHTML = `<i class="fa-solid fa-folder-open projectsFolder"></i> ${category.name}`;
+
+//		}
 
 		const icon = document.createElement("i");
 
-		icon.className = "fa-solid fa-chevron-down";
+		icon.className = "fa-solid fa-chevron-down categoryArrow";
 
 		categoryButton.appendChild(title);
 		categoryButton.appendChild(icon);
@@ -1648,7 +1657,7 @@ function setLibraryInfo(fileName){
 	const difficulty = difficultyLevels?.[libraryLevel];
 
 	libraryPanelHeaderTitle.innerHTML = `
-		${difficulty ? `<i class="fa-solid ${difficulty.icon} ${difficulty.class}" title="Nivel: ${difficulty.name}"></i> ` : ""}
+		${difficulty ? `<i class="fa-solid fa-circle ${difficulty.class}" title="Nivel: ${difficulty.name}"></i> ` : ""}
 		${libraryName === "" ? "Sin Nombre" : libraryName}
 	`;
 
