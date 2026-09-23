@@ -111,46 +111,52 @@ const themes = {
 
 
 /*==================================================
-	USUARIOS Y PROYECTOS
+	USUARIOS, LIBRERIAS Y PROYECTOS
 ==================================================*/
 
-let appMode = "Designer";
+//USUARIOS
 
-let users = [];
-let user;
-let userName;
-let xmlUsers = dataURL_Users + "users.xml";
-let xmlUsersVersion = "1.0";
-let isUserActive = true;
+let appMode = "Designer";
 
 let isAdmin = false;
 let k = "admin";
 
+let xmlType = "Server";
+
 let lib = null;
+
+let users = [];
+let user;
+let userName;
+
+let isUserActive = true;
+
+let xmlUsers = dataURL_Users + "users.xml";
+
+let xmlUsersVersion = "1.0";
+
+//LIBRERIAS Y PROYECTOS
 
 let libraries = [];
 
-let libraryLoaded = false;
+let xmlLibraries = dataURL_Libraries + "index.xml";
+
+let xmlLibrariesVersion = "1.0";
+let xmlLibrariesCreated = "";
 
 let library = [];
-let libraryFileHandle = null;
-
-let currentProjectId = null;
-
-let projectModified = false;
-
-let categories = [];
-
-let xmlVersion = "1.0";
-let xmlType = "Server";
-
-let xmlCreated = "";
 
 let xmlLibrary = dataURL_Libraries + "welcome.xml";
-let xmlLibraryType = "library";
 
+let libraryLoaded = false;
+
+let libraryFileHandle = null;
+
+let libraryVersion = "1.0";
+let libraryType = "library";
 let libraryName = "Sin Nombre";
 let libraryDesc = "Descripción";
+let libraryCreated = "";
 let libraryLevel = 1;
 
 const difficultyLevels = [
@@ -160,6 +166,11 @@ const difficultyLevels = [
 	{ name: "Avanzado", icon: "fa-thermometer-full", class: "difficultyVeryHard" }
 ];
 
+let categories = [];
+
+let currentProjectId = null;
+
+let projectModified = false;
 
 
 /*==================================================

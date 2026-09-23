@@ -168,11 +168,42 @@ async function loadProject(project) {
 
 }
 
+function parseLibrariesXml(xml) {
+
+	try {
+
+		const libraryElements = xml.querySelectorAll("library");
+
+		libraryElements.forEach(libraryElement => {
+
+			const library = {
+				id: libraryElement.getAttribute("id") || "",
+				created: libraryElement.getAttribute("created") || "",
+				modified: libraryElement.getAttribute("modified") || "",
+				level: Number(libraryElement.getAttribute("level")) || 0,
+				name: libraryElement.getAttribute("name") || "",
+				desc: libraryElement.querySelector("desc")?.textContent.trim() || ""
+			};
+
+			libraries.push(library);
+
+		});
+
+	} catch (err) {
+
+		console.error("No ha sido posible leer el archivo de bibliotecas: " + err);
+
+		showAlert("No ha sido posible leer el archivo de bibliotecas.", "error");
+
+	}
+
+}
+
 function parseLibraryXml(xml) {
 
-	xmlVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
-	xmlLibraryType = xml.querySelector("library")?.getAttribute("type") || "";
-	xmlCreated = xml.querySelector("library")?.getAttribute("created") || "";
+	libraryVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
+	libraryType = xml.querySelector("library")?.getAttribute("type") || "";
+	libraryCreated = xml.querySelector("library")?.getAttribute("created") || "";
 
 	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
 	libraryNameText.value = libraryName;
@@ -640,14 +671,14 @@ function writeLibraryXML() {
 
 	const lines = [];
 
-	xmlVersion = (parseFloat(xmlVersion) + 0.1).toFixed(1);
+	libraryVersion = (parseFloat(libraryVersion) + 0.1).toFixed(1);
 
 	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
 	lines.push(
 		'<library ' +
-		`version="${escapeXml(xmlVersion)}" ` +
-		`type="${escapeXml(xmlLibraryType)}" ` +
-		`created="${escapeXml(xmlCreated)}" ` +
+		`version="${escapeXml(libraryVersion)}" ` +
+		`type="${escapeXml(libraryType)}" ` +
+		`created="${escapeXml(libraryCreated)}" ` +
 		`modified="${escapeXml(date)}" ` +
 		`level="${escapeXml(libraryLevel)}" ` +
 		`name="${escapeXml(libraryName)}">`

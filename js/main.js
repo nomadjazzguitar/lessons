@@ -24,9 +24,11 @@ async function initializeApp() {
 
 		// PROJECTS ----------------------
 
-		setLoadingProgress(20, "Cargando proyectos...");
+		setLoadingProgress(20, "Cargando librerías y proyectos...");
 
-		await loadXML("project",xmlLibrary);
+		await loadXML("libraries",xmlLibraries);
+
+		await loadXML("library",xmlLibrary);
 
 		await initializeProjects();
 
@@ -675,10 +677,14 @@ async function loadXML(type,file) {
 
 				break;
 
-			case "project":
+			case "library":
+
+				libraries = parseLibrariesXml(xml);
 
 				libraryLoaded = false;
+
 				library = parseLibraryXml(xml);
+
 				libraryLoaded = true;
 
 				break;
@@ -699,7 +705,7 @@ async function loadXML(type,file) {
 
 			users = [];
 
-		} else if (type === "project") {
+		} else if (type === "library") {
 
 			library = [];
 			libraryLoaded = false;
