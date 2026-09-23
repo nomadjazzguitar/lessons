@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library version="2.3" id="1g0bv2l" type="library" created="10/09/2026" modified="20/09/2026" level="3" name="Pentatonicas alteradas con b6">
+	<desc>En este curso vamos a explorar el uso de la escala pentatonica menor b6. Para ello utilizaremos ejercicios prácticos y patrones de escalas aplicados a standards de jazz. Además, profundizaremos en el análisis formal de estructuras armónicas típicas del estilo para un lenguaje moderno.</desc>
+	<categories>
+		<category id="r6y20u">Utilidades</category>
+		<category id="1wcil05">Mierdas</category>
+	</categories>
+	<project id="1g6m9lf" title="score" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="score" content="welcome-1g6m9lf-Prueba-MusicXML.xml"/>
+		</resources>
+	</project>
+	<project id="ejzbpm" title="txt" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[hf hfdhdsfhdf h]]&gt;"/>
+		</resources>
+	</project>
+	<project id="13pvqhe" title="aFoto" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="image" content="welcome-13pvqhe-1fec0e76aed7409549d83047b7a56068.jpg"/>
+		</resources>
+	</project>
+	<project id="15lew6c" title="notas" category="r6y20u" projectType="fretboard" fretboardType="sequence">
+		<settings>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>rosewood</fretboardStyle>
+			<fretCount>10</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>true</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>0</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="2" fret="3" color="#ffffff" text="" chord="" order="1"/>
+			<note string="3" fret="3" color="#ffffff" text="" chord="" order="2"/>
+			<note string="2" fret="6" color="#ffffff" text="" chord="" order="3"/>
+			<note string="3" fret="7" color="#ffffff" text="" chord="" order="4"/>
+			<note string="3" fret="7" color="#ffffff" text="" chord="" order="5"/>
+		</notes>
+	</project>
+	<project id="10uth4f" title="cosas" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[JJJAJAJAJAJAJAAJAAJ JAJAJJA LOLOLOLOL sfs s dbs scb ]]&gt;"/>
+			<resource type="image" content="welcome-10uth4f-ChatGPT-Image-26-feb-2026,-10_07_25.png"/>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;KKKKKK&lt;h2&gt;]]&gt;"/>
+		</resources>
+	</project>
+	<project id="rtln41" title="texto linea" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Hola, esto es una carta    kakakakaak]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;kkkkKKKK&lt;/h1&gt; &lt;p&gt;Jejeje&lt;/p&gt; &lt;br&gt; &lt;p style=&quot;color:red&quot;&gt;Tuuuuu&lt;/p&gt;]]&gt;"/>
+		</resources>
+	</project>
+	<project id="1sgrfqj" title="wiki" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="link" content="https://es.wikipedia.org/wiki/Wikipedia"/>
+		</resources>
+	</project>
+	<project id="t9aiip" title="musixXML" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="score" content="welcome-t9aiip-1.xml"/>
+		</resources>
+	</project>
+	<project id="y8rmfd" title="MiMIDI" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="midi" content="welcome-y8rmfd-23.MID"/>
+		</resources>
+	</project>
+	<project id="1uenjym" title="footprints" category="r6y20u" projectType="fretboard" fretboardType="chord">
+		<settings>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>17</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>true</rotated>
+			<bar>3/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>0</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>30</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="4" fret="9" color="#000000" text="" chord="0" order="1"/>
+			<note string="3" fret="10" color="#000000" text="" chord="0" order="2"/>
+			<note string="2" fret="9" color="#000000" text="" chord="0" order="3"/>
+			<note string="1" fret="10" color="#000000" text="" chord="0" order="4"/>
+			<note string="4" fret="8" color="#ff0000" text="" chord="1" order="5"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="1" order="6"/>
+			<note string="2" fret="8" color="#ff0000" text="" chord="1" order="7"/>
+			<note string="1" fret="8" color="#ff0000" text="" chord="1" order="8"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="2" order="9"/>
+			<note string="3" fret="6" color="#0080ff" text="" chord="2" order="10"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="2" order="11"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="2" order="12"/>
+			<note string="0" fret="6" color="#0080ff" text="" chord="2" order="13"/>
+			<note string="5" fret="5" color="#00aa00" text="" chord="3" order="14"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="3" order="15"/>
+			<note string="2" fret="6" color="#00aa00" text="" chord="3" order="16"/>
+			<note string="1" fret="8" color="#00aa00" text="" chord="3" order="17"/>
+			<note string="4" fret="3" color="#ffcc00" text="" chord="4" order="18"/>
+			<note string="3" fret="1" color="#ffcc00" text="" chord="4" order="19"/>
+			<note string="2" fret="2" color="#ffcc00" text="" chord="4" order="20"/>
+			<note string="1" fret="1" color="#ffcc00" text="" chord="4" order="21"/>
+			<note string="0" fret="1" color="#ffcc00" text="" chord="4" order="22"/>
+		</notes>
+	</project>
+	<project id="f0o7rx" title="0" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Bienvenido!!!!]]&gt;"/>
+			<resource type="image" content="welcome-f0o7rx-Pattern-Wallpapers-(1).jpg"/>
+			<resource type="text" content="&lt;![CDATA[Estoy probando cosas pero parece que no funciona bien...]]&gt;"/>
+			<resource type="pdf" content="welcome-f0o7rx-Carpeta-Ciudadana---Titulos-Universitarios.pdf"/>
+			<resource type="text" content="&lt;![CDATA[Sigo probando...   JAJJAAJAJAAJA]]&gt;"/>
+		</resources>
+	</project>
+	<project id="q1fx0x" title="22400" category="r6y20u" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[JAJAJAJAJA  JEJEJEJEJE]]&gt;"/>
+			<resource type="pdf" content="welcome-q1fx0x-Vincent-Persichetti---Twentieth-Century-Harmony.pdf"/>
+			<resource type="text" content="&lt;![CDATA[Ostras]]&gt;"/>
+		</resources>
+	</project>
+	<project id="9im2yj" title="cacasGordas" category="1wcil05" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Texto que voy a poner aqui]]&gt;"/>
+			<resource type="pdf" content="welcome-9im2yj-Reset---Nacho-Fernandez-de-Frutos-(Eb-Lead).pdf"/>
+			<resource type="text" content="&lt;![CDATA[Lee el archivo y dime si te gusta    O no...]]&gt;"/>
+			<resource type="image" content="welcome-9im2yj-Pattern-Wallpapers-(1).jpg"/>
+		</resources>
+	</project>
+	<project id="plr47a" title="mahjong" category="1wcil05" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="audio" content="fredrik kronkvist - mahjong.mp3"/>
+		</resources>
+	</project>
+	<project id="6fluab" title="mahjong2" category="1wcil05" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="audio" content="fredrik kronkvist - mahjong.mp3"/>
+		</resources>
+	</project>
+	<project id="763eyk" title="mahjong3" category="1wcil05" projectType="multimedia" fretboardType="">
+		<resources>
+			<resource type="audio" content="fredrik kronkvist - mahjong-1.mp3"/>
+			<resource type="text" content="&lt;![CDATA[Esto es otra version mas corta]]&gt;"/>
+		</resources>
+	</project>
+</library>
