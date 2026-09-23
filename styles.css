@@ -3014,12 +3014,11 @@ input[type="range"] {
 #btnOpen,
 #btnRotate,
 #btnSaveAudio,
+#btnCopyCanvas,
+#btnCopyScore,
+#btnImgDownload,
 #btnRenderBuffer,
 #btnPlayStopBuffer,
-#btnCopyCanvas,
-#btnDownloadCanvas,
-#btnCopyScore,
-#btnScoreDownload,
 #btnNewProjectGuest{
 
 	display:flex;
@@ -3738,9 +3737,11 @@ input[type="range"] {
 	   ========================== */
 
 	#btnSaveAudio,
+	#btnImgDownload,
+	#btnCopyCanvas,
+	#btnCopyScore,
 	#btnRenderBuffer,
 	#btnPlayStopBuffer,
-	#btnCopyCanvas,
 	#btnEdit,
 	#btnBarre,
 	#btnErase,
@@ -3748,9 +3749,6 @@ input[type="range"] {
 	#btnCreate,
 	#btnOpen,
 	#btnRotate,
-	#btnDownloadCanvas,
-	#btnCopyScore,
-	#btnScoreDownload,
 	#btnNewProjectGuest{
 		width: 30px;
 		min-width:auto;

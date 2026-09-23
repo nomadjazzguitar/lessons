@@ -387,23 +387,27 @@
 						</div>
 					</div>
 
-					<div class="toolbarTop-Controls" id="topFretboardDownload">
-						<span>MÁSTIL</span>
+					<div class="toolbarTop-Controls" id="topImgFormat">
+						<span>MÁSTIL/PARTITURA</span>
 						<div class="toolRow">
-							<button type="button" id="btnCopyCanvas" title="Copiar imagen al portapapeles"><i class="fa-solid fa-copy"></i><span>Copiar</span></button>
+							<button type="button" id="btnImgDownload" title="Guardar imagen del mástil y partitura"><i class="fa-solid fa-download"></i><span>Descargar</span></button>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnDownloadCanvas" title="Guardar imágenes del mástil"><i class="fa-solid fa-download"></i><span>Descargar</span></button>
+							<select id="cmbImgFormat">
+							    <option value="webp" selected>WEBP</option>
+							    <option value="png">PNG</option>
+							    <option value="svg">SVG</option>
+							</select>
 						</div>
 					</div>
 
-					<div class="toolbarTop-Controls" id="topScoreDownload">
-						<span>PARTITURA</span>
+					<div class="toolbarTop-Controls" id="topClipboard">
+						<span>PORTAPAPELES</span>
 						<div class="toolRow">
-							<button type="button" id="btnCopyScore" title="Copiar imagen al portapapeles"><i class="fa-solid fa-copy"></i><span>Copiar</span></button>
+							<button type="button" id="btnCopyCanvas" title="Copiar imagen del mástil al portapapeles"><i class="fa-solid fa-copy"></i><span>Mástil</span></button>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnScoreDownload" title="Guardar imágenes de la partitura"><i class="fa-solid fa-download"></i><span>Descargar</span></button>
+							<button type="button" id="btnCopyScore" title="Copiar imagen de la partitura al portapapeles"><i class="fa-solid fa-copy"></i><span>Partitura</span></button>
 						</div>
 					</div>
 
