@@ -1078,7 +1078,7 @@ async function saveCurrentProject() {
 
 	}
 
-	const saved = await saveLibrariesFile();
+	const saved = await saveLibrariesFiles();
 
 	if (saved) {
 
@@ -1098,7 +1098,7 @@ async function saveCurrentProject() {
 
 }
 
-async function saveLibrariesFile() {
+async function saveLibrariesFiles() {
 
 	const libraryIndex = libraries.findIndex(item => item.id === libraryId);
 
@@ -1244,7 +1244,7 @@ function writeLibrariesXML() {
 			"\t<library " +
 			`id="${escapeXml(library.id)}" ` +
 			`created="${escapeXml(library.created)}" ` +
-			`modified="${escapeXml(library.modified)}" ` +
+			`modified="${escapeXml(date)}" ` +
 			`level="${escapeXml(library.level)}" ` +
 			`name="${escapeXml(library.name)}">`
 		);
@@ -1339,7 +1339,7 @@ async function deleteProject(id) {
 	library = library.filter(p => p.id !== id);
 
 	// Guardar el XML
-	saveLibrariesFile();
+	saveLibrariesFiles();
 
 	// Actualizar la lista
 	renderLibrary();
@@ -1487,7 +1487,7 @@ function addCategory() {
 
 	cmbProjectCategory.value = category.id;
 
-	saveLibrariesFile();
+	saveLibrariesFiles();
 
 }
 
@@ -1559,7 +1559,7 @@ function deleteCategory() {
 		cmbProjectCategory.value = categories[0].id;
 	}
 
-	saveLibrariesFile();
+	saveLibrariesFiles();
 
 }
 
