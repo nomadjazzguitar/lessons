@@ -2626,10 +2626,11 @@ async function selectMultimediaFiles() {
 
 		multimediaResources.push({
 			type: projectType,
-			content: content.trim()
+			content: content.trim(),
+			width: 90
 		});
 
-		createMultimediaElement(projectType, content.trim());
+		createMultimediaElement(projectType, content.trim(),90);
 
 		return;
 
@@ -2796,7 +2797,7 @@ async function selectMultimediaFolder() {
 
 }
 
-async function addDroppedResource(file) {
+async function addDroppedResource(file,width) {
 
 	// --------------------------------
 	// COMPROBAR ARCHIVO
@@ -2814,11 +2815,11 @@ async function addDroppedResource(file) {
 	// GUARDAR ARCHIVO
 	// --------------------------------
 
-	await saveFileToMultimedia(file,projectType);
+	await saveFileToMultimedia(file, projectType, width);
 
 }
 
-async function saveFileToMultimedia(file, type) {
+async function saveFileToMultimedia(file, type, width) {
 
 	try {
 
@@ -2889,20 +2890,15 @@ async function saveFileToMultimedia(file, type) {
 
 					multimediaResources.push({
 						type: type,
-						content: existingFileName
+						content: existingFileName,
+						width: width
 					});
 
-					createMultimediaElement(
-						type,
-						existingFileName
-					);
+					createMultimediaElement(type,existingFileName,width);
 
 				}
 
-				showAlert(
-					"El archivo ya existe.",
-					"success"
-				);
+				showAlert("El archivo ya existe.","success");
 
 				return;
 
@@ -2986,10 +2982,11 @@ async function saveFileToMultimedia(file, type) {
 
 		multimediaResources.push({
 			type: type,
-			content: fileName
+			content: fileName,
+			width: width
 		});
 
-		createMultimediaElement(type,fileName);
+		createMultimediaElement(type,fileName,width);
 
 
 		// --------------------------------
@@ -3116,7 +3113,7 @@ function isValidFile(file, type) {
 
 }
 
-function createMultimediaElement(type, content) {
+function createMultimediaElement(type, content, width) {
 
 	let element;
 	let resourceUrl = "";
@@ -3143,6 +3140,8 @@ function createMultimediaElement(type, content) {
 			element = document.createElement("div");
 			element.id = "textMultimedia";
 
+			element.style.width = width + "%";
+
 			element.innerHTML = content.replace(/^<!\[CDATA\[|\]\]>$/g, "");
 
 			break;
@@ -3156,6 +3155,8 @@ function createMultimediaElement(type, content) {
 			element.controlsList.add("nodownload");
 			element.playsInline = true;
 
+			element.style.width = width + "%";
+
 			element.addEventListener("contextmenu", event => {
 				event.preventDefault();
 			});
@@ -3166,6 +3167,8 @@ function createMultimediaElement(type, content) {
 		case "audio": {
 
 			element = document.createElement("div");
+
+			element.style.width = width + "%";
 
 			const audioLink = document.createElement("a");
 
@@ -3197,6 +3200,8 @@ function createMultimediaElement(type, content) {
 			element = document.createElement("div");
 
 			element.className = "midiPlayer";
+
+			element.style.width = width + "%";
 
 			const midiLink = document.createElement("a");
 			midiLink.href = resourceUrl;
@@ -3235,8 +3240,9 @@ function createMultimediaElement(type, content) {
 			element = document.createElement("img");
 
 			element.src = resourceUrl;
-
 			element.alt = fileName || "";
+
+			element.style.width = width + "%";
 
 			if (fileName.toLowerCase().endsWith(".svg")) element.style.backgroundColor = "#fff";
 
@@ -3247,6 +3253,8 @@ function createMultimediaElement(type, content) {
 
 			element = document.createElement("iframe");
 			element.className = "iframe-link";
+
+			element.style.width = width + "%";
 
 			if (isLocal){
 				element.src = resourceUrl;
@@ -3284,6 +3292,8 @@ function createMultimediaElement(type, content) {
 					element.className = "iframe-html";
 					element.src = "https://docs.google.com/viewer?embedded=true&url="+ baseURL + resourceUrl;
 
+					element.style.width = width + "%";
+
 				}
 
 			} else if (extension === "txt") {
@@ -3291,6 +3301,8 @@ function createMultimediaElement(type, content) {
 				element = document.createElement("iframe");
 				element.className = "iframe-doc";
 				element.src = resourceUrl;
+
+				element.style.width = width + "%";
 
 			}
 
@@ -3307,6 +3319,8 @@ function createMultimediaElement(type, content) {
 
 			element.src = resourceUrl;
 
+			element.style.width = width + "%";
+
 			break;
 
 
@@ -3316,6 +3330,8 @@ function createMultimediaElement(type, content) {
 
 			element.className = "musicxml";
 			element.id = `musicXMLScore_${Date.now()}`;
+
+			element.style.width = width + "%";
 
 			loadMusicXMLFile(resourceUrl, element);
 
@@ -3332,6 +3348,8 @@ function createMultimediaElement(type, content) {
 
 			element.allowFullscreen = true;
 
+			element.style.width = width + "%";
+
 			break;
 
 
@@ -3340,6 +3358,8 @@ function createMultimediaElement(type, content) {
 			element = document.createElement("div");
 
 			element.innerHTML = resourceUrl;
+
+			element.style.width = width + "%";
 
 			break;
 
@@ -3364,6 +3384,43 @@ async function renderMultimedia() {
 	// DRAG AND DROP ----------------------
 
 	const pType = cmbProjectType.value !== "text" && cmbProjectType.value !== "link" && cmbProjectType.value !== "iframe";
+
+	if (isAdmin){
+
+		const widthContainer = document.createElement("div");
+
+		widthContainer.id = "multimediaWidthContainer";
+
+		const widthLabel = document.createElement("label");
+
+		widthLabel.innerHTML = "Ancho (%):&nbsp;";
+
+		const widthInput = document.createElement("input");
+
+		widthInput.type = "number";
+		widthInput.min = "0";
+		widthInput.max = "100";
+		widthInput.step = "1";
+		widthInput.value = "90";
+
+		widthInput.addEventListener("input", () => {
+
+			let value = Number(widthInput.value);
+
+			if (widthInput.value === "" || !Number.isFinite(value)) value = 90;
+
+			value = Math.max(0, Math.min(100, value));
+
+			widthInput.value = value;
+
+		});
+
+		widthContainer.appendChild(widthLabel);
+		widthContainer.appendChild(widthInput);
+
+		workspaceMultimedia.appendChild(widthContainer);
+
+}
 
 	if (isAdmin && pType){
 
@@ -3427,7 +3484,7 @@ async function renderMultimedia() {
 
 			}
 
-			await addDroppedResource(file);
+			await addDroppedResource(file,Number(widthInput.value));
 
 		});
 
@@ -3440,7 +3497,7 @@ async function renderMultimedia() {
 
 		for (const resource of multimediaResources) {
 
-			createMultimediaElement(resource.type, resource.content);
+			createMultimediaElement(resource.type, resource.content, resource.width);
 
 		}
 
@@ -3481,10 +3538,11 @@ async function renderMultimedia() {
 
 					multimediaResources.push({
 						type: cmbProjectType.value,
-						content: xmlText
+						content: xmlText,
+						width: 90
 					});
 
-					createMultimediaElement(cmbProjectType.value,text);
+					createMultimediaElement(cmbProjectType.value,text,90);
 
 					element.remove();
 

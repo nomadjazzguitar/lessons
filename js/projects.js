@@ -153,7 +153,8 @@ async function loadProject(project) {
 		multimediaResources = project.resources.map(resource => ({
 
 			type: resource.type || "",
-			content: resource.content || ""
+			content: resource.content || "",
+			width: resource.width || "90"
 
 		}));
 
@@ -375,7 +376,8 @@ function parseLibraryXml(xml) {
 			project.resources.push({
 
 				type: resourceNode.getAttribute("type") || "",
-				content: resourceNode.getAttribute("content") || ""
+				content: resourceNode.getAttribute("content") || "",
+				width: resourceNode.getAttribute("width") || "90"
 
 			});
 
@@ -477,7 +479,8 @@ function getCurrentProject() {
 		resources: multimediaResources.map(resource => ({
 
 			type: resource.type || "",
-			content: resource.content || ""
+			content: resource.content || "",
+			width: resource.width || "90"
 
 		}))
 
@@ -527,10 +530,6 @@ function projectToXml(project) {
 		lines.push(`\t\t\t<notation>${escapeXml(project.settings.notation)}</notation>`);
 		lines.push(`\t\t</settings>`);
 
-	} else {
-
-//		lines.push(`\t\t<settings/>`);
-
 	}
 
 
@@ -557,10 +556,6 @@ function projectToXml(project) {
 		});
 
 		lines.push(`\t\t</notes>`);
-
-	} else {
-
-//		lines.push(`\t\t<notes/>`);
 
 	}
 
@@ -589,10 +584,6 @@ function projectToXml(project) {
 
 		lines.push(`\t\t</barres>`);
 
-	} else {
-
-//		lines.push(`\t\t<barres/>`);
-
 	}
 
 
@@ -619,10 +610,6 @@ function projectToXml(project) {
 
 		lines.push(`\t\t</nutNotes>`);
 
-	} else {
-
-//		lines.push(`\t\t<nutNotes/>`);
-
 	}
 
 	// --------------------------------
@@ -640,17 +627,14 @@ function projectToXml(project) {
 			lines.push(
 				`\t\t\t<resource ` +
 				`type="${escapeXml(resource.type || "")}" ` +
-				`content="${escapeXml(resource.content || "")}` +
-				`"/>`
+				`content="${escapeXml(resource.content || "")}" ` +
+				`width="${escapeXml(resource.width || "90")}" ` +
+				`/>`
 			);
 
 		});
 
 		lines.push(`\t\t</resources>`);
-
-	} else {
-
-//		lines.push(`\t\t<resources/>`);
 
 	}
 
@@ -723,7 +707,7 @@ async function openLibraryXMLFile() {
 
 		library = loadedProjects;
 
-		xmLibraryLoaded = true;
+		xmlLibraryLoaded = true;
 
 
 		// --------------------------------
@@ -785,7 +769,7 @@ async function openLibraryXMLFile() {
 		console.error("Error al abrir la librería de proyectos: ",error);
 
 		library = [];
-		xmLibraryLoaded = false;
+		xmlLibraryLoaded = false;
 
 		return false;
 
