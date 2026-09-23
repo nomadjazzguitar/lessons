@@ -178,13 +178,13 @@ async function loadProject(project) {
 function parseLibraryXml(xml) {
 
 	xmlVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
-	xmlLibraryType = xml.querySelector("library")?.getAttribute("user") || "";
+	xmlLibraryType = xml.querySelector("library")?.getAttribute("type") || "";
 	xmlCreated = xml.querySelector("library")?.getAttribute("created") || "";
 
 	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
 	libraryNameText.value = libraryName;
 
-	libraryDesc = xml.querySelector("library")?.getAttribute("desc") || "";
+	libraryDesc = xml.querySelector("desc")?.textContent.trim() || "";
 	libraryDescText.value = libraryDesc;
 
 	categories = [];
@@ -236,17 +236,17 @@ function parseLibraryXml(xml) {
 
 			title: projectNode.getAttribute("title") || "",
 
-			category: projectNode.getAttribute("category"),
+			category: projectNode.getAttribute("category") || "",
 
-			projectType: projectNode.getAttribute("projectType"),
+			projectType: projectNode.getAttribute("projectType") || "",
 
-			fretboardType: projectNode.getAttribute("fretboardType"),
+			fretboardType: projectNode.getAttribute("fretboardType") || "",
 
 			settings: {
 
 				orientation: getSetting("orientation","horizontal"),
 				fretboardStyle: getSetting("fretboardStyle","maple"),
-				fretCount: parseInt(getSetting("fretCount","10")),
+				fretCount: getSetting("fretCount","10"),
 				displayMode: getSetting("displayMode","scale"),
 				inlays: getSetting("inlays",true),
 				rotated: getSetting("rotated",false),
@@ -311,7 +311,7 @@ function parseLibraryXml(xml) {
 				color: noteNode.getAttribute("color") || "#000000",
 				text: noteNode.getAttribute("text") || "",
 				chord: noteNode.getAttribute("chord") || "",
-				order: noteNode.getAttribute("order") || 0
+				order: Number(noteNode.getAttribute("order")) || 0
 
 			});
 
@@ -331,7 +331,7 @@ function parseLibraryXml(xml) {
 				color: barreNode.getAttribute("color") || "#000000",
 				text: barreNode.getAttribute("text") || "",
 				chord: barreNode.getAttribute("chord") || "",
-				order: barreNode.getAttribute("order") || 0
+				order: Number(barreNode.getAttribute("order")) || 0
 
 			});
 
@@ -350,7 +350,7 @@ function parseLibraryXml(xml) {
 				color: nutNode.getAttribute("color") || "#000000",
 				text: nutNode.getAttribute("text") || "",
 				chord: nutNode.getAttribute("chord") || "",
-				order: nutNode.getAttribute("order") || 0
+				order: Number(nutNode.getAttribute("order")) || 0
 
 			});
 
@@ -488,12 +488,12 @@ function getCurrentProject() {
 
 }
 
-function projectToXml(project, indent = "\t") {
+function projectToXml(project) {
 
 	const lines = [];
 
 	lines.push(
-		`${indent}<project ` +
+		`\t<project ` +
 		`id="${escapeXml(project.id)}" ` +
 		`title="${escapeXml(project.title)}" ` +
 		`category="${escapeXml(project.category)}" ` +
@@ -503,36 +503,36 @@ function projectToXml(project, indent = "\t") {
 
 	if (project.projectType === "fretboard") {
 
-		lines.push(`${indent}\t<settings>`);
-		lines.push(`${indent}\t\t<orientation>${escapeXml(project.settings.orientation)}</orientation>`);
-		lines.push(`${indent}\t\t<fretboardStyle>${escapeXml(project.settings.fretboardStyle)}</fretboardStyle>`);
-		lines.push(`${indent}\t\t<fretCount>${project.settings.fretCount}</fretCount>`);
-		lines.push(`${indent}\t\t<displayMode>${escapeXml(project.settings.displayMode)}</displayMode>`);
-		lines.push(`${indent}\t\t<inlays>${project.settings.inlays}</inlays>`);
-		lines.push(`${indent}\t\t<rotated>${project.settings.rotated}</rotated>`);
-		lines.push(`${indent}\t\t<bar>${escapeXml(project.settings.bar)}</bar>`);
-		lines.push(`${indent}\t\t<scoreScale>${escapeXml(project.settings.scoreScale)}</scoreScale>`);
-		lines.push(`${indent}\t\t<tipoSecuencia>${escapeXml(project.settings.tipoSecuencia)}</tipoSecuencia>`);
-		lines.push(`${indent}\t\t<direccion>${project.settings.direccion}</direccion>`);
-		lines.push(`${indent}\t\t<countBars>${project.settings.countBars}</countBars>`);
-		lines.push(`${indent}\t\t<repetitionSequence>${project.settings.repetitionSequence}</repetitionSequence>`);
-		lines.push(`${indent}\t\t<isFretboardVisible>${project.settings.isFretboardVisible}</isFretboardVisible>`);
-		lines.push(`${indent}\t\t<isScoreVisible>${project.settings.isScoreVisible}</isScoreVisible>`);
-		lines.push(`${indent}\t\t<currentInstrument>${escapeXml(project.settings.currentInstrument)}</currentInstrument>`);
-		lines.push(`${indent}\t\t<fretNumbers>${project.settings.fretNumbers}</fretNumbers>`);
-		lines.push(`${indent}\t\t<showFretNumbers>${project.settings.showFretNumbers}</showFretNumbers>`);
-		lines.push(`${indent}\t\t<bpm>${project.settings.bpm}</bpm>`);
-		lines.push(`${indent}\t\t<key>${escapeXml(project.settings.key)}</key>`);
-		lines.push(`${indent}\t\t<scoreStaves>${escapeXml(project.settings.scoreStaves)}</scoreStaves>`);
-		lines.push(`${indent}\t\t<scoreLayout>${escapeXml(project.settings.scoreLayout)}</scoreLayout>`);
-		lines.push(`${indent}\t\t<swing>${project.settings.swing}</swing>`);
-		lines.push(`${indent}\t\t<metronomeOn>${project.settings.metronomeOn}</metronomeOn>`);
-		lines.push(`${indent}\t\t<notation>${escapeXml(project.settings.notation)}</notation>`);
-		lines.push(`${indent}\t</settings>`);
+		lines.push(`\t\t<settings>`);
+		lines.push(`\t\t\t<orientation>${escapeXml(project.settings.orientation)}</orientation>`);
+		lines.push(`\t\t\t<fretboardStyle>${escapeXml(project.settings.fretboardStyle)}</fretboardStyle>`);
+		lines.push(`\t\t\t<fretCount>${project.settings.fretCount}</fretCount>`);
+		lines.push(`\t\t\t<displayMode>${escapeXml(project.settings.displayMode)}</displayMode>`);
+		lines.push(`\t\t\t<inlays>${project.settings.inlays}</inlays>`);
+		lines.push(`\t\t\t<rotated>${project.settings.rotated}</rotated>`);
+		lines.push(`\t\t\t<bar>${escapeXml(project.settings.bar)}</bar>`);
+		lines.push(`\t\t\t<scoreScale>${escapeXml(project.settings.scoreScale)}</scoreScale>`);
+		lines.push(`\t\t\t<tipoSecuencia>${escapeXml(project.settings.tipoSecuencia)}</tipoSecuencia>`);
+		lines.push(`\t\t\t<direccion>${project.settings.direccion}</direccion>`);
+		lines.push(`\t\t\t<countBars>${project.settings.countBars}</countBars>`);
+		lines.push(`\t\t\t<repetitionSequence>${project.settings.repetitionSequence}</repetitionSequence>`);
+		lines.push(`\t\t\t<isFretboardVisible>${project.settings.isFretboardVisible}</isFretboardVisible>`);
+		lines.push(`\t\t\t<isScoreVisible>${project.settings.isScoreVisible}</isScoreVisible>`);
+		lines.push(`\t\t\t<currentInstrument>${escapeXml(project.settings.currentInstrument)}</currentInstrument>`);
+		lines.push(`\t\t\t<fretNumbers>${project.settings.fretNumbers}</fretNumbers>`);
+		lines.push(`\t\t\t<showFretNumbers>${project.settings.showFretNumbers}</showFretNumbers>`);
+		lines.push(`\t\t\t<bpm>${project.settings.bpm}</bpm>`);
+		lines.push(`\t\t\t<key>${escapeXml(project.settings.key)}</key>`);
+		lines.push(`\t\t\t<scoreStaves>${escapeXml(project.settings.scoreStaves)}</scoreStaves>`);
+		lines.push(`\t\t\t<scoreLayout>${escapeXml(project.settings.scoreLayout)}</scoreLayout>`);
+		lines.push(`\t\t\t<swing>${project.settings.swing}</swing>`);
+		lines.push(`\t\t\t<metronomeOn>${project.settings.metronomeOn}</metronomeOn>`);
+		lines.push(`\t\t\t<notation>${escapeXml(project.settings.notation)}</notation>`);
+		lines.push(`\t\t</settings>`);
 
 	} else {
 
-		lines.push(`${indent}\t<settings/>`);
+//		lines.push(`\t\t<settings/>`);
 
 	}
 
@@ -543,12 +543,12 @@ function projectToXml(project, indent = "\t") {
 
 	if (project.notes && project.notes.length > 0) {
 
-		lines.push(`${indent}\t<notes>`);
+		lines.push(`\t\t<notes>`);
 
 		project.notes.forEach(note => {
 
 			lines.push(
-				`${indent}\t\t<note ` +
+				`\t\t\t<note ` +
 				`string="${note.string}" ` +
 				`fret="${note.fret}" ` +
 				`color="${escapeXml(note.color)}" ` +
@@ -559,11 +559,11 @@ function projectToXml(project, indent = "\t") {
 
 		});
 
-		lines.push(`${indent}\t</notes>`);
+		lines.push(`\t\t</notes>`);
 
 	} else {
 
-		lines.push(`${indent}\t<notes/>`);
+//		lines.push(`\t\t<notes/>`);
 
 	}
 
@@ -574,12 +574,12 @@ function projectToXml(project, indent = "\t") {
 
 	if (project.barres && project.barres.length > 0) {
 
-		lines.push(`${indent}\t<barres>`);
+		lines.push(`\t\t<barres>`);
 
 		project.barres.forEach(barre => {
 
 			lines.push(
-				`${indent}\t\t<barre ` +
+				`\t\t\t<barre ` +
 				`fret="${barre.fret}" ` +
 				`startString="${barre.startString}" ` +
 				`color="${escapeXml(barre.color)}" ` +
@@ -590,11 +590,11 @@ function projectToXml(project, indent = "\t") {
 
 		});
 
-		lines.push(`${indent}\t</barres>`);
+		lines.push(`\t\t</barres>`);
 
 	} else {
 
-		lines.push(`${indent}\t<barres/>`);
+//		lines.push(`\t\t<barres/>`);
 
 	}
 
@@ -605,12 +605,12 @@ function projectToXml(project, indent = "\t") {
 
 	if (project.nutNotes && project.nutNotes.length > 0) {
 
-		lines.push(`${indent}\t<nutNotes>`);
+		lines.push(`\t\t<nutNotes>`);
 
 		project.nutNotes.forEach(note => {
 
 			lines.push(
-				`${indent}\t\t<nutNote ` +
+				`\t\t\t<nutNote ` +
 				`string="${note.string}" ` +
 				`color="${escapeXml(note.color)}" ` +
 				`text="${escapeXml(note.text)}" ` +
@@ -620,11 +620,11 @@ function projectToXml(project, indent = "\t") {
 
 		});
 
-		lines.push(`${indent}\t</nutNotes>`);
+		lines.push(`\t\t</nutNotes>`);
 
 	} else {
 
-		lines.push(`${indent}\t<nutNotes/>`);
+//		lines.push(`\t\t<nutNotes/>`);
 
 	}
 
@@ -638,9 +638,10 @@ function projectToXml(project, indent = "\t") {
 		Array.isArray(project.resources[type]) &&
 		project.resources[type].length > 0
 	);
+
 	if (hasResources) {
 
-		lines.push(`${indent}\t<resources>`);
+		lines.push(`\t\t<resources>`);
 
 		resourceTypes.forEach(type => {
 
@@ -649,28 +650,26 @@ function projectToXml(project, indent = "\t") {
 			project.resources[type].forEach(resource => {
 
 				lines.push(
-					`${indent}\t\t<resource ` +
+					`\t\t\t<resource ` +
 					`type="${escapeXml(type)}" ` +
-					`content="` +
-					`${escapeXml(resource.content || "")}` +
-					`">` +
-					`${indent}\t\t</resource>`
+					`content="${escapeXml(resource.content || "")}` +
+					`"/>`
 				);
 
 			});
 
 		});
 
-		lines.push(`${indent}\t</resources>`);
+		lines.push(`\t\t</resources>`);
 
 	} else {
 
-		lines.push(`${indent}\t<resources/>`);
+//		lines.push(`\t\t<resources/>`);
 
 	}
 
 
-	lines.push(`${indent}</project>`);
+	lines.push(`\t</project>`);
 
 	return lines.join("\n");
 
@@ -692,31 +691,32 @@ function writeLibraryXML() {
 		`type="${escapeXml(xmlLibraryType)}" ` +
 		`created="${escapeXml(xmlCreated)}" ` +
 		`modified="${escapeXml(date)}" ` +
-		`name="${escapeXml(libraryName)}" ` +
-		`desc="${escapeXml(libraryDesc)}">`
+		`name="${escapeXml(libraryName)}">`
 	);
+//	lines.push("");
 
-	lines.push("");
+	// Descripción
+	lines.push("\t<desc>");
+	lines.push(`\t\t${escapeXml(libraryDesc)}"`);
+	lines.push("\t</desc>");
 
 	// Categorías
 	lines.push("\t<categories>");
 
 	categories.forEach(category => {
 
-		lines.push(
-			`\t\t<category id="${escapeXml(category.id)}">${escapeXml(category.name)}</category>`
-		);
+		lines.push(`\t\t<category id="${escapeXml(category.id)}">${escapeXml(category.name)}</category>`);
 
 	});
 
 	lines.push("\t</categories>");
-	lines.push("");
+//	lines.push("");
 
 	// Proyectos
 	library.forEach(project => {
 
 		lines.push(projectToXml(project));
-		lines.push("");
+//		lines.push("");
 
 	});
 
