@@ -1152,7 +1152,7 @@ async function saveLibrariesFile() {
 
 			downloadBlob(
 				blob,
-				xmlLibrariesXml.substring(xmlLibrariesXml.lastIndexOf("/") + 1)
+				xmlLibraries.substring(xmlLibraries.lastIndexOf("/") + 1)
 			);
 
 		} catch (error) {
