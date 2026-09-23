@@ -1135,6 +1135,34 @@ html {
 
 }
 
+#workspaceMultimedia #multimediaWidthContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#workspaceMultimedia input{
+
+	height:30px;
+	width:50px;
+
+	padding:0 8px;
+
+	box-sizing:border-box;
+
+	border:1px solid var(--color-border);
+	border-radius: 5px;
+
+	font-size:inherit;
+
+	text-align: center;
+
+	background-color: var(--color-dark-background);
+	color:var(--color-main-text);
+
+
+}
+
 #workspaceMultimedia video {
 
 	display:block;
