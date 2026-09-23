@@ -168,34 +168,24 @@ async function loadProject(project) {
 
 }
 
-function parseLibrariesXml(xml) {
+function parseLibrariesXML(xml) {
 
-	try {
+	const libraryElements = xml.querySelectorAll("library");
 
-		const libraryElements = xml.querySelectorAll("library");
+	libraryElements.forEach(libraryElement => {
 
-		libraryElements.forEach(libraryElement => {
+		const library = {
+			id: libraryElement.getAttribute("id") || "",
+			created: libraryElement.getAttribute("created") || "",
+			modified: libraryElement.getAttribute("modified") || "",
+			level: Number(libraryElement.getAttribute("level")) || 0,
+			name: libraryElement.getAttribute("name") || "",
+			desc: libraryElement.querySelector("desc")?.textContent.trim() || ""
+		};
 
-			const library = {
-				id: libraryElement.getAttribute("id") || "",
-				created: libraryElement.getAttribute("created") || "",
-				modified: libraryElement.getAttribute("modified") || "",
-				level: Number(libraryElement.getAttribute("level")) || 0,
-				name: libraryElement.getAttribute("name") || "",
-				desc: libraryElement.querySelector("desc")?.textContent.trim() || ""
-			};
+		libraries.push(library);
 
-			libraries.push(library);
-
-		});
-
-	} catch (err) {
-
-		console.error("No ha sido posible leer el archivo de bibliotecas: " + err);
-
-		showAlert("No ha sido posible leer el archivo de bibliotecas.", "error");
-
-	}
+	});
 
 }
 
@@ -773,7 +763,7 @@ async function openLibraryXMLFile() {
 
 		library = loadedProjects;
 
-		libraryLoaded = true;
+		xmLibraryLoaded = true;
 
 
 		// --------------------------------
@@ -830,16 +820,12 @@ async function openLibraryXMLFile() {
 
 		// Cancelar selector de archivos
 
-		if (error.name === "AbortError") {
+		if (error.name === "AbortError") return false;
 
-			return false;
-
-		}
-
-		console.error("Error al abrir la biblioteca de proyectos:",error);
+		console.error("Error al abrir la librería de proyectos: ",error);
 
 		library = [];
-		libraryLoaded = false;
+		xmLibraryLoaded = false;
 
 		return false;
 

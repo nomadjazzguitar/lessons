@@ -148,7 +148,7 @@ let library = [];
 
 let xmlLibrary = dataURL_Libraries + "welcome.xml";
 
-let libraryLoaded = false;
+let xmlLibraryLoaded = false;
 
 let libraryFileHandle = null;
 
