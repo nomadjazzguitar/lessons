@@ -879,17 +879,27 @@ function renderLibrary() {
 
 			let iType = "<i class='fa-solid fa-guitar'></i>";
 
+			const resources = project.resources.filter(resource => resource.content);
+
 			const resourceTypes = [
 				...new Set(
-					project.resources
-						.filter(resource => resource.content && resource.type !== "text")
+					resources
+						.filter(resource => resource.type !== "text")
 						.map(resource => resource.type)
 				)
 			];
 
+			const hasOnlyText = resources.length > 0 &&
+				resources.every(resource => resource.type === "text");
+
+
 			if (project.projectType === "fretboard") {
 
 				iType = "<i class='fa-solid fa-guitar'></i>";
+
+			} else if (hasOnlyText) {
+
+				iType = "<i class='fa-solid fa-file-lines'></i>";
 
 			} else if (resourceTypes.length > 1) {
 
@@ -898,10 +908,6 @@ function renderLibrary() {
 			} else if (resourceTypes.length === 1) {
 
 				switch (resourceTypes[0]){
-
-					case "text":
-						iType = "<i class='fa-solid fa-file-lines'></i>";
-						break;
 
 					case "video":
 						iType = "<i class='fa-solid fa-film'></i>";

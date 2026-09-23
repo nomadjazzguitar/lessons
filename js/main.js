@@ -26,9 +26,13 @@ async function initializeApp() {
 
 		setLoadingProgress(20, "Cargando librerías y proyectos...");
 
-		await loadXML("libraries",xmlLibraries);
+		if (isAdmin || (user !== null && lib !== null)){
 
-		await loadXML("library",xmlLibrary);
+			await loadXML("libraries",xmlLibraries);
+
+			await loadXML("library",xmlLibrary);
+		
+		}
 
 		await initializeProjects();
 
