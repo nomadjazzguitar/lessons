@@ -26,7 +26,7 @@ async function initializeApp() {
 
 		setLoadingProgress(20, "Cargando librerías y proyectos...");
 
-		if (isAdmin || (user !== null && lib !== null)){
+		if (isAdmin || user !== null || lib !== null){
 
 			await loadXML("libraries",xmlLibraries);
 
