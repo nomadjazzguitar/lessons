@@ -216,8 +216,7 @@ function configureUserControls(){
 			btnEdicion.style.display = "none";
 			btnEdicionPopup.style.display = "none";
 
-			topFretboardDownload.style.display = "none";
-			topScoreDownload.style.display = "none";
+			topClipboard.style.display = "none";
 
 			btnShowLibraryPanel.style.display = "none";
 
@@ -260,8 +259,7 @@ function configureUserControls(){
 
 			setControlsEnabled(false);
 
-			topFretboardDownload.style.display = "none";
-			topScoreDownload.style.display = "none";
+			topClipboard.style.display = "none";
 
 			btnProyectos.style.display = "none";
 			btnProyectosPopup.style.display = "none";
@@ -395,8 +393,8 @@ function setMenu(m){
 		topScoreStaves,
 		topScoreScale,
 		topScoreMargin,
-		topScoreDownload,
-		topFretboardDownload,
+		topClipboard,
+		topImgFormat,
 		topVolumen,
 		topRepeats,
 		topArticulation,
@@ -511,8 +509,8 @@ function setMenu(m){
 			btnMultimedia.classList.add("active");
 
 			showMenuControls(
-				topFretboardDownload,
-				topScoreDownload,
+				topImgFormat,
+				topClipboard,
 				topBuffer,
 				topAudio,
 				topVideo,
@@ -1014,9 +1012,9 @@ function setControlsState() {
 		cmbAudioFormat.disabled = renderDisabled;
 		btnSaveAudio.disabled = renderDisabled;
 		btnCopyCanvas.disabled = renderDisabled;
-		btnDownloadCanvas.disabled = renderDisabled;
 		btnCopyScore.disabled = renderDisabled;
-		btnScoreDownload.disabled = renderDisabled;
+		cmbImgFormat.disabled = renderDisabled;
+		btnImgDownload.disabled = renderDisabled;
 
 	} else {
 
@@ -1066,10 +1064,10 @@ function setControlsState() {
 	// DESCARGAS SUPERIORES
 	// --------------------------------
 
+	cmbImgFormat.disabled = isMultimedia;
+	btnImgDownload.disabled = isMultimedia;
 	btnCopyCanvas.disabled = isMultimedia;
-	btnDownloadCanvas.disabled = isMultimedia;
 	btnCopyScore.disabled = isMultimedia;
-	btnScoreDownload.disabled = isMultimedia;
 	cmbAudioFormat.disabled = isMultimedia;
 	btnSaveAudio.disabled = isMultimedia;
 	btnRenderBuffer.disabled = isMultimedia;
@@ -1092,8 +1090,9 @@ function setControlsState() {
 		btnSaveAudio.disabled = true;
 
 		btnCopyCanvas.disabled = true;
-		btnDownloadCanvas.disabled = true;
-		btnScoreDownload.disabled = true;
+		btnCopyScore.disabled = true;
+		btnImgDownload.disabled = true;
+		cmbImgFormat.disabled = true;
 
 		btnPlayStop.disabled = true;
 
@@ -2366,7 +2365,7 @@ async function addUser(name, email) {
 
 		}
 
-		const n = await encryptUser(name);
+		const n = name; //await encryptUser(name);
 
 		const e = await encryptUser(email);
 

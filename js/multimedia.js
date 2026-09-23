@@ -34,72 +34,141 @@ async function copyCanvasToClipboard() {
 
 }
 
-function downloadCanvas() {
+function downloadFretboard() {
 
-	const titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "fretboard";
+	let titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "fretboard";
+
+	titulo = titulo + "_fretboard";
+
+	const formato = cmbImgFormat.value;
+
+
+	////////////////////////////////////////////////////////////
+	// CANVAS DE EXPORTACIÓN
+	////////////////////////////////////////////////////////////
+
+	let exportCanvas = canvas;
+
+	if (!isAdmin) {
+
+		exportCanvas = document.createElement("canvas");
+
+		exportCanvas.width = canvas.width;
+		exportCanvas.height = canvas.height;
+
+		const exportCtx = exportCanvas.getContext("2d");
+
+		exportCtx.drawImage(canvas, 0, 0);
+
+		// --------------------------------
+		// MARCA DE AGUA
+		// --------------------------------
+
+		exportCtx.save();
+
+		exportCtx.translate(
+			exportCanvas.width / 2,
+			exportCanvas.height / 2
+		);
+
+		exportCtx.rotate(-Math.PI / 6);
+
+		exportCtx.font = "bold 40px Arial";
+		exportCtx.fillStyle = "rgba(0, 0, 0, 0.18)";
+		exportCtx.textAlign = "center";
+		exportCtx.textBaseline = "middle";
+
+		exportCtx.fillText(watermark,0,0);
+
+		exportCtx.restore();
+
+	}
 
 
 	////////////////////////////////////////////////////////////
 	// WEBP
 	////////////////////////////////////////////////////////////
 
-	const linkWEBP = document.createElement("a");
+	if (formato === "webp") {
 
-	linkWEBP.download = titulo + ".webp";
-	linkWEBP.href = canvas.toDataURL("image/webp", 1);
+		const linkWEBP = document.createElement("a");
 
-	document.body.appendChild(linkWEBP);
-	linkWEBP.click();
-	document.body.removeChild(linkWEBP);
+		linkWEBP.download = titulo + ".webp";
+		linkWEBP.href = exportCanvas.toDataURL("image/webp", 1);
+
+		document.body.appendChild(linkWEBP);
+		linkWEBP.click();
+		document.body.removeChild(linkWEBP);
+
+	}
 
 
 	////////////////////////////////////////////////////////////
 	// PNG
 	////////////////////////////////////////////////////////////
 
-	const linkPNG = document.createElement("a");
+	if (formato === "png") {
 
-	linkPNG.download = titulo + ".png";
-	linkPNG.href = canvas.toDataURL("image/png");
+		const linkPNG = document.createElement("a");
 
-	document.body.appendChild(linkPNG);
-	linkPNG.click();
-	document.body.removeChild(linkPNG);
+		linkPNG.download = titulo + ".png";
+		linkPNG.href = exportCanvas.toDataURL("image/png");
+
+		document.body.appendChild(linkPNG);
+		linkPNG.click();
+		document.body.removeChild(linkPNG);
+
+	}
 
 
 	////////////////////////////////////////////////////////////
 	// SVG
 	////////////////////////////////////////////////////////////
 
-	const pngData = canvas.toDataURL("image/png");
+	if (formato === "svg") {
 
-	const svgText = `
-		<svg xmlns="http://www.w3.org/2000/svg"
-		     width="${canvas.width}"
-		     height="${canvas.height}"
-		     viewBox="0 0 ${canvas.width} ${canvas.height}">
-			<image width="${canvas.width} height="${canvas.height} href="${pngData}" />
-		</svg>`.trim();
+		try {
 
-	const blob = new Blob(
-		[svgText],
-		{
-			type: "image/svg+xml;charset=utf-8"
+			const pngData = exportCanvas.toDataURL("image/png");
+
+			const svgText = `
+				<svg xmlns="http://www.w3.org/2000/svg"
+				     width="${exportCanvas.width}"
+				     height="${exportCanvas.height}"
+				     viewBox="0 0 ${exportCanvas.width} ${exportCanvas.height}">
+					<image
+						width="${exportCanvas.width}"
+						height="${exportCanvas.height}"
+						href="${pngData}" />
+				</svg>`.trim();
+
+			const blob = new Blob(
+				[svgText],
+				{type: "image/svg+xml;charset=utf-8"}
+			);
+
+			const url = URL.createObjectURL(blob);
+
+			const linkSVG = document.createElement("a");
+
+			linkSVG.download = titulo + ".svg";
+			linkSVG.href = url;
+
+			document.body.appendChild(linkSVG);
+			linkSVG.click();
+			document.body.removeChild(linkSVG);
+
+			URL.revokeObjectURL(url);
+
+		} catch (err) {
+
+			console.error(err);
+
+			showAlert("No ha sido posible guardar la imagen SVG.","error");
+
 		}
-	);
 
-	const url = URL.createObjectURL(blob);
-
-	const linkSVG = document.createElement("a");
-
-	linkSVG.download = titulo + ".svg";
-	linkSVG.href = url;
-
-	document.body.appendChild(linkSVG);
-	linkSVG.click();
-	document.body.removeChild(linkSVG);
-
-	URL.revokeObjectURL(url);
+	}
 
 }
 
@@ -109,6 +178,282 @@ function downloadCanvas() {
 // SCORE DOWNLOAD
 //
 ////////////////////////////////////////////////////////////
+
+async function downloadScore() {
+
+	const svg = getScoreSVG();
+
+	if (svg === null) return;
+
+	let titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
+
+	titulo = titulo + "_score";
+
+	const formato = cmbImgFormat.value;
+
+
+	////////////////////////////////////////////////////////////
+	// WEBP
+	////////////////////////////////////////////////////////////
+
+	if (formato === "webp") {
+
+		try {
+
+			const canvas = await scoreToCanvas(svg);
+
+			const exportCanvas = document.createElement("canvas");
+
+			exportCanvas.width = canvas.width;
+			exportCanvas.height = canvas.height;
+
+			const ctx = exportCanvas.getContext("2d");
+
+			ctx.drawImage(canvas, 0, 0);
+
+
+			////////////////////////////////////////////////////
+			// MARCA DE AGUA
+			////////////////////////////////////////////////////
+
+			if (!isAdmin) {
+
+				ctx.save();
+
+				ctx.translate(
+					exportCanvas.width / 2,
+					exportCanvas.height / 2
+				);
+
+				ctx.rotate(-Math.PI / 6);
+
+				ctx.font = "bold 50px Arial";
+				ctx.fillStyle = "rgba(0, 0, 0, 0.20)";
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+
+				ctx.fillText(watermark,0,0);
+
+				ctx.restore();
+
+			}
+
+
+			const linkWEBP = document.createElement("a");
+
+			linkWEBP.download = titulo + ".webp";
+			linkWEBP.href = exportCanvas.toDataURL("image/webp", 1);
+
+			document.body.appendChild(linkWEBP);
+
+			linkWEBP.click();
+
+			document.body.removeChild(linkWEBP);
+
+		} catch (err) {
+
+			console.error(err);
+
+			showAlert("No ha sido posible guardar la imagen WEBP de la partitura.","error");
+
+		}
+
+	}
+
+
+	////////////////////////////////////////////////////////////
+	// PNG
+	////////////////////////////////////////////////////////////
+
+	if (formato === "png") {
+
+		try {
+
+			const canvas = await scoreToCanvas(svg);
+
+			const canvasWhite = document.createElement("canvas");
+
+			canvasWhite.width = canvas.width;
+			canvasWhite.height = canvas.height;
+
+			const ctx = canvasWhite.getContext("2d");
+
+			ctx.fillStyle = "#FFFFFF";
+
+			ctx.fillRect(0,0,canvasWhite.width,canvasWhite.height);
+
+			ctx.drawImage(canvas, 0, 0);
+
+
+			////////////////////////////////////////////////////
+			// MARCA DE AGUA
+			////////////////////////////////////////////////////
+
+			if (!isAdmin) {
+
+				ctx.save();
+
+				ctx.translate(
+					canvasWhite.width / 2,
+					canvasWhite.height / 2
+				);
+
+				ctx.rotate(-Math.PI / 6);
+
+				ctx.font = "bold 50px Arial";
+				ctx.fillStyle = "rgba(0, 0, 0, 0.20)";
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+
+				ctx.fillText(watermark,0,0);
+
+				ctx.restore();
+
+			}
+
+
+			const linkPNG = document.createElement("a");
+
+			linkPNG.download = titulo + ".png";
+			linkPNG.href = canvasWhite.toDataURL("image/png");
+
+			document.body.appendChild(linkPNG);
+
+			linkPNG.click();
+
+			document.body.removeChild(linkPNG);
+
+		} catch (err) {
+
+			console.error(err);
+
+			showAlert("No ha sido posible guardar la imagen PNG de la partitura.","error");
+
+		}
+
+	}
+
+
+	////////////////////////////////////////////////////////////
+	// SVG
+	////////////////////////////////////////////////////////////
+
+	if (formato === "svg") {
+
+		try {
+
+			////////////////////////////////////////////////////
+			// COPIAR SVG
+			////////////////////////////////////////////////////
+
+			const svgExport = svg.cloneNode(true);
+
+
+			////////////////////////////////////////////////////
+			// MARCA DE AGUA
+			////////////////////////////////////////////////////
+
+			if (!isAdmin) {
+
+				const svgNS = "http://www.w3.org/2000/svg";
+
+				let viewBox = svgExport.getAttribute("viewBox");
+
+				let width;
+				let height;
+				let x;
+				let y;
+
+				if (viewBox) {
+
+					const values = viewBox
+						.trim()
+						.split(/[\s,]+/)
+						.map(Number);
+
+					width = values[2];
+					height = values[3];
+
+					x = values[0] + width / 2;
+					y = values[1] + height / 2;
+
+				} else {
+
+					width = parseFloat(svgExport.getAttribute("width"));
+					height = parseFloat(svgExport.getAttribute("height"));
+
+					x = width / 2;
+					y = height / 2;
+
+				}
+
+
+				if (Number.isFinite(width) && Number.isFinite(height)) {
+
+					const text = document.createElementNS(svgNS, "text");
+
+					text.setAttribute("x", x);
+					text.setAttribute("y", y);
+					text.setAttribute("fill", "#000000");
+					text.setAttribute("fill-opacity", "0.20");
+					text.setAttribute("font-family", "Arial, sans-serif");
+					text.setAttribute("font-size", "50");
+					text.setAttribute("font-weight", "bold");
+					text.setAttribute("text-anchor", "middle");
+					text.setAttribute("dominant-baseline", "middle");
+					text.setAttribute("transform", `rotate(-30 ${x} ${y})`);
+
+					text.textContent = watermark;
+
+					svgExport.appendChild(text);
+
+				}
+
+			}
+
+
+			////////////////////////////////////////////////////
+			// SERIALIZAR SVG
+			////////////////////////////////////////////////////
+
+			const serializer = new XMLSerializer();
+
+			let svgText = serializer.serializeToString(svgExport);
+
+			// Añadir declaración XML
+			svgText = '<?xml version="1.0" encoding="UTF-8"?>\n' + svgText;
+
+			const blob = new Blob(
+				[svgText],
+				{type: "image/svg+xml;charset=utf-8"}
+			);
+
+			const url = URL.createObjectURL(blob);
+
+			const linkSVG = document.createElement("a");
+
+			linkSVG.download = titulo + ".svg";
+			linkSVG.href = url;
+
+			document.body.appendChild(linkSVG);
+
+			linkSVG.click();
+
+			document.body.removeChild(linkSVG);
+
+			URL.revokeObjectURL(url);
+
+		} catch (err) {
+
+			console.error(err);
+
+			showAlert("No ha sido posible guardar el archivo SVG de la partitura.","error");
+
+		}
+
+	}
+
+}
 
 function getScoreSVG() {
 
@@ -145,9 +490,7 @@ async function scoreToCanvas(svgElement) {
 
 			const blob = new Blob(
 				[svg],
-				{
-					type: "image/svg+xml;charset=utf-8"
-				}
+				{type: "image/svg+xml;charset=utf-8"}
 			);
 
 			const url = URL.createObjectURL(blob);
@@ -158,28 +501,16 @@ async function scoreToCanvas(svgElement) {
 
 				const canvas = document.createElement("canvas");
 
-				const width =
-					svgElement.viewBox?.baseVal?.width ||
-					svgElement.width?.baseVal?.value ||
-					img.naturalWidth;
+				const width = svgElement.viewBox?.baseVal?.width || svgElement.width?.baseVal?.value || img.naturalWidth;
 
-				const height =
-					svgElement.viewBox?.baseVal?.height ||
-					svgElement.height?.baseVal?.value ||
-					img.naturalHeight;
+				const height = svgElement.viewBox?.baseVal?.height || svgElement.height?.baseVal?.value || img.naturalHeight;
 
 				canvas.width = width;
 				canvas.height = height;
 
 				const ctx = canvas.getContext("2d");
 
-				ctx.drawImage(
-					img,
-					0,
-					0,
-					canvas.width,
-					canvas.height
-				);
+				ctx.drawImage(img,0,0,canvas.width,canvas.height);
 
 				URL.revokeObjectURL(url);
 
@@ -241,113 +572,19 @@ async function copyScore() {
 			})
 		]);
 
-		showAlert(
-			"Imagen de la partitura copiada al portapapeles.",
-			"success"
-		);
+		showAlert("Imagen de la partitura copiada al portapapeles.","success");
 
 	} catch (err) {
 
 		console.error(err);
 
-		showAlert(
-			"No ha sido posible copiar la imagen de la partitura.",
-			"error"
-		);
+		showAlert("No ha sido posible copiar la imagen de la partitura.","error");
 
 	}
 
 }
 
-async function downloadScorePNG() {
 
-	const svg = getScoreSVG();
-
-	if (svg === null) return;
-
-	try {
-
-		const canvas = await scoreToCanvas(svg);
-
-		const titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
-
-		const link = document.createElement("a");
-
-		link.download = titulo + ".png";
-		link.href = canvas.toDataURL("image/png");
-
-		document.body.appendChild(link);
-
-		link.click();
-
-		document.body.removeChild(link);
-
-	} catch (err) {
-
-		console.error(err);
-
-		showAlert(
-			"No ha sido posible guardar la imagen PNG de la partitura.",
-			"error"
-		);
-
-	}
-
-}
-
-function downloadScoreSVG() {
-
-	const svg = getScoreSVG();
-
-	if (svg === null) return;
-
-	try {
-
-		const serializer = new XMLSerializer();
-
-		let svgText = serializer.serializeToString(svg);
-
-		// Añadir declaración XML
-		svgText =
-			'<?xml version="1.0" encoding="UTF-8"?>\n' +
-			svgText;
-
-		const blob = new Blob(
-			[svgText],
-			{
-				type: "image/svg+xml;charset=utf-8"
-			}
-		);
-
-		const url = URL.createObjectURL(blob);
-
-		const titulo = workspaceTitleText.textContent !== "" ? workspaceTitleText.textContent : "score";
-
-		const link = document.createElement("a");
-
-		link.download = titulo + ".svg";
-		link.href = url;
-
-		document.body.appendChild(link);
-
-		link.click();
-
-		document.body.removeChild(link);
-
-		URL.revokeObjectURL(url);
-
-	} catch (err) {
-
-		console.error(err);
-
-		showAlert(
-			"No ha sido posible guardar el archivo SVG de la partitura.",
-			"error"
-		);
-
-	}
-
-}
 
 ////////////////////////////////////////////////////////////
 // RENDER BUFFER
@@ -2687,13 +2924,9 @@ async function saveFileToMultimedia(file, type) {
 
 		const extensionIndex = file.name.lastIndexOf(".");
 
-		const name = extensionIndex > 0
-			? file.name.substring(0, extensionIndex)
-			: file.name;
+		const name = extensionIndex > 0 ? file.name.substring(0, extensionIndex) : file.name;
 
-		const extension = extensionIndex > 0
-			? file.name.substring(extensionIndex)
-			: "";
+		const extension = extensionIndex > 0 ? file.name.substring(extensionIndex) : "";
 
 
 		// --------------------------------
@@ -2756,10 +2989,7 @@ async function saveFileToMultimedia(file, type) {
 			content: fileName
 		});
 
-		createMultimediaElement(
-			type,
-			fileName
-		);
+		createMultimediaElement(type,fileName);
 
 
 		// --------------------------------
@@ -2768,30 +2998,19 @@ async function saveFileToMultimedia(file, type) {
 
 		if (fileName === file.name) {
 
-			showAlert(
-				"Archivo guardado.",
-				"success"
-			);
+			showAlert("Archivo guardado.","success");
 
 		} else {
 
-			showAlert(
-				`El archivo ya existía con otro contenido. Guardado como ${fileName}.`,
-				"success"
-			);
+			showAlert(`El archivo ya existía con otro contenido. Guardado como ${fileName}.`,"success");
 
 		}
 
 	} catch (error) {
 
-		showAlert(
-			"Error guardando el archivo",
-			"error"
-		);
+		showAlert("Error guardando el archivo","error");
 
-		console.log(
-			"Error guardando el archivo: " + error
-		);
+		console.log("Error guardando el archivo: " + error);
 
 	}
 

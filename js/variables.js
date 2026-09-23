@@ -23,6 +23,8 @@ const dataURL_Samples = dataURL + "samples/";
 	CONFIGURACIÓN GENERAL DE LA APLICACIÓN
 ==================================================*/
 
+const watermark = "nomadjazzguitar";
+
 let isMobile = false;
 let isTouchDevice = false;
 
@@ -35,7 +37,7 @@ let menuOpen = "";
 
 let editMode = "view";
 
-let projectTitle = "Proyecto nuevo sin título";
+let projectTitle = "Sin Título";
 let displayMode = true;
 let fretCount = 10;
 let orientation = "horizontal";
@@ -414,7 +416,7 @@ const topTimeSignature = document.getElementById("topTimeSignature");
 const topBuffer = document.getElementById("topBuffer");
 const topAudio = document.getElementById("topAudio");
 const topVideo = document.getElementById("topVideo");
-const topScoreDownload = document.getElementById("topScoreDownload");
+const topClipboard = document.getElementById("topClipboard");
 const topChords = document.getElementById("topChords");
 const topTitleViewMode = document.getElementById("topTitleViewMode");
 const topLibraryInfo = document.getElementById("topLibraryInfo");
@@ -449,9 +451,11 @@ const btnNewProjectGuest = document.getElementById("btnNewProjectGuest");
 const btnSaveProject = document.getElementById("btnSaveProject");
 const btnDelProject = document.getElementById("btnDelProject");
 const btnShare = document.getElementById("btnShare");
+const cmbImgFormat = document.getElementById("cmbImgFormat");
+const btnImgDownload = document.getElementById("btnImgDownload");
 const btnCopyCanvas = document.getElementById("btnCopyCanvas");
-const btnDownloadCanvas = document.getElementById("btnDownloadCanvas");
-const topFretboardDownload = document.getElementById("topFretboardDownload");
+const btnCopyScore = document.getElementById("btnCopyScore");
+const topImgFormat = document.getElementById("topImgFormat");
 const chordProjectList = document.getElementById("chordProjectList");
 const scaleProjectList = document.getElementById("scaleProjectList");
 const otherProjectList = document.getElementById("otherProjectList");
@@ -503,8 +507,6 @@ const numBpm = document.getElementById("numBpm");
 const btnTime4 = document.getElementById("btnTime4");
 const btnTime3 = document.getElementById("btnTime3");
 
-const btnCopyScore = document.getElementById("btnCopyScore");
-const btnScoreDownload = document.getElementById("btnScoreDownload");
 const cmbChords = document.getElementById("cmbChords");
 
 const cmbNoteNames = document.getElementById("cmbNoteNames");

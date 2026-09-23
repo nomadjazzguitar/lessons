@@ -665,9 +665,9 @@ btnDelChord.addEventListener("click", () => {
 	delChord();
 });
 
-btnScoreDownload.addEventListener("click", () => {
-	downloadScorePNG();
-	downloadScoreSVG();
+btnImgDownload.addEventListener("click", () => {
+	downloadFretboard();
+	downloadScore();
 });
 
 btnCopyScore.addEventListener("click", () => {
@@ -847,12 +847,6 @@ btnCopyCanvas.addEventListener("click", () => {
 	if (navigator.clipboard && window.ClipboardItem) {
 		copyCanvasToClipboard();
 	}
-
-});
-
-btnDownloadCanvas.addEventListener("click", () => {
-
-	downloadCanvas();
 
 });
 
