@@ -880,7 +880,6 @@ html {
 
 }
 
-
 /* ===========================
    WORKSPACE FRETBOARD
 =========================== */
@@ -1012,6 +1011,7 @@ html {
 	height:auto;
 
 }
+
 
 /* ===========================
    WORKSPACE MULTIMEDIA
@@ -1324,104 +1324,6 @@ html {
 
 
 /* ===========================
-   MIDI
-=========================== */
-
-#sectionMidi {
-	width: 100%;
-	box-sizing: border-box;
-}
-
-/* Custom player style */
-#sectionMidi midi-player {
-/*
-	display: block;
-	width: 100%;
-	margin: 4px 0;
-	box-sizing: border-box;
-*/
-
-	display:block;
-
-	width:100%;
-	max-width:600px;
-
-	min-height:40px;
-
-	margin:10px 0;
-
-	box-sizing:border-box;
-
-}
-}
-
-/*
-#sectionMidi midi-player::part(control-panel) {
-  background: #ff5;
-  border: 2px solid #000;
-  border-radius: 10px 10px 0 0;
-}
-
-#sectionMidi midi-player::part(play-button) {
-  color: #353;
-  border: 2px solid #000;
-  background-color: #4d4;
-  border-radius: 20px;
-  transition: all 0.2s;
-  content: 'hello';
-}
-
-#sectionMidi midi-player::part(play-button):hover {
-  color: #0a0;
-  background-color: #5f5;
-  border-radius: 10px;
-}
-*/
-
-#sectionMidi midi-player::part(time) {
-  font-size:inherit;
-  color:#000;
-}
-
-#sectionMidi midi-player::part(seek-bar) {
-  accent-color:#000;
-}
-
-
-/* Custom visualizer style */
-#sectionMidi midi-visualizer .piano-roll-visualizer {
-  background: #eee;
-  margin: 4px;
-  overflow: auto;
-}
-
-#sectionMidi midi-visualizer svg rect.note {
-  opacity: 0.6;
-  stroke-width: 2;
-}
-
-#sectionMidi midi-visualizer svg rect.note[data-instrument="0"]{
-  fill: #e22;
-  stroke: #500;
-}
-
-#sectionMidi midi-visualizer svg rect.note[data-instrument="2"]{
-  fill: #2ee;
-  stroke: #055;
-}
-
-#sectionMidi midi-visualizer svg rect.note[data-is-drum="true"]{
-  fill: #888;
-  stroke: #888;
-}
-
-#sectionMidi midi-visualizer svg rect.note.active {
-  opacity: 0.9;
-  stroke: #000;
-}
-
-
-/* ===========================
    PANEL IZQUIERDO
 =========================== */
 
@@ -1613,7 +1515,6 @@ html {
 
 }
 
-
 .libraryPanelHeader button i{
 
 	font-size:inherit;
@@ -1633,7 +1534,7 @@ html {
 
 	border-radius:2px;
 
-	padding-bottom: 4px;
+	padding: 4px 0px;
 
 	line-height:1.4;
 
@@ -1871,6 +1772,103 @@ html {
 
 	color:var(--color-highlight);
 
+}
+
+/* ===========================
+   MIDI
+=========================== */
+
+#sectionMidi {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Custom player style */
+#sectionMidi midi-player {
+/*
+	display: block;
+	width: 100%;
+	margin: 4px 0;
+	box-sizing: border-box;
+*/
+
+	display:block;
+
+	width:100%;
+	max-width:600px;
+
+	min-height:40px;
+
+	margin:10px 0;
+
+	box-sizing:border-box;
+
+}
+}
+
+/*
+#sectionMidi midi-player::part(control-panel) {
+  background: #ff5;
+  border: 2px solid #000;
+  border-radius: 10px 10px 0 0;
+}
+
+#sectionMidi midi-player::part(play-button) {
+  color: #353;
+  border: 2px solid #000;
+  background-color: #4d4;
+  border-radius: 20px;
+  transition: all 0.2s;
+  content: 'hello';
+}
+
+#sectionMidi midi-player::part(play-button):hover {
+  color: #0a0;
+  background-color: #5f5;
+  border-radius: 10px;
+}
+*/
+
+#sectionMidi midi-player::part(time) {
+  font-size:inherit;
+  color:#000;
+}
+
+#sectionMidi midi-player::part(seek-bar) {
+  accent-color:#000;
+}
+
+
+/* Custom visualizer style */
+#sectionMidi midi-visualizer .piano-roll-visualizer {
+  background: #eee;
+  margin: 4px;
+  overflow: auto;
+}
+
+#sectionMidi midi-visualizer svg rect.note {
+  opacity: 0.6;
+  stroke-width: 2;
+}
+
+#sectionMidi midi-visualizer svg rect.note[data-instrument="0"]{
+  fill: #e22;
+  stroke: #500;
+}
+
+#sectionMidi midi-visualizer svg rect.note[data-instrument="2"]{
+  fill: #2ee;
+  stroke: #055;
+}
+
+#sectionMidi midi-visualizer svg rect.note[data-is-drum="true"]{
+  fill: #888;
+  stroke: #888;
+}
+
+#sectionMidi midi-visualizer svg rect.note.active {
+  opacity: 0.9;
+  stroke: #000;
 }
 
 
@@ -2516,7 +2514,7 @@ html {
 
 	color:var(--color-main-text);
 
-	cursor:default;
+	cursor:pointer;
 
 }
 

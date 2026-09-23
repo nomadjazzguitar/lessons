@@ -126,9 +126,7 @@
 					<div class="toolbarTop-Controls" id="topUser">
 						<span>USUARIOS</span>
 						<div class="toolRow">
-							<button type="button" id="btnNewUser" title="Nuevo usuario">
-								<i class="fa-solid fa-user-plus"></i><span>Nuevo</span>
-							</button>
+							<button type="button" id="btnNewUser" title="Nuevo usuario"><i class="fa-solid fa-user-plus"></i><span>Nuevo</span></button>
 						</div>
 					</div>
 
@@ -148,7 +146,7 @@
 							<input id="libraryNameText" type="text" maxlength="60" placeholder="Sin Nombre">
 						</div>
 						<div class="toolRow">
-							<input id="libraryDescText" type="text" maxlength="60" placeholder="Descripción">
+							<input id="libraryDescText" type="text" placeholder="Descripción">
 						</div>
 					</div>
 
@@ -704,7 +702,10 @@
 				<!-- Lista preparada para los proyectos -->
 				<div id="libraryPanel">
 
-					<div class="libraryPanelHeader"><span id="libraryPanelHeaderTitle">Sin Nombre</span></div>
+					<div class="libraryPanelHeader">
+						<span id="libraryPanelHeaderTitle">Sin Nombre</span>
+					</div>
+
 					<div id="libraryPanelInfo"><i><a href="#">Archivo XML</a></i><br>Descripción</div>
 
 	<!--
@@ -737,7 +738,7 @@
 
 					<div class="workspaceControls" id="workspaceControls">
 						<button type="button" id="btnPlayStop" class="buttonPlay" title="Reproducir" disabled><i class="fa-solid fa-play"></i><span>Play</span></button>
-						<button type="button" id="btnFretboardVisible" title="Ver mástil"><i class="fa-solid fa-guitar"></i><span>Fretboard</span></button>
+						<button type="button" id="btnFretboardVisible" title="Ver mástil"><i class="fa-solid fa-guitar"></i><span>Mástil</span></button>
 						<button type="button" id="btnScoreVisible" title="Ver partitura"><i class="fa-solid fa-music"></i><span>Partitura</span></button>
 						<button type="button" id="btnVertical" class="active" title="Cambiar orientación"><i class="fa-solid fa-arrows-up-down"></i><span>Vertical</span></button>
 						<button type="button" id="btnHorizontal" title="Cambiar orientación"><i class="fa-solid fa-arrows-left-right"></i><span>Horizontal</span></button>
@@ -772,18 +773,14 @@
 					</div>
 
 					<div id="workspaceScore">
-
 						<div id="vextab-score" class="vextab-auto" editor="false" editor-width="0" editor-height="0" style="color:white;">
-
 <!--
 							options scale=0.7 stave-distance=20
 							tab-stems=true tab-stem-direction=up
 							tabstave notation=true tablature=true key=C time=4/4 clef=treble
 							options space=70
 -->
-
 						</div>
-
 					</div>
 
 				</div> <!-- Fin workspaceContentArea -->
@@ -793,9 +790,7 @@
 
 			<!-- CANVAS CURSOR -->
 
-			<div id="cursorTool">
-				<i class="fa-solid fa-pencil"></i>
-			</div>
+			<div id="cursorTool"><i class="fa-solid fa-pencil"></i></div>
 
 		</main> <!-- Fin workspace -->
 
@@ -818,7 +813,7 @@
 
 		<div class="footerDivs">
 			<strong>RECURSOS</strong>
-			<a href="#"><i class="fa-solid fa-globe"></i>Página web</a>
+			<a href="#"><i class="fa-solid fa-house"></i>Home</a>
 			<a href="#"><i class="fa-solid fa-graduation-cap"></i>Aula Virtual</a>
 			<a href="#"><i class="fa-brands fa-youtube"></i>YouTube</a>
 			<!--<a href="#"><i class="fa-brands fa-github"></i>GitHub</a>-->
