@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="1.1" type="library" created="10/09/2026" modified="22/09/2026" name="Pentatonicas alteradas con b6" desc="En este curso vamos a explorar el uso de la escala pentatonica menor b6. Para ello utilizaremos ejercicios prácticos y patrones de escalas a plicados a standards de jazz.">
+<library version="1.1" type="library" created="10/09/2026" modified="22/09/2026" name="Pentatonicas alteradas con b6">
+
+	<desc>
+		En este curso vamos a explorar el uso de la escala pentatonica menor b6. Para ello utilizaremos ejercicios prácticos y patrones de escalas aplicados a standards de jazz. Además, profundizaremos en el análisis formal de estructuras armónicas típicas del estilo para un lenguaje moderno.
+	</desc>
 
 	<categories>
 		<category id="r6y20u">Utilidades</category>
 	</categories>
 
 	<project id="1g6m9lf" title="score" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="score" content="welcome-1g6m9lf-Prueba-MusicXML.xml">			</resource>
+			<resource type="score" content="welcome-1g6m9lf-Prueba-MusicXML.xml"/>
 		</resources>
 	</project>
 
 	<project id="ejzbpm" title="txt" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="text" content="&lt;![CDATA[hf hfdhdsfhdf h]]&gt;">			</resource>
+			<resource type="text" content="&lt;![CDATA[hf hfdhdsfhdf h]]&gt;"/>
 		</resources>
 	</project>
 
 	<project id="13pvqhe" title="aFoto" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="image" content="welcome-13pvqhe-1fec0e76aed7409549d83047b7a56068.jpg">			</resource>
+			<resource type="image" content="welcome-13pvqhe-1fec0e76aed7409549d83047b7a56068.jpg"/>
 		</resources>
 	</project>
 
@@ -69,61 +61,38 @@
 			<note string="3" fret="7" color="#ffffff" text="" chord="" order="4"/>
 			<note string="3" fret="7" color="#ffffff" text="" chord="" order="5"/>
 		</notes>
-		<barres/>
-		<nutNotes/>
-		<resources/>
 	</project>
 
 	<project id="10uth4f" title="cosas" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="text" content="&lt;![CDATA[JJJAJAJAJAJAJAAJAAJ JAJAJJA LOLOLOLOL sfs s dbs scb ]]&gt;">			</resource>
-			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;KKKKKK&lt;h2&gt;]]&gt;">			</resource>
-			<resource type="image" content="welcome-10uth4f-ChatGPT-Image-26-feb-2026,-10_07_25.png">			</resource>
+			<resource type="text" content="&lt;![CDATA[JJJAJAJAJAJAJAAJAAJ JAJAJJA LOLOLOLOL sfs s dbs scb ]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;KKKKKK&lt;h2&gt;]]&gt;"/>
+			<resource type="image" content="welcome-10uth4f-ChatGPT-Image-26-feb-2026,-10_07_25.png"/>
 		</resources>
 	</project>
 
 	<project id="rtln41" title="texto linea" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="text" content="&lt;![CDATA[Hola, esto es una carta    kakakakaak]]&gt;">			</resource>
-			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;kkkkKKKK&lt;/h1&gt; &lt;p&gt;Jejeje&lt;/p&gt; &lt;br&gt; &lt;p style=&quot;color:red&quot;&gt;Tuuuuu&lt;/p&gt;]]&gt;">			</resource>
+			<resource type="text" content="&lt;![CDATA[Hola, esto es una carta    kakakakaak]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;kkkkKKKK&lt;/h1&gt; &lt;p&gt;Jejeje&lt;/p&gt; &lt;br&gt; &lt;p style=&quot;color:red&quot;&gt;Tuuuuu&lt;/p&gt;]]&gt;"/>
 		</resources>
 	</project>
 
 	<project id="1sgrfqj" title="wiki" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="link" content="https://es.wikipedia.org/wiki/Wikipedia">			</resource>
+			<resource type="link" content="https://es.wikipedia.org/wiki/Wikipedia"/>
 		</resources>
 	</project>
 
 	<project id="t9aiip" title="musixXML" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="score" content="welcome-t9aiip-1.xml">			</resource>
+			<resource type="score" content="welcome-t9aiip-1.xml"/>
 		</resources>
 	</project>
 
 	<project id="y8rmfd" title="MiMIDI" category="r6y20u" projectType="multimedia" fretboardType="">
-		<settings/>
-		<notes/>
-		<barres/>
-		<nutNotes/>
 		<resources>
-			<resource type="midi" content="welcome-y8rmfd-23.MID">			</resource>
+			<resource type="midi" content="welcome-y8rmfd-23.MID"/>
 		</resources>
 	</project>
 
@@ -178,9 +147,6 @@
 			<note string="1" fret="1" color="#ffcc00" text="" chord="4" order="21"/>
 			<note string="0" fret="1" color="#ffcc00" text="" chord="4" order="22"/>
 		</notes>
-		<barres/>
-		<nutNotes/>
-		<resources/>
 	</project>
 
 </library>
