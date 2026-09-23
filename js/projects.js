@@ -168,7 +168,11 @@ async function loadProject(project) {
 
 }
 
-function parseLibrariesXML(xml) {
+function parseLibrariesXml(xml) {
+
+	const libraries = [];
+
+	xmlLibrariesVersion = xml.querySelector("libraries")?.getAttribute("version") || "1.0";
 
 	const libraryElements = xml.querySelectorAll("library");
 
@@ -187,10 +191,13 @@ function parseLibrariesXML(xml) {
 
 	});
 
+	return libraries;
+
 }
 
 function parseLibraryXml(xml) {
 
+	libraryId = xml.querySelector("library")?.getAttribute("id") || "";
 	libraryVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
 	libraryType = xml.querySelector("library")?.getAttribute("type") || "";
 	libraryCreated = xml.querySelector("library")?.getAttribute("created") || "";
@@ -654,53 +661,6 @@ function projectToXml(project) {
 
 }
 
-function writeLibraryXML() {
-
-	const today = new Date();
-	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
-
-	const lines = [];
-
-	libraryVersion = (parseFloat(libraryVersion) + 0.1).toFixed(1);
-
-	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
-	lines.push(
-		'<library ' +
-		`version="${escapeXml(libraryVersion)}" ` +
-		`type="${escapeXml(libraryType)}" ` +
-		`created="${escapeXml(libraryCreated)}" ` +
-		`modified="${escapeXml(date)}" ` +
-		`level="${escapeXml(libraryLevel)}" ` +
-		`name="${escapeXml(libraryName)}">`
-	);
-
-	// Descripción
-	lines.push(`\t<desc>${escapeXml(libraryDesc)}</desc>`);
-
-	// Categorías
-	lines.push("\t<categories>");
-
-	categories.forEach(category => {
-
-		lines.push(`\t\t<category id="${escapeXml(category.id)}">${escapeXml(category.name)}</category>`);
-
-	});
-
-	lines.push("\t</categories>");
-
-	// Proyectos
-	library.forEach(project => {
-
-		lines.push(projectToXml(project));
-
-	});
-
-	lines.push("</library>");
-
-	return lines.join("\n");
-
-}
-
 async function openLibraryXMLFile() {
 
 	try {
@@ -1118,7 +1078,7 @@ async function saveCurrentProject() {
 
 	}
 
-	const saved = await saveProjectsFile();
+	const saved = await saveLibrariesFile();
 
 	if (saved) {
 
@@ -1138,9 +1098,79 @@ async function saveCurrentProject() {
 
 }
 
-async function saveProjectsFile() {
+async function saveLibrariesFile() {
+
+	const libraryIndex = libraries.findIndex(item => item.id === libraryId);
+
+	let librariesChanged = false;
+
+
+	////////////////////////////////////////////////////////////
+	// ACTUALIZAR ARRAY DE LIBRERÍAS SI HA CAMBIADO
+	////////////////////////////////////////////////////////////
+
+	if (libraryIndex !== -1) {
+
+		const currentLibrary = libraries[libraryIndex];
+
+		librariesChanged =
+			currentLibrary.created !== libraryCreated ||
+			currentLibrary.name !== libraryName ||
+			currentLibrary.desc !== libraryDesc ||
+			currentLibrary.level !== libraryLevel;
+
+
+		if (librariesChanged) {
+
+			libraries[libraryIndex] = {
+				...currentLibrary,
+				created: libraryCreated,
+				name: libraryName,
+				desc: libraryDesc,
+				level: libraryLevel
+			};
+
+		}
+
+	}
+
+
+	////////////////////////////////////////////////////////////
+	// GUARDAR XML GENERAL DE LIBRERÍAS SI HA CAMBIADO
+	////////////////////////////////////////////////////////////
+
+	if (librariesChanged) {
+
+		const xmlLibrariesText = writeLibrariesXML();
+
+		try {
+
+			const blob = new Blob(
+				[xmlLibrariesText],
+				{type:"application/xml;charset=utf-8"}
+			);
+
+			downloadBlob(
+				blob,
+				xmlLibrariesXml.substring(xmlLibrariesXml.lastIndexOf("/") + 1)
+			);
+
+		} catch (error) {
+
+			showAlert("No se pudo guardar el archivo de las librerías.","error");
+			console.log("No se pudo guardar el archivo de las librerías: ",error);
+
+		}
+
+	}
+
+
+	////////////////////////////////////////////////////////////
+	// GUARDAR SIEMPRE EL XML DE LA LIBRERÍA ACTUAL
+	////////////////////////////////////////////////////////////
 
 	const xmlText = writeLibraryXML();
+
 
 	// Chrome / Edge: guardar en el archivo elegido.
 	if (libraryFileHandle) {
@@ -1156,11 +1186,12 @@ async function saveProjectsFile() {
 
 		} catch (error) {
 
-			showAlert("No se pudo escribir el XML elegido. Se descargará una copia.","error");
+			showAlert("No se pudo escribir el archivo de la librería de proyectos elegido. Se descargará una copia.","error");
 
 		}
 
 	}
+
 
 	// Alternativa: descargar el archivo.
 	try {
@@ -1170,18 +1201,110 @@ async function saveProjectsFile() {
 			{type:"application/xml;charset=utf-8"}
 		);
 
-		downloadBlob(blob,xmlLibrary.substring(xmlLibrary.lastIndexOf("/") + 1));
+		downloadBlob(
+			blob,
+			xmlLibrary.substring(xmlLibrary.lastIndexOf("/") + 1)
+		);
 
 		return true;
 
 	} catch (error) {
 
-		showAlert("No se pudo descargar el archivo XML.","error");
-		console.log("No se pudo descargar el archivo XML: ",error);
+		showAlert("No se pudo guardar el archivo de la librería de proyectos.","error");
+		console.log("No se pudo guardar el archivo de la librería de proyectos: ",error);
 
 		return false;
 
 	}
+
+}
+
+function writeLibrariesXML() {
+
+	const today = new Date();
+	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
+
+	const lines = [];
+
+	xmlLibrariesVersion = (parseFloat(xmlLibrariesVersion) + 0.1).toFixed(1);
+
+	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
+
+	lines.push(
+		'<libraries ' +
+		`version="${escapeXml(xmlLibrariesVersion)}" ` +
+		`modified="${escapeXml(date)}">`
+	);
+
+
+	// Librerías
+	libraries.forEach(library => {
+
+		lines.push(
+			"\t<library " +
+			`id="${escapeXml(library.id)}" ` +
+			`created="${escapeXml(library.created)}" ` +
+			`modified="${escapeXml(library.modified)}" ` +
+			`level="${escapeXml(library.level)}" ` +
+			`name="${escapeXml(library.name)}">`
+		);
+
+		lines.push(`\t\t<desc>${escapeXml(library.desc)}</desc>`);
+
+		lines.push("\t</library>");
+
+	});
+
+	lines.push("</libraries>");
+
+	return lines.join("\n");
+
+}
+
+function writeLibraryXML() {
+
+	const today = new Date();
+	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
+
+	const lines = [];
+
+	libraryVersion = (parseFloat(libraryVersion) + 0.1).toFixed(1);
+
+	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
+	lines.push(
+		'<library ' +
+		`version="${escapeXml(libraryVersion)}" ` +
+		`type="${escapeXml(libraryType)}" ` +
+		`created="${escapeXml(libraryCreated)}" ` +
+		`modified="${escapeXml(date)}" ` +
+		`level="${escapeXml(libraryLevel)}" ` +
+		`name="${escapeXml(libraryName)}">`
+	);
+
+	// Descripción
+	lines.push(`\t<desc>${escapeXml(libraryDesc)}</desc>`);
+
+	// Categorías
+	lines.push("\t<categories>");
+
+	categories.forEach(category => {
+
+		lines.push(`\t\t<category id="${escapeXml(category.id)}">${escapeXml(category.name)}</category>`);
+
+	});
+
+	lines.push("\t</categories>");
+
+	// Proyectos
+	library.forEach(project => {
+
+		lines.push(projectToXml(project));
+
+	});
+
+	lines.push("</library>");
+
+	return lines.join("\n");
 
 }
 
@@ -1216,7 +1339,7 @@ async function deleteProject(id) {
 	library = library.filter(p => p.id !== id);
 
 	// Guardar el XML
-	saveProjectsFile();
+	saveLibrariesFile();
 
 	// Actualizar la lista
 	renderLibrary();
@@ -1364,7 +1487,7 @@ function addCategory() {
 
 	cmbProjectCategory.value = category.id;
 
-	saveProjectsFile();
+	saveLibrariesFile();
 
 }
 
@@ -1436,7 +1559,7 @@ function deleteCategory() {
 		cmbProjectCategory.value = categories[0].id;
 	}
 
-	saveProjectsFile();
+	saveLibrariesFile();
 
 }
 

@@ -13,8 +13,16 @@ let dataURL = "";
 if (isLocal) dataURL = baseURL;
 
 const dataURL_Images = dataURL + "img/";
+
 const dataURL_Users = dataURL;
+const xmlUsers = dataURL_Users + "users.xml";
+
 const dataURL_Libraries = dataURL + "libraries/";
+const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
+
+//Modificable
+let xmlLibrary = dataURL_Libraries + "welcome.xml";
+
 const dataURL_Multimedia = dataURL_Libraries + "multimedia/";
 const dataURL_Samples = dataURL + "samples/";
 
@@ -131,27 +139,21 @@ let userName;
 
 let isUserActive = true;
 
-let xmlUsers = dataURL_Users + "users.xml";
-
 let xmlUsersVersion = "1.0";
 
 //LIBRERIAS Y PROYECTOS
 
 let libraries = [];
 
-let xmlLibraries = dataURL_Libraries + "index.xml";
-
 let xmlLibrariesVersion = "1.0";
-let xmlLibrariesCreated = "";
 
 let library = [];
-
-let xmlLibrary = dataURL_Libraries + "welcome.xml";
 
 let xmlLibraryLoaded = false;
 
 let libraryFileHandle = null;
 
+let libraryId = "";
 let libraryVersion = "1.0";
 let libraryType = "library";
 let libraryName = "Sin Nombre";
@@ -277,7 +279,7 @@ const scoreNoteColor = "blue";
 const scoreScrollColor = "green";
 
 let scoreArray = [];
-let scoreFooter = "www.jazzguitarnomad.com";
+let scoreFooter = watermark;
 
 let firstTick = true;
 

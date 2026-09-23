@@ -26,6 +26,8 @@ async function initializeApp() {
 
 		setLoadingProgress(20, "Cargando librerías y proyectos...");
 
+		await loadXML("libraries",xmlLibraries);
+
 		await loadXML("library",xmlLibrary);
 
 		await initializeProjects();
@@ -678,6 +680,8 @@ async function loadXML(type,file) {
 			case "libraries":
 
 				libraries = parseLibrariesXml(xml);
+
+				break;
 
 			case "library":
 
