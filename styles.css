@@ -23,6 +23,22 @@
 
 }
 
+.difficultyEasy {
+	color: #4CAF50;
+}
+
+.difficultyMedium {
+	color: #FCD22D;
+}
+
+.difficultyHard {
+	color: #FF9800;
+}
+
+.difficultyVeryHard {
+	color: #F44336;
+}
+
 * {
 	box-sizing: border-box;
 }
