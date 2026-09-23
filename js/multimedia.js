@@ -2387,7 +2387,10 @@ async function selectMultimediaFiles() {
 
 		if (!content) return;
 
-		resources[projectType].push({content: content.trim()});
+		multimediaResources.push({
+			type: projectType,
+			content: content.trim()
+		});
 
 		createMultimediaElement(projectType, content.trim());
 
@@ -2496,8 +2499,6 @@ async function selectMultimediaFiles() {
 
 		}
 
-//		console.log(resources);
-
 	});
 
 	input.click();
@@ -2595,24 +2596,140 @@ async function saveFileToMultimedia(file, type) {
 
 
 		// --------------------------------
-		// CREAR ARCHIVO
+		// CALCULAR HASH
 		// --------------------------------
 
-		const name = file.name.substring(0,file.name.lastIndexOf(".")).replace(/[\s.]+/g,"-");
-		const extension = file.name.split(".").pop();
+		const buffer = await file.arrayBuffer();
 
-		const lib = xmlLibrary.substring(xmlLibrary.lastIndexOf("/") + 1,xmlLibrary.lastIndexOf("."));
+		const hashBuffer = await crypto.subtle.digest(
+			"SHA-256",
+			buffer
+		);
 
-		const fileName = lib + "-" + currentProjectId + "-" + name + "." + extension;
+		const hashArray = Array.from(
+			new Uint8Array(hashBuffer)
+		);
+
+		const fileHash = hashArray
+			.map(byte => byte.toString(16).padStart(2, "0"))
+			.join("");
+
+
+		// --------------------------------
+		// CARGAR ÍNDICE
+		// --------------------------------
+
+		const index = await loadMultimediaIndex();
+
+		if (!index[type]) {
+			index[type] = {};
+		}
+
+
+		// --------------------------------
+		// COMPROBAR SI YA EXISTE
+		// EL MISMO CONTENIDO
+		// --------------------------------
+
+		const existingFileName = index[type][fileHash];
+
+		if (existingFileName) {
+
+			try {
+
+				await folder.getFileHandle(existingFileName);
+
+				// --------------------------------
+				// EL ARCHIVO YA EXISTE
+				// --------------------------------
+
+				const resourceExists = multimediaResources.some(resource =>
+					resource.type === type &&
+					resource.content === existingFileName
+				);
+
+				if (!resourceExists) {
+
+					multimediaResources.push({
+						type: type,
+						content: existingFileName
+					});
+
+					createMultimediaElement(
+						type,
+						existingFileName
+					);
+
+				}
+
+				showAlert(
+					"El archivo ya existe.",
+					"success"
+				);
+
+				return;
+
+			} catch {
+
+				// El índice apunta a un archivo que ya no existe.
+				// Eliminamos la entrada antigua.
+
+				delete index[type][fileHash];
+
+			}
+
+		}
+
+
+		// --------------------------------
+		// NOMBRE ORIGINAL
+		// --------------------------------
+
+		const extensionIndex = file.name.lastIndexOf(".");
+
+		const name = extensionIndex > 0
+			? file.name.substring(0, extensionIndex)
+			: file.name;
+
+		const extension = extensionIndex > 0
+			? file.name.substring(extensionIndex)
+			: "";
+
+
+		// --------------------------------
+		// BUSCAR NOMBRE DISPONIBLE
+		// --------------------------------
+
+		let fileName = file.name;
+		let counter = 1;
+
+		while (true) {
+
+			try {
+
+				await folder.getFileHandle(fileName);
+
+				fileName = `${name}-${counter}${extension}`;
+
+				counter++;
+
+			} catch {
+
+				break;
+
+			}
+
+		}
+
+
+		// --------------------------------
+		// CREAR ARCHIVO
+		// --------------------------------
 
 		const fileHandle = await folder.getFileHandle(
 			fileName,
 			{ create: true }
 		);
-
-		// --------------------------------
-		// ESCRIBIR ARCHIVO
-		// --------------------------------
 
 		const writable = await fileHandle.createWritable();
 
@@ -2622,21 +2739,102 @@ async function saveFileToMultimedia(file, type) {
 
 
 		// --------------------------------
+		// ACTUALIZAR ÍNDICE
+		// --------------------------------
+
+		index[type][fileHash] = fileName;
+
+		await saveMultimediaIndex(index);
+
+
+		// --------------------------------
 		// GUARDAR REFERENCIA
 		// --------------------------------
 
-		resources[type].push({content: fileName});
+		multimediaResources.push({
+			type: type,
+			content: fileName
+		});
 
-		createMultimediaElement(type,fileName);
+		createMultimediaElement(
+			type,
+			fileName
+		);
 
-		showAlert("Archivo guardado.", "success");
+
+		// --------------------------------
+		// AVISO
+		// --------------------------------
+
+		if (fileName === file.name) {
+
+			showAlert(
+				"Archivo guardado.",
+				"success"
+			);
+
+		} else {
+
+			showAlert(
+				`El archivo ya existía con otro contenido. Guardado como ${fileName}.`,
+				"success"
+			);
+
+		}
 
 	} catch (error) {
 
-		showAlert("Error guardando el archivo", "error");
-		console.log("Error guardando el archivo: " + error);
+		showAlert(
+			"Error guardando el archivo",
+			"error"
+		);
+
+		console.log(
+			"Error guardando el archivo: " + error
+		);
 
 	}
+
+}
+
+async function loadMultimediaIndex() {
+
+	const indexHandle = await multimediaDirectory.getFileHandle(
+		".multimedia-index.json",
+		{ create: true }
+	);
+
+	try {
+
+		const file = await indexHandle.getFile();
+		const text = await file.text();
+
+		if (!text.trim()) return {};
+
+		return JSON.parse(text);
+
+	} catch {
+
+		return {};
+
+	}
+
+}
+
+async function saveMultimediaIndex(index) {
+
+	const indexHandle = await multimediaDirectory.getFileHandle(
+		".multimedia-index.json",
+		{ create: true }
+	);
+
+	const writable = await indexHandle.createWritable();
+
+	await writable.write(
+		JSON.stringify(index, null, "\t")
+	);
+
+	await writable.close();
 
 }
 
@@ -2703,12 +2901,9 @@ function createMultimediaElement(type, content) {
 
 	let element;
 	let resourceUrl = "";
-	let realName = "";
 	let fileName = content;
 
 	if (type !== "text"){
-
-		realName = fileName.substring(fileName.indexOf("-", fileName.indexOf("-") + 1) + 1);
 
 		if (type === "link" || type === "iframe"){
 			resourceUrl = fileName;
@@ -2756,7 +2951,7 @@ function createMultimediaElement(type, content) {
 			const audioLink = document.createElement("a");
 
 			audioLink.href = resourceUrl;
-			audioLink.innerHTML = "<i class='fa-solid fa-music'></i> " + (realName || "");
+			audioLink.innerHTML = "<i class='fa-solid fa-music'></i> " + (fileName || "");
 			audioLink.target = "_blank";
 
 			const audio = document.createElement("audio");
@@ -2786,7 +2981,7 @@ function createMultimediaElement(type, content) {
 
 			const midiLink = document.createElement("a");
 			midiLink.href = resourceUrl;
-			midiLink.innerHTML = "<i class='fa-solid fa-music'></i> " + (realName || "");
+			midiLink.innerHTML = "<i class='fa-solid fa-music'></i> " + (fileName || "");
 			midiLink.target = "_blank";
 
 			const midiLinkContainer = document.createElement("div");
@@ -2861,7 +3056,7 @@ function createMultimediaElement(type, content) {
 
 					element = document.createElement("a");
 					element.href = resourceUrl;
-					element.innerHTML = "<i class='fa-solid fa-file-word'></i> " + (realName || "");
+					element.innerHTML = "<i class='fa-solid fa-file-word'></i> " + (fileName || "");
 					element.target = "_blank";
 
 				}else{
@@ -2903,7 +3098,7 @@ function createMultimediaElement(type, content) {
 			element.className = "musicxml";
 			element.id = `musicXMLScore_${Date.now()}`;
 
-			loadMusicXML(resourceUrl, element);
+			loadMusicXMLFile(resourceUrl, element);
 
 			break;
 
@@ -2946,11 +3141,12 @@ async function renderMultimedia() {
 
 	workspaceMultimedia.innerHTML = "";
 
+
+	// DRAG AND DROP ----------------------
+
 	const pType = cmbProjectType.value !== "text" && cmbProjectType.value !== "link" && cmbProjectType.value !== "iframe";
 
 	if (isAdmin && pType){
-
-		// ZONA DRAG & DROP ----------------------
 
 		const dropZone = document.createElement("div");
 
@@ -2959,9 +3155,6 @@ async function renderMultimedia() {
 		dropZone.innerHTML = "<i class='fa-solid fa-cloud-arrow-up'></i><span>Arrastra aquí un archivo</span>";
 
 		workspaceMultimedia.appendChild(dropZone);
-
-
-		// DRAG & DROP ----------------------
 
 		dropZone.addEventListener("dragover", event => {
 
@@ -3021,24 +3214,21 @@ async function renderMultimedia() {
 
 	}
 
-	const project = library.find(project => project.id === currentProjectId);
 
 	// RECURSOS ----------------------
 
-	if (project?.resources) {
+	if (Array.isArray(multimediaResources)) {
 
-		for (const type of Object.keys(project.resources)) {
+		for (const resource of multimediaResources) {
 
-			for (const resource of project.resources[type]) {
-
-				createMultimediaElement(type, resource.content);
-
-			}
+			createMultimediaElement(resource.type, resource.content);
 
 		}
 
 	}
 
+
+	// TEXT AREA ----------------------
 
 	if (isAdmin && cmbProjectType.value === "text"){
 
@@ -3070,7 +3260,10 @@ async function renderMultimedia() {
 
 					let xmlText = "<![CDATA[" + text + "]]>";
 
-					resources[cmbProjectType.value].push({content: xmlText});
+					multimediaResources.push({
+						type: cmbProjectType.value,
+						content: xmlText
+					});
 
 					createMultimediaElement(cmbProjectType.value,text);
 
@@ -3092,7 +3285,7 @@ async function renderMultimedia() {
 
 }
 
-async function loadMusicXML(url, element) {
+async function loadMusicXMLFile(url, element) {
 
 	const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(element, {
 		autoResize: !isMobile,

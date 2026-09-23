@@ -1522,15 +1522,11 @@ btnNewUser.addEventListener("click", () => {
 
 btnUser.addEventListener("click", () => {
 
-	if (isAdmin){
+	currentTheme = currentTheme === "dark" ? "light" : "dark";
 
-		currentTheme = currentTheme === "dark" ? "light" : "dark";
+	setTheme(currentTheme);
 
-		setTheme(currentTheme);
-
-		if (isFretboardVisible) resizeCanvas();
-
-	}
+	if (isFretboardVisible) resizeCanvas();
 
 });
 

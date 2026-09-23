@@ -297,19 +297,7 @@ let recordingTimer = null;
 
 let camerasInfo = [];
 
-let resources = {
-	text: [],
-	video: [],
-	audio: [],
-	midi: [],
-	image: [],
-	score: [],
-	pdf: [],
-	document: [],
-	html: [],
-	link: [],
-	iframe: []
-};
+let multimediaResources = [];
 
 let midiData = null;
 let midiSynths = [];

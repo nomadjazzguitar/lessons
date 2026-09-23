@@ -152,7 +152,7 @@ function setUserState(){
 	
 			if (currentUser) {
 
-				userName = currentUser.name;
+				userName = currentUser.n;
 
 				if (!currentUser.active){
 					showAlert("El usuario '" + userName +"' no está activo.", "error");
@@ -301,7 +301,6 @@ function configureUserControls(){
 		btnUser.classList.remove("user");
 		btnUser.classList.add("admin");
 		btnUser.querySelector("i").className = "fa-solid fa-user-shield";
-		btnUser.style.cursor = "pointer";
 
 		txtUserTitle.textContent = "Admin";
 
@@ -899,28 +898,15 @@ function resetControlsValues(state){
 
 function initializeArrays(){
 
-	resources = {
-		text: [],
-		video: [],
-		audio: [],
-		midi: [],
-		image: [],
-		score: [],
-		pdf: [],
-		document: [],
-		html: [],
-		link: [],
-		iframe: []
-	};
-
+	multimediaResources = [];
 	history = [];
 	notes = [];
 	barreNotes = [];
 	nutNotes = Array(stringCount).fill(null);
-	noteOrder = 0;
 	aSequence = [];
 	aChords = [];
 
+	noteOrder = 0;
 }
 
 function setControlsEnabled(enabled) {
@@ -2233,13 +2219,13 @@ function chordNoteExists(string,fret,chord) {
 
 }
 
-async function encryptUser(email, password) {
+async function encryptUser(e) {
 
 	const encoder = new TextEncoder();
 
 	const keyMaterial = await crypto.subtle.importKey(
 		"raw",
-		encoder.encode(password),
+		encoder.encode(k),
 		"PBKDF2",
 		false,
 		["deriveKey"]
@@ -2271,7 +2257,7 @@ async function encryptUser(email, password) {
 			iv
 		},
 		key,
-		encoder.encode(email)
+		encoder.encode(e)
 	);
 
 	// Convertir a Base64 para poder transportarlo
@@ -2284,7 +2270,7 @@ async function encryptUser(email, password) {
 	return btoa(String.fromCharCode(...data));
 }
 
-async function decryptUser(encryptedData, password) {
+async function decryptUser(e) {
 
 	try {
 
@@ -2292,7 +2278,7 @@ async function decryptUser(encryptedData, password) {
 		const decoder = new TextDecoder();
 
 		const data = Uint8Array.from(
-			atob(encryptedData),
+			atob(e),
 			c => c.charCodeAt(0)
 		);
 
@@ -2302,7 +2288,7 @@ async function decryptUser(encryptedData, password) {
 
 		const keyMaterial = await crypto.subtle.importKey(
 			"raw",
-			encoder.encode(password),
+			encoder.encode(k),
 			"PBKDF2",
 			false,
 			["deriveKey"]
@@ -2354,8 +2340,8 @@ async function parseUsersXml(xml) {
 		[...xml.querySelectorAll("user")].map(async node => ({
 
 			id: node.getAttribute("id"),
-			name: node.getAttribute("name"),
-			email: node.getAttribute("email"),
+			n: node.getAttribute("n"),
+			e: node.getAttribute("e"),
 			active: node.getAttribute("active") === "true",
 			alta: node.getAttribute("alta"),
 			baja: node.getAttribute("baja"),
@@ -2380,7 +2366,9 @@ async function addUser(name, email) {
 
 		}
 
-		const encrypted = await encryptUser(email, k);
+		const n = await encryptUser(name);
+
+		const e = await encryptUser(email);
 
 		const date = new Date();
 
@@ -2391,8 +2379,8 @@ async function addUser(name, email) {
 		const userData = {
 
 			id: id,
-			name: name,
-			email: encrypted,
+			n: n,
+			e: e,
 			active: true,
 			alta: alta,
 			baja: "",
@@ -2435,8 +2423,8 @@ function saveUsersXml() {
 			xml += '\t<user';
 
 			xml += ' id="' + escapeXml(user.id) + '"';
-			xml += ' name="' + escapeXml(user.name) + '"';
-			xml += ' email="' + escapeXml(user.email) + '"';
+			xml += ' n="' + escapeXml(user.n) + '"';
+			xml += ' e="' + escapeXml(user.e) + '"';
 			xml += ' active="' + user.active + '"';
 			xml += ' alta="' + escapeXml(user.alta) + '"';
 			xml += ' baja="' + escapeXml(user.baja) + '"';

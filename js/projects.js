@@ -148,21 +148,14 @@ async function loadProject(project) {
 	// RECURSOS MULTIMEDIA
 	// --------------------------------
 
-	if (project.resources) {
+	if (Array.isArray(project?.resources)) {
 
-		for (const type of Object.keys(project.resources)) {
+		multimediaResources = project.resources.map(resource => ({
 
-			if (Array.isArray(project.resources[type])) {
+			type: resource.type || "",
+			content: resource.content || ""
 
-				resources[type] = project.resources[type].map(resource => ({
-
-					content: resource.content || ""
-
-				}));
-
-			}
-
-		}
+		}));
 
 	}
 
@@ -279,21 +272,7 @@ function parseLibraryXml(xml) {
 			// RECURSOS MULTIMEDIA
 			// --------------------------------
 
-			resources: {
-
-				text: [],
-				video: [],
-				audio: [],
-				midi: [],
-				image: [],
-				score: [],
-				pdf: [],
-				document: [],
-				html: [],
-				link: [],
-				iframe: []
-
-			}
+			resources: []
 
 		};
 
@@ -363,12 +342,9 @@ function parseLibraryXml(xml) {
 
 		projectNode.querySelectorAll("resources > resource").forEach(resourceNode => {
 
-			const type = resourceNode.getAttribute("type") || "";
+			project.resources.push({
 
-			if (!project.resources[type]) return;
-
-			project.resources[type].push({
-
+				type: resourceNode.getAttribute("type") || "",
 				content: resourceNode.getAttribute("content") || ""
 
 			});
@@ -468,21 +444,12 @@ function getCurrentProject() {
 
 		}).filter(note => note !== null),
 
-		resources: Object.fromEntries(
+		resources: multimediaResources.map(resource => ({
 
-			Object.entries(resources).map(([type, resourceList]) => [
+			type: resource.type || "",
+			content: resource.content || ""
 
-				type,
-
-				resourceList.map(resource => ({
-
-					content: resource.content || ""
-
-				}))
-
-			])
-
-		)
+		}))
 
 	};
 
@@ -632,31 +599,20 @@ function projectToXml(project) {
 	// RECURSOS MULTIMEDIA
 	// --------------------------------
 
-	const resourceTypes = Object.keys(project.resources || {});
-
-	const hasResources = resourceTypes.some(type =>
-		Array.isArray(project.resources[type]) &&
-		project.resources[type].length > 0
-	);
+	const hasResources = Array.isArray(project.resources) && project.resources.length > 0;
 
 	if (hasResources) {
 
 		lines.push(`\t\t<resources>`);
 
-		resourceTypes.forEach(type => {
+		project.resources.forEach(resource => {
 
-			if (!Array.isArray(project.resources[type])) return;
-
-			project.resources[type].forEach(resource => {
-
-				lines.push(
-					`\t\t\t<resource ` +
-					`type="${escapeXml(type)}" ` +
-					`content="${escapeXml(resource.content || "")}` +
-					`"/>`
-				);
-
-			});
+			lines.push(
+				`\t\t\t<resource ` +
+				`type="${escapeXml(resource.type || "")}" ` +
+				`content="${escapeXml(resource.content || "")}` +
+				`"/>`
+			);
 
 		});
 
@@ -865,7 +821,7 @@ function renderLibrary() {
 	// Eliminar todas las categorías actuales excepto la cabecera
 	libraryPanel.querySelectorAll(".projectCategory").forEach(category => category.remove());
 
-	getSortedCategories().forEach(category => {
+	categories.forEach(category => {
 
 		// --------------------------------
 		// CONTENEDOR DE LA CATEGORÍA
@@ -964,10 +920,13 @@ function renderLibrary() {
 
 			let iType = "<i class='fa-solid fa-guitar'></i>";
 
-			const resourceTypes = Object.keys(project.resources)
-				.filter(type =>
-					Array.isArray(project.resources[type]) && project.resources[type].length > 0
-				);
+			const resourceTypes = [
+				...new Set(
+					project.resources
+						.filter(resource => resource.content)
+						.map(resource => resource.type)
+				)
+			];
 
 			if (project.projectType === "fretboard") {
 
@@ -1334,7 +1293,7 @@ function refreshCategoryList() {
 
 	cmbProjectCategory.innerHTML = "";
 
-	getSortedCategories().forEach(category => {
+	categories.forEach(category => {
 
 		const option = document.createElement("option");
 
@@ -1345,12 +1304,6 @@ function refreshCategoryList() {
 
 	});
 
-}
-
-function getSortedCategories() {
-	return [...categories].sort((a, b) =>
-		a.name.localeCompare(b.name, "es", { sensitivity: "base" })
-	);
 }
 
 function addCategory() {
@@ -1514,6 +1467,14 @@ function createLibrary(fileName,type) {
 
 	const lines = [];
 
+	let name = "";
+
+	if (type === "user"){
+		name = "Clases";
+	}else{
+		name= fileName;
+	}
+
 	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
 
 	lines.push(
@@ -1522,7 +1483,7 @@ function createLibrary(fileName,type) {
 		`type="${escapeXml(type)}" ` +
 		`created="${escapeXml(date)}" ` +
 		`modified="" ` +
-		`name="${escapeXml(fileName)}">`
+		`name="${escapeXml(name)}">`
 	);
 
 	lines.push(`</library>`);
@@ -1563,10 +1524,10 @@ function setLibraryInfo(fileName){
 	if (isAdmin && xmlType === "Server"){
 		txtInfo = txtInfo + "<i><a href='";
 		txtInfo = txtInfo + xmlLibrary + "' target='_blank'>Librería " + fileName.replace(dataURL_Library, "") + "</a></i><br>";
-		txtInfo = txtInfo + "</a></i><br>";
+		txtInfo = txtInfo + "</a></i>";
 	}
 
-	if (libraryDesc !== "") txtInfo = txtInfo + libraryDesc;
+	if (libraryDesc !== "") txtInfo = txtInfo + "<p>" + libraryDesc + "</p>";
 
 	libraryPanelInfo.innerHTML = txtInfo;
 
@@ -1576,21 +1537,16 @@ function setLibraryInfo(fileName){
 
 function getFirstProject() {
 
-	if (!library || library.length === 0) {
-		return null;
-	}
+	if (!library || library.length === 0) return null;
 
-	const firstCategory = getSortedCategories()
+	const firstCategory = categories
 		.find(category =>
 			library.some(project => project.category === category.id)
 		);
 
-	if (!firstCategory) {
-		return null;
-	}
+	if (!firstCategory) return null;
 
-	return library
-		.find(project => project.category === firstCategory.id) || null;
+	return library.find(project => project.category === firstCategory.id) || null;
 
 /*
 	return library
