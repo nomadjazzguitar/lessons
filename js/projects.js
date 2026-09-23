@@ -1127,30 +1127,7 @@ async function saveLibrariesFiles() {
 	// GUARDAR XML GENERAL DE LIBRERÍAS SI HA CAMBIADO
 	////////////////////////////////////////////////////////////
 
-	if (librariesChanged) {
-
-		const xmlLibrariesText = writeLibrariesXML();
-
-		try {
-
-			const blob = new Blob(
-				[xmlLibrariesText],
-				{type:"application/xml;charset=utf-8"}
-			);
-
-			downloadBlob(
-				blob,
-				xmlLibraries.substring(xmlLibraries.lastIndexOf("/") + 1)
-			);
-
-		} catch (error) {
-
-			showAlert("No se pudo guardar el archivo de las librerías.","error");
-			console.log("No se pudo guardar el archivo de las librerías: ",error);
-
-		}
-
-	}
+	if (librariesChanged) modifyLibrariesXmlFile();
 
 
 	////////////////////////////////////////////////////////////
@@ -1202,6 +1179,31 @@ async function saveLibrariesFiles() {
 		console.log("No se pudo guardar el archivo de la librería de proyectos: ",error);
 
 		return false;
+
+	}
+
+}
+
+function modifyLibrariesXmlFile(){
+
+	const xmlLibrariesText = writeLibrariesXML();
+
+	try {
+
+		const blob = new Blob(
+			[xmlLibrariesText],
+			{type:"application/xml;charset=utf-8"}
+		);
+
+		downloadBlob(
+			blob,
+			xmlLibraries.substring(xmlLibraries.lastIndexOf("/") + 1)
+		);
+
+	} catch (error) {
+
+		showAlert("No se pudo guardar el archivo de las librerías.","error");
+		console.log("No se pudo guardar el archivo de las librerías: ",error);
 
 	}
 
@@ -1293,6 +1295,85 @@ function writeLibraryXML() {
 	lines.push("</library>");
 
 	return lines.join("\n");
+
+}
+
+function createLibrary(fileName,type) {
+
+	const today = new Date();
+	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
+
+	const lines = [];
+
+	const id = generateIDKey();
+
+	let name = "";
+
+	if (type === "user"){
+		name = "Clases";
+	}else{
+		name= fileName;
+	}
+
+	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
+
+	lines.push(
+		`<library ` +
+		`version="1.0" ` +
+		`id="${escapeXml(id)}" ` +
+		`type="${escapeXml(type)}" ` +
+		`created="${escapeXml(date)}" ` +
+		`modified="" ` +
+		`level="1" ` +
+		`name="${escapeXml(name)}">`
+	);
+
+	lines.push(`</library>`);
+
+	const xmlContent = lines.join("\n");
+
+	const blob = new Blob(
+		[xmlContent],
+		{ type: "application/xml;charset=utf-8" }
+	);
+
+	const url = URL.createObjectURL(blob);
+
+	const link = document.createElement("a");
+
+	link.href = url;
+
+	link.download = fileName + ".xml";
+
+	document.body.appendChild(link);
+
+	link.click();
+
+	document.body.removeChild(link);
+
+	URL.revokeObjectURL(url);
+
+
+	/////////////////////////////
+	//Modificamos el archivo de librerias
+	/////////////////////////////
+
+	if (type === "library"){
+
+		libraries.push({
+			id: id,
+			created: date,
+			modified: "",
+			level: 1,
+			name: name,
+			desc: ""
+		});
+
+		modifyLibrariesXmlFile();
+
+	}
+
+	return true;
 
 }
 
@@ -1585,65 +1666,6 @@ async function renderProject(){
 //		}
 
 	}
-
-}
-
-function createLibrary(fileName,type) {
-
-	const today = new Date();
-	const date = String(today.getDate()).padStart(2, "0") + "/" + String(today.getMonth() + 1).padStart(2, "0") + "/" + today.getFullYear();
-
-	const lines = [];
-
-	const id = generateIDKey();
-
-	let name = "";
-
-	if (type === "user"){
-		name = "Clases";
-	}else{
-		name= fileName;
-	}
-
-	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
-
-	lines.push(
-		`<library ` +
-		`version="1.0" ` +
-		`id="${escapeXml(id)}" ` +
-		`type="${escapeXml(type)}" ` +
-		`created="${escapeXml(date)}" ` +
-		`modified="" ` +
-		`level="1" ` +
-		`name="${escapeXml(name)}">`
-	);
-
-	lines.push(`</library>`);
-
-	const xmlContent = lines.join("\n");
-
-	const blob = new Blob(
-		[xmlContent],
-		{ type: "application/xml;charset=utf-8" }
-	);
-
-	const url = URL.createObjectURL(blob);
-
-	const link = document.createElement("a");
-
-	link.href = url;
-
-	link.download = fileName + ".xml";
-
-	document.body.appendChild(link);
-
-	link.click();
-
-	document.body.removeChild(link);
-
-	URL.revokeObjectURL(url);
-
-	return true;
 
 }
 
