@@ -177,6 +177,8 @@ function parseLibraryXml(xml) {
 	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
 	libraryNameText.value = libraryName;
 
+	libraryLevel = Number(xml.querySelector("library")?.getAttribute("level") ?? 1);
+
 	libraryDesc = xml.querySelector("desc")?.textContent.trim() || "";
 	libraryDescText.value = libraryDesc;
 
@@ -647,9 +649,9 @@ function writeLibraryXML() {
 		`type="${escapeXml(xmlLibraryType)}" ` +
 		`created="${escapeXml(xmlCreated)}" ` +
 		`modified="${escapeXml(date)}" ` +
+		`level="${escapeXml(libraryLevel)}" ` +
 		`name="${escapeXml(libraryName)}">`
 	);
-//	lines.push("");
 
 	// Descripción
 	lines.push(`\t<desc>${escapeXml(libraryDesc)}</desc>`);
@@ -664,13 +666,11 @@ function writeLibraryXML() {
 	});
 
 	lines.push("\t</categories>");
-//	lines.push("");
 
 	// Proyectos
 	library.forEach(project => {
 
 		lines.push(projectToXml(project));
-//		lines.push("");
 
 	});
 
@@ -1467,6 +1467,8 @@ function createLibrary(fileName,type) {
 
 	const lines = [];
 
+	const id = generateIDKey();
+
 	let name = "";
 
 	if (type === "user"){
@@ -1480,9 +1482,11 @@ function createLibrary(fileName,type) {
 	lines.push(
 		`<library ` +
 		`version="1.0" ` +
+		`id="${escapeXml(id)}" ` +
 		`type="${escapeXml(type)}" ` +
 		`created="${escapeXml(date)}" ` +
 		`modified="" ` +
+		`level="1" ` +
 		`name="${escapeXml(name)}">`
 	);
 
@@ -1517,13 +1521,18 @@ function createLibrary(fileName,type) {
 
 function setLibraryInfo(fileName){
 
-	libraryPanelHeaderTitle.textContent = libraryName === "" ? "Sin Nombre" : libraryName;
+	const difficulty = difficultyLevels?.[libraryLevel];
+
+	libraryPanelHeaderTitle.innerHTML = `
+		${difficulty ? `<i class="fa-solid ${difficulty.icon} ${difficulty.class}" title="Nivel: ${difficulty.name}"></i> ` : ""}
+		${libraryName === "" ? "Sin Nombre" : libraryName}
+	`;
 
 	let txtInfo = "";
 
 	if (isAdmin && xmlType === "Server"){
 		txtInfo = txtInfo + "<i><a href='";
-		txtInfo = txtInfo + xmlLibrary + "' target='_blank'>Librería " + fileName.replace(dataURL_Library, "") + "</a></i><br>";
+		txtInfo = txtInfo + xmlLibrary + "' target='_blank'>Librería " + fileName.replace(dataURL_Libraries, "") + "</a></i><br>";
 		txtInfo = txtInfo + "</a></i>";
 	}
 

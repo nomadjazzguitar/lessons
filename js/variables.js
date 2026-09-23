@@ -14,8 +14,8 @@ if (isLocal) dataURL = baseURL;
 
 const dataURL_Images = dataURL + "img/";
 const dataURL_Users = dataURL;
-const dataURL_Library = dataURL + "library/";
-const dataURL_Multimedia = dataURL_Library + "multimedia/";
+const dataURL_Libraries = dataURL + "libraries/";
+const dataURL_Multimedia = dataURL_Libraries + "multimedia/";
 const dataURL_Samples = dataURL + "samples/";
 
 
@@ -70,8 +70,6 @@ let topControlsWasOpen = true;
 let libraryWasClosed = false;
 
 let currentTheme = "dark";
-
-/*4CAF70*/
 
 const themes = {
 
@@ -130,6 +128,8 @@ let k = "admin";
 
 let lib = null;
 
+let libraries = [];
+
 let libraryLoaded = false;
 
 let library = [];
@@ -141,15 +141,25 @@ let projectModified = false;
 
 let categories = [];
 
-let xmlLibrary = dataURL_Library + "welcome.xml";
-let xmlLibraryType = "library";
 let xmlVersion = "1.0";
 let xmlType = "Server";
 
 let xmlCreated = "";
 
+let xmlLibrary = dataURL_Libraries + "welcome.xml";
+let xmlLibraryType = "library";
+
 let libraryName = "Sin Nombre";
 let libraryDesc = "Descripción";
+let libraryLevel = 1;
+
+const difficultyLevels = [
+	{ name: "Básico", icon: "fa-thermometer-quarter", class: "difficultyEasy" },
+	{ name: "Medio", icon: "fa-thermometer-half", class: "difficultyMedium" },
+	{ name: "Intermedio", icon: "fa-thermometer-three-quarters", class: "difficultyHard" },
+	{ name: "Avanzado", icon: "fa-thermometer-full", class: "difficultyVeryHard" }
+];
+
 
 
 /*==================================================
@@ -393,6 +403,7 @@ const chkInlays = document.getElementById("chkInlays");
 	REFERENCIAS DOM: GRUPOS DE HERRAMIENTAS
 ==================================================*/
 
+
 const topProject = document.getElementById("topProject");
 const topCategory = document.getElementById("topCategory");
 const topLibrary = document.getElementById("topLibrary");
@@ -442,6 +453,7 @@ const chkFretboardZoom = document.getElementById("chkFretboardZoom");
 /*==================================================
 	REFERENCIAS DOM: PROYECTOS
 ==================================================*/
+
 
 const btnNewUser = document.getElementById("btnNewUser");
 const btnCreate = document.getElementById("btnCreate");

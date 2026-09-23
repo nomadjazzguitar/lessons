@@ -178,9 +178,9 @@ function setUserState(){
 
 	}
 
-	if (!isAdmin && user !== null) xmlLibrary = dataURL_Library + user + ".xml";
+	if (!isAdmin && user !== null) xmlLibrary = dataURL_Libraries + user + ".xml";
 
-	if (lib !== null && isUserActive) xmlLibrary = dataURL_Library + lib + ".xml";
+	if (lib !== null && isUserActive) xmlLibrary = dataURL_Libraries + lib + ".xml";
 
 }
 
@@ -735,8 +735,8 @@ function resetControlsValues(state){
 		orientation = window.innerWidth <= 480 ? "vertical" : "horizontal";
 		isScoreVisible = window.innerWidth <= 480 ? false : true;
 
-		projectType = "fretboard";
 		fretboardType = "sequence";
+		projectType = "fretboard";
 
 	}
 
@@ -921,11 +921,7 @@ function setControlsEnabled(enabled) {
 	span.style.opacity = enabled ? 1 : "0.55";
     });
 
-    if (enabled) {
-
-	setControlsState();
-
-    }
+    if (enabled) setControlsState();
 
 }
 
