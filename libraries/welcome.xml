@@ -7,17 +7,17 @@
 	</categories>
 	<project id="1g6m9lf" title="score" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="score" content="welcome-1g6m9lf-Prueba-MusicXML.xml"/>
+			<resource type="musicxml" content="welcome-1g6m9lf-Prueba-MusicXML.xml" width="90" />
 		</resources>
 	</project>
 	<project id="ejzbpm" title="txt" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[hf hfdhdsfhdf h]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[hf hfdhdsfhdf h]]&gt;" width="90" />
 		</resources>
 	</project>
 	<project id="13pvqhe" title="aFoto" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="image" content="welcome-13pvqhe-1fec0e76aed7409549d83047b7a56068.jpg"/>
+			<resource type="image" content="welcome-13pvqhe-1fec0e76aed7409549d83047b7a56068.jpg" width="90" />
 		</resources>
 	</project>
 	<project id="15lew6c" title="notas" category="r6y20u" projectType="fretboard" fretboardType="sequence">
@@ -57,30 +57,30 @@
 	</project>
 	<project id="10uth4f" title="cosas" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[JJJAJAJAJAJAJAAJAAJ JAJAJJA LOLOLOLOL sfs s dbs scb ]]&gt;"/>
-			<resource type="image" content="welcome-10uth4f-ChatGPT-Image-26-feb-2026,-10_07_25.png"/>
-			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;KKKKKK&lt;h2&gt;]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[JJJAJAJAJAJAJAAJAAJ JAJAJJA LOLOLOLOL sfs s dbs scb ]]&gt;" width="90" />
+			<resource type="image" content="welcome-10uth4f-ChatGPT-Image-26-feb-2026,-10_07_25.png" width="90" />
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;KKKKKK&lt;h2&gt;]]&gt;" width="90" />
 		</resources>
 	</project>
 	<project id="rtln41" title="texto linea" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[Hola, esto es una carta    kakakakaak]]&gt;"/>
-			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;kkkkKKKK&lt;/h1&gt; &lt;p&gt;Jejeje&lt;/p&gt; &lt;br&gt; &lt;p style=&quot;color:red&quot;&gt;Tuuuuu&lt;/p&gt;]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[Hola, esto es una carta    kakakakaak]]&gt;" width="90" />
+			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;kkkkKKKK&lt;/h1&gt; &lt;p&gt;Jejeje&lt;/p&gt; &lt;br&gt; &lt;p style=&quot;color:red&quot;&gt;Tuuuuu&lt;/p&gt;]]&gt;" width="90" />
 		</resources>
 	</project>
 	<project id="1sgrfqj" title="wiki" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="link" content="https://es.wikipedia.org/wiki/Wikipedia"/>
+			<resource type="link" content="https://es.wikipedia.org/wiki/Wikipedia" width="90" />
 		</resources>
 	</project>
 	<project id="t9aiip" title="musixXML" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="score" content="welcome-t9aiip-1.xml"/>
+			<resource type="musicxml" content="welcome-t9aiip-1.xml" width="90" />
 		</resources>
 	</project>
 	<project id="y8rmfd" title="MiMIDI" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="midi" content="welcome-y8rmfd-23.MID"/>
+			<resource type="midi" content="welcome-y8rmfd-23.MID" width="90" />
 		</resources>
 	</project>
 	<project id="1uenjym" title="footprints" category="r6y20u" projectType="fretboard" fretboardType="chord">
@@ -137,42 +137,42 @@
 	</project>
 	<project id="f0o7rx" title="0" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[Bienvenido!!!!]]&gt;"/>
-			<resource type="image" content="welcome-f0o7rx-Pattern-Wallpapers-(1).jpg"/>
-			<resource type="text" content="&lt;![CDATA[Estoy probando cosas pero parece que no funciona bien...]]&gt;"/>
-			<resource type="pdf" content="welcome-f0o7rx-Carpeta-Ciudadana---Titulos-Universitarios.pdf"/>
-			<resource type="text" content="&lt;![CDATA[Sigo probando...   JAJJAAJAJAAJA]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[Bienvenido!!!!]]&gt;" width="90" />
+			<resource type="image" content="welcome-f0o7rx-Pattern-Wallpapers-(1).jpg" width="90" />
+			<resource type="text" content="&lt;![CDATA[Estoy probando cosas pero parece que no funciona bien...]]&gt;" width="90" />
+			<resource type="pdf" content="welcome-f0o7rx-Carpeta-Ciudadana---Titulos-Universitarios.pdf" width="90" />
+			<resource type="text" content="&lt;![CDATA[Sigo probando...   JAJJAAJAJAAJA]]&gt;" width="90" />
 		</resources>
 	</project>
 	<project id="q1fx0x" title="22400" category="r6y20u" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[JAJAJAJAJA  JEJEJEJEJE]]&gt;"/>
-			<resource type="pdf" content="welcome-q1fx0x-Vincent-Persichetti---Twentieth-Century-Harmony.pdf"/>
-			<resource type="text" content="&lt;![CDATA[Ostras]]&gt;"/>
+			<resource type="text" content="&lt;![CDATA[JAJAJAJAJA  JEJEJEJEJE]]&gt;" width="90" />
+			<resource type="pdf" content="welcome-q1fx0x-Vincent-Persichetti---Twentieth-Century-Harmony.pdf" width="90" />
+			<resource type="text" content="&lt;![CDATA[Ostras]]&gt;" width="90" />
 		</resources>
 	</project>
 	<project id="9im2yj" title="cacasGordas" category="1wcil05" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[Texto que voy a poner aqui]]&gt;"/>
-			<resource type="pdf" content="welcome-9im2yj-Reset---Nacho-Fernandez-de-Frutos-(Eb-Lead).pdf"/>
-			<resource type="text" content="&lt;![CDATA[Lee el archivo y dime si te gusta    O no...]]&gt;"/>
-			<resource type="image" content="welcome-9im2yj-Pattern-Wallpapers-(1).jpg"/>
+			<resource type="text" content="&lt;![CDATA[Texto que voy a poner aqui]]&gt;" width="90" />
+			<resource type="pdf" content="welcome-9im2yj-Reset---Nacho-Fernandez-de-Frutos-(Eb-Lead).pdf" width="90" />
+			<resource type="text" content="&lt;![CDATA[Lee el archivo y dime si te gusta    O no...]]&gt;" width="90" />
+			<resource type="image" content="welcome-9im2yj-Pattern-Wallpapers-(1).jpg" width="90" />
 		</resources>
 	</project>
 	<project id="plr47a" title="mahjong" category="1wcil05" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="audio" content="fredrik kronkvist - mahjong.mp3"/>
+			<resource type="audio" content="fredrik kronkvist - mahjong.mp3" width="90" />
 		</resources>
 	</project>
 	<project id="6fluab" title="mahjong2" category="1wcil05" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="audio" content="fredrik kronkvist - mahjong.mp3"/>
+			<resource type="audio" content="fredrik kronkvist - mahjong.mp3" width="90" />
 		</resources>
 	</project>
 	<project id="763eyk" title="mahjong3" category="1wcil05" projectType="multimedia" fretboardType="">
 		<resources>
-			<resource type="audio" content="fredrik kronkvist - mahjong-1.mp3"/>
-			<resource type="text" content="&lt;![CDATA[Esto es otra version mas corta]]&gt;"/>
+			<resource type="audio" content="fredrik kronkvist - mahjong-1.mp3" width="90" />
+			<resource type="text" content="&lt;![CDATA[Esto es otra version mas corta]]&gt;" width="90" />
 		</resources>
 	</project>
 </library>
