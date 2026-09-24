@@ -206,9 +206,6 @@ function configureUserControls(){
 		btnProyectos.style.display = "none";
 		btnProyectosPopup.style.display = "none";
 
-		btnUser.classList.remove("admin");
-		btnUser.classList.add("user");
-
 		cmbResolucion.style.display = "none";
 
 		if (appMode === "Guest"){
@@ -227,6 +224,7 @@ function configureUserControls(){
 			btnShowLibraryPanel.style.display = "none";
 
 			btnUser.querySelector("i").className = "fa-solid fa-user-lock";
+
 			txtUserTitle.textContent = "Invitado";
 
 		}else{
@@ -238,6 +236,7 @@ function configureUserControls(){
 				btnShowLibraryPanel.style.display = "none";
 
 				btnUser.querySelector("i").className = "fa-solid fa-user-tie";
+
 				txtUserTitle.textContent = "Invitado";
 
 			}else{
@@ -302,8 +301,6 @@ function configureUserControls(){
 
 		topMultimedia.style.display = "";
 
-		btnUser.classList.remove("user");
-		btnUser.classList.add("admin");
 		btnUser.querySelector("i").className = "fa-solid fa-user-shield";
 
 		txtUserTitle.textContent = "Admin";
@@ -938,6 +935,8 @@ function setControlsEnabled(enabled) {
     });
 
     if (enabled) setControlsState();
+
+    btnUser.disabled = false;
 
 }
 

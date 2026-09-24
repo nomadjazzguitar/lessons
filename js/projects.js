@@ -154,7 +154,7 @@ async function loadProject(project) {
 
 			type: resource.type || "",
 			content: resource.content || "",
-			width: resource.width || "90"
+			width: resource.width || resourceWidth
 
 		}));
 
@@ -377,7 +377,7 @@ function parseLibraryXml(xml) {
 
 				type: resourceNode.getAttribute("type") || "",
 				content: resourceNode.getAttribute("content") || "",
-				width: resourceNode.getAttribute("width") || "90"
+				width: resourceNode.getAttribute("width") || resourceWidth
 
 			});
 
@@ -480,7 +480,7 @@ function getCurrentProject() {
 
 			type: resource.type || "",
 			content: resource.content || "",
-			width: resource.width || "90"
+			width: resource.width || resourceWidth
 
 		}))
 
@@ -628,7 +628,7 @@ function projectToXml(project) {
 				`\t\t\t<resource ` +
 				`type="${escapeXml(resource.type || "")}" ` +
 				`content="${escapeXml(resource.content || "")}" ` +
-				`width="${escapeXml(resource.width || "90")}" ` +
+				`width="${escapeXml(resource.width || resourceWidth)}" ` +
 				`/>`
 			);
 

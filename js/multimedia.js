@@ -2627,10 +2627,10 @@ async function selectMultimediaFiles() {
 		multimediaResources.push({
 			type: projectType,
 			content: content.trim(),
-			width: 90
+			width: resourceWidth
 		});
 
-		createMultimediaElement(projectType, content.trim(),90);
+		createMultimediaElement(projectType, content.trim(),resourceWidth);
 
 		return;
 
@@ -3119,6 +3119,8 @@ function createMultimediaElement(type, content, width) {
 	let resourceUrl = "";
 	let fileName = content;
 
+	if (isMobile) width = resourceWidth;
+
 	if (type !== "text"){
 
 		if (type === "link" || type === "iframe"){
@@ -3401,13 +3403,13 @@ async function renderMultimedia() {
 		widthInput.min = "0";
 		widthInput.max = "100";
 		widthInput.step = "1";
-		widthInput.value = "90";
+		widthInput.value = resourceWidth;
 
 		widthInput.addEventListener("input", () => {
 
 			let value = Number(widthInput.value);
 
-			if (widthInput.value === "" || !Number.isFinite(value)) value = 90;
+			if (widthInput.value === "" || !Number.isFinite(value)) value = resourceWidth;
 
 			value = Math.max(0, Math.min(100, value));
 
@@ -3539,10 +3541,10 @@ async function renderMultimedia() {
 					multimediaResources.push({
 						type: cmbProjectType.value,
 						content: xmlText,
-						width: 90
+						width: resourceWidth
 					});
 
-					createMultimediaElement(cmbProjectType.value,text,90);
+					createMultimediaElement(cmbProjectType.value,text,resourceWidth);
 
 					element.remove();
 

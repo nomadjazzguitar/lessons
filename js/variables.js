@@ -33,6 +33,8 @@ const dataURL_Samples = dataURL + "samples/";
 
 const watermark = "nomadjazzguitar";
 
+const resourceWidth = 90;
+
 let isMobile = false;
 let isTouchDevice = false;
 
