@@ -3142,7 +3142,7 @@ function createMultimediaElement(type, content, width) {
 			element = document.createElement("div");
 			element.id = "textMultimedia";
 
-			element.style.width = width + "%";
+//			element.style.width = width + "%";
 
 			element.innerHTML = content.replace(/^<!\[CDATA\[|\]\]>$/g, "");
 
