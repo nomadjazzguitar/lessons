@@ -21,7 +21,7 @@ const dataURL_Libraries = dataURL + "libraries/";
 const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
 
 //Modificable
-let xmlLibrary = dataURL_Libraries + "welcome.xml";
+let xmlLibrary = dataURL_Libraries + "library-default.xml";
 
 const dataURL_Multimedia = dataURL_Libraries + "multimedia/";
 const dataURL_Samples = dataURL + "samples/";
