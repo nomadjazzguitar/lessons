@@ -1755,6 +1755,10 @@ html {
 
 }
 
+.projectItem i{
+	font-size:10px;
+}
+
 .projectItem:last-child {
 	margin-bottom: 0;
 }
@@ -2607,8 +2611,6 @@ html {
 	padding-bottom:5px;
 
 }
-
-#btnUser.admin i, #btnUser.user i{ }
 
 #txtUserTitle{
 
