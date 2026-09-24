@@ -3517,7 +3517,7 @@ async function renderMultimedia() {
 
 			const textArea = document.createElement("textarea");
 			textArea.id = "textAreaMultimedia";
-			textArea.placeholder = "Escribe aquí texto normal o HTML...";
+			textArea.placeholder = "Escribe aquí texto o HTML...";
 
 			const btnSave = document.createElement("button");
 			btnSave.id = "btnSaveMultimediaText";
