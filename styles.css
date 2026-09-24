@@ -1116,6 +1116,7 @@ html {
 
 	margin-left:0;
 	margin-top:5px;
+
 	font-size:12px;
 
 }
@@ -2606,10 +2607,16 @@ html {
 #btnUser i{
 
 	font-size:18px;
-	line-height:18px;
-	color:var(--color-main-text);
+
+	color:inherit;
 
 	padding-bottom:5px;
+
+}
+
+#btnUser:hover{
+
+	color:var(--color-highlight);
 
 }
 
