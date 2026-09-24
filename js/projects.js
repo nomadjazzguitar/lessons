@@ -1690,7 +1690,7 @@ function setLibraryInfo(fileName){
 
 	libraryPanelInfo.innerHTML = txtInfo;
 
-	if (txtInfo === "") libraryPanelInfo.style.display = "none";
+	libraryPanelInfo.style.display = txtInfo === "" ? "none", "";
 
 }
 
