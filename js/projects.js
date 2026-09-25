@@ -877,77 +877,82 @@ function renderLibrary() {
 
 			titleSpan.className = "projectTitle";
 
-			let iType = "<i class='fa-solid fa-guitar'></i>";
+			let iType = "";
 
-			const resources = project.resources.filter(resource => resource.content);
-
-			const resourceTypes = [
-				...new Set(
-					resources
-						.filter(resource => resource.type !== "text")
-						.map(resource => resource.type)
-				)
-			];
-
-			const hasOnlyText = resources.length > 0 &&
-				resources.every(resource => resource.type === "text");
-
-
-			if (project.projectType === "fretboard") {
+			if (isAdmin){
 
 				iType = "<i class='fa-solid fa-guitar'></i>";
 
-			} else if (hasOnlyText) {
+				const resources = project.resources.filter(resource => resource.content);
 
-				iType = "<i class='fa-solid fa-file-lines'></i>";
+				const resourceTypes = [
+					...new Set(
+						resources
+							.filter(resource => resource.type !== "text")
+							.map(resource => resource.type)
+					)
+				];
 
-			} else if (resourceTypes.length > 1) {
+				const hasOnlyText = resources.length > 0 && resources.every(resource => resource.type === "text");
 
-				iType = "<i class='fa-solid fa-photo-film'></i>";
 
-			} else if (resourceTypes.length === 1) {
+				if (project.projectType === "fretboard") {
 
-				switch (resourceTypes[0]){
+					iType = "<i class='fa-solid fa-guitar'></i>";
 
-					case "video":
-						iType = "<i class='fa-solid fa-film'></i>";
-						break;
+				} else if (hasOnlyText) {
 
-					case "audio":
-						iType = "<i class='fa-solid fa-compact-disc'></i>";
-						break;
+					iType = "<i class='fa-solid fa-file-lines'></i>";
 
-					case "image":
-						iType = "<i class='fa-solid fa-image'></i>";
-						break;
+				} else if (resourceTypes.length > 1) {
 
-					case "pdf":
-						iType = "<i class='fa-solid fa-file-pdf'></i>";
-						break;
+					iType = "<i class='fa-solid fa-photo-film'></i>";
 
-					case "document":
-						iType = "<i class='fa-solid fa-file-lines'></i>";
-						break;
+				} else if (resourceTypes.length === 1) {
 
-					case "midi":
-						iType = "<i class='fa-solid fa-file-audio'></i>";
-						break;
+					switch (resourceTypes[0]){
 
-					case "musicxml":
-						iType = "<i class='fa-solid fa-music'></i>";
-						break;
+						case "video":
+							iType = "<i class='fa-solid fa-film'></i>";
+							break;
 
-					case "html":
-						iType = "<i class='fa-solid fa-file-code'></i>";
-						break;
+						case "audio":
+							iType = "<i class='fa-solid fa-compact-disc'></i>";
+							break;
 
-					case "link":
-						iType = "<i class='fa-solid fa-link'></i>";
-						break;
+						case "image":
+							iType = "<i class='fa-solid fa-image'></i>";
+							break;
 
-					case "iframe":
-						iType = "<i class='fa-solid fa-code'></i>";
-						break;
+						case "pdf":
+							iType = "<i class='fa-solid fa-file-pdf'></i>";
+							break;
+
+						case "document":
+							iType = "<i class='fa-solid fa-file-lines'></i>";
+							break;
+
+						case "midi":
+							iType = "<i class='fa-solid fa-file-audio'></i>";
+							break;
+
+						case "musicxml":
+							iType = "<i class='fa-solid fa-music'></i>";
+							break;
+
+						case "html":
+							iType = "<i class='fa-solid fa-file-code'></i>";
+							break;
+
+						case "link":
+							iType = "<i class='fa-solid fa-link'></i>";
+							break;
+
+						case "iframe":
+							iType = "<i class='fa-solid fa-code'></i>";
+							break;
+
+					}
 
 				}
 
