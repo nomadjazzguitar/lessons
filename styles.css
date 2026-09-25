@@ -2581,7 +2581,7 @@ html {
 
 }
 
-#btnUser{
+#btnStudent{
 
 	width: 55px;
 	height:48px;
@@ -2604,7 +2604,7 @@ html {
 
 }
 
-#btnUser i{
+#btnStudent i{
 
 	font-size:18px;
 
@@ -2614,13 +2614,13 @@ html {
 
 }
 
-#btnUser:hover{
+#btnStudent:hover{
 
 	color:var(--color-highlight);
 
 }
 
-#txtUserTitle{
+#txtStudentTitle{
 
 	font-size:11px;
 	line-height:10px;
@@ -3905,14 +3905,14 @@ input[type="range"] {
 	}
 
 
-	#btnUser i{
+	#btnStudent i{
 
 		font-size:16px;
 		line-height:16px;
 
 	}
 
-	#txtUserTitle{
+	#txtStudentTitle{
 
 		font-size:9px;
 		line-height:9px;
