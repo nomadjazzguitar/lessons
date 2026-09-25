@@ -434,6 +434,7 @@ function setMenu(m){
 			showMenuControls(
 				topNewStudent,
 				topLibrary,
+				topLibraryInfo,
 				topStudentClases,
 				topCatalogue
 			);
@@ -449,7 +450,6 @@ function setMenu(m){
 
 			showMenuControls(
 				topProject,
-				topLibraryInfo,
 				topCategory,
 				topType,
 				topShare,
