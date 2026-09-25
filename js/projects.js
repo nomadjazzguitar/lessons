@@ -861,7 +861,7 @@ function renderLibrary() {
 			openButton.dataset.projectId = project.id;
 			openButton.title = `Abrir: ${project.title}`;
 
-			if (!isstudentActive){
+			if (!isStudentActive){
 
 				openButton.disabled = true;
 
@@ -1658,7 +1658,7 @@ async function renderProject(){
 
 	}else{
 /*
-		if (projectType !== "fretboard" && isstudentActive){
+		if (projectType !== "fretboard" && isStudentActive){
 			if (menuOpen !== "edit") setMenu("edit");
 		}else{
 */

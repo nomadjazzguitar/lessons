@@ -19,16 +19,16 @@ async function initializeApp() {
 
 		setstudentState();
 
-		configurestudentControls();
+		configureStudentControls();
 
 
 		// PROJECTS ----------------------
 
 		setLoadingProgress(20, "Cargando librerías y proyectos...");
 
-		if (isAdmin || student !== null || lib !== null){
+		await loadXML("libraries",xmlLibraries);
 
-			await loadXML("libraries",xmlLibraries);
+		if (isAdmin || student !== null || lib !== null){
 
 			await loadXML("library",xmlLibrary);
 		
@@ -146,7 +146,7 @@ function setstudentState(){
 	isMobile = window.innerWidth <= maxMediaScreenWidth;
 	isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
-	isstudentActive = true;
+	isStudentActive = true;
 
 	appMode = "Designer";
 
@@ -162,14 +162,14 @@ function setstudentState(){
 
 				if (!currentstudent.active){
 					showAlert("El usuario '" + studentName +"' no está activo.", "error");
-					isstudentActive = false;
+					isStudentActive = false;
 				}else{
-					isstudentActive = true;
+					isStudentActive = true;
 				}
 
 			}else{
 				showAlert("El usuario '" + student + "' no existe.", "error");
-				isstudentActive = true;
+				isStudentActive = true;
 				student = null;
 			}
 		}
@@ -186,14 +186,15 @@ function setstudentState(){
 
 	if (!isAdmin && student !== null) xmlLibrary = dataURL_Libraries + student + ".xml";
 
-	if (lib !== null && isstudentActive) xmlLibrary = dataURL_Libraries + lib + ".xml";
+	if (lib !== null && isStudentActive) xmlLibrary = dataURL_Libraries + lib + ".xml";
 
 }
 
-function configurestudentControls(){
+function configureStudentControls(){
 
 	if (!isAdmin) {
 
+		topNewStudent.style.display = "none";
 		topLibrary.style.display = "none";
 		topLibraryInfo.style.display = "none";
 		btnSaveProject.style.display = "none";
@@ -247,7 +248,7 @@ function configurestudentControls(){
 					setMenu("metronome");
 				}
 
-				if (!isstudentActive){
+				if (!isStudentActive){
 					btnStudent.querySelector("i").className = "fa-solid fa-user-lock";
 				}else{
 					btnStudent.querySelector("i").className = "fa-solid fa-user-graduate";
@@ -260,7 +261,7 @@ function configurestudentControls(){
 
 		}
 
-		if (!isstudentActive){
+		if (!isStudentActive){
 
 			setControlsEnabled(false);
 
@@ -298,6 +299,7 @@ function configurestudentControls(){
 
 		topProjectGuest.style.display = "none";
 		topTitleViewMode.style.display = "none";
+		topStudentClases.style.display = "none";
 
 		topMultimedia.style.display = "";
 
@@ -362,6 +364,7 @@ function setMenu(m){
 
 	menuOpen = m;
 
+	btnCourses.classList.remove("active");
 	btnProyectos.classList.remove("active");
 	btnEdicion.classList.remove("active");
 	btnFretboard.classList.remove("active");
@@ -410,29 +413,47 @@ function setMenu(m){
 		topGuitarAmp,
 		topLibraryInfo,
 		topProjectGuest,
-		topStudent
+		topNewStudent,
+		topCatalogue,
+		topStudentClases,
+		topCourses
 
 	].forEach(control => control.classList.add("isHidden"));
 
 	switch (menuOpen){
+
+		case "courses":
+
+			btnCourses.classList.add("active");
+
+			showMenuControls(
+				topNewStudent,
+				topLibrary,
+				topStudentClases,
+				topCatalogue,
+				topCourses
+			);
+
+			menuSelectorText.textContent = "MIS CURSOS";
+			menuSelectorIcon.className = "fa-solid fa-book";
+
+			break;
 
 		case "projects":
 
 			btnProyectos.classList.add("active");
 
 			showMenuControls(
-				topStudent,
 				topProject,
 				topLibraryInfo,
 				topCategory,
 				topType,
-				topLibrary,
 				topShare,
 				topTitle
 			);
 
 			menuSelectorText.textContent = "PROYECTOS";
-			menuSelectorIcon.className = "fa-solid fa-folder";
+			menuSelectorIcon.className = "fa-solid fa-folder-open";
 
 			break;
 
@@ -598,7 +619,7 @@ async function initializeProjects() {
     // ABRIR PROYECTO DE LA URL
     // --------------------------------
 
-    if (currentProjectId !== null && isstudentActive) {
+    if (currentProjectId !== null && isStudentActive) {
 
         const project = library.find(project => project.id === currentProjectId);
 
@@ -615,7 +636,7 @@ async function initializeProjects() {
 
         }
 
-    }else if (student !== null && isstudentActive) {
+    }else if (student !== null && isStudentActive) {
 
         // --------------------------------
         // ABRIR PRIMER PROYECTO
@@ -674,13 +695,15 @@ async function loadXML(type,file) {
 
 			case "student":
 
-				students = await parsestudentsXml(xml);
+				students = await parseStudentsXml(xml);
 
 				break;
 
 			case "libraries":
 
 				libraries = parseLibrariesXml(xml);
+
+				if (libraries) loadComboCurses();
 
 				break;
 
@@ -739,6 +762,19 @@ function parseXML(xmlText) {
 
 	return xml;
 
+}
+
+function initializeArrays(){
+
+	multimediaResources = [];
+	history = [];
+	notes = [];
+	barreNotes = [];
+	nutNotes = Array(stringCount).fill(null);
+	aSequence = [];
+	aChords = [];
+
+	noteOrder = 0;
 }
 
 function resetControlsValues(state){
@@ -907,19 +943,6 @@ function resetControlsValues(state){
 
 }
 
-function initializeArrays(){
-
-	multimediaResources = [];
-	history = [];
-	notes = [];
-	barreNotes = [];
-	nutNotes = Array(stringCount).fill(null);
-	aSequence = [];
-	aChords = [];
-
-	noteOrder = 0;
-}
-
 function setControlsEnabled(enabled) {
 
     const controls = document.querySelectorAll(
@@ -983,7 +1006,7 @@ function setControlsState() {
 		playStopDisabled = true;
 	}
 
-	if (isstudentActive) {
+	if (isStudentActive) {
 		btnPlayStop.disabled = playStopDisabled;
 	} else {
 		btnPlayStop.disabled = true;
@@ -1039,7 +1062,7 @@ function setControlsState() {
 	// CONTROLES DEL FRETBOARD
 	// --------------------------------
 
-	chkInlays.disabled = noDisplayMode || !isstudentActive;
+	chkInlays.disabled = noDisplayMode || !isStudentActive;
 
 	chkNoteNames.disabled = noDisplayMode;
 
@@ -1133,6 +1156,20 @@ function setControlsState() {
 
 	workspace.classList.toggle("multimedia",isMultimedia);
 
+
+	// --------------------------------
+	// CATALOGO CURSOS
+	// --------------------------------
+
+	if (isAdmin || appMode === "Designer" || !isStudentActive){
+		
+		btnEnroll.disabled = true;
+
+	}else if (!isStudentActive){
+
+		cmbCourses.disabled = true;
+
+	}
 }
 
 function updateTopBarMenu() {
@@ -2339,7 +2376,7 @@ async function decryptstudent(e) {
 
 }
 
-async function parsestudentsXml(xml) {
+async function parseStudentsXml(xml) {
 
 	const studentsNode = xml.querySelector("students");
 
@@ -2494,4 +2531,21 @@ function changeComboFretboardType(value){
 		cmbFretboardTypeGuest.value = oldType;
 
 	}
+}
+
+function loadComboCurses(){
+
+	cmbCourses.innerHTML = "";
+
+	libraries.forEach(library => {
+
+		const option = document.createElement("option");
+
+		option.value = library.id;
+		option.textContent = library.name;
+
+		cmbCourses.appendChild(option);
+
+	});
+
 }

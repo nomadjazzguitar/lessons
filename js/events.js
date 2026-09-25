@@ -58,7 +58,7 @@ window.addEventListener("orientationchange", () => {
 
 document.addEventListener("keydown", e => {
 
-	if (!isstudentActive || isPlaying) return;
+	if (!isStudentActive || isPlaying) return;
 
 	if (videoContainer.style.display === "flex") return;
 
@@ -691,6 +691,10 @@ btnNewCategory.addEventListener("click", () => {
 
 btnDelCategory.addEventListener("click", () => {
 	deleteCategory();
+});
+
+btnCourses.addEventListener("click", () => {
+	setMenu("courses");
 });
 
 btnProyectos.addEventListener("click", () => {

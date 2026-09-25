@@ -138,7 +138,7 @@ let students = [];
 let student;
 let studentName;
 
-let isstudentActive = true;
+let isStudentActive = true;
 
 let xmlStudentsVersion = "1.0";
 
@@ -361,6 +361,7 @@ const topControlsContainer = document.getElementById("topControlsContainer");
 const btnStudent = document.getElementById("btnStudent");
 const txtStudentTitle = document.getElementById("txtStudentTitle");
 
+const btnCourses = document.getElementById("btnCourses");
 const btnProyectos = document.getElementById("btnProyectos");
 const btnEdicion = document.getElementById("btnEdicion");
 const btnFretboard = document.getElementById("btnFretboard");
@@ -369,6 +370,7 @@ const btnScore = document.getElementById("btnScore");
 const btnMetronome = document.getElementById("btnMetronome");
 const btnMultimedia = document.getElementById("btnMultimedia");
 
+const btnCoursesPopUp = document.getElementById("btnCoursesPopUp");
 const btnProyectosPopup = document.getElementById("btnProyectosPopup");
 const btnEdicionPopup = document.getElementById("btnEdicionPopup");
 const btnFretboardPopup = document.getElementById("btnFretboardPopup");
@@ -417,7 +419,10 @@ const chkInlays = document.getElementById("chkInlays");
 	REFERENCIAS DOM: GRUPOS DE HERRAMIENTAS
 ==================================================*/
 
-
+const topStudentClases = document.getElementById("topStudentClases");
+const topCourses = document.getElementById("topCourses");
+const topCatalogue = document.getElementById("topCatalogue");
+const topNewStudent = document.getElementById("topNewStudent");
 const topProject = document.getElementById("topProject");
 const topCategory = document.getElementById("topCategory");
 const topLibrary = document.getElementById("topLibrary");
@@ -468,7 +473,10 @@ const chkFretboardZoom = document.getElementById("chkFretboardZoom");
 	REFERENCIAS DOM: PROYECTOS
 ==================================================*/
 
-
+const btnEnroll = document.getElementById("btnEnroll");
+const cmbCourses = document.getElementById("cmbCourses");
+const btnStudentClases = document.getElementById("btnStudentClases");
+const btnCatalogue = document.getElementById("btnCatalogue");
 const btnNewStudent = document.getElementById("btnNewStudent");
 const btnCreate = document.getElementById("btnCreate");
 const btnOpen = document.getElementById("btnOpen");
