@@ -17,7 +17,7 @@ const dataURL_Images = dataURL + "img/";
 const dataURL_Libraries = dataURL + "libraries/";
 const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
 
-const xmlStudents = dataURL_Libraries + "libraries-students.xml";
+const xmlStudents = dataURL_Libraries + "students.xml";
 
 //Modificable
 let xmlLibrary = dataURL_Libraries + "library-default.xml";
