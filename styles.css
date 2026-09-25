@@ -2821,14 +2821,12 @@ html {
 
 }
 
-
 .toolbarTop-Controls select:hover,
 .video-controls select:hover{
 
 	background-color:var(--color-dark-background);
 
 }
-
 
 .toolbarTop-Controls select:focus,
 .video-controls select:focus{
@@ -2838,7 +2836,6 @@ html {
 	box-shadow:0 0 0 1px var(--color-highlight);
 
 }
-
 
 .toolbarTop-Controls select option,
 .video-controls select option{
@@ -2850,7 +2847,6 @@ html {
 	padding:8px 10px;
 
 }
-
 
 .toolbarTop-Controls select option:checked,
 .video-controls select option:checked{
@@ -2897,6 +2893,11 @@ input[type="range"] {
 	max-width:110px;
 	accent-color:var(--color-main-text);
 
+}
+
+.toolbarTop-Controls select#cmbCourses{
+	min-width:170px;
+	max-width:300px;
 }
 
 #noteText {
@@ -3109,7 +3110,8 @@ input[type="range"] {
 #btnImgDownload,
 #btnRenderBuffer,
 #btnPlayStopBuffer,
-#btnNewProjectGuest{
+#btnNewProjectGuest,
+#btnEnroll{
 
 	display:flex;
 	flex-direction:row;

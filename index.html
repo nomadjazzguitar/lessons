@@ -80,6 +80,7 @@
 			</div>
 
 			<nav id="mainMenu">
+				<button type="button" id="btnCourses" class="menuButton"><i class="fa-solid fa-graduation-cap"></i>MIS CURSOS</button>
 				<button type="button" id="btnProyectos" class="menuButton"><i class="fa-solid fa-folder-open"></i>PROYECTOS</button>
 				<button type="button" id="btnEdicion" class="menuButton active"><i class="fa-solid fa-pen"></i>EDITAR</button>
 				<button type="button" id="btnFretboard" class="menuButton"><i class="fa-solid fa-guitar"></i>MÁSTIL</button>
@@ -100,6 +101,7 @@
 				</button>
 
 				<div id="menuPopup">
+					<button type="button" id="btnCoursesPopup" data-menu="courses"><i class="fa-solid fa-book"></i>MIS CURSOS</button>
 					<button type="button" id="btnProyectosPopup" data-menu="projects"><i class="fa-solid fa-folder-open"></i>PROYECTOS</button>
 					<button type="button" id="btnEdicionPopup" data-menu="edit"><i class="fa-solid fa-pen"></i>EDICIÓN</button>
 					<button type="button" id="btnFretboardPopup" data-menu="fretboard"><i class="fa-solid fa-guitar"></i>MÁSTIL</button>
@@ -123,10 +125,10 @@
 			<div id="topControls">
 				<div id="toolbarTop">
 
-					<div class="toolbarTop-Controls" id="topStudent">
+					<div class="toolbarTop-Controls" id="topNewStudent">
 						<span>ALUMNO</span>
 						<div class="toolRow">
-							<button type="button" id="btnNewStudent" title="Nuevo alumno"><i class="fa-solid fa-user-plus"></i><span>Nuevo</span></button>
+							<button type="button" id="btnNewStudent" title="Nuevo alumno"><i class="fa-solid fa-user-graduate"></i><span>Nuevo</span></button>
 						</div>
 					</div>
 
@@ -137,6 +139,30 @@
 						</div>
 						<div class="toolRow">
 							<button type="button" id="btnOpen" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
+						</div>
+					</div>
+
+					<div class="toolbarTop-Controls" id="topStudentClases">
+						<span>MIS CLASES</span>
+						<div class="toolRow">
+							<button type="button" id="btnStudentClases" title="Mis clases online"><i class="fa-solid fa-laptop-file"></i><span>Acceder</span></button>
+						</div>
+					</div>
+
+					<div class="toolbarTop-Controls" id="topCourses">
+						<span>CURSOS</span>
+						<div class="toolRow">
+							<select id="cmbCourses"></select>
+						</div>
+						<div class="toolRow">
+							<button type="button" id="btnEnroll" title="Matricularme en un nuevo curso"><i class="fa-solid fa-book-medical"></i><span>Añadir</span></button>
+						</div>
+					</div>
+
+					<div class="toolbarTop-Controls" id="topCatalogue">
+						<span>CATÁLOGO</span>
+						<div class="toolRow">
+							<button type="button" id="btnCatalogue" title="Explorar cursos"><i class="fa-solid fa-magnifying-glass"></i><span>Buscar</span></button>
 						</div>
 					</div>
 
@@ -248,6 +274,19 @@
 						</div>
 					</div>
 
+					<div class="toolbarTop-Controls" id="topChords">
+						<span>ACORDES</span>
+						<div class="toolRow">
+							<select id="cmbChords">
+							    <option value="0">Acorde 1</option>
+							</select>
+						</div>
+						<div class="toolRow">
+							<button type="button" id="btnNewChord" title="Nuevo acorde"><i class="fa-solid fa-folder-plus"></i><span></span></button>
+							<button type="button" id="btnDelChord" title="Borrar acorde"><i class="fa-solid fa-folder-minus"></i><span></span></button>
+						</div>
+					</div>
+
 					<div class="toolbarTop-Controls" id="topEdit">
 						<span>ESCRIBIR</span>
 						<div class="toolRow">
@@ -288,19 +327,6 @@
 						<div class="toolRow">
 							<span>Texto</span>
 							<input id="noteText" type="text" maxlength="4" placeholder="A">
-						</div>
-					</div>
-
-					<div class="toolbarTop-Controls" id="topChords">
-						<span>ACORDES</span>
-						<div class="toolRow">
-							<select id="cmbChords">
-							    <option value="0">Acorde 1</option>
-							</select>
-						</div>
-						<div class="toolRow">
-							<button type="button" id="btnNewChord" title="Nuevo acorde"><i class="fa-solid fa-folder-plus"></i><span></span></button>
-							<button type="button" id="btnDelChord" title="Borrar acorde"><i class="fa-solid fa-folder-minus"></i><span></span></button>
 						</div>
 					</div>
 
