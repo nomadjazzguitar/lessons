@@ -181,7 +181,6 @@ function setstudentState(){
 
 	}else{
 		student = "admin";
-
 	}
 
 	if (!isAdmin && student !== null) xmlLibrary = dataURL_Libraries + student + ".xml";
@@ -191,6 +190,8 @@ function setstudentState(){
 }
 
 function configureStudentControls(){
+
+	topStudentClases.style.display = "none";
 
 	if (!isAdmin) {
 
@@ -217,6 +218,9 @@ function configureStudentControls(){
 				setMenu("metronome");
 			}
 
+			btnCourses.style.display = "none";
+			btnCoursesPopup.style.display = "none";
+
 			btnEdicion.style.display = "none";
 			btnEdicionPopup.style.display = "none";
 
@@ -234,8 +238,6 @@ function configureStudentControls(){
 
 				setMenu("edit");
 
-				topStudentClases.style.display = "none";
-
 				btnShowLibraryPanel.style.display = "none";
 
 				btnStudent.querySelector("i").className = "fa-solid fa-user-graduate";
@@ -249,6 +251,8 @@ function configureStudentControls(){
 				}else{
 					setMenu("metronome");
 				}
+
+				topStudentClases.style.display = "";
 
 				if (!isStudentActive){
 					btnStudent.querySelector("i").className = "fa-solid fa-user-lock";
