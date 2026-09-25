@@ -15,18 +15,18 @@ async function initializeApp() {
 
 		getURLParams();
 
-		await loadXML("user",xmlUsers);
+		await loadXML("student",xmlStudents);
 
-		setUserState();
+		setstudentState();
 
-		configureUserControls();
+		configurestudentControls();
 
 
 		// PROJECTS ----------------------
 
 		setLoadingProgress(20, "Cargando librerías y proyectos...");
 
-		if (isAdmin || user !== null || lib !== null){
+		if (isAdmin || student !== null || lib !== null){
 
 			await loadXML("libraries",xmlLibraries);
 
@@ -131,9 +131,9 @@ function getURLParams(){
 
 	const params = new URLSearchParams(window.location.search);
 
-	user = params.get("user");
+	student = params.get("student");
 
-	isAdmin = params.has("admin") || user === "admin";
+	isAdmin = params.has("admin") || student === "admin";
 
 	lib = params.get("lib");
 
@@ -141,56 +141,56 @@ function getURLParams(){
 
 }
 
-function setUserState(){
+function setstudentState(){
 
 	isMobile = window.innerWidth <= maxMediaScreenWidth;
 	isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
-	isUserActive = true;
+	isstudentActive = true;
 
 	appMode = "Designer";
 
 	if (!isAdmin) {
 
-		if (user !== null){
+		if (student !== null){
 
-			const currentUser = users.find(item => item.id === user);
+			const currentstudent = students.find(item => item.id === student);
 	
-			if (currentUser) {
+			if (currentstudent) {
 
-				userName = currentUser.n;
+				studentName = currentstudent.n;
 
-				if (!currentUser.active){
-					showAlert("El usuario '" + userName +"' no está activo.", "error");
-					isUserActive = false;
+				if (!currentstudent.active){
+					showAlert("El usuario '" + studentName +"' no está activo.", "error");
+					isstudentActive = false;
 				}else{
-					isUserActive = true;
+					isstudentActive = true;
 				}
 
 			}else{
-				showAlert("El usuario '" + user + "' no existe.", "error");
-				isUserActive = true;
-				user = null;
+				showAlert("El usuario '" + student + "' no existe.", "error");
+				isstudentActive = true;
+				student = null;
 			}
 		}
 
-		if (user === null && currentProjectId !== null) {
+		if (student === null && currentProjectId !== null) {
 
 			appMode = "Guest";
 		}
 
 	}else{
-		user = "admin";
+		student = "admin";
 
 	}
 
-	if (!isAdmin && user !== null) xmlLibrary = dataURL_Libraries + user + ".xml";
+	if (!isAdmin && student !== null) xmlLibrary = dataURL_Libraries + student + ".xml";
 
-	if (lib !== null && isUserActive) xmlLibrary = dataURL_Libraries + lib + ".xml";
+	if (lib !== null && isstudentActive) xmlLibrary = dataURL_Libraries + lib + ".xml";
 
 }
 
-function configureUserControls(){
+function configurestudentControls(){
 
 	if (!isAdmin) {
 
@@ -223,21 +223,21 @@ function configureUserControls(){
 
 			btnShowLibraryPanel.style.display = "none";
 
-			btnUser.querySelector("i").className = "fa-solid fa-user-lock";
+			btnStudent.querySelector("i").className = "fa-solid fa-user-lock";
 
-			txtUserTitle.textContent = "Invitado";
+			txtStudentTitle.textContent = "Invitado";
 
 		}else{
 
-			if (user === null) {
+			if (student === null) {
 
 				setMenu("edit");
 
 				btnShowLibraryPanel.style.display = "none";
 
-				btnUser.querySelector("i").className = "fa-solid fa-user-tie";
+				btnStudent.querySelector("i").className = "fa-solid fa-user-graduate";
 
-				txtUserTitle.textContent = "Invitado";
+				txtStudentTitle.textContent = "Invitado";
 
 			}else{
 
@@ -247,20 +247,20 @@ function configureUserControls(){
 					setMenu("metronome");
 				}
 
-				if (!isUserActive){
-					btnUser.querySelector("i").className = "fa-solid fa-user-lock";
+				if (!isstudentActive){
+					btnStudent.querySelector("i").className = "fa-solid fa-user-lock";
 				}else{
-					btnUser.querySelector("i").className = "fa-solid fa-user-tie";
+					btnStudent.querySelector("i").className = "fa-solid fa-user-graduate";
 				}
 
-				const txt = userName.includes(" ") ? userName.substring(0, userName.indexOf(" ")) : userName;
-				txtUserTitle.textContent = txt;
+				const txt = studentName.includes(" ") ? studentName.substring(0, studentName.indexOf(" ")) : studentName;
+				txtStudentTitle.textContent = txt;
 
 			}
 
 		}
 
-		if (!isUserActive){
+		if (!isstudentActive){
 
 			setControlsEnabled(false);
 
@@ -286,7 +286,7 @@ function configureUserControls(){
 
 			btnPlayStop.disabled = true;
 
-			btnUser.querySelector("i").className = "fa-solid fa-user-lock";
+			btnStudent.querySelector("i").className = "fa-solid fa-user-lock";
 
 			setMenu("metronome");
 
@@ -301,9 +301,9 @@ function configureUserControls(){
 
 		topMultimedia.style.display = "";
 
-		btnUser.querySelector("i").className = "fa-solid fa-user-shield";
+		btnStudent.querySelector("i").className = "fa-solid fa-user-shield";
 
-		txtUserTitle.textContent = "Admin";
+		txtStudentTitle.textContent = "Admin";
 
 	}
 
@@ -332,7 +332,7 @@ function configureUserControls(){
 
 	}
 
-	if (!isMobile && (isAdmin || user === null)){
+	if (!isMobile && (isAdmin || student === null)){
 		openTopControls();
 		
 	}else{
@@ -410,7 +410,7 @@ function setMenu(m){
 		topGuitarAmp,
 		topLibraryInfo,
 		topProjectGuest,
-		topUser
+		topStudent
 
 	].forEach(control => control.classList.add("isHidden"));
 
@@ -421,7 +421,7 @@ function setMenu(m){
 			btnProyectos.classList.add("active");
 
 			showMenuControls(
-				topUser,
+				topStudent,
 				topProject,
 				topLibraryInfo,
 				topCategory,
@@ -554,7 +554,7 @@ async function initializeProjects() {
     // PANEL
     // --------------------------------
 
-    if (!isMobile && appMode !== "Guest" && user !== null) {
+    if (!isMobile && appMode !== "Guest" && student !== null) {
 
 	openLibraryPanel();
 
@@ -598,7 +598,7 @@ async function initializeProjects() {
     // ABRIR PROYECTO DE LA URL
     // --------------------------------
 
-    if (currentProjectId !== null && isUserActive) {
+    if (currentProjectId !== null && isstudentActive) {
 
         const project = library.find(project => project.id === currentProjectId);
 
@@ -615,7 +615,7 @@ async function initializeProjects() {
 
         }
 
-    }else if (user !== null && isUserActive) {
+    }else if (student !== null && isstudentActive) {
 
         // --------------------------------
         // ABRIR PRIMER PROYECTO
@@ -651,7 +651,7 @@ function initializeEmptyProject() {
 
 	resetControlsValues("init");
 
-	if (user === null) workspaceTitleText.style.display = "none";
+	if (student === null) workspaceTitleText.style.display = "none";
 }
 
 async function loadXML(type,file) {
@@ -672,9 +672,9 @@ async function loadXML(type,file) {
 
 		switch (type) {
 
-			case "user":
+			case "student":
 
-				users = await parseUsersXml(xml);
+				students = await parsestudentsXml(xml);
 
 				break;
 
@@ -704,9 +704,9 @@ async function loadXML(type,file) {
 
 		console.warn("Error cargando " + file,error);
 
-		if (type === "user") {
+		if (type === "student") {
 
-			users = [];
+			students = [];
 
 		} else if (type === "libraries") {
 
@@ -936,7 +936,7 @@ function setControlsEnabled(enabled) {
 
     if (enabled) setControlsState();
 
-    btnUser.disabled = false;
+    btnStudent.disabled = false;
 
 }
 
@@ -983,7 +983,7 @@ function setControlsState() {
 		playStopDisabled = true;
 	}
 
-	if (isUserActive) {
+	if (isstudentActive) {
 		btnPlayStop.disabled = playStopDisabled;
 	} else {
 		btnPlayStop.disabled = true;
@@ -1039,7 +1039,7 @@ function setControlsState() {
 	// CONTROLES DEL FRETBOARD
 	// --------------------------------
 
-	chkInlays.disabled = noDisplayMode || !isUserActive;
+	chkInlays.disabled = noDisplayMode || !isstudentActive;
 
 	chkNoteNames.disabled = noDisplayMode;
 
@@ -1141,7 +1141,7 @@ function updateTopBarMenu() {
 
 	const brandWidth = brand.offsetWidth;
 
-	const toggleWidth = btnUser.offsetWidth;
+	const toggleWidth = btnStudent.offsetWidth;
 
 
 	// Mostrar temporalmente el menú para poder medirlo
@@ -2229,7 +2229,7 @@ function chordNoteExists(string,fret,chord) {
 
 }
 
-async function encryptUser(e) {
+async function encryptstudent(e) {
 
 	const encoder = new TextEncoder();
 
@@ -2280,7 +2280,7 @@ async function encryptUser(e) {
 	return btoa(String.fromCharCode(...data));
 }
 
-async function decryptUser(e) {
+async function decryptstudent(e) {
 
 	try {
 
@@ -2339,15 +2339,15 @@ async function decryptUser(e) {
 
 }
 
-async function parseUsersXml(xml) {
+async function parsestudentsXml(xml) {
 
-	const usersNode = xml.querySelector("users");
+	const studentsNode = xml.querySelector("students");
 
-	xmlUsersVersion = usersNode.getAttribute("version") || "1.0";
+	xmlStudentsVersion = studentsNode.getAttribute("version") || "1.0";
 
 	const u = await Promise.all(
 
-		[...xml.querySelectorAll("user")].map(async node => ({
+		[...xml.querySelectorAll("student")].map(async node => ({
 
 			id: node.getAttribute("id"),
 			n: node.getAttribute("n"),
@@ -2365,20 +2365,20 @@ async function parseUsersXml(xml) {
 
 }
 
-async function addUser(name, email) {
+async function addStudent(name, email) {
 
 	try {
 
 		// Comprobar que existe el array
-		if (!Array.isArray(users)) {
+		if (!Array.isArray(students)) {
 
-			users = [];
+			students = [];
 
 		}
 
-		const n = name; //await encryptUser(name);
+		const n = name; //await encryptstudent(name);
 
-		const e = await encryptUser(email);
+		const e = await encryptstudent(email);
 
 		const date = new Date();
 
@@ -2386,7 +2386,7 @@ async function addUser(name, email) {
 
 		const id = generateIDKey();
 
-		const userData = {
+		const studentData = {
 
 			id: id,
 			n: n,
@@ -2398,11 +2398,11 @@ async function addUser(name, email) {
 
 		};
 
-		users.push(userData);
+		students.push(studentData);
 
-		saveUsersXml();
+		savestudentsXml();
 
-		const created = createLibrary(id,"user");
+		const created = createLibrary(id,"student");
 
 		showAlert(created
 			? "Usuario '" + name + "', con email '" + email + "' y librería creados."
@@ -2418,33 +2418,33 @@ async function addUser(name, email) {
 
 }
 
-function saveUsersXml() {
+function savestudentsXml() {
 
 	try {
 
-		xmlUsersVersion = (parseFloat(xmlUsersVersion) + 0.1).toFixed(1);
+		xmlStudentsVersion = (parseFloat(xmlStudentsVersion) + 0.1).toFixed(1);
 
 		let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
 
-		xml += '<users version="' + escapeXml(xmlUsersVersion) + '">\n';
+		xml += '<students version="' + escapeXml(xmlStudentsVersion) + '">\n';
 
-		users.forEach(user => {
+		students.forEach(student => {
 
-			xml += '\t<user';
+			xml += '\t<student';
 
-			xml += ' id="' + escapeXml(user.id) + '"';
-			xml += ' n="' + escapeXml(user.n) + '"';
-			xml += ' e="' + escapeXml(user.e) + '"';
-			xml += ' active="' + user.active + '"';
-			xml += ' alta="' + escapeXml(user.alta) + '"';
-			xml += ' baja="' + escapeXml(user.baja) + '"';
+			xml += ' id="' + escapeXml(student.id) + '"';
+			xml += ' n="' + escapeXml(student.n) + '"';
+			xml += ' e="' + escapeXml(student.e) + '"';
+			xml += ' active="' + student.active + '"';
+			xml += ' alta="' + escapeXml(student.alta) + '"';
+			xml += ' baja="' + escapeXml(student.baja) + '"';
 			xml += ' courses=""';
 
 			xml += ' />\n';
 
 		});
 
-		xml += '</users>';
+		xml += '</students>';
 
 		const blob = new Blob(
 			[xml],
@@ -2456,7 +2456,7 @@ function saveUsersXml() {
 		const a = document.createElement("a");
 
 		a.href = url;
-		a.download = "users.xml";
+		a.download = "students.xml";
 
 		a.click();
 
@@ -2466,7 +2466,7 @@ function saveUsersXml() {
 
 	} catch (error) {
 
-		console.error("Error al guardar users.xml:", error);
+		console.error("Error al guardar el archivo students.xml: ", error);
 
 		return false;
 

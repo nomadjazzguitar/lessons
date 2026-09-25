@@ -861,7 +861,7 @@ function renderLibrary() {
 			openButton.dataset.projectId = project.id;
 			openButton.title = `Abrir: ${project.title}`;
 
-			if (!isUserActive){
+			if (!isstudentActive){
 
 				openButton.disabled = true;
 
@@ -1309,7 +1309,7 @@ function createLibrary(fileName,type) {
 
 	let name = "";
 
-	if (type === "user"){
+	if (type === "student"){
 		name = "Clases";
 	}else{
 		name= fileName;
@@ -1658,7 +1658,7 @@ async function renderProject(){
 
 	}else{
 /*
-		if (projectType !== "fretboard" && isUserActive){
+		if (projectType !== "fretboard" && isstudentActive){
 			if (menuOpen !== "edit") setMenu("edit");
 		}else{
 */
@@ -1682,7 +1682,7 @@ function setLibraryInfo(fileName){
 
 	if (isAdmin && xmlType === "Server"){
 		txtInfo = txtInfo + "<i><a href='";
-		txtInfo = txtInfo + xmlLibrary + "' target='_blank'>Librería " + fileName.replace(dataURL_Libraries, "") + "</a></i><br>";
+		txtInfo = txtInfo + xmlLibrary + "' target='_blank'>" + fileName.replace(dataURL_Libraries, "") + "</a></i><br>";
 		txtInfo = txtInfo + "</a></i>";
 	}
 

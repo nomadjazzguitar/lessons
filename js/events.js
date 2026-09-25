@@ -58,7 +58,7 @@ window.addEventListener("orientationchange", () => {
 
 document.addEventListener("keydown", e => {
 
-	if (!isUserActive || isPlaying) return;
+	if (!isstudentActive || isPlaying) return;
 
 	if (videoContainer.style.display === "flex") return;
 
@@ -1491,7 +1491,7 @@ btnScoreVisible.addEventListener("click", () => {
 
 });
 
-btnNewUser.addEventListener("click", () => {
+btnNewStudent.addEventListener("click", () => {
 
 	const name = prompt("Introduce un nombre:");
 
@@ -1505,7 +1505,7 @@ btnNewUser.addEventListener("click", () => {
 
 		if (regex.test(email)){
 
-			addUser(name,email);
+			addStudent(name,email);
 
 		}else{
 			showAlert("Correo eléctrónico no válido", "error");
@@ -1514,7 +1514,7 @@ btnNewUser.addEventListener("click", () => {
 
 });
 
-btnUser.addEventListener("click", () => {
+btnStudent.addEventListener("click", () => {
 
 	currentTheme = currentTheme === "dark" ? "light" : "dark";
 

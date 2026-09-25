@@ -14,11 +14,10 @@ if (isLocal) dataURL = baseURL;
 
 const dataURL_Images = dataURL + "img/";
 
-const dataURL_Users = dataURL;
-const xmlUsers = dataURL_Users + "users.xml";
-
 const dataURL_Libraries = dataURL + "libraries/";
 const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
+
+const xmlStudents = dataURL_Libraries + "libraries-students.xml";
 
 //Modificable
 let xmlLibrary = dataURL_Libraries + "library-default.xml";
@@ -135,13 +134,13 @@ let xmlType = "Server";
 
 let lib = null;
 
-let users = [];
-let user;
-let userName;
+let students = [];
+let student;
+let studentName;
 
-let isUserActive = true;
+let isstudentActive = true;
 
-let xmlUsersVersion = "1.0";
+let xmlStudentsVersion = "1.0";
 
 //LIBRERIAS Y PROYECTOS
 
@@ -359,8 +358,8 @@ const topBar = document.getElementById("topBar");
 
 const topControlsContainer = document.getElementById("topControlsContainer");
 
-const btnUser = document.getElementById("btnUser");
-const txtUserTitle = document.getElementById("txtUserTitle");
+const btnStudent = document.getElementById("btnStudent");
+const txtStudentTitle = document.getElementById("txtStudentTitle");
 
 const btnProyectos = document.getElementById("btnProyectos");
 const btnEdicion = document.getElementById("btnEdicion");
@@ -470,7 +469,7 @@ const chkFretboardZoom = document.getElementById("chkFretboardZoom");
 ==================================================*/
 
 
-const btnNewUser = document.getElementById("btnNewUser");
+const btnNewStudent = document.getElementById("btnNewStudent");
 const btnCreate = document.getElementById("btnCreate");
 const btnOpen = document.getElementById("btnOpen");
 const btnNewProject = document.getElementById("btnNewProject");
