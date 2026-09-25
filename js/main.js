@@ -234,6 +234,8 @@ function configureStudentControls(){
 
 				setMenu("edit");
 
+				topStudentClases.style.display = "none";
+
 				btnShowLibraryPanel.style.display = "none";
 
 				btnStudent.querySelector("i").className = "fa-solid fa-user-graduate";
@@ -265,7 +267,7 @@ function configureStudentControls(){
 
 			setControlsEnabled(false);
 
-			topClipboard.style.display = "none";
+			topClipboard.style.display = "none";			
 
 			btnProyectos.style.display = "none";
 			btnProyectosPopup.style.display = "none";
@@ -415,8 +417,7 @@ function setMenu(m){
 		topProjectGuest,
 		topNewStudent,
 		topCatalogue,
-		topStudentClases,
-		topCourses
+		topStudentClases
 
 	].forEach(control => control.classList.add("isHidden"));
 
@@ -430,11 +431,10 @@ function setMenu(m){
 				topNewStudent,
 				topLibrary,
 				topStudentClases,
-				topCatalogue,
-				topCourses
+				topCatalogue
 			);
 
-			menuSelectorText.textContent = "MIS CURSOS";
+			menuSelectorText.textContent = "CURSOS";
 			menuSelectorIcon.className = "fa-solid fa-book";
 
 			break;
@@ -1157,19 +1157,6 @@ function setControlsState() {
 	workspace.classList.toggle("multimedia",isMultimedia);
 
 
-	// --------------------------------
-	// CATALOGO CURSOS
-	// --------------------------------
-
-	if (isAdmin || appMode === "Designer" || !isStudentActive){
-		
-		btnEnroll.disabled = true;
-
-	}else if (!isStudentActive){
-
-		cmbCourses.disabled = true;
-
-	}
 }
 
 function updateTopBarMenu() {

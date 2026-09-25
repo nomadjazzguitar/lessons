@@ -420,7 +420,6 @@ const chkInlays = document.getElementById("chkInlays");
 ==================================================*/
 
 const topStudentClases = document.getElementById("topStudentClases");
-const topCourses = document.getElementById("topCourses");
 const topCatalogue = document.getElementById("topCatalogue");
 const topNewStudent = document.getElementById("topNewStudent");
 const topProject = document.getElementById("topProject");
@@ -473,7 +472,6 @@ const chkFretboardZoom = document.getElementById("chkFretboardZoom");
 	REFERENCIAS DOM: PROYECTOS
 ==================================================*/
 
-const btnEnroll = document.getElementById("btnEnroll");
 const cmbCourses = document.getElementById("cmbCourses");
 const btnStudentClases = document.getElementById("btnStudentClases");
 const btnCatalogue = document.getElementById("btnCatalogue");
