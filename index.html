@@ -26,6 +26,36 @@
 	<!-- ALERT FLOTANTE -->
 	<div id="appAlert" class="app-alert"><i id="alertIcon" class="fa-solid"></i><span id="alertMessage"></span></div>
 
+
+	<!-- CURSOS FLOTANTE -->
+	<div id="coursesContainer">
+
+		<div class="courses-window">
+
+			<div class="courses-close">
+				<button type="button" id="btnCoursesPanelClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+			</div>
+
+			<div class="courses-control">
+				<span>Nombre: </span>
+				<input id="textCourseName" type="text" maxlength="60" placeholder="Sin Nombre">
+				<span>Nivel: </span>
+				<select id="cmbLevels"></select>
+			</div>
+			<div class="courses-control">
+				<span>Descripción:</span>
+				<textarea id="textAreaCourse" placeholder="Descripción"></textarea>
+			</div>
+			<div class="courses-control">
+
+			</div>
+			<div class="courses-buttons">
+				<button type="button" id="btnSaveCourse"><i class="fa-solid fa-floppy-disk"></i><span>Guardar</span></button>
+			</div>
+		</div>
+
+	</div><!-- Fin coursesContainer -->
+
 	<!-- VIDEO FLOTANTE -->
 	<div id="videoContainer">
 
@@ -111,7 +141,7 @@
 					<button type="button" id="btnMetronomePopup" data-menu="metronome"><i class="fa-solid fa-stopwatch"></i>METRÓNOMO</button>
 				</div>
 
-				<button type="button" id="btnStudent" class="student"><i class="fa-solid fa-user-graduate"></i><span id="txtStudentTitle">Usuario</span></button>
+				<button type="button" id="btnStudent" class="student"><i class="fa-solid fa-circle-user"></i><span id="txtStudentTitle">Usuario</span></button>
 
 			</div>
 
@@ -135,27 +165,9 @@
 					<div class="toolbarTop-Controls" id="topLibrary">
 						<span>LIBRERÍA</span>
 						<div class="toolRow">
-							<button type="button" id="btnCreate" title="Crear librería"><i class="fa-solid fa-file-circle-plus"></i><span>Crear</span></button>
-						</div>
-						<div class="toolRow">
-							<button type="button" id="btnOpen" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
-						</div>
-					</div>
-
-					<div class="toolbarTop-Controls" id="topLibraryInfo">
-						<span>NOMBRE/DESCRIPCIÓN</span>
-						<div class="toolRow">
-							<input id="libraryNameText" type="text" maxlength="60" placeholder="Sin Nombre">
-						</div>
-						<div class="toolRow">
-							<input id="libraryDescText" type="text" placeholder="Descripción">
-						</div>
-					</div>
-
-					<div class="toolbarTop-Controls" id="topStudentClases">
-						<span>MIS CLASES</span>
-						<div class="toolRow">
-							<button type="button" id="btnStudentClases" title="Mis clases online"><i class="fa-solid fa-laptop-file"></i><span>Acceder</span></button>
+							<button type="button" id="btnAddCourse" title="Crear librería"><i class="fa-solid fa-file-circle-plus"></i><span>Crear</span></button>
+							<button type="button" id="btnModifyCourse" title="Modificar librería"><i class="fa-solid fa-pen"></i><span>Modificar</span></button>
+							<button type="button" id="btnOpenCourse" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
 						</div>
 					</div>
 

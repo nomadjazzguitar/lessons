@@ -74,7 +74,8 @@ a:visited {
    VIDEO
 ========================================================== */
 
-#videoContainer {
+#videoContainer,
+#coursesContainer {
 
 	display:none;
 
@@ -86,7 +87,7 @@ a:visited {
 	width:100%;
 	height:100%;
 
-	background:rgba(0,0,0,0.35);
+	background:rgba(0,0,0,0.30);
 
 	justify-content:center;
 	align-items:center;
@@ -97,7 +98,8 @@ a:visited {
 
 }
 
-.video-window {
+.video-window,
+.courses-window {
 
 	display:flex;
 	flex-direction:column;
@@ -106,6 +108,7 @@ a:visited {
 
 	width:90%;
 	max-width:700px;
+	min-height:300px;
 
 	padding:10px;
 
@@ -121,7 +124,24 @@ a:visited {
 
 }
 
-.video-head {
+.courses-control{
+
+	display:flex;
+
+	align-items:center;
+
+	gap:8px;
+
+	padding-bottom:4px;
+
+	flex-wrap:wrap;
+
+	width:100%;
+
+}
+
+.video-head,
+.courses-close {
 
 	display:flex;
 
@@ -149,7 +169,7 @@ a:visited {
 
 }
 
-.video-window .close-btn {
+.close-btn {
 
 	display:flex;
 
@@ -174,7 +194,7 @@ a:visited {
 
 }
 
-.video-window .close-btn:hover {
+.close-btn:hover{
 
 	background:var(--color-tools);
 
@@ -1818,7 +1838,8 @@ html {
 .difficultyEasy,
 .difficultyMedium,
 .difficultyHard,
-.difficultyVeryHard  {
+.difficultyVeryHard,
+.difficultyExpert  {
 	font-size: 10px;
 	padding-right:2px;
 }
@@ -1837,6 +1858,10 @@ html {
 
 .difficultyVeryHard {
 	color: #F44336;
+}
+
+.difficultyExpert{
+	color: yellow;
 }
 
 .projectsPending,
@@ -2763,7 +2788,8 @@ html {
 }
 
 .toolbarTop-Controls input,
-#videoContainer input{
+#videoContainer input,
+#coursesContainer input{
 
 	height:30px;
 	width:120px;
@@ -2785,12 +2811,14 @@ html {
 
 }
 
-#videoContainer input{
+#videoContainer input,
+#coursesContainer input{
 	text-align:left;
 }
 
 .toolbarTop-Controls select,
-.video-controls select{
+.video-controls select,
+#coursesContainer select{
 
 	height:30px;
 	min-width:110px;
@@ -2822,14 +2850,16 @@ html {
 }
 
 .toolbarTop-Controls select:hover,
-.video-controls select:hover{
+.video-controls select:hover,
+#coursesContainer select:hover{
 
 	background-color:var(--color-dark-background);
 
 }
 
 .toolbarTop-Controls select:focus,
-.video-controls select:focus{
+.video-controls select:focus,
+#coursesContainer select:focus{
 
 	border-color:var(--color-highlight);
 
@@ -2838,7 +2868,8 @@ html {
 }
 
 .toolbarTop-Controls select option,
-.video-controls select option{
+.video-controls select option,
+#coursesContainer select option{
 
 	background-color:var(--color-tools);
 
@@ -2849,7 +2880,8 @@ html {
 }
 
 .toolbarTop-Controls select option:checked,
-.video-controls select option:checked{
+.video-controls select option:checked,
+#coursesContainer select option:checked{
 
 	background-color:var(--color-main-text);
 
@@ -2860,7 +2892,8 @@ html {
 }
 
 .toolbarTop-Controls select option:hover,
-.video-controls select option:hover{
+.video-controls select option:hover,
+#coursesContainer select option:hover{
 
 	background-color:var(--color-highlight);
 
@@ -2879,7 +2912,8 @@ html {
 }
 
 .toolbarTop-Controls select:focus-visible,
-.video-controls select:focus-visible{
+.video-controls select:focus-visible,
+#coursesContainer select:focus-visible{
 	outline: 2px solid var(--color-main-text);
 	outline-offset: 2px;
 }
@@ -2895,7 +2929,33 @@ input[type="range"] {
 
 }
 
-.toolbarTop-Controls select#cmbCourses{
+#textCourseName{
+	min-width:250px;
+}
+
+#textAreaCourse{
+
+	width:100%;
+	min-height:100px;
+
+	box-sizing:border-box;
+
+	border:1px solid var(--color-border);
+	border-radius:5px;
+
+	padding:8px;
+
+	background-color:var(--color-dark-background);
+	color:var(--color-main-text);
+
+	font-family:inherit;
+	font-size:inherit;
+
+	resize:none;
+
+}
+
+#cmbCourses{
 	min-width:170px;
 	max-width:300px;
 }
@@ -2989,6 +3049,7 @@ input[type="range"] {
 #workspaceHeader button:not(:disabled):hover,
 .libraryPanelHeader button:not(:disabled):hover,
 #videoContainer button:not(:disabled):hover,
+#coursesContainer button:not(:disabled):hover,
 #workspaceMultimedia button:not(:disabled):hover {
 
 	color:#fff;
@@ -3004,6 +3065,7 @@ input[type="range"] {
 .toolbarTop-Controls button:focus-visible,
 #workspaceHeader button:focus-visible,
 #videoContainer button:focus-visible,
+#coursesContainer button:focus-visible,
 #workspaceMultimedia button:focus-visible{
 
 	outline:1px solid var(--color-main-text);
@@ -3013,17 +3075,10 @@ input[type="range"] {
 
 .toolbarTop-Controls button:active,
 #workspaceHeader button:active,
-#videoContainer button:active{
+#videoContainer button:active,
+#coursesContainer button:active{
 
 	transform:scale(0.96);
-
-	box-shadow:inset 2px 2px 4px rgba(0,0,0,.35);
-
-}
-
-.toolbarTop-Controls button.active,
-#workspaceHeader button.active,
-#videoContainer button.active{
 
 	font-weight:700;
 
@@ -3035,7 +3090,8 @@ input[type="range"] {
 
 .toolbarTop-Controls button i,
 #workspaceHeader button i,
-#videoContainer button i{
+#videoContainer button i,
+#coursesContainer button i{
 
 	width:16px;
 
@@ -3047,7 +3103,8 @@ input[type="range"] {
 
 .toolbarTop-Controls button:hover i,
 #workspaceHeader button:hover i,
-#videoContainer button:hover i{
+#videoContainer button:hover i,
+#coursesContainer button:hover i{
 
 	transform:none;
 
@@ -3101,8 +3158,6 @@ input[type="range"] {
 #btnBarre,
 #btnErase,
 #btnUndo,
-#btnCreate,
-#btnOpen,
 #btnRotate,
 #btnSaveAudio,
 #btnCopyCanvas,
@@ -3136,6 +3191,7 @@ input[type="range"] {
 
 #workspaceHeader button,
 #videoContainer button,
+#coursesContainer button,
 #workspaceMultimedia button{
 
 	display:inline-flex;
@@ -3173,7 +3229,8 @@ input[type="range"] {
 
 }
 
-#videoContainer #btnVideoClose {
+#videoContainer #btnVideoClose,
+#coursesContainer #btnCoursesPanelClose {
 
 	width:30px;
 	min-width:30px;
@@ -3656,7 +3713,8 @@ input[type="range"] {
 
 	#toolbarTop .toolbarTop-Controls button,
 	#workspaceHeader button,
-	#videoContainer button {
+	#videoContainer button,
+	#coursesContainer button{
 
 		width: 30px;
 		height: 30px;
@@ -3674,7 +3732,8 @@ input[type="range"] {
 
 	#toolbarTop .toolbarTop-Controls button span,
 	#workspaceHeader button span,
-	#videoContainer button span {
+	#videoContainer button span,
+	#coursesContainer button span{
 
 		display: none;
 
@@ -3682,7 +3741,8 @@ input[type="range"] {
 
 	#toolbarTop .toolbarTop-Controls button i,
 	#workspaceHeader button i,
-	#videoContainer button i {
+	#videoContainer button i,
+	#coursesContainer button i{
 
 		font-size: 12px;
 
@@ -3703,7 +3763,8 @@ input[type="range"] {
 	=========================== */
 
 	#workspaceHeader,
-	#videoContainer{
+	#videoContainer,
+	#coursesContainer {
 
 		font-size:10px;
 
@@ -3825,8 +3886,6 @@ input[type="range"] {
 	#btnBarre,
 	#btnErase,
 	#btnUndo,
-	#btnCreate,
-	#btnOpen,
 	#btnRotate,
 	#btnNewProjectGuest{
 		width: 30px;
@@ -4100,7 +4159,8 @@ input[type="range"] {
 
 @media (max-width:600px), (max-height:400px) {
 
-	#videoContainer {
+	#videoContainer,
+	#coursesContainer  {
 
 		width:100vw;
 		height:100dvh;
@@ -4117,7 +4177,8 @@ input[type="range"] {
 
 	}
 
-	.video-window {
+	.video-window,
+	.courses-window {
 
 		width:100%;
 		max-width:none;
