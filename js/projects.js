@@ -199,17 +199,20 @@ function parseLibrariesXml(xml) {
 function parseLibraryXml(xml) {
 
 	libraryId = xml.querySelector("library")?.getAttribute("id") || "";
+	cmbCourses.value = libraryId;
+
 	libraryVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
 	libraryType = xml.querySelector("library")?.getAttribute("type") || "";
 	libraryCreated = xml.querySelector("library")?.getAttribute("created") || "";
 
 	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
-	libraryNameText.value = libraryName;
-
-	libraryLevel = Number(xml.querySelector("library")?.getAttribute("level") ?? 1);
+	textCourseName.value = libraryName;
 
 	libraryDesc = xml.querySelector("desc")?.textContent.trim() || "";
-	libraryDescText.value = libraryDesc;
+	textAreaCourse.value = libraryDesc;
+
+	libraryLevel = Number(xml.querySelector("library")?.getAttribute("level") ?? 1);
+	cmbLevels.value = libraryLevel;
 
 	categories = [];
 
@@ -718,19 +721,17 @@ async function openLibraryXMLFile() {
 
 		setLibraryInfo(fileHandle.name);
 
+		// --------------------------------
+		// RENDERIZAR LISTA
+		// --------------------------------
+
+		renderLibrary();
 
 		// --------------------------------
 		// ABRIR PANEL
 		// --------------------------------
 
 		openLibraryPanel();
-
-
-		// --------------------------------
-		// RENDERIZAR LISTA
-		// --------------------------------
-
-		renderLibrary();
 
 		// --------------------------------
 		// ABRIR PRIMER PROYECTO
@@ -1077,9 +1078,9 @@ async function saveCurrentProject() {
 
 		projectModified = false;
 
-		renderLibrary();
+		setLibraryInfo(xmlLibrary);
 
-		setLibraryInfo(xmlLibrary.substring(xmlLibrary.indexOf("/") + 1));
+		renderLibrary();
 
 		openProjectCategory(project.category);
 
@@ -1329,7 +1330,7 @@ function createLibrary(fileName,type) {
 		`type="${escapeXml(type)}" ` +
 		`created="${escapeXml(date)}" ` +
 		`modified="" ` +
-		`level="1" ` +
+		`level="${cmbLevels.value}" ` +
 		`name="${escapeXml(name)}">`
 	);
 
@@ -1348,7 +1349,7 @@ function createLibrary(fileName,type) {
 
 	link.href = url;
 
-	link.download = fileName + ".xml";
+	link.download = id + ".xml";
 
 	document.body.appendChild(link);
 
@@ -1369,7 +1370,7 @@ function createLibrary(fileName,type) {
 			id: id,
 			created: date,
 			modified: "",
-			level: 1,
+			level: cmbLevels.value,
 			name: name,
 			desc: ""
 		});
@@ -1696,6 +1697,8 @@ function setLibraryInfo(fileName){
 	libraryPanelInfo.innerHTML = txtInfo;
 
 	libraryPanelInfo.style.display = txtInfo === "" ? "none" : "";
+
+	cmbLevels.value = libraryLevel;
 
 }
 

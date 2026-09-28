@@ -11,20 +11,22 @@ async function initializeApp() {
 
 		// USUARIO Y CONTROLES ----------------------
 
-		setLoadingProgress(10, "Configurando interface de usuario...");
+		setLoadingProgress(10, "Configurando interface de estudiante...");
 
 		getURLParams();
 
 		await loadXML("student",xmlStudents);
 
-		setstudentState();
+		setStudentState();
 
 		configureStudentControls();
 
 
 		// PROJECTS ----------------------
 
-		setLoadingProgress(20, "Cargando librerías y proyectos...");
+		setLoadingProgress(20, "Cargando cursos y proyectos...");
+
+		loadComboLevels();
 
 		await loadXML("libraries",xmlLibraries);
 
@@ -131,7 +133,7 @@ function getURLParams(){
 
 	const params = new URLSearchParams(window.location.search);
 
-	student = params.get("student");
+	student = params.get("s");
 
 	isAdmin = params.has("admin") || student === "admin";
 
@@ -141,7 +143,7 @@ function getURLParams(){
 
 }
 
-function setstudentState(){
+function setStudentState(){
 
 	isMobile = window.innerWidth <= maxMediaScreenWidth;
 	isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
@@ -161,23 +163,20 @@ function setstudentState(){
 				studentName = currentstudent.n;
 
 				if (!currentstudent.active){
-					showAlert("El usuario '" + studentName +"' no está activo.", "error");
+					showAlert("El estudiante '" + studentName +"' no está activo.", "error");
 					isStudentActive = false;
 				}else{
 					isStudentActive = true;
 				}
 
 			}else{
-				showAlert("El usuario '" + student + "' no existe.", "error");
+				showAlert("El estudiante '" + student + "' no existe.", "error");
 				isStudentActive = true;
 				student = null;
 			}
 		}
 
-		if (student === null && currentProjectId !== null) {
-
-			appMode = "Guest";
-		}
+		if (student === null && currentProjectId !== null) appMode = "Shared";
 
 	}else{
 		student = "admin";
@@ -187,17 +186,15 @@ function setstudentState(){
 
 	if (lib !== null && isStudentActive) xmlLibrary = dataURL_Libraries + lib + ".xml";
 
+
 }
 
 function configureStudentControls(){
-
-	topStudentClases.style.display = "none";
 
 	if (!isAdmin) {
 
 		topNewStudent.style.display = "none";
 		topLibrary.style.display = "none";
-		topLibraryInfo.style.display = "none";
 		btnSaveProject.style.display = "none";
 		btnDelProject.style.display = "none";
 		topTitle.style.display = "none";
@@ -205,12 +202,15 @@ function configureStudentControls(){
 		topShare.style.display = "none";
 		topMultimedia.style.display = "none";
 
+		btnCourses.style.display = "none";
+		btnCoursesPopup.style.display = "none";
+
 		btnProyectos.style.display = "none";
 		btnProyectosPopup.style.display = "none";
 
 		cmbResolucion.style.display = "none";
 
-		if (appMode === "Guest"){
+		if (appMode === "Shared"){
 
 			if (projectType !== "fretboard"){
 				setMenu("edit");
@@ -228,7 +228,7 @@ function configureStudentControls(){
 
 			btnShowLibraryPanel.style.display = "none";
 
-			btnStudent.querySelector("i").className = "fa-solid fa-user-lock";
+			btnStudent.querySelector("i").className = "fa-solid fa-circle-user";
 
 			txtStudentTitle.textContent = "Invitado";
 
@@ -240,7 +240,7 @@ function configureStudentControls(){
 
 				btnShowLibraryPanel.style.display = "none";
 
-				btnStudent.querySelector("i").className = "fa-solid fa-user-graduate";
+				btnStudent.querySelector("i").className = "fa-solid fa-circle-user";
 
 				txtStudentTitle.textContent = "Invitado";
 
@@ -251,8 +251,6 @@ function configureStudentControls(){
 				}else{
 					setMenu("metronome");
 				}
-
-				topStudentClases.style.display = "";
 
 				if (!isStudentActive){
 					btnStudent.querySelector("i").className = "fa-solid fa-user-lock";
@@ -273,15 +271,11 @@ function configureStudentControls(){
 
 			topClipboard.style.display = "none";			
 
-			btnProyectos.style.display = "none";
-			btnProyectosPopup.style.display = "none";
 			btnEdicion.style.display = "none";
 			btnEdicionPopup.style.display = "none";
 			btnMultimedia.style.display = "none";
 			btnMultimediaPopup.style.display = "none";
 
-			btnMenuSelector.disabled = false;
-			btnShowLibraryPanel.disabled = false;
 			btnFretboard.disabled = false;
 			btnFretboardPopup.disabled = false;
 			btnScore.disabled = false;
@@ -290,6 +284,9 @@ function configureStudentControls(){
 			btnPlayerPopup.disabled = false;
 			btnMetronome.disabled = false;
 			btnMetronomePopup.disabled = false;
+
+			btnMenuSelector.disabled = false;
+			btnShowLibraryPanel.disabled = false;
 
 			btnPlayStop.disabled = true;
 
@@ -305,7 +302,6 @@ function configureStudentControls(){
 
 		topProjectGuest.style.display = "none";
 		topTitleViewMode.style.display = "none";
-		topStudentClases.style.display = "none";
 
 		topMultimedia.style.display = "";
 
@@ -346,6 +342,202 @@ function configureStudentControls(){
 	}else{
 		closeTopControls();
 	}
+
+}
+
+function setControlsState() {
+
+	const isFretboard = fretboardType === "fretboard";
+	const isChord = fretboardType === "chord";
+	const noDisplayMode = !displayMode;
+	const isSharedFretboard = appMode === "Shared" && isFretboard;
+	const isMultimedia = cmbProjectType.value !== "fretboard";
+
+
+	// --------------------------------
+	// TIPO DE FRETBOARD
+	// --------------------------------
+
+	chkMetronomeOn.disabled = isFretboard;
+
+	cmbChords.disabled = !isChord;
+	btnNewChord.disabled = !isChord;
+	btnDelChord.disabled = !isChord;
+
+
+	// --------------------------------
+	// PLAYER / SCORE
+	// --------------------------------
+
+	const playerScoreDisabled = isFretboard || noDisplayMode || isMultimedia;
+
+	btnPlayer.disabled = playerScoreDisabled;
+	btnPlayerPopup.disabled = playerScoreDisabled;
+
+	btnScore.disabled = playerScoreDisabled;
+	btnScorePopup.disabled = playerScoreDisabled;
+
+
+	// --------------------------------
+	// PLAY / STOP
+	// --------------------------------
+
+	let playStopDisabled = noDisplayMode || isMultimedia;
+
+	if (isSharedFretboard) {
+		playStopDisabled = true;
+	}
+
+	if (isStudentActive) {
+		btnPlayStop.disabled = playStopDisabled;
+	} else {
+		btnPlayStop.disabled = true;
+	}
+
+	// --------------------------------
+	// SCORE VISIBLE
+	// --------------------------------
+
+	btnScoreVisible.disabled = isFretboard || noDisplayMode || isMultimedia;
+
+
+	// --------------------------------
+	// FRETBOARD VISIBLE
+	// --------------------------------
+
+	btnFretboardVisible.disabled = isFretboard && appMode === "Shared" || isMultimedia;
+
+
+	// --------------------------------
+	// FRETBOARD CONTROLS
+	// --------------------------------
+
+	workspaceControls.style.display = isMultimedia ? "none" : "";
+	workspaceMetronome.style.display = isMultimedia ? "none" : "";
+
+
+	// --------------------------------
+	// AUDIO / RENDER
+	// --------------------------------
+
+	const renderDisabled = isFretboard || noDisplayMode || isMultimedia;
+
+	if (isAdmin) {
+
+		btnRenderBuffer.disabled = renderDisabled;
+		cmbAudioFormat.disabled = renderDisabled;
+		btnSaveAudio.disabled = renderDisabled;
+		btnCopyCanvas.disabled = renderDisabled;
+		btnCopyScore.disabled = renderDisabled;
+		cmbImgFormat.disabled = renderDisabled;
+		btnImgDownload.disabled = renderDisabled;
+
+	} else {
+
+		btnMultimedia.disabled = noDisplayMode;
+		btnMultimediaPopup.disabled = noDisplayMode;
+
+	}
+
+
+	// --------------------------------
+	// CONTROLES DEL FRETBOARD
+	// --------------------------------
+
+	chkInlays.disabled = noDisplayMode || !isStudentActive;
+
+	chkNoteNames.disabled = noDisplayMode;
+
+	btnLessNumberFrets.disabled = Boolean(displayMode);
+	numberFrets.disabled = Boolean(displayMode);
+	btnMoreNumberFrets.disabled = Boolean(displayMode);
+
+
+	// --------------------------------
+	// MULTIMEDIA / EDICIÓN
+	// --------------------------------
+
+	btnEdicion.disabled = isMultimedia;
+	btnEdicionPopup.disabled = isMultimedia;
+
+	btnFretboard.disabled = isMultimedia;
+	btnFretboardPopup.disabled = isMultimedia;
+
+	btnVertical.disabled = isMultimedia;
+	btnHorizontal.disabled = isMultimedia;
+
+/*
+	chkShowTitle.disabled = isMultimedia;
+	chkScoreTitle.disabled = isMultimedia;
+*/
+
+	cmbFretboardType.disabled = isMultimedia;
+
+	btnUploadFile.disabled = !isMultimedia;
+
+
+	// --------------------------------
+	// DESCARGAS SUPERIORES
+	// --------------------------------
+
+	cmbImgFormat.disabled = isMultimedia;
+	btnImgDownload.disabled = isMultimedia;
+	btnCopyCanvas.disabled = isMultimedia;
+	btnCopyScore.disabled = isMultimedia;
+	cmbAudioFormat.disabled = isMultimedia;
+	btnSaveAudio.disabled = isMultimedia;
+	btnRenderBuffer.disabled = isMultimedia;
+
+
+	// --------------------------------
+	// Shared + FRETBOARD
+	// --------------------------------
+
+	if (isSharedFretboard) {
+
+		btnScore.disabled = true;
+		btnScorePopup.disabled = true;
+
+		btnPlayer.disabled = true;
+		btnPlayerPopup.disabled = true;
+
+		btnRenderBuffer.disabled = true;
+		cmbAudioFormat.disabled = true;
+		btnSaveAudio.disabled = true;
+
+		btnCopyCanvas.disabled = true;
+		btnCopyScore.disabled = true;
+		btnImgDownload.disabled = true;
+		cmbImgFormat.disabled = true;
+
+		btnPlayStop.disabled = true;
+
+		btnFretboardVisible.disabled = true;
+		btnScoreVisible.disabled = true;
+
+	}
+
+
+	// --------------------------------
+	// SIN DISPLAY MODE
+	// --------------------------------
+
+	if (noDisplayMode) {
+
+		chkInlays.checked = false;
+		chkNoteNames.checked = false;
+
+		isScoreVisible = false;
+
+	}
+
+
+	// --------------------------------
+	// WORKSPACE MULTIMEDIA
+	// --------------------------------
+
+	workspace.classList.toggle("multimedia",isMultimedia);
+
 
 }
 
@@ -417,11 +609,9 @@ function setMenu(m){
 		topVideo,
 		topMultimedia,
 		topGuitarAmp,
-		topLibraryInfo,
 		topProjectGuest,
 		topNewStudent,
-		topCatalogue,
-		topStudentClases
+		topCatalogue
 
 	].forEach(control => control.classList.add("isHidden"));
 
@@ -434,8 +624,6 @@ function setMenu(m){
 			showMenuControls(
 				topNewStudent,
 				topLibrary,
-				topLibraryInfo,
-				topStudentClases,
 				topCatalogue
 			);
 
@@ -575,32 +763,18 @@ function setMenu(m){
 
 async function initializeProjects() {
 
-    // --------------------------------
-    // PANEL
-    // --------------------------------
-
-    if (!isMobile && appMode !== "Guest" && student !== null) {
+    if (!isMobile && appMode !== "Shared" && student !== null) {
 
 	openLibraryPanel();
 
     }
 
-    // --------------------------------
-    // INFORMACION DE LIBRERIA
-    // --------------------------------
-
-    setLibraryInfo(xmlLibrary);
-
-    // --------------------------------
-    // NO HAY BIBLIOTECA
-    // --------------------------------
-
     if (!xmlLibraryLoaded) {
 
         initializeEmptyProject();
 
-        libraryNameText.disabled = true;
-        libraryDescText.disabled = true;
+        textCourseName.disabled = true;
+        textAreaCourse.disabled = true;
 
         btnSaveProject.disabled = true;
         btnDelProject.disabled = true;
@@ -613,9 +787,7 @@ async function initializeProjects() {
 
     }
 
-    // --------------------------------
-    // RENDERIZAR BIBLIOTECA
-    // --------------------------------
+    setLibraryInfo(xmlLibrary);
 
     renderLibrary();
 
@@ -677,6 +849,7 @@ function initializeEmptyProject() {
 	resetControlsValues("init");
 
 	if (student === null) workspaceTitleText.style.display = "none";
+
 }
 
 async function loadXML(type,file) {
@@ -685,9 +858,7 @@ async function loadXML(type,file) {
 
 		const response = await fetch(file);
 
-		if (!response.ok) {
-			throw new Error("No se pudo cargar " + file);
-		}
+		if (!response.ok) throw new Error("No se pudo cargar " + file);
 
 		const xmlText = await response.text();
 
@@ -707,7 +878,7 @@ async function loadXML(type,file) {
 
 				libraries = parseLibrariesXml(xml);
 
-				if (libraries) loadComboCurses();
+				if (libraries) loadComboCourses();
 
 				break;
 
@@ -964,202 +1135,6 @@ function setControlsEnabled(enabled) {
     if (enabled) setControlsState();
 
     btnStudent.disabled = false;
-
-}
-
-function setControlsState() {
-
-	const isFretboard = fretboardType === "fretboard";
-	const isChord = fretboardType === "chord";
-	const noDisplayMode = !displayMode;
-	const isGuestFretboard = appMode === "Guest" && isFretboard;
-	const isMultimedia = cmbProjectType.value !== "fretboard";
-
-
-	// --------------------------------
-	// TIPO DE FRETBOARD
-	// --------------------------------
-
-	chkMetronomeOn.disabled = isFretboard;
-
-	cmbChords.disabled = !isChord;
-	btnNewChord.disabled = !isChord;
-	btnDelChord.disabled = !isChord;
-
-
-	// --------------------------------
-	// PLAYER / SCORE
-	// --------------------------------
-
-	const playerScoreDisabled = isFretboard || noDisplayMode || isMultimedia;
-
-	btnPlayer.disabled = playerScoreDisabled;
-	btnPlayerPopup.disabled = playerScoreDisabled;
-
-	btnScore.disabled = playerScoreDisabled;
-	btnScorePopup.disabled = playerScoreDisabled;
-
-
-	// --------------------------------
-	// PLAY / STOP
-	// --------------------------------
-
-	let playStopDisabled = noDisplayMode || isMultimedia;
-
-	if (isGuestFretboard) {
-		playStopDisabled = true;
-	}
-
-	if (isStudentActive) {
-		btnPlayStop.disabled = playStopDisabled;
-	} else {
-		btnPlayStop.disabled = true;
-	}
-
-	// --------------------------------
-	// SCORE VISIBLE
-	// --------------------------------
-
-	btnScoreVisible.disabled = isFretboard || noDisplayMode || isMultimedia;
-
-
-	// --------------------------------
-	// FRETBOARD VISIBLE
-	// --------------------------------
-
-	btnFretboardVisible.disabled = isFretboard && appMode === "Guest" || isMultimedia;
-
-
-	// --------------------------------
-	// FRETBOARD CONTROLS
-	// --------------------------------
-
-	workspaceControls.style.display = isMultimedia ? "none" : "";
-	workspaceMetronome.style.display = isMultimedia ? "none" : "";
-
-
-	// --------------------------------
-	// AUDIO / RENDER
-	// --------------------------------
-
-	const renderDisabled = isFretboard || noDisplayMode || isMultimedia;
-
-	if (isAdmin) {
-
-		btnRenderBuffer.disabled = renderDisabled;
-		cmbAudioFormat.disabled = renderDisabled;
-		btnSaveAudio.disabled = renderDisabled;
-		btnCopyCanvas.disabled = renderDisabled;
-		btnCopyScore.disabled = renderDisabled;
-		cmbImgFormat.disabled = renderDisabled;
-		btnImgDownload.disabled = renderDisabled;
-
-	} else {
-
-		btnMultimedia.disabled = noDisplayMode;
-		btnMultimediaPopup.disabled = noDisplayMode;
-
-	}
-
-
-	// --------------------------------
-	// CONTROLES DEL FRETBOARD
-	// --------------------------------
-
-	chkInlays.disabled = noDisplayMode || !isStudentActive;
-
-	chkNoteNames.disabled = noDisplayMode;
-
-	btnLessNumberFrets.disabled = Boolean(displayMode);
-	numberFrets.disabled = Boolean(displayMode);
-	btnMoreNumberFrets.disabled = Boolean(displayMode);
-
-
-	// --------------------------------
-	// MULTIMEDIA / EDICIÓN
-	// --------------------------------
-
-	btnEdicion.disabled = isMultimedia;
-	btnEdicionPopup.disabled = isMultimedia;
-
-	btnFretboard.disabled = isMultimedia;
-	btnFretboardPopup.disabled = isMultimedia;
-
-	btnVertical.disabled = isMultimedia;
-	btnHorizontal.disabled = isMultimedia;
-
-/*
-	chkShowTitle.disabled = isMultimedia;
-	chkScoreTitle.disabled = isMultimedia;
-*/
-
-	cmbFretboardType.disabled = isMultimedia;
-
-	btnUploadFile.disabled = !isMultimedia;
-
-
-	// --------------------------------
-	// DESCARGAS SUPERIORES
-	// --------------------------------
-
-	cmbImgFormat.disabled = isMultimedia;
-	btnImgDownload.disabled = isMultimedia;
-	btnCopyCanvas.disabled = isMultimedia;
-	btnCopyScore.disabled = isMultimedia;
-	cmbAudioFormat.disabled = isMultimedia;
-	btnSaveAudio.disabled = isMultimedia;
-	btnRenderBuffer.disabled = isMultimedia;
-
-
-	// --------------------------------
-	// GUEST + FRETBOARD
-	// --------------------------------
-
-	if (isGuestFretboard) {
-
-		btnScore.disabled = true;
-		btnScorePopup.disabled = true;
-
-		btnPlayer.disabled = true;
-		btnPlayerPopup.disabled = true;
-
-		btnRenderBuffer.disabled = true;
-		cmbAudioFormat.disabled = true;
-		btnSaveAudio.disabled = true;
-
-		btnCopyCanvas.disabled = true;
-		btnCopyScore.disabled = true;
-		btnImgDownload.disabled = true;
-		cmbImgFormat.disabled = true;
-
-		btnPlayStop.disabled = true;
-
-		btnFretboardVisible.disabled = true;
-		btnScoreVisible.disabled = true;
-
-	}
-
-
-	// --------------------------------
-	// SIN DISPLAY MODE
-	// --------------------------------
-
-	if (noDisplayMode) {
-
-		chkInlays.checked = false;
-		chkNoteNames.checked = false;
-
-		isScoreVisible = false;
-
-	}
-
-
-	// --------------------------------
-	// WORKSPACE MULTIMEDIA
-	// --------------------------------
-
-	workspace.classList.toggle("multimedia",isMultimedia);
-
 
 }
 
@@ -2433,14 +2408,14 @@ async function addStudent(name, email) {
 		const created = createLibrary(id,"student");
 
 		showAlert(created
-			? "Usuario '" + name + "', con email '" + email + "' y librería creados."
-			: "Usuario '" + name + "', con email '" + email + "' creado. No se pudo crear la librería.",
+			? "Estudiante '" + name + "', con email '" + email + "' y librería creados."
+			: "Estudiante '" + name + "', con email '" + email + "' creado. No se pudo crear la librería.",
 			created ? "success" : "error");
 
 	} catch (error) {
 
-		showAlert("No se pudo crear el usuario","error");
-		console.log("No se pudo crear el usuario",error);
+		showAlert("No se pudo crear el estudiante","error");
+		console.log("No se pudo crear el estudiante",error);
 
 	}
 
@@ -2524,7 +2499,7 @@ function changeComboFretboardType(value){
 	}
 }
 
-function loadComboCurses(){
+function loadComboCourses(){
 
 	cmbCourses.innerHTML = "";
 
@@ -2536,6 +2511,29 @@ function loadComboCurses(){
 		option.textContent = library.name;
 
 		cmbCourses.appendChild(option);
+
+	});
+
+}
+
+function loadComboLevels(){
+
+	let l = 0;
+
+	cmbLevels.innerHTML = "";
+
+	difficultyLevels.forEach(level => {
+
+		const option = document.createElement("option");
+
+		option.value = l;
+		option.textContent = level.name;
+
+		if (l === 1) option.selected = true;
+
+		l++;
+
+		cmbLevels.appendChild(option);
 
 	});
 

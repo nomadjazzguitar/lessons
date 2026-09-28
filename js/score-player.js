@@ -814,7 +814,7 @@ async function playMusic(){
 		if (topControlsWasOpen) openTopControls();
 		topControlsWasOpen = false;
 
-		if (!libraryWasClosed && appMode !== "Guest") openLibraryPanel();
+		if (!libraryWasClosed && appMode !== "Shared") openLibraryPanel();
 		libraryWasClosed = false;
 
 		if (chkAutoScroll.checked) {

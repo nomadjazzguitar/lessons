@@ -15,14 +15,19 @@ if (isLocal) dataURL = baseURL;
 const dataURL_Images = dataURL + "img/";
 
 const dataURL_Libraries = dataURL + "libraries/";
+
+const dataURL_Courses = dataURL_Libraries + "courses/";
+
+const dataURL_Students = dataURL_Libraries + "students/";
+
 const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
 
 const xmlStudents = dataURL_Libraries + "students.xml";
 
-//Modificable
 let xmlLibrary = dataURL_Libraries + "library-default.xml";
 
 const dataURL_Multimedia = dataURL_Libraries + "multimedia/";
+
 const dataURL_Samples = dataURL + "samples/";
 
 
@@ -166,7 +171,8 @@ const difficultyLevels = [
 	{ name: "Básico", class: "difficultyEasy" },
 	{ name: "Medio", class: "difficultyMedium" },
 	{ name: "Intermedio", class: "difficultyHard" },
-	{ name: "Avanzado", class: "difficultyVeryHard" }
+	{ name: "Avanzado", class: "difficultyVeryHard" },
+	{ name: "Experto", class: "difficultyExpert" }
 ];
 
 let categories = [];
@@ -175,6 +181,7 @@ let currentProjectId = null;
 
 let projectModified = false;
 
+let isNewCourse = false;
 
 /*==================================================
 	IMÁGENES
@@ -419,7 +426,6 @@ const chkInlays = document.getElementById("chkInlays");
 	REFERENCIAS DOM: GRUPOS DE HERRAMIENTAS
 ==================================================*/
 
-const topStudentClases = document.getElementById("topStudentClases");
 const topCatalogue = document.getElementById("topCatalogue");
 const topNewStudent = document.getElementById("topNewStudent");
 const topProject = document.getElementById("topProject");
@@ -448,7 +454,6 @@ const topVideo = document.getElementById("topVideo");
 const topClipboard = document.getElementById("topClipboard");
 const topChords = document.getElementById("topChords");
 const topTitleViewMode = document.getElementById("topTitleViewMode");
-const topLibraryInfo = document.getElementById("topLibraryInfo");
 const topScroll = document.getElementById("topScroll");
 const topProjectGuest = document.getElementById("topProjectGuest");
 const topMultimedia = document.getElementById("topMultimedia");
@@ -473,11 +478,8 @@ const chkFretboardZoom = document.getElementById("chkFretboardZoom");
 ==================================================*/
 
 const cmbCourses = document.getElementById("cmbCourses");
-const btnStudentClases = document.getElementById("btnStudentClases");
 const btnCatalogue = document.getElementById("btnCatalogue");
 const btnNewStudent = document.getElementById("btnNewStudent");
-const btnCreate = document.getElementById("btnCreate");
-const btnOpen = document.getElementById("btnOpen");
 const btnNewProject = document.getElementById("btnNewProject");
 const btnNewProjectGuest = document.getElementById("btnNewProjectGuest");
 const btnSaveProject = document.getElementById("btnSaveProject");
@@ -497,10 +499,18 @@ const btnDelCategory = document.getElementById("btnDelCategory");
 const libraryPanel = document.getElementById("libraryPanel");
 const libraryPanelInfo = document.getElementById("libraryPanelInfo");
 const libraryPanelHeaderTitle = document.getElementById("libraryPanelHeaderTitle");
-const libraryNameText = document.getElementById("libraryNameText");
-const libraryDescText = document.getElementById("libraryDescText");
+const textCourseName = document.getElementById("textCourseName");
+const textAreaCourse = document.getElementById("textAreaCourse");
 const btnNewChord = document.getElementById("btnNewChord");
 const btnDelChord = document.getElementById("btnDelChord");
+
+const btnCreateCourse = document.getElementById("btnCreateCourse");
+const btnOpenCourse = document.getElementById("btnOpenCourse");
+const btnModifyCourse = document.getElementById("btnModifyCourse");
+const coursesContainer = document.getElementById("coursesContainer");
+const btnCoursesPanelClose = document.getElementById("btnCoursesPanelClose");
+const cmbLevels = document.getElementById("cmbLevels");
+const btnSaveCourse = document.getElementById("btnSaveCourse");
 
 
 /*==================================================

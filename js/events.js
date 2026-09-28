@@ -97,7 +97,7 @@ document.addEventListener("keydown", e => {
 
 			e.preventDefault();
 
-			if (isAdmin) btnOpen.click();
+			if (isAdmin) btnOpenCourse.click();
 
 			break;
 
@@ -854,22 +854,70 @@ btnCopyCanvas.addEventListener("click", () => {
 
 });
 
-btnCreate.addEventListener("click", () => {
+btnAddCourse.addEventListener("click", () => {
 
-	const nombre = prompt("Introduce un Nombre:");
+	isNewCourse = true;
+	textCourseName.value = "";
+	textAreaCourse.value = "";
+	cmbLevels.value = 1;
 
-	if (nombre !== null) {
-
-		if (createLibrary(nombre,"library")) {
-
-			showAlert("Librería '" + libraryNameText.value + "' creada.", "success");
-
-		}
-	}
+	coursesContainer.style.display = "flex";
 
 });
 
-btnOpen.addEventListener("click", async () => {
+btnModifyCourse.addEventListener("click", () => {
+
+	isNewCourse = false;
+	coursesContainer.style.display = "flex";
+
+});
+
+btnSaveCourse.addEventListener("click", () => {
+
+	const name = textCourseName.value.trim();
+
+	if (name === "") {
+
+		alert("Escribe un nombre.");
+
+		textCourseName.focus();
+		return;
+
+	}
+
+	if (isNewCourse){
+
+		if (createLibrary(name,"library")) {
+
+			showAlert("Librería '" + libraryName + "' creada.", "success");
+
+		}
+
+	}else{
+
+		libraryName = name;
+		libraryDesc = textAreaCourse.value.trim();
+		libraryLevel = cmbLevels.value;
+
+		saveLibrariesFiles();
+
+		setLibraryInfo(xmlLibrary);
+
+		showAlert("Librería '" + libraryName + "' modificada.", "success");
+
+	}
+
+	coursesContainer.style.display = "none";
+
+});
+
+btnCoursesPanelClose.addEventListener("click", () => {
+
+	coursesContainer.style.display = "none";
+
+});
+
+btnOpenCourse.addEventListener("click", async () => {
 
 	if (projectModified) {
 
@@ -880,8 +928,8 @@ btnOpen.addEventListener("click", async () => {
 
 	if (await openLibraryXMLFile()){
 
-		libraryNameText.disabled = false;
-		libraryDescText.disabled = false;
+		textCourseName.disabled = false;
+		textAreaCourse.disabled = false;
 		btnSaveProject.disabled = false;
 		btnDelProject.disabled = false;
 
@@ -889,14 +937,14 @@ btnOpen.addEventListener("click", async () => {
 
 });
 
-libraryNameText.addEventListener("input", () => {
+textCourseName.addEventListener("input", () => {
 	projectModified = true;
-	libraryName = libraryNameText.value.trim() || "Sin Nombre";
+	libraryName = textCourseName.value.trim() || "Sin Nombre";
 });
 
-libraryDescText.addEventListener("input", () => {
+textAreaCourse.addEventListener("input", () => {
 	projectModified = true;
-	libraryDesc = libraryDescText.value.trim() || "Descripción";
+	libraryDesc = textAreaCourse.value.trim() || "Descripción";
 });
 
 btnShare.addEventListener("click", () => {
@@ -938,6 +986,7 @@ btnSaveProject.addEventListener("click", async () => {
 	}
 
 	await saveCurrentProject();
+
 });
 
 btnDelProject.addEventListener("click", () => {
