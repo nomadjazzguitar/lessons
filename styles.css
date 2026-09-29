@@ -2902,52 +2902,6 @@ input[type="range"] {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===========================
    PANTALLAS ESTRECHAS
 =========================== */
@@ -3479,45 +3433,73 @@ input[type="range"] {
 =========================== */
 
 @media (max-width:480px) and (orientation:portrait){
-/*
-	#workspace{
 
-		grid-template-columns:
-			1fr;
+	/* ================================================== */
+	/* ÁREA PRINCIPAL */
+	/* ================================================== */
 
-		grid-template-rows:
-			minmax(0,1fr);
-
-		grid-template-areas:
-			"content";
-
-	}
-
-
-	#workspaceLibraryPanel{
-
-		position:absolute;
-
-		top:0;
-		left:0;
+	#appMain{
+		grid-template-columns:minmax(0,1fr);
+		grid-template-rows:auto;
 
 		width:100%;
 		min-width:0;
+		min-height:0;
 
-		height:100%;
-
-		z-index:100;
-
+		align-items:stretch;
+		align-content:start;
 	}
 
-	#workspace:has(#workspaceLibraryPanel.panelHidden){
+	/* ================================================== */
+	/* PANEL DE LIBRERÍA ABIERTO */
+	/* ================================================== */
 
-		grid-template-columns:
-			1fr;
+	#appMain:not(.libraryHidden) #workspaceLibraryPanel{
+		display:flex;
 
+		grid-column:1;
+		grid-row:1;
+
+		width:100%;
+		min-width:0;
+		min-height:100dvh;
+
+		padding:8px;
+
+		box-sizing:border-box;
+		overflow-y:auto;
+		overflow-x:hidden;
 	}
 
-*/
+	/* ================================================== */
+	/* WORKSPACE OCULTO CON LA LIBRERÍA ABIERTA */
+	/* ================================================== */
+
+	#appMain:not(.libraryHidden) #workspace{
+		display:none;
+	}
+
+	/* ================================================== */
+	/* LIBRERÍA CERRADA */
+	/* ================================================== */
+
+	#appMain.libraryHidden{
+		grid-template-columns:minmax(0,1fr);
+	}
+
+	#appMain.libraryHidden #workspaceLibraryPanel{
+		display:none;
+	}
+
+	#appMain.libraryHidden #workspace{
+		display:grid;
+
+		grid-column:1;
+		grid-row:1;
+
+		width:100%;
+		min-width:0;
+	}
 }
 
 /* =================================
