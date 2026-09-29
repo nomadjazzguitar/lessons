@@ -183,7 +183,7 @@ document.addEventListener("metronomeBeat", (e) => {
 		case "restart":
 		case "stop":
 
-//			if (cmbProjectType.value === "multimedia") workspaceMetronome.style.display = "none";
+			if (cmbProjectType.value === "multimedia") workspaceMetronome.style.display = "none";
 
 			resetMetronomeTimeline();
 
@@ -192,7 +192,7 @@ document.addEventListener("metronomeBeat", (e) => {
 		case "start":
 		case "tick":
 
-//			if (cmbProjectType.value === "multimedia") workspaceMetronome.style.display = "";
+			if (cmbProjectType.value === "multimedia") workspaceMetronome.style.display = "";
 
 			updateMetronomeTimeline(beat, subBeat);
 
@@ -1555,6 +1555,14 @@ btnNewStudent.addEventListener("click", () => {
 
 });
 
+cmbStudents.addEventListener("change", async () => {
+
+	const url = window.location.origin + window.location.pathname;
+
+	window.open("?admin&lib=" + cmbStudents.value, "_self");	
+
+});
+
 btnStudent.addEventListener("click", () => {
 
 	currentTheme = currentTheme === "dark" ? "light" : "dark";
@@ -1570,6 +1578,17 @@ btnAbrirVideo.addEventListener("click", async () => {
 	const media = await getCameraAndMicrophone();
 
 	if (media) {
+
+		const now = new Date();
+
+		const dateTime =
+			now.getFullYear() +
+			String(now.getMonth() + 1).padStart(2, "0") +
+			String(now.getDate()).padStart(2, "0") + "-" +
+			String(now.getHours()).padStart(2, "0") + "-" +
+			String(now.getMinutes()).padStart(2, "0");
+
+		videoTitle.value = dateTime;
 
 		videoContainer.style.display = "flex";
 
@@ -1651,7 +1670,6 @@ btnVideoMirror.addEventListener("click", () => {
 
 btnVideoRecord.addEventListener("click", () => {
 
-/*
 	if (videoTitle.value.trim() === "") {
 
 		alert("Introduce un título.");
@@ -1659,7 +1677,6 @@ btnVideoRecord.addEventListener("click", () => {
 		return;
 
 	}
-*/
 
 	recordVideo();
 
@@ -1734,6 +1751,12 @@ cmbMicrophone.addEventListener("change", async () => {
 btnGuitarAmp.addEventListener("click", () => {
 
 	window.open("https://www.noise-box.es/#/amp", "_blank");
+
+});
+
+btnUpload.addEventListener("click", () => {
+
+	window.open("https://github.com/nomadjazzguitar/lessons", "_blank");
 
 });
 

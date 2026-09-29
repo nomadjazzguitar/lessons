@@ -600,7 +600,8 @@ function setMenu(m){
 		topGuitarAmp,
 		topProjectGuest,
 		topNewStudent,
-		topCatalogue
+		topCatalogue,
+		topRepository
 
 	].forEach(control => control.classList.add("isHidden"));
 
@@ -613,7 +614,8 @@ function setMenu(m){
 			showMenuControls(
 				topNewStudent,
 				topLibrary,
-				topCatalogue
+				topCatalogue,
+				topRepository
 			);
 
 			menuSelectorText.textContent = "CURSOS";
@@ -859,6 +861,8 @@ async function loadXML(type,file) {
 
 				students = await parseStudentsXml(xml);
 
+				if (students) loadComboStudents();
+
 				break;
 
 			case "libraries":
@@ -947,10 +951,6 @@ function resetControlsValues(state){
 		isScoreVisible = window.innerWidth <= 480 ? false : true;
 
 		projectType = "fretboard";
-	}
-
-	if (state !== "loadProject"){
-
 		fretboardType = "sequence";
 		projectTitle = "";
 		fretCount = 10;
@@ -981,6 +981,10 @@ function resetControlsValues(state){
 		currentInstrument = "piano";
 */
 
+	}
+
+	if (state === "newProject"){
+		projectTitle = "";
 	}
 
 	titleText.value = projectTitle;
@@ -2358,9 +2362,11 @@ async function addStudent(name, email) {
 
 		students.push(studentData);
 
-		savestudentsXml();
+		saveStudentsXml();
 
 		const created = createLibrary(id,"student");
+
+		loadComboStudents();
 
 		showAlert(created
 			? "Estudiante '" + name + "', con email '" + email + "' y librería creados."
@@ -2370,13 +2376,13 @@ async function addStudent(name, email) {
 	} catch (error) {
 
 		showAlert("No se pudo crear el estudiante","error");
-		console.log("No se pudo crear el estudiante",error);
+		console.log("No se pudo crear el estudiante:",error);
 
 	}
 
 }
 
-function savestudentsXml() {
+function saveStudentsXml() {
 
 	try {
 
@@ -2468,6 +2474,34 @@ function loadComboCourses(){
 		cmbCourses.appendChild(option);
 
 	});
+
+}
+
+function loadComboStudents(){
+
+	cmbStudents.innerHTML = "";
+
+	students.forEach(student => {
+
+		const option = document.createElement("option");
+
+		option.value = student.id;
+		option.textContent = student.n;
+
+		cmbStudents.appendChild(option);
+
+	});
+
+	if (isAdmin && lib !==null){
+		cmbStudents.value = lib;
+		return;
+	}
+
+	if (student !== null){
+		cmbStudents.value = student;
+	}else{
+		cmbStudents.selectedIndex = -1;
+	}
 
 }
 

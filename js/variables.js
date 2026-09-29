@@ -453,7 +453,7 @@ const topScroll = document.getElementById("topScroll");
 const topProjectGuest = document.getElementById("topProjectGuest");
 const topMultimedia = document.getElementById("topMultimedia");
 const topGuitarAmp = document.getElementById("topGuitarAmp");
-
+const topRepository = document.getElementById("topRepository");
 
 /*==================================================
 	REFERENCIAS DOM: BARRA DE HERRAMIENTAS
@@ -638,6 +638,7 @@ const btnSaveMultimediaText = document.getElementById("btnSaveMultimediaText");
 const textAreaMultimedia = document.getElementById("textAreaMultimedia");
 const resourceWidthInput = document.getElementById("resourceWidthInput");
 const multimediaDropZone = document.getElementById("multimediaDropZone");
+const btnUpload = document.getElementById("btnUpload");
 
 /*==================================================
 	INSTRUMENTOS
