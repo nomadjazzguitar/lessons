@@ -1775,7 +1775,7 @@ btnSaveMultimediaText.addEventListener("click", () => {
 			width: resourceWidthInput.value
 		});
 
-		createMultimediaElement(cmbMultimedia.value,text,resourceWidthInput.value);
+		createMultimediaElement("text",text,resourceWidthInput.value);
 
 		textAreaMultimedia.value = "";
 
