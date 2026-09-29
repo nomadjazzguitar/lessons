@@ -1760,6 +1760,12 @@ btnUpload.addEventListener("click", () => {
 
 });
 
+btnUpload2.addEventListener("click", () => {
+
+	window.open("https://mega.nz/fm", "_blank");
+
+});
+
 resourceWidthInput.addEventListener("input", () => {
 
 	let value = Number(resourceWidthInput.value);
