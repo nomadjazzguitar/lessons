@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="1.0" id="s_7333s5" type="student" created="29/09/2026" modified="" level="3" name="Clases">
+<library version="1.6" type="student" created="29/09/2026" modified="29/09/2026" level="3" name="Clases">
+	<desc></desc>
+	<categories>
+		<category id="flu1is">2026-29-Sept</category>
+	</categories>
+	<project id="13wg19t" title="Bienvenido" category="flu1is" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Bienvenido a tus clases. 
+A partir de ahora te vas a divertir un monton y vas a aprender la hostia!.]]&gt;" width="90" />
+		</resources>
+	</project>
+	<project id="akt7vt" title="Straight Life Backing Track" category="flu1is" projectType="multimedia">
+		<resources>
+			<resource type="link" content="https://www.youtube.com/watch?v=owCxPWX8ano" width="90" />
+			<resource type="text" content="&lt;![CDATA[Trabaja sobre este backing track de la canciónd e Freddie Hubbard....]]&gt;" width="90" />
+		</resources>
+	</project>
 </library>
