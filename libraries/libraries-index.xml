@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<libraries version="1.2" modified="28/09/2026">
-	<library id="1g0bv2l" created="10/09/2026" modified="28/09/2026" level="1" name="Pentatonicas alteradas con b6">
+<libraries version="1.3" modified="29/09/2026">
+	<library id="1g0bv2l" created="10/09/2026" modified="29/09/2026" level="1" name="Pentatonicas alteradas con b6">
 		<desc>En este curso vamos a explorar el uso de la escala pentatonica menor b6. Para ello utilizaremos ejercicios prácticos y patrones de escalas aplicados a standards de jazz. Además, profundizaremos en el análisis formal de estructuras armónicas típicas del estilo para un lenguaje moderno.</desc>
 	</library>
-	<library id="rqjbtw" created="28/09/2026" modified="28/09/2026" level="3" name="X alt">
+	<library id="rqjbtw" created="28/09/2026" modified="29/09/2026" level="3" name="X alt">
 		<desc>Alterada escala</desc>
+	</library>
+	<library id="14icr3e" created="29/09/2026" modified="29/09/2026" level="3" name="Soniquete flamenco">
+		<desc>Ole!
+Toma que toma...</desc>
 	</library>
 </libraries>
