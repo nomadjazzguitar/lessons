@@ -95,17 +95,6 @@ function drawFretboard() {
 
 
 			//------------------------------------------------
-			// Horizontal (cejuela izquierda)
-			//------------------------------------------------
-
-			case 270:
-
-				ctx.drawImage(neckImage, imageLeft, imageTop, imageWidth, imageHeight);
-
-				break;
-
-
-			//------------------------------------------------
 			// Vertical (cejuela abajo)
 			//------------------------------------------------
 
@@ -122,12 +111,21 @@ function drawFretboard() {
 
 				break;
 
+			//------------------------------------------------
+			// Horizontal (cejuela izquierda)
+			//------------------------------------------------
+
+			case 90:
+
+				ctx.drawImage(neckImage, imageLeft, imageTop, imageWidth, imageHeight);
+
+				break;
 
 			//------------------------------------------------
 			// Horizontal (cejuela derecha)
 			//------------------------------------------------
 
-			case 90:
+			case 270:
 
 				ctx.save();
 
@@ -193,7 +191,7 @@ function drawFretboard() {
 		ctx.textAlign = "left";
 		ctx.textBaseline = "middle";
 
-		ctx.fillText(title, boardleft, boardtop - (showFretNumbers && (rotation === 0 || rotation === 90) ? 42 : 20));
+		ctx.fillText(title, boardleft, boardtop - (showFretNumbers && (rotation === 270 || rotation === 90) ? 42 : 20));
 
 	}
 
@@ -233,7 +231,7 @@ function drawHorizontal() {
 	stringSpace = boardHeight / (stringCount - 1);
 	fretSpace = boardWidth / fretCount;
 
-	const reverseStrings = (rotation === 90);
+	const reverseStrings = (rotation === 270);
 
 	//------------------------------------------------
 	// Trastes
@@ -452,7 +450,7 @@ function drawHorizontal() {
 
 		const fretWidth = Math.max(2,stringSpace * 0.10);
 
-		const nutX = rotation === 270 ? boardleft : boardright;
+		const nutX = rotation === 90 ? boardleft : boardright;
 
 		drawFret(nutX,boardtop,nutX,boardbottom,fretWidth);
 
@@ -466,9 +464,9 @@ function drawHorizontal() {
 			ctx.lineWidth = nutWidth;
 			ctx.strokeStyle = getNutColor();
 
-			const x1 = rotation === 270 ? boardleft : boardright;
+			const x1 = rotation === 90 ? boardleft : boardright;
 
-			const x2 = rotation === 270 ? boardleft + gap : boardright - gap;
+			const x2 = rotation === 90 ? boardleft + gap : boardright - gap;
 
 			ctx.beginPath();
 			ctx.moveTo(x1, boardtop);
@@ -765,13 +763,13 @@ function drawRealisticNut() {
 	switch (rotation) {
 
 		case 0:
-		case 270:
+		case 90:
 			ctx.shadowOffsetX = 1;
 			ctx.shadowOffsetY = 1;
 			break;
 
 		case 180:
-		case 90:
+		case 270:
 			ctx.shadowOffsetX = -1;
 			ctx.shadowOffsetY = -1;
 			break;
@@ -836,59 +834,6 @@ function drawRealisticNut() {
 		}
 
 		//------------------------------------------------
-		// Horizontal (cejuela izquierda)
-		//------------------------------------------------
-
-		case 270: {
-
-			const x = boardleft - nutThickness / 2;
-			const y = boardtop - nutRadius;
-			const width = nutThickness;
-			const height = boardHeight + nutRadius * 2;
-
-			ctx.beginPath();
-
-			ctx.moveTo(x + nutRadius, y);
-			ctx.lineTo(x + width - nutRadius, y);
-			ctx.quadraticCurveTo(x + width, y, x + width, y + nutRadius);
-			ctx.lineTo(x + width, y + height - nutRadius);
-			ctx.quadraticCurveTo(x + width, y + height, x + width - nutRadius, y + height);
-			ctx.lineTo(x + nutRadius, y + height);
-			ctx.quadraticCurveTo(x, y + height, x, y + height - nutRadius);
-			ctx.lineTo(x, y + nutRadius);
-			ctx.quadraticCurveTo(x, y, x + nutRadius, y);
-
-			ctx.closePath();
-
-			ctx.fillStyle = nutFill;
-			ctx.fill();
-
-			ctx.shadowColor = "transparent";
-
-			ctx.beginPath();
-			ctx.moveTo(x + nutThickness * 0.28, y + nutRadius);
-			ctx.lineTo(x + nutThickness * 0.28, y + height - nutRadius);
-			ctx.strokeStyle = nutHighlight;
-			ctx.lineWidth = Math.max(0.7, nutThickness * 0.13);
-			ctx.stroke();
-
-			for (let s = 0; s < stringCount; s++) {
-
-				const stringY = boardtop + s * stringSpace;
-
-				ctx.beginPath();
-				ctx.moveTo(x + nutThickness * 0.18, stringY);
-				ctx.lineTo(x + nutThickness * 0.82, stringY);
-				ctx.strokeStyle = slotColor;
-				ctx.lineWidth = Math.max(0.7, 1 + s * 0.14);
-				ctx.stroke();
-
-			}
-
-			break;
-		}
-
-		//------------------------------------------------
 		// Vertical (cejuela abajo)
 		//------------------------------------------------
 
@@ -943,10 +888,63 @@ function drawRealisticNut() {
 		}
 
 		//------------------------------------------------
-		// Horizontal (cejuela derecha)
+		// Horizontal (cejuela izquierda)
 		//------------------------------------------------
 
 		case 90: {
+
+			const x = boardleft - nutThickness / 2;
+			const y = boardtop - nutRadius;
+			const width = nutThickness;
+			const height = boardHeight + nutRadius * 2;
+
+			ctx.beginPath();
+
+			ctx.moveTo(x + nutRadius, y);
+			ctx.lineTo(x + width - nutRadius, y);
+			ctx.quadraticCurveTo(x + width, y, x + width, y + nutRadius);
+			ctx.lineTo(x + width, y + height - nutRadius);
+			ctx.quadraticCurveTo(x + width, y + height, x + width - nutRadius, y + height);
+			ctx.lineTo(x + nutRadius, y + height);
+			ctx.quadraticCurveTo(x, y + height, x, y + height - nutRadius);
+			ctx.lineTo(x, y + nutRadius);
+			ctx.quadraticCurveTo(x, y, x + nutRadius, y);
+
+			ctx.closePath();
+
+			ctx.fillStyle = nutFill;
+			ctx.fill();
+
+			ctx.shadowColor = "transparent";
+
+			ctx.beginPath();
+			ctx.moveTo(x + nutThickness * 0.28, y + nutRadius);
+			ctx.lineTo(x + nutThickness * 0.28, y + height - nutRadius);
+			ctx.strokeStyle = nutHighlight;
+			ctx.lineWidth = Math.max(0.7, nutThickness * 0.13);
+			ctx.stroke();
+
+			for (let s = 0; s < stringCount; s++) {
+
+				const stringY = boardtop + s * stringSpace;
+
+				ctx.beginPath();
+				ctx.moveTo(x + nutThickness * 0.18, stringY);
+				ctx.lineTo(x + nutThickness * 0.82, stringY);
+				ctx.strokeStyle = slotColor;
+				ctx.lineWidth = Math.max(0.7, 1 + s * 0.14);
+				ctx.stroke();
+
+			}
+
+			break;
+		}
+
+		//------------------------------------------------
+		// Horizontal (cejuela derecha)
+		//------------------------------------------------
+
+		case 270: {
 
 			const x = boardright - nutThickness / 2;
 			const y = boardtop - nutRadius;
@@ -1068,7 +1066,7 @@ function drawInlays(left, top, stringSpace) {
 	ctx.fillStyle = getInlayColor();
 
 	const horizontal = rotation === 90 || rotation === 270;
-	const reverseStrings = rotation === 180 || rotation === 90;
+	const reverseStrings = rotation === 180 || rotation === 270;
 
 	marks.forEach(fret => {
 
@@ -1165,7 +1163,7 @@ function drawFretNumbers() {
 
 		ctx.textAlign = "center";
 
-		const y = rotation === 90 ? boardtop - 18 : boardbottom + 18;
+		const y = rotation === 270 ? boardtop - 18 : boardbottom + 18;
 
 		for (let fret = 1; fret <= fretCount; fret++) {
 
@@ -1229,17 +1227,6 @@ function drawStringNumbers() {
 				break;
 
 			//------------------------------------------------
-			// Horizontal (cejuela izquierda)
-			//------------------------------------------------
-
-			case 270:
-
-				x = boardleft - 18;
-				y = boardtop + s * stringSpace;
-
-				break;
-
-			//------------------------------------------------
 			// Vertical (cejuela abajo)
 			//------------------------------------------------
 
@@ -1251,10 +1238,21 @@ function drawStringNumbers() {
 				break;
 
 			//------------------------------------------------
-			// Horizontal (cejuela derecha)
+			// Horizontal (cejuela izquierda)
 			//------------------------------------------------
 
 			case 90:
+
+				x = boardleft - 18;
+				y = boardtop + s * stringSpace;
+
+				break;
+
+			//------------------------------------------------
+			// Horizontal (cejuela derecha)
+			//------------------------------------------------
+
+			case 270:
 
 				x = boardright + 18;
 				y = boardbottom - s * stringSpace;
@@ -1493,17 +1491,6 @@ function drawNutNotes(opacity = 1) {
 				break;
 
 			//------------------------------------------------
-			// Horizontal (cejuela izquierda)
-			//------------------------------------------------
-
-			case 270:
-
-				x = boardleft + gap / 2;
-				y = boardtop + s * stringSpace;
-
-				break;
-
-			//------------------------------------------------
 			// Vertical (cejuela abajo)
 			//------------------------------------------------
 
@@ -1515,10 +1502,21 @@ function drawNutNotes(opacity = 1) {
 				break;
 
 			//------------------------------------------------
-			// Horizontal (cejuela derecha)
+			// Horizontal (cejuela izquierda)
 			//------------------------------------------------
 
 			case 90:
+
+				x = boardleft + gap / 2;
+				y = boardtop + s * stringSpace;
+
+				break;
+
+			//------------------------------------------------
+			// Horizontal (cejuela derecha)
+			//------------------------------------------------
+
+			case 270:
 
 				x = boardright - gap / 2;
 				y = boardtop + (stringCount - 1 - s) * stringSpace;
@@ -1652,17 +1650,6 @@ function drawNutHover() {
 			break;
 
 		//------------------------------------------------
-		// Horizontal (cejuela izquierda)
-		//------------------------------------------------
-
-		case 270:
-
-			x = boardleft + gap / 2;
-			y = boardtop + hoverNut * stringSpace;
-
-			break;
-
-		//------------------------------------------------
 		// Vertical (cejuela abajo)
 		//------------------------------------------------
 
@@ -1674,10 +1661,21 @@ function drawNutHover() {
 			break;
 
 		//------------------------------------------------
-		// Horizontal (cejuela derecha)
+		// Horizontal (cejuela izquierda)
 		//------------------------------------------------
 
 		case 90:
+
+			x = boardleft + gap / 2;
+			y = boardtop + hoverNut * stringSpace;
+
+			break;
+
+		//------------------------------------------------
+		// Horizontal (cejuela derecha)
+		//------------------------------------------------
+
+		case 270:
 
 			x = boardright - gap / 2;
 			y = boardbottom - hoverNut * stringSpace;
@@ -1747,7 +1745,7 @@ function getFretPosition(fret) {
 	// Invertir el sentido del mástil
 	//------------------------------------------------
 
-	if (rotation === 180 || rotation === 90) {
+	if (rotation === 180 || rotation === 270) {
 
 		position = neckLength - position;
 
@@ -1803,13 +1801,6 @@ function getNotePosition(string, fret) {
 					y: boardtop + gap / 2
 				};
 
-			case 270:
-
-				return {
-					x: boardleft + gap / 2,
-					y: boardtop + string * stringSpace
-				};
-
 			case 180:
 
 				return {
@@ -1818,6 +1809,13 @@ function getNotePosition(string, fret) {
 				};
 
 			case 90:
+
+				return {
+					x: boardleft + gap / 2,
+					y: boardtop + string * stringSpace
+				};
+
+			case 270:
 
 				return {
 					x: boardright - gap / 2,
@@ -1850,17 +1848,6 @@ function getCellCenter(string, fret) {
 			};
 
 		//------------------------------------------------
-		// Horizontal (cejuela izquierda)
-		//------------------------------------------------
-
-		case 270:
-
-			return {
-				x: boardleft + fretCenter,
-				y: boardtop + string * stringSpace
-			};
-
-		//------------------------------------------------
 		// Vertical (cejuela abajo)
 		//------------------------------------------------
 
@@ -1872,10 +1859,21 @@ function getCellCenter(string, fret) {
 			};
 
 		//------------------------------------------------
-		// Horizontal (cejuela derecha)
+		// Horizontal (cejuela izquierda)
 		//------------------------------------------------
 
 		case 90:
+
+			return {
+				x: boardleft + fretCenter,
+				y: boardtop + string * stringSpace
+			};
+
+		//------------------------------------------------
+		// Horizontal (cejuela derecha)
+		//------------------------------------------------
+
+		case 270:
 
 			return {
 				x: boardleft + fretCenter,
@@ -1913,17 +1911,6 @@ function getCellFromMouse(x, y) {
 			break;
 
 		//------------------------------------------------
-		// Horizontal (cejuela izquierda)
-		//------------------------------------------------
-
-		case 270:
-
-			string = Math.round((y - boardtop) / stringSpace);
-			fret = getFretFromPosition(x - boardleft);
-
-			break;
-
-		//------------------------------------------------
 		// Vertical (cejuela abajo)
 		//------------------------------------------------
 
@@ -1935,10 +1922,21 @@ function getCellFromMouse(x, y) {
 			break;
 
 		//------------------------------------------------
-		// Horizontal (cejuela derecha)
+		// Horizontal (cejuela izquierda)
 		//------------------------------------------------
 
 		case 90:
+
+			string = Math.round((y - boardtop) / stringSpace);
+			fret = getFretFromPosition(x - boardleft);
+
+			break;
+
+		//------------------------------------------------
+		// Horizontal (cejuela derecha)
+		//------------------------------------------------
+
+		case 270:
 
 			string = Math.round((y - boardtop) / stringSpace);
 			string = stringCount - 1 - string;
@@ -1981,22 +1979,6 @@ function getNutStringFromMouse(x, y) {
 		}
 
 		//------------------------------------------------
-		// Horizontal (cejuela izquierda)
-		//------------------------------------------------
-
-		case 270: {
-
-			if (x > boardleft + 8) return null;
-
-			let string = Math.round((y - boardtop) / stringSpace);
-
-			if (string < 0 || string >= stringCount) return null;
-
-			return string;
-
-		}
-
-		//------------------------------------------------
 		// Vertical (cejuela abajo)
 		//------------------------------------------------
 
@@ -2013,10 +1995,26 @@ function getNutStringFromMouse(x, y) {
 		}
 
 		//------------------------------------------------
-		// Horizontal (cejuela derecha)
+		// Horizontal (cejuela izquierda)
 		//------------------------------------------------
 
 		case 90: {
+
+			if (x > boardleft + 8) return null;
+
+			let string = Math.round((y - boardtop) / stringSpace);
+
+			if (string < 0 || string >= stringCount) return null;
+
+			return string;
+
+		}
+
+		//------------------------------------------------
+		// Horizontal (cejuela derecha)
+		//------------------------------------------------
+
+		case 270: {
 
 			if (x < boardright - 8) return null;
 

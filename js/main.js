@@ -186,7 +186,6 @@ function setStudentState(){
 
 	if (lib !== null && isStudentActive) xmlLibrary = dataURL_Libraries + lib + ".xml";
 
-
 }
 
 function configureStudentControls(){
@@ -226,8 +225,6 @@ function configureStudentControls(){
 
 			topClipboard.style.display = "none";
 
-			btnShowLibraryPanel.style.display = "none";
-
 			btnStudent.querySelector("i").className = "fa-solid fa-circle-user";
 
 			txtStudentTitle.textContent = "Invitado";
@@ -237,8 +234,6 @@ function configureStudentControls(){
 			if (student === null) {
 
 				setMenu("edit");
-
-				btnShowLibraryPanel.style.display = "none";
 
 				btnStudent.querySelector("i").className = "fa-solid fa-circle-user";
 
@@ -287,6 +282,7 @@ function configureStudentControls(){
 
 			btnMenuSelector.disabled = false;
 			btnShowLibraryPanel.disabled = false;
+			btnToggleLibraryPanel.disabled = false;
 
 			btnPlayStop.disabled = true;
 
@@ -334,6 +330,8 @@ function configureStudentControls(){
 
 		cursor.style.display = "";
 
+		btnToggleLibraryPanel.style.display = "none";
+
 	}
 
 	if (!isMobile && (isAdmin || student === null)){
@@ -341,6 +339,14 @@ function configureStudentControls(){
 		
 	}else{
 		closeTopControls();
+	}
+
+	if (!isAdmin){
+		workspaceMultimediaControls.style.display = "none";
+	}
+
+	if (student === null) {
+		workspaceTitleContainer.style.display = "none";
 	}
 
 }
@@ -351,7 +357,7 @@ function setControlsState() {
 	const isChord = fretboardType === "chord";
 	const noDisplayMode = !displayMode;
 	const isSharedFretboard = appMode === "Shared" && isFretboard;
-	const isMultimedia = cmbProjectType.value !== "fretboard";
+	const isMultimedia = cmbProjectType.value === "multimedia";
 
 
 	// --------------------------------
@@ -432,13 +438,7 @@ function setControlsState() {
 		cmbImgFormat.disabled = renderDisabled;
 		btnImgDownload.disabled = renderDisabled;
 
-	} else {
-
-		btnMultimedia.disabled = noDisplayMode;
-		btnMultimediaPopup.disabled = noDisplayMode;
-
 	}
-
 
 	// --------------------------------
 	// CONTROLES DEL FRETBOARD
@@ -472,9 +472,6 @@ function setControlsState() {
 */
 
 	cmbFretboardType.disabled = isMultimedia;
-
-	btnUploadFile.disabled = !isMultimedia;
-
 
 	// --------------------------------
 	// DESCARGAS SUPERIORES
@@ -530,14 +527,6 @@ function setControlsState() {
 		isScoreVisible = false;
 
 	}
-
-
-	// --------------------------------
-	// WORKSPACE MULTIMEDIA
-	// --------------------------------
-
-	workspace.classList.toggle("multimedia",isMultimedia);
-
 
 }
 
@@ -848,8 +837,6 @@ function initializeEmptyProject() {
 
 	resetControlsValues("init");
 
-	if (student === null) workspaceTitleText.style.display = "none";
-
 }
 
 async function loadXML(type,file) {
@@ -959,22 +946,12 @@ function resetControlsValues(state){
 		orientation = window.innerWidth <= 480 ? "vertical" : "horizontal";
 		isScoreVisible = window.innerWidth <= 480 ? false : true;
 
-		fretboardType = "sequence";
 		projectType = "fretboard";
-
-	}
-
-	if (state === "newProject"){
-		if (!isAdmin) {
-			projectType = "fretboard";
-			cmbProjectType.value = projectType;
-		}
 	}
 
 	if (state !== "loadProject"){
 
-		if (cmbProjectType.value !== "fretboard") fretboardType = "sequence";
-
+		fretboardType = "sequence";
 		projectTitle = "";
 		fretCount = 10;
 		projectBar = 4;
@@ -1005,8 +982,6 @@ function resetControlsValues(state){
 */
 
 	}
-
-	if (projectType === "multimedia") projectType = "video";
 
 	titleText.value = projectTitle;
 
@@ -1098,6 +1073,8 @@ function resetControlsValues(state){
 	cmbFretboardTypeGuest.value = cmbFretboardType.value;
 
 	if (fretboardType === "fretboard") isScoreVisible = false;
+
+	cmbMultimedia.value = "text";
 
 	btnDisplay.classList.toggle("active", displayMode);
 
@@ -1304,22 +1281,24 @@ function saveHistory() {
 
 function openLibraryPanel(){
 
-	workspaceLibraryPanel.classList.remove("panelHidden");
+	appMain.classList.remove("libraryHidden");
 
 	btnShowLibraryPanel.title = "Ocultar librería";
-
 	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-left'></i>";
 
+	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
+	btnToggleLibraryPanel.innerHTML = btnShowLibraryPanel.innerHTML;
 }
 
 function closeLibraryPanel(){
 
-	workspaceLibraryPanel.classList.add("panelHidden");
+	appMain.classList.add("libraryHidden");
 
 	btnShowLibraryPanel.title = "Ver librería";
-
 	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-right'></i>";
 
+	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
+	btnToggleLibraryPanel.innerHTML = btnShowLibraryPanel.innerHTML;
 }
 
 function openTopControls(){
@@ -1453,6 +1432,8 @@ function updateOrientationButtons(){
 
 function scrollToFretboardNut(){
 
+	return;
+
 	if (!isFretboardVisible) return;
 
 	requestAnimationFrame(() => {
@@ -1471,13 +1452,13 @@ function scrollToFretboardNut(){
 
 				break;
 
-			case 270:
-				workspaceFretboard.scrollLeft = 0;
+			case 90:
+//				workspaceFretboard.scrollLeft = 0;
 
 				break;
 
-			case 90:
-				workspaceFretboard.scrollLeft = workspaceFretboard.scrollWidth;
+			case 270:
+//				workspaceFretboard.scrollLeft = workspaceFretboard.scrollWidth;
 
 				break;
 		}
@@ -1488,56 +1469,32 @@ function scrollToFretboardNut(){
 
 function setWorkspaceLayout(){
 
-	//------------------------------------------------
-	// Nunca permitir que ambos estén ocultos
-	//------------------------------------------------
+	workspaceMultimedia.innerHTML = "";
 
-	if (!isScoreVisible && !isFretboardVisible) {
+	if (cmbProjectType.value === "multimedia"){
 
-		isFretboardVisible = true;
+		workspaceFretboard.style.display = "none";
+		workspaceScore.style.display = "none";
 
-	}
+	}else{
 
-	//------------------------------------------------
-	// Mostrar / ocultar
-	//------------------------------------------------
+		// Nunca permitir que ambos estén ocultos
+		if (!isScoreVisible && !isFretboardVisible) isFretboardVisible = true;
 
-	workspaceFretboard.style.display = isFretboardVisible ? "" : "none";
+		workspaceFretboard.style.display = isFretboardVisible ? "" : "none";
+		workspaceScore.style.display = isScoreVisible ? "" : "none";
 
-	workspaceScore.style.display = isScoreVisible ? "" : "none";
+		btnFretboardVisible.classList.toggle("active",isFretboardVisible);
 
-	//------------------------------------------------
-	// Configurar layout
-	//------------------------------------------------
+		btnScoreVisible.classList.toggle("active",isScoreVisible);
 
-	workspace.classList.remove(
-		"horizontal",
-		"vertical",
-		"contentOnly",
-		"scoreOnly"
-	);
+		if (isFretboardVisible) resizeCanvas();
 
-	if (isFretboardVisible && isScoreVisible) {
-
-		workspace.classList.add(orientation);
-
-	} else if (isFretboardVisible) {
-
-		workspace.classList.add("contentOnly");
-
-	} else {
-
-		workspace.classList.add("scoreOnly");
+		if (isScoreVisible) scoreRender();
 
 	}
 
-	//------------------------------------------------
-	// Estado de los botones
-	//------------------------------------------------
-
-	btnFretboardVisible.classList.toggle("active",isFretboardVisible);
-
-	btnScoreVisible.classList.toggle("active",isScoreVisible);
+	renderMultimedia();
 
 }
 
@@ -1974,28 +1931,23 @@ function resizeCanvas() {
 		//------------------------------------------------
 
 		if (rotation === 0) leftMargin = Math.max(leftMargin, 40);
-
 		if (rotation === 180) rightMargin = Math.max(rightMargin, 40);
-
-		if (rotation === 270) bottomMargin = Math.max(bottomMargin, 40);
-
-		if (rotation === 90) topMargin = Math.max(topMargin, 40);
+		if (rotation === 90) bottomMargin = Math.max(bottomMargin, 40);
+		if (rotation === 270) topMargin = Math.max(topMargin, 40);
 
 		//------------------------------------------------
 		// Números de cuerdas
 		//------------------------------------------------
 
 		if (rotation === 0 || rotation === 90) topMargin = Math.max(topMargin, 40);
-
 		if (rotation === 180 || rotation === 270) bottomMargin = Math.max(bottomMargin, 40);
 
 		//------------------------------------------------
 		// Margen lateral para números de cuerdas
 		//------------------------------------------------
 
-		if (rotation === 90) rightMargin = Math.max(rightMargin, 40);
-
-		if (rotation === 270) leftMargin = Math.max(leftMargin, 40);
+		if (rotation === 270) rightMargin = Math.max(rightMargin, 40);
+		if (rotation === 90) leftMargin = Math.max(leftMargin, 40);
 
 	}
 
@@ -2096,8 +2048,8 @@ function zoomCanvas() {
 
 		if (rotation === 0) leftMargin = Math.max(leftMargin, 40);
 		if (rotation === 180) rightMargin = Math.max(rightMargin, 40);
-		if (rotation === 270) bottomMargin = Math.max(bottomMargin, 40);
-		if (rotation === 90) topMargin = Math.max(topMargin, 40);
+		if (rotation === 90) bottomMargin = Math.max(bottomMargin, 40);
+		if (rotation === 270) topMargin = Math.max(topMargin, 40);
 
 		//------------------------------------------------
 		// Números de cuerdas
@@ -2111,8 +2063,8 @@ function zoomCanvas() {
 		// Margen lateral para números de cuerdas
 		//------------------------------------------------
 
-		if (rotation === 90) rightMargin = Math.max(rightMargin, 40);
-		if (rotation === 270) leftMargin = Math.max(leftMargin, 40);
+		if (rotation === 270) rightMargin = Math.max(rightMargin, 40);
+		if (rotation === 90) leftMargin = Math.max(leftMargin, 40);
 
 	}
 
@@ -2387,7 +2339,7 @@ async function addStudent(name, email) {
 
 		const alta = String(date.getDate()).padStart(2, "0") + "/" + String(date.getMonth() + 1).padStart(2, "0") + "/" + date.getFullYear();
 
-		const id = generateIDKey();
+		const id = "s_" + generateIDKey();
 
 		const studentData = {
 

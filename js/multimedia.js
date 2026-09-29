@@ -2608,7 +2608,7 @@ function stopRecordingTimer() {
 
 async function selectMultimediaFiles() {
 
-	if (projectType === "text") return;
+	if (cmbMultimedia.value === "text") return;
 
 	// --------------------------------
 	// TIPOS SIN ARCHIVO
@@ -2616,21 +2616,21 @@ async function selectMultimediaFiles() {
 
 	let content;
 
-	if (projectType === "link" || projectType === "iframe") {
+	if (cmbMultimedia.value === "link" || cmbMultimedia.value === "iframe") {
 
-		if (projectType === "link") content = prompt("Introduzca la URL:");
+		if (cmbMultimedia.value === "link") content = prompt("Introduzca la URL:");
 
-		if (projectType === "iframe") content = prompt("Pegue aquí el código de inserción:");
+		if (cmbMultimedia.value === "iframe") content = prompt("Pegue aquí el código de inserción:");
 
 		if (!content) return;
 
 		multimediaResources.push({
-			type: projectType,
+			type: cmbMultimedia.value,
 			content: content.trim(),
 			width: resourceWidth
 		});
 
-		createMultimediaElement(projectType, content.trim(),resourceWidth);
+		createMultimediaElement(cmbMultimedia.value, content.trim(),resourceWidth);
 
 		return;
 
@@ -2662,7 +2662,7 @@ async function selectMultimediaFiles() {
 
 	input.multiple = true;
 
-	switch (projectType) {
+	switch (cmbMultimedia.value) {
 
 		case "video":
 
@@ -2729,11 +2729,11 @@ async function selectMultimediaFiles() {
 
 		for (const file of files) {
 
-			if (!isValidFile(file, projectType)) {
+			if (!isValidFile(file, cmbMultimedia.value)) {
 				continue;
 			}
 
-			await saveFileToMultimedia(file, projectType);
+			await saveFileToMultimedia(file, cmbMultimedia.value);
 
 		}
 
@@ -2803,7 +2803,7 @@ async function addDroppedResource(file,width) {
 	// COMPROBAR ARCHIVO
 	// --------------------------------
 
-	if (!isValidFile(file,projectType)) {
+	if (!isValidFile(file,cmbMultimedia.value)) {
 
 		showAlert("El archivo no corresponde al formato del proyecto.","info");
 
@@ -2815,7 +2815,7 @@ async function addDroppedResource(file,width) {
 	// GUARDAR ARCHIVO
 	// --------------------------------
 
-	await saveFileToMultimedia(file, projectType, width);
+	await saveFileToMultimedia(file, cmbMultimedia.value, width);
 
 }
 
@@ -3244,7 +3244,7 @@ function createMultimediaElement(type, content, width) {
 			element.src = resourceUrl;
 			element.alt = fileName || "";
 
-			element.style.width = width + "%";
+//			element.style.width = width + "%";
 
 			if (fileName.toLowerCase().endsWith(".svg")) element.style.backgroundColor = "#fff";
 
@@ -3382,182 +3382,12 @@ async function renderMultimedia() {
 
 	workspaceMultimedia.innerHTML = "";
 
-
-	// DRAG AND DROP ----------------------
-
-	const pType = cmbProjectType.value !== "text" && cmbProjectType.value !== "link" && cmbProjectType.value !== "iframe";
-
-	if (isAdmin){
-
-		const widthContainer = document.createElement("div");
-
-		widthContainer.id = "multimediaWidthContainer";
-
-		const widthLabel = document.createElement("label");
-
-		widthLabel.innerHTML = "Ancho (%):&nbsp;";
-
-		const widthInput = document.createElement("input");
-
-		widthInput.type = "number";
-		widthInput.min = "0";
-		widthInput.max = "100";
-		widthInput.step = "1";
-		widthInput.value = resourceWidth;
-
-		widthInput.addEventListener("input", () => {
-
-			let value = Number(widthInput.value);
-
-			if (widthInput.value === "" || !Number.isFinite(value)) value = resourceWidth;
-
-			value = Math.max(0, Math.min(100, value));
-
-			widthInput.value = value;
-
-		});
-
-		widthContainer.appendChild(widthLabel);
-		widthContainer.appendChild(widthInput);
-
-		workspaceMultimedia.appendChild(widthContainer);
-
-}
-
-	if (isAdmin && pType){
-
-		const dropZone = document.createElement("div");
-
-		dropZone.id = "multimediaDropZone";
-
-		dropZone.innerHTML = "<i class='fa-solid fa-cloud-arrow-up'></i><span>Arrastra aquí un archivo</span>";
-
-		workspaceMultimedia.appendChild(dropZone);
-
-		dropZone.addEventListener("dragover", event => {
-
-			event.preventDefault();
-
-			event.stopPropagation();
-
-			event.dataTransfer.dropEffect = "copy";
-
-			dropZone.classList.add("dragover");
-
-		});
-
-		dropZone.addEventListener("dragleave", event => {
-
-			event.preventDefault();
-
-			event.stopPropagation();
-
-			// Solo quitarlo si realmente salimos de la zona
-
-			if (!dropZone.contains(event.relatedTarget)) {
-
-				dropZone.classList.remove("dragover");
-
-			}
-
-		});
-
-		dropZone.addEventListener("drop", async event => {
-
-			event.preventDefault();
-
-			event.stopPropagation();
-
-			dropZone.classList.remove("dragover");
-
-			const files = event.dataTransfer.files;
-
-			if (!files || files.length === 0) return;
-
-			const file = files[0];
-
-			// Seleccionar carpeta multimedia si no está seleccionada
-
-			if (!multimediaDirectory) {
-
-				const selected = await selectMultimediaFolder();
-
-				if (!selected) return;
-
-			}
-
-			await addDroppedResource(file,Number(widthInput.value));
-
-		});
-
-	}
-
-
-	// RECURSOS ----------------------
-
 	if (Array.isArray(multimediaResources)) {
 
 		for (const resource of multimediaResources) {
 
 			createMultimediaElement(resource.type, resource.content, resource.width);
 
-		}
-
-	}
-
-
-	// TEXT AREA ----------------------
-
-	if (isAdmin && cmbProjectType.value === "text"){
-
-		if (!workspaceMultimedia.querySelector("#textAreaMultimedia")) {
-
-			const element = document.createElement("div");
-			element.id = "textMultimedia";
-
-			const textArea = document.createElement("textarea");
-			textArea.id = "textAreaMultimedia";
-			textArea.placeholder = "Escribe aquí texto o HTML...";
-
-			const btnSave = document.createElement("button");
-			btnSave.id = "btnSaveMultimediaText";
-			btnSave.innerHTML = "<i class='fa-solid fa-floppy-disk'></i><span>Guardar</span>";
-			btnSave.title = "Guardar texto en el proyecto";
-
-			btnSave.addEventListener("click", () => {
-
-				let text = textArea.value;
-
-				if (text === ""){
-
-					alert("El texto esta vacío.");
-
-					textArea.focus();
-
-				}else{
-
-					let xmlText = "<![CDATA[" + text + "]]>";
-
-					multimediaResources.push({
-						type: cmbProjectType.value,
-						content: xmlText,
-						width: resourceWidth
-					});
-
-					createMultimediaElement(cmbProjectType.value,text,resourceWidth);
-
-					element.remove();
-
-				}
-
-			});
-
-			element.appendChild(textArea);
-			element.appendChild(btnSave);
-
-			workspaceMultimedia.appendChild(element);
-
-			textArea.focus();
 		}
 
 	}

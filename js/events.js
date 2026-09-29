@@ -183,7 +183,7 @@ document.addEventListener("metronomeBeat", (e) => {
 		case "restart":
 		case "stop":
 
-			if (cmbProjectType.value !== "fretboard") workspaceMetronome.style.display = "none";
+//			if (cmbProjectType.value === "multimedia") workspaceMetronome.style.display = "none";
 
 			resetMetronomeTimeline();
 
@@ -192,7 +192,7 @@ document.addEventListener("metronomeBeat", (e) => {
 		case "start":
 		case "tick":
 
-			if (cmbProjectType.value !== "fretboard") workspaceMetronome.style.display = "";
+//			if (cmbProjectType.value === "multimedia") workspaceMetronome.style.display = "";
 
 			updateMetronomeTimeline(beat, subBeat);
 
@@ -743,6 +743,8 @@ menuPopup.querySelectorAll("button").forEach(button=>{
 		setMenu(button.dataset.menu);
 
 		menuPopup.classList.remove("isOpen");
+	
+		if (isMobile) closeLibraryPanel();
 
 	});
 
@@ -785,7 +787,11 @@ cmbDiapason.addEventListener("change", () => {
 
 btnShowLibraryPanel.addEventListener("click", () => {
 
-	if (workspaceLibraryPanel.classList.contains("panelHidden")) {
+	if (isMobile) {
+		btnMenuSelector.click();
+	}
+
+	if (appMain.classList.contains("libraryHidden")) {
 
 		openLibraryPanel();
 
@@ -795,6 +801,12 @@ btnShowLibraryPanel.addEventListener("click", () => {
 	}
 
 	if (isScoreVisible) scoreRender();
+
+});
+
+btnToggleLibraryPanel.addEventListener("click", () => {
+
+	btnShowLibraryPanel.click();
 
 });
 
@@ -1262,33 +1274,9 @@ cmbKey.addEventListener("change", function () {
 
 cmbProjectType.addEventListener("change", () => {
 
-	const oldType = projectType;
-
 	projectType = cmbProjectType.value;
 
-	if ((oldType === "fretboard" && projectType !== "fretboard") || (oldType !== "fretboard" && projectType === "fretboard")) {
-
-		if (!newProject()) {
-
-			cmbProjectType.value = oldType;
-
-			projectType = oldType;
-
-			return;
-
-		}
-
-	}
-
-	if (projectType === "fretboard") {
-
-		renderProject();
-
-	} else {
-
-		renderMultimedia();
-
-	}
+	newProject();
 
 });
 
@@ -1743,17 +1731,119 @@ cmbMicrophone.addEventListener("change", async () => {
 
 });
 
-btnUploadFile.addEventListener("click", () => {
-
-	closeLibraryPanel();
-
-	selectMultimediaFiles();
-
-});
-
 btnGuitarAmp.addEventListener("click", () => {
 
 	window.open("https://www.noise-box.es/#/amp", "_blank");
 
 });
 
+resourceWidthInput.addEventListener("input", () => {
+
+	let value = Number(resourceWidthInput.value);
+
+	if (resourceWidthInput.value === "" || !Number.isFinite(value)) value = resourceWidth;
+
+	value = Math.max(0, Math.min(100, value));
+
+	resourceWidthInput.value = value;
+
+});
+
+btnUploadFile.addEventListener("click", () => {
+
+	selectMultimediaFiles();
+
+});
+
+btnSaveMultimediaText.addEventListener("click", () => {
+
+	let text = textAreaMultimedia.value.trim();
+
+	if (text === ""){
+
+		alert("El texto esta vacío.");
+
+//		textAreaMultimedia.focus();
+
+	}else{
+
+		let xmlText = "<![CDATA[" + text + "]]>";
+
+		multimediaResources.push({
+			type: "text",
+			content: xmlText,
+			width: resourceWidthInput.value
+		});
+
+		createMultimediaElement(cmbMultimedia.value,text,resourceWidthInput.value);
+
+		textAreaMultimedia.value = "";
+
+	}
+
+});
+
+multimediaDropZone.addEventListener("dragover", event => {
+
+	const pType = cmbMultimedia.value !== "text" && cmbMultimedia.value !== "link" && cmbMultimedia.value !== "iframe";
+	if (!pType) return;
+
+	event.preventDefault();
+
+	event.stopPropagation();
+
+	event.dataTransfer.dropEffect = "copy";
+
+	multimediaDropZone.classList.add("dragover");
+
+});
+
+multimediaDropZone.addEventListener("dragleave", event => {
+
+	const pType = cmbMultimedia.value !== "text" && cmbMultimedia.value !== "link" && cmbMultimedia.value !== "iframe";
+	if (!pType) return;
+
+	event.preventDefault();
+
+	event.stopPropagation();
+
+	// Solo quitarlo si realmente salimos de la zona
+
+	if (!multimediaDropZone.contains(event.relatedTarget)) {
+
+		multimediaDropZone.classList.remove("dragover");
+
+	}
+
+});
+
+multimediaDropZone.addEventListener("drop", async event => {
+
+	const pType = cmbMultimedia.value !== "text" && cmbMultimedia.value !== "link" && cmbMultimedia.value !== "iframe";
+	if (!pType) return;
+
+	event.preventDefault();
+
+	event.stopPropagation();
+
+	multimediaDropZone.classList.remove("dragover");
+
+	const files = event.dataTransfer.files;
+
+	if (!files || files.length === 0) return;
+
+	const file = files[0];
+
+	// Seleccionar carpeta multimedia si no está seleccionada
+
+	if (!multimediaDirectory) {
+
+		const selected = await selectMultimediaFolder();
+
+		if (!selected) return;
+
+	}
+
+	await addDroppedResource(file,Number(resourceWidthInput.value));
+
+});

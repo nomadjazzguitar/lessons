@@ -54,11 +54,13 @@ async function loadProject(project) {
 
 	projectType = project.projectType ?? "fretboard";
 
-	fretboardType = project.fretboardType === "" ? "sequence" : project.fretboardType;
+	cmbProjectType.value = projectType;
 
 	// --------------------------------
 	// SETTINGS
 	// --------------------------------
+
+	fretboardType = project.settings?.fretboardType ?? "sequence";
 
 	fretCount = Math.max(5, Math.min(24, project.settings?.fretCount ?? 10));
 	displayMode = parseBoolean(project.settings?.displayMode, true);
@@ -199,7 +201,7 @@ function parseLibrariesXml(xml) {
 function parseLibraryXml(xml) {
 
 	libraryId = xml.querySelector("library")?.getAttribute("id") || "";
-	cmbCourses.value = libraryId;
+	if ([...cmbCourses.options].some(option => option.value === libraryId)) cmbCourses.value = libraryId;
 
 	libraryVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
 	libraryType = xml.querySelector("library")?.getAttribute("type") || "";
@@ -267,10 +269,9 @@ function parseLibraryXml(xml) {
 
 			projectType: projectNode.getAttribute("projectType") || "",
 
-			fretboardType: projectNode.getAttribute("fretboardType") || "",
-
 			settings: {
 
+				fretboardType: getSetting("fretboardType","sequence"),
 				orientation: getSetting("orientation","horizontal"),
 				fretboardStyle: getSetting("fretboardStyle","maple"),
 				fretCount: getSetting("fretCount","10"),
@@ -309,7 +310,6 @@ function parseLibraryXml(xml) {
 			resources: []
 
 		};
-
 
 		// --------------------------------
 		// NOTAS
@@ -416,11 +416,10 @@ function getCurrentProject() {
 
 		category: cmbProjectCategory.value,
 
-		projectType: cmbProjectType.value === "fretboard" ? "fretboard" : "multimedia",
-
-		fretboardType: cmbProjectType.value === "fretboard" ? cmbFretboardType.value : "",
+		projectType: cmbProjectType.value,
 
 		settings: {
+			fretboardType: fretboardType,
 			orientation: orientation,
 			fretboardStyle: cmbDiapason.value,
 			fretCount: numFrets.value,
@@ -500,13 +499,13 @@ function projectToXml(project) {
 		`id="${escapeXml(project.id)}" ` +
 		`title="${escapeXml(project.title)}" ` +
 		`category="${escapeXml(project.category)}" ` +
-		`projectType="${escapeXml(project.projectType)}" ` +
-		`fretboardType="${escapeXml(project.fretboardType)}">`
+		`projectType="${escapeXml(project.projectType)}">`
 	);
 
 	if (project.projectType === "fretboard") {
 
 		lines.push(`\t\t<settings>`);
+		lines.push(`\t\t\t<fretboardType>${escapeXml(project.settings.fretboardType)}</fretboardType>`);
 		lines.push(`\t\t\t<orientation>${escapeXml(project.settings.orientation)}</orientation>`);
 		lines.push(`\t\t\t<fretboardStyle>${escapeXml(project.settings.fretboardStyle)}</fretboardStyle>`);
 		lines.push(`\t\t\t<fretCount>${project.settings.fretCount}</fretCount>`);
@@ -1201,10 +1200,7 @@ function modifyLibrariesXmlFile(){
 			{type:"application/xml;charset=utf-8"}
 		);
 
-		downloadBlob(
-			blob,
-			xmlLibraries.substring(xmlLibraries.lastIndexOf("/") + 1)
-		);
+		downloadBlob(blob,xmlLibraries.substring(xmlLibraries.lastIndexOf("/") + 1));
 
 	} catch (error) {
 
@@ -1311,14 +1307,16 @@ function createLibrary(fileName,type) {
 
 	const lines = [];
 
-	const id = generateIDKey();
+	let id = "";
 
 	let name = "";
 
 	if (type === "student"){
 		name = "Clases";
+		id = fileName;
 	}else{
 		name= fileName;
+		id = generateIDKey();
 	}
 
 	lines.push('<?xml version="1.0" encoding="UTF-8"?>');
@@ -1333,6 +1331,11 @@ function createLibrary(fileName,type) {
 		`level="${cmbLevels.value}" ` +
 		`name="${escapeXml(name)}">`
 	);
+
+	if (type === "library"){
+		// Descripción
+		lines.push(`\t<desc>${escapeXml(textAreaCourse.value.trim())}</desc>`);
+	}
 
 	lines.push(`</library>`);
 
@@ -1372,7 +1375,7 @@ function createLibrary(fileName,type) {
 			modified: "",
 			level: cmbLevels.value,
 			name: name,
-			desc: ""
+			desc: textAreaCourse.value.trim()
 		});
 
 		modifyLibrariesXmlFile();
@@ -1490,17 +1493,11 @@ function openProjectCategory(category) {
 		`.projectCategoryButton[data-project-category="${category}"]`
 	);
 
-	if (!button) {
-		return;
-	}
+	if (!button) return;
 
 	const isOpen = button.getAttribute("aria-expanded") === "true";
 
-	if (!isOpen) {
-
-		button.click();
-
-	}
+	if (!isOpen) button.click();
 
 }
 

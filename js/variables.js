@@ -16,10 +16,6 @@ const dataURL_Images = dataURL + "img/";
 
 const dataURL_Libraries = dataURL + "libraries/";
 
-const dataURL_Courses = dataURL_Libraries + "courses/";
-
-const dataURL_Students = dataURL_Libraries + "students/";
-
 const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
 
 const xmlStudents = dataURL_Libraries + "students.xml";
@@ -36,8 +32,6 @@ const dataURL_Samples = dataURL + "samples/";
 ==================================================*/
 
 const watermark = "nomadjazzguitar";
-
-const resourceWidth = 90;
 
 let isMobile = false;
 let isTouchDevice = false;
@@ -335,6 +329,7 @@ let multimediaResources = [];
 let midiData = null;
 let midiSynths = [];
 
+const resourceWidth = 90;
 
 /*==================================================
 	REFERENCIAS DOM: LAYOUT, LOADING
@@ -523,14 +518,19 @@ const ctx = canvas.getContext("2d");
 
 const cursor = document.getElementById("cursorTool");
 
+const appMain = document.getElementById("appMain");
+
 const workspaceMultimedia = document.getElementById("workspaceMultimedia");
+const workspaceMultimediaControls = document.getElementById("workspaceMultimediaControls");
 const workspaceFretboard = document.getElementById("workspaceFretboard");
 const workspaceScore = document.getElementById("workspaceScore");
 const workspaceLibraryPanel = document.getElementById("workspaceLibraryPanel");
 const workspaceTitleText = document.getElementById("workspaceTitleText");
+const workspaceTitleContainer = document.getElementById("workspaceTitleContainer");
 
 const btnPlayStop = document.getElementById("btnPlayStop");
 const btnShowLibraryPanel = document.getElementById("btnShowLibraryPanel");
+const btnToggleLibraryPanel = document.getElementById("btnToggleLibraryPanel");
 const btnFretboardVisible = document.getElementById("btnFretboardVisible");
 const btnScoreVisible = document.getElementById("btnScoreVisible");
 const btnVertical = document.getElementById("btnVertical");
@@ -633,6 +633,11 @@ const localVideo = document.getElementById("localVideo");
 
 const videoTitle = document.getElementById("videoTitle");
 
+const cmbMultimedia = document.getElementById("cmbMultimedia");
+const btnSaveMultimediaText = document.getElementById("btnSaveMultimediaText");
+const textAreaMultimedia = document.getElementById("textAreaMultimedia");
+const resourceWidthInput = document.getElementById("resourceWidthInput");
+const multimediaDropZone = document.getElementById("multimediaDropZone");
 
 /*==================================================
 	INSTRUMENTOS
