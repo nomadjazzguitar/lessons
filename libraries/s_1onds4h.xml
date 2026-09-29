@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library version="4.1" type="student" created="29/09/2026" modified="29/09/2026" level="1" name="Clases">
+	<desc></desc>
+	<categories>
+		<category id="1ay80if">Arpegios triada</category>
+		<category id="1ntra8d">Song for my father</category>
+	</categories>
+	<project id="h0kg1r" title="Fm7 primera posción" category="1ay80if" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>1</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="1" color="#0080ff" text="" chord="" order="3"/>
+			<note string="5" fret="4" color="#0080ff" text="" chord="" order="4"/>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="5"/>
+			<note string="3" fret="3" color="#0080ff" text="" chord="" order="6"/>
+			<note string="2" fret="1" color="#0080ff" text="" chord="" order="7"/>
+			<note string="1" fret="1" color="#0080ff" text="" chord="" order="8"/>
+			<note string="0" fret="1" color="#0080ff" text="" chord="" order="9"/>
+			<note string="0" fret="4" color="#0080ff" text="" chord="" order="10"/>
+		</notes>
+	</project>
+	<project id="17lyhko" title="Fm7 segunda posicion" category="1ay80if" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>1</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="4" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="2"/>
+			<note string="3" fret="3" color="#0080ff" text="" chord="" order="3"/>
+			<note string="3" fret="6" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="5"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="6"/>
+			<note string="0" fret="4" color="#0080ff" text="" chord="" order="7"/>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+	<project id="2p9sgk" title="Fm7 tercera posicion 1" category="1ay80if" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>1</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="8" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="2"/>
+			<note string="3" fret="6" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="5"/>
+			<note string="1" fret="9" color="#0080ff" text="" chord="" order="6"/>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="7"/>
+		</notes>
+	</project>
+	<project id="1ft3rlv" title="Fm7 tercera posicion 2" category="1ay80if" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>1</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="8" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="2"/>
+			<note string="4" fret="11" color="#0080ff" text="" chord="" order="3"/>
+			<note string="3" fret="10" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="10" color="#0080ff" text="" chord="" order="5"/>
+			<note string="1" fret="9" color="#0080ff" text="" chord="" order="6"/>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="7"/>
+			<note string="0" fret="13" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+	<project id="1fib17" title="Fm7 primera posción (octava)" category="1ay80if" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>1</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="13" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="11" color="#0080ff" text="" chord="" order="2"/>
+			<note string="3" fret="10" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="10" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="13" color="#0080ff" text="" chord="" order="5"/>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="10"/>
+			<note string="0" fret="13" color="#0080ff" text="" chord="" order="11"/>
+		</notes>
+	</project>
+	<project id="fy3l3w" title="Ejercicio 1" category="1ay80if" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<scoreScale>auto</scoreScale>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countBars>1</countBars>
+			<repetitionSequence>2</repetitionSequence>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>100</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="1" color="#0080ff" text="" chord="" order="1"/>
+			<note string="5" fret="4" color="#0080ff" text="" chord="" order="2"/>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="3"/>
+			<note string="3" fret="3" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="1" color="#0080ff" text="" chord="" order="5"/>
+			<note string="1" fret="1" color="#0080ff" text="" chord="" order="6"/>
+			<note string="0" fret="1" color="#0080ff" text="" chord="" order="7"/>
+			<note string="0" fret="4" color="#0080ff" text="" chord="" order="8"/>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="9"/>
+			<note string="0" fret="4" color="#0080ff" text="" chord="" order="11"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="12"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="13"/>
+			<note string="3" fret="6" color="#0080ff" text="" chord="" order="14"/>
+			<note string="3" fret="3" color="#0080ff" text="" chord="" order="15"/>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="16"/>
+			<note string="5" fret="4" color="#0080ff" text="" chord="" order="17"/>
+		</notes>
+	</project>
+	<project id="bu65qj" title="Comping" category="1ntra8d" projectType="multimedia">
+		<resources>
+			<resource type="video" content="20260929-20-30.webm" width="90" />
+		</resources>
+	</project>
+</library>
