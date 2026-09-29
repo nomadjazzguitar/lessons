@@ -1473,10 +1473,13 @@ function setWorkspaceLayout(){
 
 	if (cmbProjectType.value === "multimedia"){
 
+		workspaceMultimedia.style.display = "";
 		workspaceFretboard.style.display = "none";
 		workspaceScore.style.display = "none";
 
 	}else{
+
+		workspaceMultimedia.style.display = "none";
 
 		// Nunca permitir que ambos estén ocultos
 		if (!isScoreVisible && !isFretboardVisible) isFretboardVisible = true;

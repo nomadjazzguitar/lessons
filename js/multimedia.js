@@ -3390,6 +3390,7 @@ async function renderMultimedia() {
 
 		}
 
+		workspaceMultimedia.style.display = "";
 	}
 
 }
