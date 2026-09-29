@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 	<!-- LOADING SCREEN -->
@@ -94,7 +96,7 @@
 		</div>
 	</div><!-- Fin videoContainer -->
 
-	<!-- LAYOUT -->
+	<!-- LAYOUT GENERAL -->
 	<div id="appLayout">
 
 		<!-- CABECERA SUPERIOR -->
@@ -148,7 +150,7 @@
 		</header><!-- Fin topBar -->
 
 
-		<!-- PANEL CONTROLES -->
+		<!-- CONTROLES GLOBALES -->
 
 		<div id="topControlsContainer">
 
@@ -177,7 +179,7 @@
 							<select id="cmbCourses"></select>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnCatalogue" title="Matricularme en un nuevo curso"><i class="fa-solid fa-book-medical"></i><span>Explorar</span></button>
+							<button type="button" id="btnCatalogue" class="btnStretch" title="Explorar cursos"><i class="fa-solid fa-book-medical"></i><span>Explorar</span></button>
 						</div>
 					</div>
 
@@ -215,8 +217,8 @@
 							<select id="cmbProjectCategory"></select>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnNewCategory" title="Nueva categoría"><i class="fa-solid fa-folder-plus"></i><span></span></button>
-							<button type="button" id="btnDelCategory" title="Borrar categoría"><i class="fa-solid fa-folder-minus"></i><span></span></button>
+							<button type="button" id="btnNewCategory" class="btnSmall" title="Nueva categoría"><i class="fa-solid fa-folder-plus"></i><span></span></button>
+							<button type="button" id="btnDelCategory" class="btnSmall" title="Borrar categoría"><i class="fa-solid fa-folder-minus"></i><span></span></button>
 						</div>
 					</div>
 
@@ -225,17 +227,7 @@
 						<div class="toolRow">
 							<select id="cmbProjectType">
 							    <option value="fretboard" selected>Mástil/Partitura</option>
-							    <option value="text">Texto</option>
-							    <option value="video">Vídeo</option>
-							    <option value="audio">Audio</option>
-							    <option value="midi">MIDI</option>
-							    <option value="image">Imágen</option>
-							    <option value="pdf">PDF</option>
-							    <option value="document">Documento</option>
-							    <option value="musicxml">Music XML</option>
-							    <option value="html">HTML</option>
-							    <option value="link">Enlace</option>
-							    <option value="iframe">Frame</option>
+							    <option value="multimedia">Multimedia</option>
 							</select>
 						</div>
 						<div class="toolRow">
@@ -268,7 +260,7 @@
 					<div class="toolbarTop-Controls" id="topProjectGuest">
 						<span>PROYECTO</span>
 						<div class="toolRow">
-							<button type="button" id="btnNewProjectGuest" title="Nuevo proyecto (Ctrl+P)"><i class="fa-solid fa-file"></i><span>Nuevo</span></button>
+							<button type="button" id="btnNewProjectGuest" class="btnStretch" title="Nuevo proyecto (Ctrl+P)"><i class="fa-solid fa-file"></i><span>Nuevo</span></button>
 						</div>
 						<div class="toolRow">
 							<select id="cmbFretboardTypeGuest">
@@ -287,28 +279,28 @@
 							</select>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnNewChord" title="Nuevo acorde"><i class="fa-solid fa-folder-plus"></i><span></span></button>
-							<button type="button" id="btnDelChord" title="Borrar acorde"><i class="fa-solid fa-folder-minus"></i><span></span></button>
+							<button type="button" id="btnNewChord" class="btnSmall" title="Nuevo acorde"><i class="fa-solid fa-folder-plus"></i><span></span></button>
+							<button type="button" id="btnDelChord" class="btnSmall" title="Borrar acorde"><i class="fa-solid fa-folder-minus"></i><span></span></button>
 						</div>
 					</div>
 
 					<div class="toolbarTop-Controls" id="topEdit">
 						<span>ESCRIBIR</span>
 						<div class="toolRow">
-							<button type="button" id="btnEdit" title="Escribir nota (Ctrl+E)"><i class="fa-solid fa-pen"></i><span>Nota</span></button>
+							<button type="button" id="btnEdit" class="btnStretch" title="Escribir nota (Ctrl+E)"><i class="fa-solid fa-pen"></i><span>Nota</span></button>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnBarre" title="Escribir cejilla"><i class="fa-solid fa-grip-lines"></i><span>Cejilla</span></button>
+							<button type="button" id="btnBarre" class="btnStretch" title="Escribir cejilla"><i class="fa-solid fa-grip-lines"></i><span>Cejilla</span></button>
 						</div>
 					</div>
 
 					<div class="toolbarTop-Controls" id="topUndo">
 						<span>BORRAR</span>
 						<div class="toolRow">
-							<button type="button" id="btnErase" title="Borrar nota"><i class="fa-solid fa-eraser"></i><span>Borrar</span></button>
+							<button type="button" id="btnErase" class="btnStretch" title="Borrar nota"><i class="fa-solid fa-eraser"></i><span>Borrar</span></button>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnUndo" title="Deshacer escritura (Ctrl+Z)"><i class="fa-solid fa-rotate-left"></i><span>Deshacer</span></button>
+							<button type="button" id="btnUndo" class="btnStretch" title="Deshacer escritura (Ctrl+Z)"><i class="fa-solid fa-rotate-left"></i><span>Deshacer</span></button>
 						</div>
 					</div>
 
@@ -363,7 +355,7 @@
 					<div class="toolbarTop-Controls" id="topOrientation">
 						<span>ORIENTACIÓN</span>
 						<div class="toolRow">
-							<button type="button" id="btnRotate" title="Rotar"><i class="fa-solid fa-rotate"></i><span>Rotar</span></button>
+							<button type="button" id="btnRotate" class="btnStretch" title="Rotar"><i class="fa-solid fa-rotate"></i><span>Rotar</span></button>
 						</div>
 						<div class="toolRow">
 							<label class="lblToggle" title="Ajustar en reproducción">
@@ -377,9 +369,9 @@
 					<div class="toolbarTop-Controls" id="topFrets">
 						<span>TRASTES</span>
 						<div class="toolRow">
-							<button type="button" id="btnLessFrets">−</button>
+							<button type="button" id="btnLessFrets" class="btnSmall">−</button>
 							<input id="numFrets" type="text" min="4" max="24" value="10">
-							<button type="button" id="btnMoreFrets">+</button>
+							<button type="button" id="btnMoreFrets" class="btnSmall">+</button>
 						</div>
 						<div class="toolRow">
 							<span>Trastes</span>
@@ -390,9 +382,9 @@
 					<div class="toolbarTop-Controls" id="topNumbers">
 						<span>NÚMEROS</span>
 						<div class="toolRow">
-							<button type="button" id="btnLessNumberFrets" disabled>−</button>
+							<button type="button" id="btnLessNumberFrets" class="btnSmall" disabled>−</button>
 							<input id="numberFrets" type="text" min="1" max="19" value="1" disabled>
-							<button type="button" id="btnMoreNumberFrets" disabled>+</button>
+							<button type="button" id="btnMoreNumberFrets" class="btnSmall" disabled>+</button>
 						</div>
 						<label class="lblToggle" title="Mostrar números">
 							<span class="lblToggleText">Números</span>
@@ -421,7 +413,7 @@
 					<div class="toolbarTop-Controls" id="topImgFormat">
 						<span>MÁSTIL/PARTITURA</span>
 						<div class="toolRow">
-							<button type="button" id="btnImgDownload" title="Guardar imagen del mástil y partitura"><i class="fa-solid fa-download"></i><span>Descargar</span></button>
+							<button type="button" id="btnImgDownload" class="btnStretch" title="Guardar imagen del mástil y partitura"><i class="fa-solid fa-download"></i><span>Descargar</span></button>
 						</div>
 						<div class="toolRow">
 							<select id="cmbImgFormat">
@@ -435,10 +427,10 @@
 					<div class="toolbarTop-Controls" id="topClipboard">
 						<span>PORTAPAPELES</span>
 						<div class="toolRow">
-							<button type="button" id="btnCopyCanvas" title="Copiar imagen del mástil al portapapeles"><i class="fa-solid fa-copy"></i><span>Mástil</span></button>
+							<button type="button" id="btnCopyCanvas" class="btnStretch" title="Copiar imagen del mástil al portapapeles"><i class="fa-solid fa-copy"></i><span>Mástil</span></button>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnCopyScore" title="Copiar imagen de la partitura al portapapeles"><i class="fa-solid fa-copy"></i><span>Partitura</span></button>
+							<button type="button" id="btnCopyScore" class="btnStretch" title="Copiar imagen de la partitura al portapapeles"><i class="fa-solid fa-copy"></i><span>Partitura</span></button>
 						</div>
 					</div>
 
@@ -508,9 +500,9 @@
 					<div class="toolbarTop-Controls" id="topTempo">
 						<span>TEMPO</span>
 						<div class="toolRow">
-							<button type="button" id="btnLessTempo">−</button>
+							<button type="button" id="btnLessTempo" class="btnSmall">−</button>
 							<input id="numBpm" type="text" min="30" max="300" value="90">
-							<button type="button" id="btnMoreTempo">+</button>
+							<button type="button" id="btnMoreTempo" class="btnSmall">+</button>
 						</div>
 						<div class="toolRow">
 							<span>BPM</span>
@@ -674,7 +666,7 @@
 					<div class="toolbarTop-Controls" id="topBuffer">
 						<span>PLAYER BUFFER</span>
 						<div class="toolRow">
-							<button type="button" id="btnRenderBuffer" title="Render buffer"><i class="fa-solid fa-memory"></i><span>Render</span></button>
+							<button type="button" id="btnRenderBuffer" class="btnStretch" title="Render buffer"><i class="fa-solid fa-memory"></i><span>Render</span></button>
 						</div>
 						<div class="toolRow">
 							<div id="player_bufferState">Waiting...</div>
@@ -690,7 +682,7 @@
 							</select>
 						</div>
 						<div class="toolRow">
-							<button type="button" id="btnSaveAudio" title="Descargar Audio"><i class="fa-solid fa-download"></i><span>Descargar</span></button>
+							<button type="button" id="btnSaveAudio" class="btnStretch" title="Descargar Audio"><i class="fa-solid fa-download"></i><span>Descargar</span></button>
 						</div>
 					</div>
 
@@ -704,7 +696,22 @@
 					<div class="toolbarTop-Controls" id="topMultimedia">
 						<span>MULTIMEDIA</span>
 						<div class="toolRow">
-							<button type="button" id="btnUploadFile" title="Añadir elemento multimedia al proyecto" disabled><i class="fa-solid fa-cloud-arrow-up"></i><span>Añadir</span></button>
+							<select id="cmbMultimedia">
+							    <option value="text" selected>Texto</option>
+							    <option value="video">Vídeo</option>
+							    <option value="audio">Audio</option>
+							    <option value="midi">MIDI</option>
+							    <option value="image">Imágen</option>
+							    <option value="pdf">PDF</option>
+							    <option value="document">Documento</option>
+							    <option value="musicxml">Music XML</option>
+							    <option value="html">HTML</option>
+							    <option value="link">Enlace</option>
+							    <option value="iframe">Frame</option>
+							</select>
+						</div>
+						<div class="toolRow">
+							<button type="button" id="btnUploadFile" class="btnStretch" title="Añadir elemento multimedia al proyecto"><i class="fa-solid fa-cloud-arrow-up"></i><span>Añadir</span></button>
 						</div>
 					</div>
 
@@ -715,30 +722,27 @@
 						</div>
 					</div>
 
+				</div><!-- Fin toolbarTop -->
+			</div><!-- Fin topControls -->
 
-				</div> <!-- Fin toolbarTop -->
-			</div> <!-- Fin topControls -->
-
-		</div> <!-- Fin topControlsContainer -->
+		</div><!-- Fin topControlsContainer -->
 
 
-		<!-- ZONA CENTRAL -->
+		<!-- ZONA PRINCIPAL DE LA APLICACIÓN -->
 
-		<main id="workspace" class="horizontal">
+		<div id="appMain" class="libraryHidden">
 
-			<!-- BOTÓN LIBRERÍA -->
+			<!-- PANEL LATERAL IZQUIERDO -->
 
-			<button type="button" id="btnShowLibraryPanel" title="Ver librería"><i class="fa-solid fa-angles-left"></i></button>
+			<aside id="workspaceLibraryPanel">
 
-			<!-- PANEL MENU IZQUIERDO -->
+				<!-- CONTENIDO DE LA LIBRERÍA -->
 
-			<aside id="workspaceLibraryPanel" class="panelHidden">
-
-				<!-- Lista preparada para los proyectos -->
 				<div id="libraryPanel">
 
 					<div class="libraryPanelHeader">
 						<span id="libraryPanelHeaderTitle"></span>
+						<button type="button" id="btnToggleLibraryPanel" class="btnSmall" title="Ocultar librería"><i class="fa-solid fa-angles-left"></i></button>
 					</div>
 
 					<div id="libraryPanelInfo"></div>
@@ -751,121 +755,155 @@
 						</button>
 						<ul class="projectCategoryList" id="projectCategoryList">
 							<li class="projectItem">
-								<button type="button" class="projectOpenButton" data-project-id="b568f802474943669bb094652803af3f" title="Abrir: Título"><span class="projectTitle"><i class="fa-solid fa-music"></i>Título</span></button>
+								<button type="button" class="projectOpenButton" data-project-id="b568f80" title="Abrir: Título"><span class="projectTitle"><i class="fa-solid fa-music"></i>Título</span></button>
 								<button type="button" class="projectDeleteButton" title="Eliminar proyecto"><i class="fa-solid fa-trash"></i></button>
 							</li>
 						</ul>
 					</div>
 	-->
 
-				</div>
+				</div><!-- Fin libraryPanel -->
 
-			</aside> <!-- Fin workspaceLibraryPanel -->
+			</aside><!-- Fin workspaceLibraryPanel -->
 
 
-			<!-- ZONA DERECHA -->
+			<!-- WORKSPACE -->
 
-			<div id="workspaceContent">
+			<main id="workspace">
 
-				<!-- CONTROLES WORKSPACE -->
+				<!-- HEADER DEL WORKSPACE -->
 
-				<div id="workspaceHeader">
+				<header id="workspaceHeader">
 
-					<div class="workspaceControls" id="workspaceControls">
+					<!-- TÍTULO DEL PROYECTO Y BOTÓN LIBRERÍA -->
+
+					<div id="workspaceTitleContainer">
+						<button type="button" id="btnShowLibraryPanel" class="btnSmall" title="Ocultar librería"><i class="fa-solid fa-angles-left"></i></button>
+						<div id="workspaceTitleText"></div>
+					</div><!-- Fin workspaceTitleContainer -->
+
+
+					<!-- CONTROLES DE VISTA Y REPRODUCCIÓN -->
+
+					<div id="workspaceControls">
 						<button type="button" id="btnPlayStop" class="buttonPlay" title="Reproducir" disabled><i class="fa-solid fa-play"></i><span>Play</span></button>
 						<button type="button" id="btnFretboardVisible" title="Ver mástil"><i class="fa-solid fa-guitar"></i><span>Mástil</span></button>
 						<button type="button" id="btnScoreVisible" title="Ver partitura"><i class="fa-solid fa-music"></i><span>Partitura</span></button>
 						<button type="button" id="btnVertical" class="active" title="Cambiar orientación"><i class="fa-solid fa-arrows-up-down"></i><span>Vertical</span></button>
 						<button type="button" id="btnHorizontal" title="Cambiar orientación"><i class="fa-solid fa-arrows-left-right"></i><span>Horizontal</span></button>
-					</div>
-					<div class="workspaceControls" id="workspaceMetronome">
+					</div><!-- Fin workspaceControls -->
+
+
+					<!-- TIMELINE DEL METRÓNOMO -->
+
+					<div id="workspaceMetronome">
 						<div id="metronome_timeline">
 							<div class="metronome_pulse metronome_beat metronome_bar" data-index="0"></div>
 							<div class="metronome_pulse metronome_beat metronome_bar" data-index="1"></div>
 							<div class="metronome_pulse metronome_beat metronome_bar" data-index="2"></div>
 							<div class="metronome_pulse metronome_beat metronome_bar" data-index="3"></div>
 						</div>
-					</div>
-					<div class="workspaceControls" id="workspaceTimeInfo">
+					</div><!-- Fin workspaceMetronome -->
+
+
+					<!-- INFORMACIÓN DE REPRODUCCIÓN -->
+
+					<div id="workspaceTimeInfo">
 						<div id="player_repeatInfo">Loop: <b>1</b> Compás: <b>1</b></div>
 						<div id="metronome_Info">Metrónomo: <b>1 / 1</b></div>
-					</div>
-					<div class="workspaceControls">
-						<div id="workspaceTitleText"></div>
-					</div>
+					</div><!-- Fin workspaceTimeInfo -->
 
-				</div> <!-- Fin Controles Workspace -->
+				</header><!-- Fin workspaceHeader -->
 
 
-				<!-- CONTENIDO WORKSPACE -->
+				<!-- ÁREA CENTRAL DE CONTENIDO -->
 
 				<div id="workspaceContentArea">
 
+					<!-- MULTIMEDIA -->
 					<div id="workspaceMultimedia"></div>
 
+					<!-- MÁSTIL -->
 					<div id="workspaceFretboard">
 						<canvas id="workspaceCanvas"></canvas>
-					</div>
+					</div><!-- Fin workspaceFretboard -->
 
+					<!-- PARTITURA -->
 					<div id="workspaceScore">
 						<div id="vextab-score" class="vextab-auto" editor="false" editor-width="0" editor-height="0" style="color:white;"></div>
+					</div><!-- Fin workspaceScore -->
+
+					<!-- MULTIMEDIA CONTROLS-->
+					<div id="workspaceMultimediaControls">
+
+						<div id="multimediaWidthContainer">
+							<label>Ancho (%):&nbsp;</label><input id="resourceWidthInput" type="number" min="0" max="100" step="1" value="90">
+						</div>
+						<div id="multimediaDropZone">
+							<i class="fa-solid fa-cloud-arrow-up"></i><span>Arrastra aquí un archivo</span>
+						</div>
+						<div id="textMultimedia">
+							<textarea id="textAreaMultimedia" placeholder="Escribe aquí texto o HTML..."></textarea>
+							<button id="btnSaveMultimediaText" title="Guardar texto en el proyecto"><i class="fa-solid fa-floppy-disk"></i><span>Guardar</span></button>
+						</div>
+
 					</div>
 
-				</div> <!-- Fin workspaceContentArea -->
-
-			</div> <!-- Fin workspaceContent -->
+				</div><!-- Fin workspaceContentArea -->
 
 
-			<!-- CANVAS CURSOR -->
+				<!-- CANVAS CURSOR -->
 
-			<div id="cursorTool"><i class="fa-solid fa-pencil"></i></div>
+				<div id="cursorTool"><i class="fa-solid fa-pencil"></i></div>
 
-		</main> <!-- Fin workspace -->
+
+				<!-- FOOTER DEL WORKSPACE -->
+
+				<footer id="workspaceFooter">
+
+					<div class="footerDivs">
+						<a href="#"><img id="footerBrandLogo" src="img/logo-FFF.png"></a>
+						<strong>SÍGUENOS</strong>
+						<div class="footerSocial">
+							<a href="#"><i class="fa-brands fa-facebook"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+						</div>
+					</div>
+
+					<div class="footerDivs">
+						<strong>RECURSOS</strong>
+						<a href="#"><i class="fa-solid fa-house"></i>Home</a>
+						<a href="#"><i class="fa-solid fa-graduation-cap"></i>Aula Virtual</a>
+						<a href="#"><i class="fa-brands fa-youtube"></i>YouTube</a>
+						<!--<a href="#"><i class="fa-brands fa-github"></i>GitHub</a>-->
+					</div>
+
+					<div class="footerDivs">
+						<strong>CONTACTO</strong>
+						<a href="#"><!--<i class="fa-solid fa-envelope"></i>-->info@nomadjazzguitar.com</a>
+						<a href="#"><!--<i class="fa-solid fa-phone"></i>-->+34 910 000 000</a>
+						<span><i class="fa-solid fa-location-dot"></i>Madrid, España</span>
+					</div>
+
+					<div class="footerCopyRights">
+						<br>
+						<span>© 2026 Nomad Jazz Guitar. Todos los derechos reservados.</span>
+						<br>
+						<div>
+							<a href="#">Privacidad</a>
+							<a href="#">Aviso legal</a>
+							<a href="#">Cookies</a>
+						</div>
+					</div>
+
+				</footer><!-- Fin workspaceFooter -->
+
+			</main><!-- Fin workspace -->
+
+		</div><!-- Fin appMain -->
 
 	</div><!-- Fin appLayout -->
-
-
-	<!-- FOOTER -->
-
-	<footer id="footer">
-
-		<div class="footerDivs">
-			<a href="#"><img id="footerBrandLogo" src="img/logo-FFF.png"></a>
-			<strong>SÍGUENOS</strong>
-			<div class="footerSocial">
-				<a href="#"><i class="fa-brands fa-facebook"></i></a>
-				<a href="#"><i class="fa-brands fa-instagram"></i></a>
-				<a href="#"><i class="fa-brands fa-pinterest"></i></a>
-			</div>
-		</div>
-
-		<div class="footerDivs">
-			<strong>RECURSOS</strong>
-			<a href="#"><i class="fa-solid fa-house"></i>Home</a>
-			<a href="#"><i class="fa-solid fa-graduation-cap"></i>Aula Virtual</a>
-			<a href="#"><i class="fa-brands fa-youtube"></i>YouTube</a>
-			<!--<a href="#"><i class="fa-brands fa-github"></i>GitHub</a>-->
-		</div>
-
-		<div class="footerDivs">
-			<strong>CONTACTO</strong>
-			<a href="#"><!--<i class="fa-solid fa-envelope"></i>-->info@nomadjazzguitar.com</a>
-			<a href="#"><!--<i class="fa-solid fa-phone"></i>-->+34 910 000 000</a>
-			<span><i class="fa-solid fa-location-dot"></i>Madrid, España</span>
-		</div>
-
-		<div class="footerCopyRights">
-			<br>
-			<span>© 2026 Nomad Jazz Guitar. Todos los derechos reservados.</span>
-			<br>
-			<div>
-				<a href="#">Privacidad</a>
-				<a href="#">Aviso legal</a>
-				<a href="#">Cookies</a>
-			</div>
-		</div>
-
-	</footer><!-- Fin footer -->
 
 
 	<!-- JAVASCRIPT -->
@@ -888,7 +926,6 @@
 	<script src="js/main.js"></script>
 	<script src="js/score-player.js"></script>
 	<script src="js/events.js"></script>
-
 
 </body>
 </html>
