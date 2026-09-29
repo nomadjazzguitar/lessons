@@ -82,6 +82,7 @@
 					<button type="button" id="btnVideoRecord" class="buttonPlay"><i class="fa-solid fa-circle"></i><span>Grabar</span></button>
 				</div>
 				<div class="video-devices">
+					<span>Cámara: </span>
 					<select id="cmbCamera"></select>
 					<select id="cmbResolucion">
 						<option value="480">SD</option>
@@ -89,6 +90,7 @@
 						<option value="1080" selected>Full HD</option>
 						<option value="4K">Ultra HD</option>
 					</select>
+					<span>Micrófono: </span>
 					<select id="cmbMicrophone"></select>
 				</div>
 				<div id="videoInfo" class="video-info"><span></span></div>
@@ -100,7 +102,6 @@
 	<div id="appLayout">
 
 		<!-- CABECERA SUPERIOR -->
-
 		<header id="topBar">
 
 			<div id="brand">
@@ -151,25 +152,27 @@
 
 
 		<!-- CONTROLES GLOBALES -->
-
 		<div id="topControlsContainer">
 
 			<div id="topControls">
 				<div id="toolbarTop">
 
 					<div class="toolbarTop-Controls" id="topNewStudent">
-						<span>ALUMNO</span>
+						<span>ALUMNOS</span>
 						<div class="toolRow">
-							<button type="button" id="btnNewStudent" title="Nuevo alumno"><i class="fa-solid fa-user-graduate"></i><span>Nuevo</span></button>
+							<select id="cmbStudents"></select>
+						</div>
+						<div class="toolRow">
+							<button type="button" id="btnNewStudent" class="btnStretch" title="Nuevo alumno"><i class="fa-solid fa-user-graduate"></i><span>Nuevo</span></button>
 						</div>
 					</div>
 
 					<div class="toolbarTop-Controls" id="topLibrary">
 						<span>LIBRERÍA</span>
 						<div class="toolRow">
+							<button type="button" id="btnOpenCourse" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
 							<button type="button" id="btnAddCourse" title="Crear librería"><i class="fa-solid fa-file-circle-plus"></i><span>Crear</span></button>
 							<button type="button" id="btnModifyCourse" title="Modificar librería"><i class="fa-solid fa-pen"></i><span>Modificar</span></button>
-							<button type="button" id="btnOpenCourse" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
 						</div>
 					</div>
 
@@ -180,6 +183,13 @@
 						</div>
 						<div class="toolRow">
 							<button type="button" id="btnCatalogue" class="btnStretch" title="Explorar cursos"><i class="fa-solid fa-book-medical"></i><span>Explorar</span></button>
+						</div>
+					</div>
+
+					<div class="toolbarTop-Controls" id="topRepository">
+						<span>REPOSITORIO</span>
+						<div class="toolRow">
+							<button type="button" id="btnUpload" title="Subir archivos al repositorio"><i class="fa-solid fa-upload"></i><span>Subir</span></button>
 						</div>
 					</div>
 
@@ -768,23 +778,18 @@
 
 
 			<!-- WORKSPACE -->
-
 			<main id="workspace">
 
 				<!-- HEADER DEL WORKSPACE -->
-
 				<header id="workspaceHeader">
 
 					<!-- TÍTULO DEL PROYECTO Y BOTÓN LIBRERÍA -->
-
 					<div id="workspaceTitleContainer">
 						<button type="button" id="btnShowLibraryPanel" class="btnSmall" title="Ocultar librería"><i class="fa-solid fa-angles-left"></i></button>
 						<div id="workspaceTitleText"></div>
 					</div><!-- Fin workspaceTitleContainer -->
 
-
 					<!-- CONTROLES DE VISTA Y REPRODUCCIÓN -->
-
 					<div id="workspaceControls">
 						<button type="button" id="btnPlayStop" class="buttonPlay" title="Reproducir" disabled><i class="fa-solid fa-play"></i><span>Play</span></button>
 						<button type="button" id="btnFretboardVisible" title="Ver mástil"><i class="fa-solid fa-guitar"></i><span>Mástil</span></button>
@@ -793,9 +798,7 @@
 						<button type="button" id="btnHorizontal" title="Cambiar orientación"><i class="fa-solid fa-arrows-left-right"></i><span>Horizontal</span></button>
 					</div><!-- Fin workspaceControls -->
 
-
 					<!-- TIMELINE DEL METRÓNOMO -->
-
 					<div id="workspaceMetronome">
 						<div id="metronome_timeline">
 							<div class="metronome_pulse metronome_beat metronome_bar" data-index="0"></div>
@@ -805,9 +808,7 @@
 						</div>
 					</div><!-- Fin workspaceMetronome -->
 
-
 					<!-- INFORMACIÓN DE REPRODUCCIÓN -->
-
 					<div id="workspaceTimeInfo">
 						<div id="player_repeatInfo">Loop: <b>1</b> Compás: <b>1</b></div>
 						<div id="metronome_Info">Metrónomo: <b>1 / 1</b></div>
@@ -820,9 +821,6 @@
 
 				<div id="workspaceContentArea">
 
-					<!-- MULTIMEDIA -->
-					<div id="workspaceMultimedia"></div>
-
 					<!-- MÁSTIL -->
 					<div id="workspaceFretboard">
 						<canvas id="workspaceCanvas"></canvas>
@@ -832,6 +830,9 @@
 					<div id="workspaceScore">
 						<div id="vextab-score" class="vextab-auto" editor="false" editor-width="0" editor-height="0" style="color:white;"></div>
 					</div><!-- Fin workspaceScore -->
+
+					<!-- MULTIMEDIA -->
+					<div id="workspaceMultimedia"></div>
 
 					<!-- MULTIMEDIA CONTROLS-->
 					<div id="workspaceMultimediaControls">
@@ -853,12 +854,10 @@
 
 
 				<!-- CANVAS CURSOR -->
-
 				<div id="cursorTool"><i class="fa-solid fa-pencil"></i></div>
 
 
 				<!-- FOOTER DEL WORKSPACE -->
-
 				<footer id="workspaceFooter">
 
 					<div class="footerDivs">
