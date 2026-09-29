@@ -1447,7 +1447,7 @@ html {
 
 	width:100%;
 	min-width:0;
-	min-height:0;
+	min-height:400px;
 	height:auto;
 
 	margin:0;
@@ -1455,6 +1455,8 @@ html {
 
 	box-sizing:border-box;
 	overflow:visible;
+
+	background:var(--color-fretboard-background);
 }
 
 /* ================================================== */
