@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="4.7" type="student" created="29/09/2026" modified="30/09/2026" level="1" name="Clases">
+<library version="5.3" type="student" created="29/09/2026" modified="30/09/2026" level="1" name="Clases">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">Arpegios triada</category>
@@ -26,7 +26,7 @@
 			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
 			<bpm>120</bpm>
-			<key>C</key>
+			<key>Ab</key>
 			<scoreStaves>all</scoreStaves>
 			<scoreLayout>vertical</scoreLayout>
 			<swing>false</swing>
@@ -65,7 +65,7 @@
 			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
 			<bpm>120</bpm>
-			<key>C</key>
+			<key>Ab</key>
 			<scoreStaves>all</scoreStaves>
 			<scoreLayout>vertical</scoreLayout>
 			<swing>false</swing>
@@ -104,7 +104,7 @@
 			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
 			<bpm>120</bpm>
-			<key>C</key>
+			<key>Ab</key>
 			<scoreStaves>all</scoreStaves>
 			<scoreLayout>vertical</scoreLayout>
 			<swing>false</swing>
@@ -142,7 +142,7 @@
 			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
 			<bpm>120</bpm>
-			<key>C</key>
+			<key>Ab</key>
 			<scoreStaves>all</scoreStaves>
 			<scoreLayout>vertical</scoreLayout>
 			<swing>false</swing>
@@ -181,7 +181,7 @@
 			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
 			<bpm>120</bpm>
-			<key>C</key>
+			<key>Ab</key>
 			<scoreStaves>all</scoreStaves>
 			<scoreLayout>vertical</scoreLayout>
 			<swing>false</swing>
@@ -219,7 +219,7 @@
 			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
 			<bpm>100</bpm>
-			<key>C</key>
+			<key>Ab</key>
 			<scoreStaves>all</scoreStaves>
 			<scoreLayout>vertical</scoreLayout>
 			<swing>false</swing>
