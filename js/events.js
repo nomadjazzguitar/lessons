@@ -740,7 +740,7 @@ menuPopup.querySelectorAll("button").forEach(button=>{
 
 	button.addEventListener("click",()=>{
 
-		setMenu(button.dataset.menu);
+		setMenu(button.dataset.menu,true);
 
 		menuPopup.classList.remove("isOpen");
 	
