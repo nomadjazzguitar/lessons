@@ -1287,7 +1287,7 @@ function openLibraryPanel(){
 
 	appMain.classList.remove("libraryHidden");
 
-	btnShowLibraryPanel.title = "Ocultar librería";
+	btnShowLibraryPanel.title = "Ocultar lista";
 	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-left'></i>";
 
 	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
@@ -1298,7 +1298,7 @@ function closeLibraryPanel(){
 
 	appMain.classList.add("libraryHidden");
 
-	btnShowLibraryPanel.title = "Ver librería";
+	btnShowLibraryPanel.title = "Ver lista";
 	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-right'></i>";
 
 	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
@@ -2474,6 +2474,12 @@ function loadComboLibraries(){
 		cmbLibraries.appendChild(option);
 
 	});
+
+	if (isAdmin && lib !==null){
+		cmbLibraries.value = lib;
+	}else{
+		cmbLibraries.selectedIndex = -1;
+	}
 
 }
 

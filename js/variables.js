@@ -639,7 +639,7 @@ const textAreaMultimedia = document.getElementById("textAreaMultimedia");
 const resourceWidthInput = document.getElementById("resourceWidthInput");
 const multimediaDropZone = document.getElementById("multimediaDropZone");
 const btnUpload = document.getElementById("btnUpload");
-const btnUpload2 = document.getElementById("btnUpload2");
+
 
 /*==================================================
 	INSTRUMENTOS

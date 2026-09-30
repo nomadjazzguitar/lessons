@@ -880,6 +880,10 @@ btnAddLibrary.addEventListener("click", () => {
 btnModifyLibrary.addEventListener("click", () => {
 
 	isNewLibrary = false;
+	textLibraryName.value = libraryName;
+	textAreaLibrary.value = libraryDesc;
+	cmbLevels.value = libraryLevel;
+
 	librariesContainer.style.display = "flex";
 
 });
@@ -1563,6 +1567,14 @@ cmbStudents.addEventListener("change", async () => {
 
 });
 
+cmbLibraries.addEventListener("change", async () => {
+
+	const url = window.location.origin + window.location.pathname;
+
+	window.open("?admin&lib=" + cmbLibraries.value, "_self");	
+
+});
+
 btnStudent.addEventListener("click", () => {
 
 	currentTheme = currentTheme === "dark" ? "light" : "dark";
@@ -1757,12 +1769,6 @@ btnGuitarAmp.addEventListener("click", () => {
 btnUpload.addEventListener("click", () => {
 
 	window.open("https://github.com/nomadjazzguitar/lessons", "_blank");
-
-});
-
-btnUpload2.addEventListener("click", () => {
-
-	window.open("https://mega.nz/fm", "_blank");
 
 });
 
