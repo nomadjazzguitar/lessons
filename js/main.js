@@ -742,7 +742,7 @@ function setMenu(m, click = false){
 
 	}
 
-	openTopControls();
+	if (click) openTopControls();
 
 }
 
