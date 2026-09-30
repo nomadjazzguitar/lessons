@@ -201,8 +201,8 @@ function configureStudentControls(){
 		topShare.style.display = "none";
 		topMultimedia.style.display = "none";
 
-		btnCourses.style.display = "none";
-		btnCoursesPopup.style.display = "none";
+		btnLibraries.style.display = "none";
+		btnLibrariesPopup.style.display = "none";
 
 		btnProyectos.style.display = "none";
 		btnProyectosPopup.style.display = "none";
@@ -217,8 +217,8 @@ function configureStudentControls(){
 				setMenu("metronome");
 			}
 
-			btnCourses.style.display = "none";
-			btnCoursesPopup.style.display = "none";
+			btnLibraries.style.display = "none";
+			btnLibrariesPopup.style.display = "none";
 
 			btnEdicion.style.display = "none";
 			btnEdicionPopup.style.display = "none";
@@ -551,7 +551,7 @@ function setMenu(m){
 
 	menuOpen = m;
 
-	btnCourses.classList.remove("active");
+	btnLibraries.classList.remove("active");
 	btnProyectos.classList.remove("active");
 	btnEdicion.classList.remove("active");
 	btnFretboard.classList.remove("active");
@@ -607,9 +607,9 @@ function setMenu(m){
 
 	switch (menuOpen){
 
-		case "courses":
+		case "libraries":
 
-			btnCourses.classList.add("active");
+			btnLibraries.classList.add("active");
 
 			showMenuControls(
 				topNewStudent,
@@ -764,8 +764,8 @@ async function initializeProjects() {
 
         initializeEmptyProject();
 
-        textCourseName.disabled = true;
-        textAreaCourse.disabled = true;
+        textLibraryName.disabled = true;
+        textAreaLibrary.disabled = true;
 
         btnSaveProject.disabled = true;
         btnDelProject.disabled = true;
@@ -869,7 +869,7 @@ async function loadXML(type,file) {
 
 				libraries = parseLibrariesXml(xml);
 
-				if (libraries) loadComboCourses();
+				if (libraries) loadComboLibraries();
 
 				break;
 
@@ -2460,9 +2460,9 @@ function changeComboFretboardType(value){
 	}
 }
 
-function loadComboCourses(){
+function loadComboLibraries(){
 
-	cmbCourses.innerHTML = "";
+	cmbLibraries.innerHTML = "";
 
 	libraries.forEach(library => {
 
@@ -2471,7 +2471,7 @@ function loadComboCourses(){
 		option.value = library.id;
 		option.textContent = library.name;
 
-		cmbCourses.appendChild(option);
+		cmbLibraries.appendChild(option);
 
 	});
 

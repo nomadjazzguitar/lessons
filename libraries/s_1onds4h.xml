@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="5.4" type="student" created="29/09/2026" modified="30/09/2026" level="1" name="Clases">
+<library version="5.4" type="student" created="29/09/2026" modified="30/09/2026" level="1" name="Clases online">
 	<desc></desc>
 	<categories>
-		<category id="1ay80if">Arpegios triada</category>
-		<category id="1ntra8d">Song for my father</category>
+		<category id="1ay80if">2027 Sept 29</category>
 	</categories>
 	<project id="h0kg1r" title="Fm7 primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
@@ -245,7 +244,7 @@
 			<note string="5" fret="4" color="#0080ff" text="" chord="" order="17"/>
 		</notes>
 	</project>
-	<project id="1depwq4" title="Comping" category="1ntra8d" projectType="multimedia">
+	<project id="1depwq4" title="Comping Song for my father" category="1ay80if" projectType="multimedia">
 		<resources>
 			<resource type="video" content="20260929-20-30.webm" width="90" />
 		</resources>

@@ -30,33 +30,33 @@
 
 
 	<!-- CURSOS FLOTANTE -->
-	<div id="coursesContainer">
+	<div id="librariesContainer">
 
-		<div class="courses-window">
+		<div class="libraries-window">
 
-			<div class="courses-close">
-				<button type="button" id="btnCoursesPanelClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+			<div class="libraries-close">
+				<button type="button" id="btnLibrariesPanelClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
 			</div>
 
-			<div class="courses-control">
+			<div class="libraries-control">
 				<span>Nombre: </span>
-				<input id="textCourseName" type="text" maxlength="60" placeholder="Sin Nombre">
+				<input id="textLibraryName" type="text" maxlength="60" placeholder="Sin Nombre">
 				<span>Nivel: </span>
 				<select id="cmbLevels"></select>
 			</div>
-			<div class="courses-control">
+			<div class="libraries-control">
 				<span>Descripción:</span>
-				<textarea id="textAreaCourse" placeholder="Descripción"></textarea>
+				<textarea id="textAreaLibrary" placeholder="Descripción"></textarea>
 			</div>
-			<div class="courses-control">
+			<div class="libraries-control">
 
 			</div>
-			<div class="courses-buttons">
-				<button type="button" id="btnSaveCourse"><i class="fa-solid fa-floppy-disk"></i><span>Guardar</span></button>
+			<div class="libraries-buttons">
+				<button type="button" id="btnSaveLibrary"><i class="fa-solid fa-floppy-disk"></i><span>Guardar</span></button>
 			</div>
 		</div>
 
-	</div><!-- Fin coursesContainer -->
+	</div><!-- Fin librariesContainer -->
 
 	<!-- VIDEO FLOTANTE -->
 	<div id="videoContainer">
@@ -113,7 +113,7 @@
 			</div>
 
 			<nav id="mainMenu">
-				<button type="button" id="btnCourses" class="menuButton"><i class="fa-solid fa-graduation-cap"></i>CURSOS</button>
+				<button type="button" id="btnLibraries" class="menuButton"><i class="fa-solid fa-graduation-cap"></i>CURSOS</button>
 				<button type="button" id="btnProyectos" class="menuButton"><i class="fa-solid fa-folder-open"></i>PROYECTOS</button>
 				<button type="button" id="btnEdicion" class="menuButton active"><i class="fa-solid fa-pen"></i>EDITAR</button>
 				<button type="button" id="btnFretboard" class="menuButton"><i class="fa-solid fa-guitar"></i>MÁSTIL</button>
@@ -134,7 +134,7 @@
 				</button>
 
 				<div id="menuPopup">
-					<button type="button" id="btnCoursesPopup" data-menu="courses"><i class="fa-solid fa-book"></i>CURSOS</button>
+					<button type="button" id="btnLibrariesPopup" data-menu="libraries"><i class="fa-solid fa-book"></i>CURSOS</button>
 					<button type="button" id="btnProyectosPopup" data-menu="projects"><i class="fa-solid fa-folder-open"></i>PROYECTOS</button>
 					<button type="button" id="btnEdicionPopup" data-menu="edit"><i class="fa-solid fa-pen"></i>EDICIÓN</button>
 					<button type="button" id="btnFretboardPopup" data-menu="fretboard"><i class="fa-solid fa-guitar"></i>MÁSTIL</button>
@@ -168,18 +168,18 @@
 					</div>
 
 					<div class="toolbarTop-Controls" id="topLibrary">
-						<span>LIBRERÍA</span>
+						<span>LIBRERÍAS</span>
 						<div class="toolRow">
-							<button type="button" id="btnOpenCourse" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
-							<button type="button" id="btnAddCourse" title="Crear librería"><i class="fa-solid fa-file-circle-plus"></i><span>Crear</span></button>
-							<button type="button" id="btnModifyCourse" title="Modificar librería"><i class="fa-solid fa-pen"></i><span>Modificar</span></button>
+							<button type="button" id="btnOpenLibrary" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
+							<button type="button" id="btnAddLibrary" title="Crear librería"><i class="fa-solid fa-file-circle-plus"></i><span>Crear</span></button>
+							<button type="button" id="btnModifyLibrary" title="Modificar librería"><i class="fa-solid fa-pen"></i><span>Modificar</span></button>
 						</div>
 					</div>
 
 					<div class="toolbarTop-Controls" id="topCatalogue">
 						<span>CATÁLOGO DE CURSOS</span>
 						<div class="toolRow">
-							<select id="cmbCourses"></select>
+							<select id="cmbLibraries"></select>
 						</div>
 						<div class="toolRow">
 							<button type="button" id="btnCatalogue" class="btnStretch" title="Explorar cursos"><i class="fa-solid fa-book-medical"></i><span>Explorar</span></button>

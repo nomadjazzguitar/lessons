@@ -175,7 +175,7 @@ let currentProjectId = null;
 
 let projectModified = false;
 
-let isNewCourse = false;
+let isNewLibrary = false;
 
 /*==================================================
 	IMÁGENES
@@ -363,7 +363,7 @@ const topControlsContainer = document.getElementById("topControlsContainer");
 const btnStudent = document.getElementById("btnStudent");
 const txtStudentTitle = document.getElementById("txtStudentTitle");
 
-const btnCourses = document.getElementById("btnCourses");
+const btnLibraries = document.getElementById("btnLibraries");
 const btnProyectos = document.getElementById("btnProyectos");
 const btnEdicion = document.getElementById("btnEdicion");
 const btnFretboard = document.getElementById("btnFretboard");
@@ -372,7 +372,7 @@ const btnScore = document.getElementById("btnScore");
 const btnMetronome = document.getElementById("btnMetronome");
 const btnMultimedia = document.getElementById("btnMultimedia");
 
-const btnCoursesPopUp = document.getElementById("btnCoursesPopUp");
+const btnLibrariesPopUp = document.getElementById("btnLibrariesPopUp");
 const btnProyectosPopup = document.getElementById("btnProyectosPopup");
 const btnEdicionPopup = document.getElementById("btnEdicionPopup");
 const btnFretboardPopup = document.getElementById("btnFretboardPopup");
@@ -472,7 +472,7 @@ const chkFretboardZoom = document.getElementById("chkFretboardZoom");
 	REFERENCIAS DOM: PROYECTOS
 ==================================================*/
 
-const cmbCourses = document.getElementById("cmbCourses");
+const cmbLibraries = document.getElementById("cmbLibraries");
 const btnCatalogue = document.getElementById("btnCatalogue");
 const btnNewStudent = document.getElementById("btnNewStudent");
 const btnNewProject = document.getElementById("btnNewProject");
@@ -494,18 +494,18 @@ const btnDelCategory = document.getElementById("btnDelCategory");
 const libraryPanel = document.getElementById("libraryPanel");
 const libraryPanelInfo = document.getElementById("libraryPanelInfo");
 const libraryPanelHeaderTitle = document.getElementById("libraryPanelHeaderTitle");
-const textCourseName = document.getElementById("textCourseName");
-const textAreaCourse = document.getElementById("textAreaCourse");
+const textLibraryName = document.getElementById("textLibraryName");
+const textAreaLibrary = document.getElementById("textAreaLibrary");
 const btnNewChord = document.getElementById("btnNewChord");
 const btnDelChord = document.getElementById("btnDelChord");
 
-const btnCreateCourse = document.getElementById("btnCreateCourse");
-const btnOpenCourse = document.getElementById("btnOpenCourse");
-const btnModifyCourse = document.getElementById("btnModifyCourse");
-const coursesContainer = document.getElementById("coursesContainer");
-const btnCoursesPanelClose = document.getElementById("btnCoursesPanelClose");
+const btnCreateLibrary = document.getElementById("btnCreateLibrary");
+const btnOpenLibrary = document.getElementById("btnOpenLibrary");
+const btnModifyLibrary = document.getElementById("btnModifyLibrary");
+const librariesContainer = document.getElementById("librariesContainer");
+const btnLibrariesPanelClose = document.getElementById("btnLibrariesPanelClose");
 const cmbLevels = document.getElementById("cmbLevels");
-const btnSaveCourse = document.getElementById("btnSaveCourse");
+const btnSaveLibrary = document.getElementById("btnSaveLibrary");
 
 
 /*==================================================

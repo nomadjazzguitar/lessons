@@ -75,7 +75,7 @@ a:visited {
 ========================================================== */
 
 #videoContainer,
-#coursesContainer {
+#librariesContainer {
 
 	display:none;
 
@@ -99,7 +99,7 @@ a:visited {
 }
 
 .video-window,
-.courses-window {
+.libraries-window {
 
 	display:flex;
 	flex-direction:column;
@@ -124,7 +124,7 @@ a:visited {
 
 }
 
-.courses-control{
+.libraries-control{
 
 	display:flex;
 
@@ -141,7 +141,7 @@ a:visited {
 }
 
 .video-head,
-.courses-close {
+.libraries-close {
 
 	display:flex;
 
@@ -2303,7 +2303,7 @@ html {
 
 .toolbarTop-Controls input,
 #videoContainer input,
-#coursesContainer input{
+#librariesContainer input{
 
 	height:30px;
 	width:120px;
@@ -2326,13 +2326,13 @@ html {
 }
 
 #videoContainer input,
-#coursesContainer input{
+#librariesContainer input{
 	text-align:left;
 }
 
 .toolbarTop-Controls select,
 .video-controls select,
-#coursesContainer select{
+#librariesContainer select{
 
 	height:30px;
 	min-width:110px;
@@ -2365,7 +2365,7 @@ html {
 
 .toolbarTop-Controls select:hover,
 .video-controls select:hover,
-#coursesContainer select:hover{
+#librariesContainer select:hover{
 
 	background-color:var(--color-dark-background);
 
@@ -2373,7 +2373,7 @@ html {
 
 .toolbarTop-Controls select:focus,
 .video-controls select:focus,
-#coursesContainer select:focus{
+#librariesContainer select:focus{
 
 	border-color:var(--color-highlight);
 
@@ -2383,7 +2383,7 @@ html {
 
 .toolbarTop-Controls select option,
 .video-controls select option,
-#coursesContainer select option{
+#librariesContainer select option{
 
 	background-color:var(--color-tools);
 
@@ -2395,7 +2395,7 @@ html {
 
 .toolbarTop-Controls select option:checked,
 .video-controls select option:checked,
-#coursesContainer select option:checked{
+#librariesContainer select option:checked{
 
 	background-color:var(--color-main-text);
 
@@ -2407,7 +2407,7 @@ html {
 
 .toolbarTop-Controls select option:hover,
 .video-controls select option:hover,
-#coursesContainer select option:hover{
+#librariesContainer select option:hover{
 
 	background-color:var(--color-highlight);
 
@@ -2427,7 +2427,7 @@ html {
 
 .toolbarTop-Controls select:focus-visible,
 .video-controls select:focus-visible,
-#coursesContainer select:focus-visible{
+#librariesContainer select:focus-visible{
 	outline: 2px solid var(--color-main-text);
 	outline-offset: 2px;
 }
@@ -2443,11 +2443,11 @@ input[type="range"] {
 
 }
 
-#textCourseName{
+#textLibraryName{
 	min-width:250px;
 }
 
-#textAreaCourse{
+#textAreaLibrary{
 
 	width:100%;
 	min-height:100px;
@@ -2469,7 +2469,7 @@ input[type="range"] {
 
 }
 
-#cmbCourses{
+#cmbLibraries{
 	min-width:170px;
 	max-width:300px;
 }
@@ -2563,7 +2563,7 @@ input[type="range"] {
 #workspaceHeader button:not(:disabled):hover,
 .libraryPanelHeader button:not(:disabled):hover,
 #videoContainer button:not(:disabled):hover,
-#coursesContainer button:not(:disabled):hover,
+#librariesContainer button:not(:disabled):hover,
 #workspaceMultimediaControls button:not(:disabled):hover {
 
 	color:#fff;
@@ -2578,7 +2578,7 @@ input[type="range"] {
 .toolbarTop-Controls button:focus-visible,
 #workspaceHeader button:focus-visible,
 #videoContainer button:focus-visible,
-#coursesContainer button:focus-visible,
+#librariesContainer button:focus-visible,
 #workspaceMultimediaControls button:focus-visible{
 
 	outline:1px solid var(--color-main-text);
@@ -2603,7 +2603,7 @@ input[type="range"] {
 .toolbarTop-Controls button i,
 #workspaceHeader button i,
 #videoContainer button i,
-#coursesContainer button i{
+#librariesContainer button i{
 
 	width:16px;
 
@@ -2616,7 +2616,7 @@ input[type="range"] {
 .toolbarTop-Controls button:hover i,
 #workspaceHeader button:hover i,
 #videoContainer button:hover i,
-#coursesContainer button:hover i{
+#librariesContainer button:hover i{
 
 	transform:none;
 
@@ -2662,7 +2662,7 @@ input[type="range"] {
 
 #workspaceHeader button,
 #videoContainer button,
-#coursesContainer button,
+#librariesContainer button,
 #workspaceMultimediaControls button{
 
 	display:inline-flex;
@@ -2701,7 +2701,7 @@ input[type="range"] {
 }
 
 #videoContainer #btnVideoClose,
-#coursesContainer #btnCoursesPanelClose {
+#librariesContainer #btnLibrariesPanelClose {
 
 	width:30px;
 	min-width:30px;
@@ -3180,7 +3180,7 @@ input[type="range"] {
 	#toolbarTop .toolbarTop-Controls button,
 	#workspaceHeader button,
 	#videoContainer button,
-	#coursesContainer button{
+	#librariesContainer button{
 
 		width: 30px;
 		height: 30px;
@@ -3199,7 +3199,7 @@ input[type="range"] {
 	#toolbarTop .toolbarTop-Controls button span,
 	#workspaceHeader button span,
 	#videoContainer button span,
-	#coursesContainer button span{
+	#librariesContainer button span{
 
 		display: none;
 
@@ -3208,7 +3208,7 @@ input[type="range"] {
 	#toolbarTop .toolbarTop-Controls button i,
 	#workspaceHeader button i,
 	#videoContainer button i,
-	#coursesContainer button i{
+	#librariesContainer button i{
 
 		font-size: 12px;
 
@@ -3231,7 +3231,7 @@ input[type="range"] {
 	#workspaceHeader,
 	#workspaceLibraryPanel,
 	#videoContainer,
-	#coursesContainer{
+	#librariesContainer{
 
 		font-size:10px;
 
@@ -3599,7 +3599,7 @@ input[type="range"] {
 @media (max-width:600px), (max-height:400px) {
 
 	#videoContainer,
-	#coursesContainer  {
+	#librariesContainer  {
 
 		width:100vw;
 		height:100dvh;
@@ -3617,7 +3617,7 @@ input[type="range"] {
 	}
 
 	.video-window,
-	.courses-window {
+	.libraries-window {
 
 		width:100%;
 		max-width:none;

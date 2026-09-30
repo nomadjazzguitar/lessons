@@ -201,17 +201,17 @@ function parseLibrariesXml(xml) {
 function parseLibraryXml(xml) {
 
 	libraryId = xml.querySelector("library")?.getAttribute("id") || "";
-	if ([...cmbCourses.options].some(option => option.value === libraryId)) cmbCourses.value = libraryId;
+	if ([...cmbLibraries.options].some(option => option.value === libraryId)) cmbLibraries.value = libraryId;
 
 	libraryVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
 	libraryType = xml.querySelector("library")?.getAttribute("type") || "";
 	libraryCreated = xml.querySelector("library")?.getAttribute("created") || "";
 
 	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
-	textCourseName.value = libraryName;
+	textLibraryName.value = libraryName;
 
 	libraryDesc = xml.querySelector("desc")?.textContent.trim() || "";
-	textAreaCourse.value = libraryDesc;
+	textAreaLibrary.value = libraryDesc;
 
 	libraryLevel = Number(xml.querySelector("library")?.getAttribute("level") ?? 1);
 	cmbLevels.value = libraryLevel;
@@ -1334,7 +1334,7 @@ function createLibrary(fileName,type) {
 
 	if (type === "library"){
 		// Descripción
-		lines.push(`\t<desc>${escapeXml(textAreaCourse.value.trim())}</desc>`);
+		lines.push(`\t<desc>${escapeXml(textAreaLibrary.value.trim())}</desc>`);
 	}
 
 	lines.push(`</library>`);
@@ -1375,7 +1375,7 @@ function createLibrary(fileName,type) {
 			modified: "",
 			level: cmbLevels.value,
 			name: name,
-			desc: textAreaCourse.value.trim()
+			desc: textAreaLibrary.value.trim()
 		});
 
 		modifyLibrariesXmlFile();
