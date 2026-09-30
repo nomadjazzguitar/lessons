@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="5.3" type="student" created="29/09/2026" modified="30/09/2026" level="1" name="Clases">
+<library version="5.4" type="student" created="29/09/2026" modified="30/09/2026" level="1" name="Clases">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">Arpegios triada</category>
 		<category id="1ntra8d">Song for my father</category>
 	</categories>
-	<project id="h0kg1r" title="Fm7 primera posción" category="1ay80if" projectType="fretboard">
+	<project id="h0kg1r" title="Fm7 primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
