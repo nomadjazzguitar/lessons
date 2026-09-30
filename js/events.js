@@ -869,6 +869,7 @@ btnCopyCanvas.addEventListener("click", () => {
 btnAddLibrary.addEventListener("click", () => {
 
 	isNewLibrary = true;
+	labelLibraryId.textContent = "";
 	textLibraryName.value = "";
 	textAreaLibrary.value = "";
 	cmbLevels.value = 1;
@@ -880,6 +881,7 @@ btnAddLibrary.addEventListener("click", () => {
 btnModifyLibrary.addEventListener("click", () => {
 
 	isNewLibrary = false;
+	labelLibraryId.innerHTML = "<b>Id:</b> " + libraryId + " - <b>Fecha creación: </b>" + libraryCreated;
 	textLibraryName.value = libraryName;
 	textAreaLibrary.value = libraryDesc;
 	cmbLevels.value = libraryLevel;
@@ -1106,10 +1108,7 @@ numFrets.addEventListener("change", () => {
 
 	// Limitar también si el usuario escribe un valor manualmente
 
-	fretCount = Math.max(
-		4,
-		Math.min(24, fretCount)
-	);
+	fretCount = Math.max(4,Math.min(24, fretCount));
 
 	updateFretNumberControls();
 
@@ -1121,9 +1120,7 @@ numFrets.addEventListener("change", () => {
 
 btnMoreFrets.addEventListener("click", () => {
 
-	if (fretCount >= 24) {
-		return;
-	}
+	if (fretCount >= 24) return;
 
 	fretCount++;
 
@@ -1135,9 +1132,7 @@ btnMoreFrets.addEventListener("click", () => {
 
 btnLessFrets.addEventListener("click", () => {
 
-	if (fretCount <= 4) {
-		return;
-	}
+	if (fretCount <= 4) return;
 
 	fretCount--;
 
@@ -1153,9 +1148,7 @@ btnMoreNumberFrets.addEventListener("click", () => {
 
 	const maxFirstFret = 25 - fretCount;
 
-	if (nFrets >= maxFirstFret) {
-		return;
-	}
+	if (nFrets >= maxFirstFret) return;
 
 	numberFrets.value = nFrets + 1;
 
@@ -1167,9 +1160,7 @@ btnLessNumberFrets.addEventListener("click", () => {
 
 	let nFrets = numberFrets.value == null || numberFrets.value === "" ? 1 : parseInt(numberFrets.value);
 
-	if (nFrets <= 1) {
-		return;
-	}
+	if (nFrets <= 1) return;
 
 	numberFrets.value = nFrets - 1;
 
@@ -1880,5 +1871,17 @@ multimediaDropZone.addEventListener("drop", async event => {
 	}
 
 	await addDroppedResource(file,Number(resourceWidthInput.value));
+
+});
+
+btnProjectSearch.addEventListener("click", () => {
+
+	searchProject();
+
+});
+
+txtSearch.addEventListener("keydown", event => {
+
+	if (event.key === "Enter") searchProject();
 
 });

@@ -28,7 +28,6 @@
 	<!-- ALERT FLOTANTE -->
 	<div id="appAlert" class="app-alert"><i id="alertIcon" class="fa-solid"></i><span id="alertMessage"></span></div>
 
-
 	<!-- CURSOS FLOTANTE -->
 	<div id="librariesContainer">
 
@@ -36,6 +35,7 @@
 
 			<div class="libraries-close">
 				<button type="button" id="btnLibrariesPanelClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+				<label id="labelLibraryId"></label>
 			</div>
 
 			<div class="libraries-control">
@@ -168,7 +168,7 @@
 					</div>
 
 					<div class="toolbarTop-Controls" id="topLibrary">
-						<span>LIBRERÍAS</span>
+						<span>LIBRERÍAS DE CURSOS</span>
 						<div class="toolRow">
 							<button type="button" id="btnOpenLibrary" title="Abrir librería de proyectos (Ctrl+A)"><i class="fa-solid fa-folder-plus"></i><span>Abrir</span></button>
 							<button type="button" id="btnAddLibrary" title="Crear librería"><i class="fa-solid fa-file-circle-plus"></i><span>Crear</span></button>
@@ -755,7 +755,10 @@
 						<button type="button" id="btnToggleLibraryPanel" class="btnSmall" title="Ocultar lista"><i class="fa-solid fa-angles-left"></i></button>
 					</div>
 
-					<div id="libraryPanelInfo"></div>
+					<div id="libraryPanelInfo">
+						<input id="txtSearch" type="text" maxlength="60" placeholder="Buscar">
+						<button type="button" id="btnProjectSearch" class="btnSmall" title="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+					</div>
 
 	<!--
 					<div class="projectCategory">

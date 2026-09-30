@@ -1196,10 +1196,6 @@ html {
 	overflow-wrap:break-word;
 }
 
-#libraryPanelInfo a{
-	text-decoration:underline;
-}
-
 #libraryPanelHeaderTitle{
 	font-weight:700;
 	font-size:14px;
@@ -2300,9 +2296,32 @@ html {
 
 }
 
+#libraryPanelInfo{
+	display:flex;
+	align-items:center;
+	width:100%;
+	gap:6px;
+
+	border-radius:2px;
+	padding:4px 0;
+
+	line-height:1.4;
+	overflow-wrap:break-word;
+}
+
+#libraryPanelInfo input{
+	flex:1;
+	min-width:0;
+}
+
+#libraryPanelInfo button{
+	flex-shrink:0;
+}
+
 .toolbarTop-Controls input,
 #videoContainer input,
-#librariesContainer input{
+#librariesContainer input,
+#libraryPanelInfo input{
 
 	height:30px;
 	width:120px;
@@ -2325,7 +2344,8 @@ html {
 }
 
 #videoContainer input,
-#librariesContainer input{
+#librariesContainer input,
+#libraryPanelInfo input{
 	text-align:left;
 }
 
@@ -2518,7 +2538,8 @@ input[type="range"] {
 =========================== */
 
 .toolbarTop-Controls button,
-#workspaceLibraryPanel .btnSmall{
+#workspaceLibraryPanel .btnSmall,
+#libraryPanelInfo .btnSmall{
 
 	display:flex;
 	flex-direction:column;
@@ -2627,7 +2648,8 @@ input[type="range"] {
 
 #topControlsContainer .btnSmall,
 #workspaceLibraryPanel .btnSmall,
-#workspaceTitleContainer .btnSmall{
+#workspaceTitleContainer .btnSmall,
+#libraryPanelInfo .btnSmall{
 
 	height: 30px;
 	width: 30px;

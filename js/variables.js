@@ -506,7 +506,9 @@ const librariesContainer = document.getElementById("librariesContainer");
 const btnLibrariesPanelClose = document.getElementById("btnLibrariesPanelClose");
 const cmbLevels = document.getElementById("cmbLevels");
 const btnSaveLibrary = document.getElementById("btnSaveLibrary");
-
+const btnProjectSearch = document.getElementById("btnProjectSearch");
+const txtSearch = document.getElementById("txtSearch");
+const labelLibraryId = document.getElementById("labelLibraryId");
 
 /*==================================================
 	REFERENCIAS DOM: WORKSPACE

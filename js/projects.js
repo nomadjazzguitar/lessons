@@ -200,11 +200,16 @@ function parseLibrariesXml(xml) {
 
 function parseLibraryXml(xml) {
 
-	libraryId = xml.querySelector("library")?.getAttribute("id") || "";
-	if ([...cmbLibraries.options].some(option => option.value === libraryId)) cmbLibraries.value = libraryId;
+	libraryType = xml.querySelector("library")?.getAttribute("type") || "";
+
+	if (libraryType === "library"){
+		libraryId = xml.querySelector("library")?.getAttribute("id") || "";
+		if ([...cmbLibraries.options].some(option => option.value === libraryId)) cmbLibraries.value = libraryId;
+	}else{
+		if (lib !== null) libraryId = lib;
+	}
 
 	libraryVersion = xml.querySelector("library")?.getAttribute("version") || "1.0";
-	libraryType = xml.querySelector("library")?.getAttribute("type") || "";
 	libraryCreated = xml.querySelector("library")?.getAttribute("created") || "";
 
 	libraryName = xml.querySelector("library")?.getAttribute("name") || "Sin Nombre";
@@ -1477,9 +1482,33 @@ function setupProjectCategories() {
 
 			const isOpen = button.getAttribute("aria-expanded") === "true";
 
+			// Cerramos todas las demás categorías
+
+			if (!isOpen) {
+
+				categoryButtons.forEach(otherButton => {
+
+					if (otherButton !== button) {
+
+						otherButton.setAttribute("aria-expanded","false");
+
+						const otherList = otherButton.nextElementSibling;
+
+						if (otherList && otherList.classList.contains("projectCategoryList")) {
+							otherList.classList.remove("isOpen");
+						}
+
+					}
+
+				});
+
+			}
+
+			// Abrimos/cerramos la categoría seleccionada
+
 			button.setAttribute("aria-expanded",String(!isOpen));
 
-			list.classList.toggle("isOpen", !isOpen);
+			list.classList.toggle("isOpen",!isOpen);
 
 		});
 
@@ -1489,9 +1518,7 @@ function setupProjectCategories() {
 
 function openProjectCategory(category) {
 
-	const button = document.querySelector(
-		`.projectCategoryButton[data-project-category="${category}"]`
-	);
+	const button = document.querySelector(`.projectCategoryButton[data-project-category="${category}"]`);
 
 	if (!button) return;
 
@@ -1671,26 +1698,24 @@ function setLibraryInfo(fileName){
 
 	const difficulty = difficultyLevels?.[libraryLevel];
 
-	libraryPanelHeaderTitle.innerHTML = `
-		${difficulty ? `<i class="fa-solid fa-circle ${difficulty.class}" title="Nivel: ${difficulty.name}"></i> ` : ""}
-		${libraryName === "" ? "Sin Nombre" : libraryName}
-	`;
-
-	let txtInfo = "";
-
-	if (isAdmin && xmlType === "Server"){
-		txtInfo = txtInfo + "<i><a href='";
-		txtInfo = txtInfo + xmlLibrary + "' target='_blank'>" + fileName.replace(dataURL_Libraries, "") + "</a></i><br>";
-		txtInfo = txtInfo + "</a></i>";
-	}
-
-	if (libraryDesc !== "") txtInfo = txtInfo + "<p>" + libraryDesc + "</p>";
-
-	libraryPanelInfo.innerHTML = txtInfo;
-
-	libraryPanelInfo.style.display = txtInfo === "" ? "none" : "";
-
 	cmbLevels.value = libraryLevel;
+
+	libraryPanelHeaderTitle.innerHTML = `${difficulty ? `<i class="fa-solid fa-circle ${difficulty.class}" title="Nivel: ${difficulty.name}"></i> ` : ""}
+		${libraryName === "" ? "Sin Nombre" : libraryName}`;
+
+}
+
+function searchProject(){
+
+	if (txtSearch.value.trim() === "") return;
+
+	const project = library.find(library => library.title?.includes(txtSearch.value.trim()));
+
+	if (project){
+		selectProject(project);
+	}else{
+		showAlert("Ninguna actividad encontrada","info");
+	}
 
 }
 
