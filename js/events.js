@@ -694,35 +694,35 @@ btnDelCategory.addEventListener("click", () => {
 });
 
 btnLibraries.addEventListener("click", () => {
-	setMenu("libraries");
+	setMenu("libraries",true);
 });
 
 btnProyectos.addEventListener("click", () => {
-	setMenu("projects");
+	setMenu("projects",true);
 });
 
 btnEdicion.addEventListener("click", () => {
-	setMenu("edit");
+	setMenu("edit",true);
 });
 
 btnFretboard.addEventListener("click", () => {
-	setMenu("fretboard");
+	setMenu("fretboard",true);
 });
 
 btnPlayer.addEventListener("click", () => {
-	setMenu("player");
+	setMenu("player",true);
 });
 
 btnScore.addEventListener("click", () => {
-	setMenu("score");
+	setMenu("score",true);
 });
 
 btnMetronome.addEventListener("click", () => {
-	setMenu("metronome");
+	setMenu("metronome",true);
 });
 
 btnMultimedia.addEventListener("click", () => {
-	setMenu("multimedia");
+	setMenu("multimedia",true);
 });
 
 btnMenuSelector.addEventListener("click", () => {

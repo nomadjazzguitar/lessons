@@ -766,8 +766,18 @@ async function playMusic(){
 		topControlsWasOpen = topControlsContainer.classList.contains("isOpen");
 		closeTopControls();
 
+		if (isMobile){
+
+			menuPopup.classList.toggle("isOpen");
+
+			menuSelectorText.textContent = "MENÚ";
+			menuSelectorIcon.className = "fa-solid fa-gear fa-fw";
+
+		}
+
 		libraryWasOpen = !appMain.classList.contains("libraryHidden");
 		closeLibraryPanel();
+
 
 		if (isFretboardVisible) drawNotesAlpha(0.4);
 

@@ -203,7 +203,6 @@ function configureStudentControls(){
 
 		btnLibraries.style.display = "none";
 		btnLibrariesPopup.style.display = "none";
-
 		btnProyectos.style.display = "none";
 		btnProyectosPopup.style.display = "none";
 
@@ -219,9 +218,6 @@ function configureStudentControls(){
 
 			btnLibraries.style.display = "none";
 			btnLibrariesPopup.style.display = "none";
-
-			btnEdicion.style.display = "none";
-			btnEdicionPopup.style.display = "none";
 
 			topClipboard.style.display = "none";
 
@@ -240,6 +236,9 @@ function configureStudentControls(){
 				txtStudentTitle.textContent = "Invitado";
 
 			}else{
+
+				btnEdicion.style.display = "none";
+				btnEdicionPopup.style.display = "none";
 
 				if (projectType !== "fretboard"){
 					setMenu("fretboard");
@@ -266,8 +265,6 @@ function configureStudentControls(){
 
 			topClipboard.style.display = "none";			
 
-			btnEdicion.style.display = "none";
-			btnEdicionPopup.style.display = "none";
 			btnMultimedia.style.display = "none";
 			btnMultimediaPopup.style.display = "none";
 
@@ -530,21 +527,18 @@ function setControlsState() {
 
 }
 
-function setMenu(m){
+function setMenu(m, click = false){
 
 	// alternar abrir-cerrar si se pulsa el mismo menú
 	if (btnMenuSelector.style.display === "none" && menuOpen === m) {
 
-		if (topControlsContainer.classList.contains("isOpen")) {
-
-			closeTopControls();
-
-		} else {
-
-			openTopControls();
-
+		if (click){
+			if (topControlsContainer.classList.contains("isOpen")) {
+				closeTopControls();
+			} else {
+				openTopControls();
+			}
 		}
-
 		return;
 
 	}
@@ -1303,6 +1297,7 @@ function closeLibraryPanel(){
 
 	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
 	btnToggleLibraryPanel.innerHTML = btnShowLibraryPanel.innerHTML;
+
 }
 
 function openTopControls(){

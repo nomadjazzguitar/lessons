@@ -1660,13 +1660,8 @@ async function renderProject(){
 		if (menuOpen !== "projects") setMenu("projects");
 
 	}else{
-/*
-		if (projectType !== "fretboard" && isStudentActive){
-			if (menuOpen !== "edit") setMenu("edit");
-		}else{
-*/
-			if (menuOpen !== "metronome") setMenu("metronome");
-//		}
+
+		if (menuOpen !== "metronome") setMenu("metronome");
 
 	}
 
