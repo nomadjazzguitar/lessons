@@ -334,11 +334,11 @@ document.addEventListener("playerBeat", (e) => {
 
 			setPlayStopButton(btnPlayStop, false);
 
-			if (topControlsWasOpen) openTopControls();
+			if (!isMobile && topControlsWasOpen) openTopControls();
 			topControlsWasOpen = false;
 
-			if (!libraryWasClosed && appMode !== "Guest") openLibraryPanel();
-			libraryWasClosed = false;
+			if (!isMobile && libraryWasOpen && appMode !== "Shared") openLibraryPanel();
+			libraryWasOpen = false;
 
 			break;
 
@@ -798,9 +798,9 @@ btnShowLibraryPanel.addEventListener("click", () => {
 	}else{
 
 		closeLibraryPanel();
-	}
 
-	if (isScoreVisible) scoreRender();
+//		if (!isMobile && isScoreVisible) scoreRender();
+	}
 
 });
 

@@ -75,7 +75,7 @@ let inlays = true;
 let notation = "";
 
 let topControlsWasOpen = true;
-let libraryWasClosed = false;
+let libraryWasOpen = true;
 
 let currentTheme = "dark";
 

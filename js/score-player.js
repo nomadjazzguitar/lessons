@@ -766,7 +766,7 @@ async function playMusic(){
 		topControlsWasOpen = topControlsContainer.classList.contains("isOpen");
 		closeTopControls();
 
-		libraryWasClosed = workspaceLibraryPanel.classList.contains("panelHidden");
+		libraryWasOpen = !appMain.classList.contains("libraryHidden");
 		closeLibraryPanel();
 
 		if (isFretboardVisible) drawNotesAlpha(0.4);
@@ -811,11 +811,11 @@ async function playMusic(){
 
 		workspaceTimeInfo.style.display = "none";
 
-		if (topControlsWasOpen) openTopControls();
+		if (!isMobile && topControlsWasOpen) openTopControls();
 		topControlsWasOpen = false;
 
-		if (!libraryWasClosed && appMode !== "Shared") openLibraryPanel();
-		libraryWasClosed = false;
+		if (!isMobile && libraryWasOpen && appMode !== "Shared") openLibraryPanel();
+		libraryWasOpen = false;
 
 		if (chkAutoScroll.checked) {
 			document.body.scrollTo({top: 0,left: 0,behavior: "smooth"});
