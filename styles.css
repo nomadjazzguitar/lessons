@@ -1034,7 +1034,6 @@ html {
 
 #txtStudentTitle{
 	font-size:11px;
-	line-height:10px;
 	display:block;
 	max-width:100%;
 	overflow:hidden;
@@ -2897,10 +2896,6 @@ input[type="range"] {
 
 }
 
-#noteFlat{
-	font-size: 14px;
-}
-
 
 
 
@@ -3419,13 +3414,8 @@ input[type="range"] {
 
 	#txtStudentTitle{
 
-		font-size:9px;
-		line-height:9px;
+		font-size:10px;
 
-	}
-
-	#noteFlat{
-		font-size: 11px;
 	}
 
 }
