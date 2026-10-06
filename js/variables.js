@@ -9,14 +9,21 @@ const isLocal = window.location.protocol === "file:" || window.location.hostname
 const repositoryURL = "https://github.com/nomadjazzguitar/lessons";
 
 let baseURL = "https://nomadjazzguitar.github.io/lessons/";
+
+let dataURL_Multimedia = "https://nomadjazzguitar.github.io/multimedia/";
+
 let dataURL = "";
 
 let dataURL_Images = "img/";
 
-//Para que funcione el pintado y guardado de la imagen renderizada del mastil de ctx.getImageData en local, los achivos de imagenes del mastil tienen que estar en un servidor
 if (isLocal) {
-	dataURL = baseURL;
-//	dataURL_Images = dataURL + "img/"; //Lo desactivo porque si no hay Internet, no carga la imagen y no se puede trabajar en local
+	dataURL = baseURL; //Para cargar las librerias desde el servidor
+
+	//Para que funcione el pintado y guardado de la imagen renderizada del mastil de ctx.getImageData en local, los achivos de imagenes del mastil tienen que estar en un servidor. Lo desactivo porque si no hay Internet, no carga la imagen y no se puede trabajar en local
+//	dataURL_Images = dataURL + "img/";
+
+	//Cargamos el repositorio local de GitHub para subir los archivos desde GitHub Desktop
+	dataURL_Multimedia = "multimedia/";
 }
 
 const dataURL_Libraries = dataURL + "libraries/";
@@ -25,11 +32,9 @@ const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
 
 const xmlStudents = dataURL_Libraries + "students.xml";
 
-const dataURL_Multimedia = dataURL_Libraries + "multimedia/";
-
 const dataURL_Samples = dataURL + "samples/";
 
-let xmlLibrary = dataURL_Libraries + "library-default.xml";
+let xmlLibrary = dataURL_Libraries + "library-default.xml"; //Cargamos una libreria por defecto
 
 
 /*==================================================
