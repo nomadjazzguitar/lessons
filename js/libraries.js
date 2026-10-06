@@ -1793,23 +1793,15 @@ function getFirstProject() {
 
 	if (!library || library.length === 0) return null;
 
-	const firstCategory = categories
+	//Buscamos el primer proyecto de la ultima categoria
+	const lastCategory = [...categories]
+		.reverse()
 		.find(category =>
 			library.some(project => project.category === category.id)
 		);
 
-	if (!firstCategory) return null;
+	if (!lastCategory) return null;
 
-	return library.find(project => project.category === firstCategory.id) || null;
-
-/*
-	return library
-		.filter(project => project.category === firstCategory.id)
-		.sort((a, b) =>
-			a.title.localeCompare(b.title, undefined, {
-				sensitivity: "base"
-			})
-		)[0] || null;
-*/
+	return library.find(project => project.category === lastCategory.id) || null;
 
 }

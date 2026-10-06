@@ -500,7 +500,7 @@ function setControlsState() {
 
 	chkEditSound.disabled = btnEdicion.style.display === "none";
 
-	chkFretboardZoom.disabled = isLocal;
+//	chkFretboardZoom.disabled = isLocal;
 
 }
 
@@ -1891,9 +1891,7 @@ function loadFretboardImage() {
 
 	return new Promise((resolve, reject) => {
 
-		if (!isLocal) {
-			neckImage.crossOrigin = "Anonymous";
-		}
+		neckImage.crossOrigin = "Anonymous";
 
 		neckImage.onload = () => {
 

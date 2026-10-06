@@ -211,7 +211,7 @@ function drawFretboard() {
 	// Guardamos todo el dibujo
 	//------------------------------------------------
 
-	if (!isLocal) fretboardBackground = ctx.getImageData(0,0,canvas.width,canvas.height);
+	fretboardBackground = ctx.getImageData(0,0,canvas.width,canvas.height);
 
 }
 
@@ -1291,7 +1291,7 @@ function drawNotesAlpha(opacity = 1) {
 	drawNutNotes(opacity);
 
 	// Guardar el estado completo: mástil + notas con opacidad
-	if (!isLocal) fretboardPlaybackBackground = ctx.getImageData(0,0,canvas.width,canvas.height);
+	fretboardPlaybackBackground = ctx.getImageData(0,0,canvas.width,canvas.height);
 
 }
 
@@ -1320,15 +1320,7 @@ function drawPlayingMarker(x, y) {
 
 function drawNotes() {
 
-	if (isLocal) {
-
-		drawFretboard();
-
-	} else {
-
-		restoreFretboardBackground();
-
-	}
+	restoreFretboardBackground();
 
 	drawBarres();
 

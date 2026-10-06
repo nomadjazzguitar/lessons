@@ -19,8 +19,8 @@ let dataURL = "";
 if (isLocal) {
 	dataURL = baseURL + "lessons/"; //Para cargar las librerias desde el servidor
 
-	//Para que funcione el pintado y guardado de la imagen renderizada del mastil de ctx.getImageData en local, los achivos de imagenes del mastil tienen que estar en un servidor. Lo desactivo porque si no hay Internet, no carga la imagen y no se puede trabajar en local
-//	dataURL_Images = dataURL + "img/";
+	//Para que funcione el pintado y guardado de la imagen renderizada del mastil de ctx.getImageData en local, los achivos de imagenes del mastil tienen que estar en un servidor
+	dataURL_Images = dataURL + "img/";
 
 	//Cargamos el repositorio local de GitHub para subir los archivos desde GitHub Desktop
 	dataURL_Multimedia = "multimedia/";
