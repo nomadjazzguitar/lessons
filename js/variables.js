@@ -17,7 +17,7 @@ let dataURL_Images = "img/";
 let dataURL = "";
 
 if (isLocal) {
-	dataURL = baseURL; //Para cargar las librerias desde el servidor
+	dataURL = baseURL + "lessons/"; //Para cargar las librerias desde el servidor
 
 	//Para que funcione el pintado y guardado de la imagen renderizada del mastil de ctx.getImageData en local, los achivos de imagenes del mastil tienen que estar en un servidor. Lo desactivo porque si no hay Internet, no carga la imagen y no se puede trabajar en local
 //	dataURL_Images = dataURL + "img/";
@@ -26,13 +26,13 @@ if (isLocal) {
 	dataURL_Multimedia = "multimedia/";
 }
 
-const dataURL_Libraries = dataURL + "lessons/libraries/";
+const dataURL_Libraries = dataURL + "libraries/";
 
 const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
 
 const xmlStudents = dataURL_Libraries + "students.xml";
 
-const dataURL_Samples = dataURL + "lessons/samples/";
+const dataURL_Samples = dataURL + "samples/";
 
 let xmlLibrary = dataURL_Libraries + "library-default.xml"; //Cargamos una libreria por defecto
 
