@@ -512,7 +512,7 @@ function showHome(value){
 
 		const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
 
-		txt = cat !== "" ? cat + " > " : "";
+		txt = cat !== "" ? cat + " / " : "";
 		txt = projectTitle === "" ? txt + "Sin Título" : txt + projectTitle;
 		txt = "<i class='fa-solid fa-folder-open'></i>&nbsp;<span>"+ txt + "</span>";
 
@@ -1027,11 +1027,6 @@ function resetControlsValues(state){
 	}
 
 	titleText.value = projectTitle;
-
-	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
-
-	workspaceTitleText.textContent = cat !== "" ? cat + " > " : "";
-	workspaceTitleText.textContent = projectTitle === "" ? workspaceTitleText.textContent + "Sin Título" : workspaceTitleText.textContent + projectTitle;
 
 	numFrets.value = fretCount;
 	sliderFrets.value = fretCount;
