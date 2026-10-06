@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="6.4" id="s_1onds4h" type="student" created="29/09/2026" modified="06/10/2026" level="1" name="Clases online">
+<library version="6.7" id="s_1onds4h" type="student" created="29/09/2026" modified="06/10/2026" level="1" name="Clases online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">2026 Sept 29</category>
-		<category id="m683mj">2026 Oct 6</category>
+		<category id="1xq0k1r">2026 Oct 6</category>
 	</categories>
 	<project id="h0kg1r" title="Fm primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
@@ -255,5 +255,128 @@
 		<resources>
 			<resource type="video" content="20260929-20-30.webm" width="100" />
 		</resources>
+	</project>
+	<project id="rzykag" title="Fm Arpegio Extendido 1" category="1xq0k1r" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>Ab</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="1" color="#00aa00" text="" chord="" order="1"/>
+			<note string="5" fret="4" color="#00aa00" text="" chord="" order="2"/>
+			<note string="4" fret="3" color="#00aa00" text="" chord="" order="3"/>
+			<note string="3" fret="3" color="#ff8800" text="" chord="" order="4"/>
+			<note string="3" fret="6" color="#ff8800" text="" chord="" order="5"/>
+			<note string="2" fret="5" color="#ff8800" text="" chord="" order="6"/>
+			<note string="1" fret="6" color="#8000ff" text="" chord="" order="7"/>
+			<note string="1" fret="9" color="#8000ff" text="" chord="" order="8"/>
+			<note string="0" fret="8" color="#8000ff" text="" chord="" order="9"/>
+		</notes>
+	</project>
+	<project id="1k5vpfl" title="Fm Arpegio Extendido 2" category="1xq0k1r" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>Ab</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="4" color="#00aa00" text="" chord="" order="1"/>
+			<note string="5" fret="8" color="#00aa00" text="" chord="" order="2"/>
+			<note string="4" fret="8" color="#00aa00" text="" chord="" order="3"/>
+			<note string="3" fret="6" color="#ff8800" text="" chord="" order="4"/>
+			<note string="3" fret="10" color="#ff8800" text="" chord="" order="5"/>
+			<note string="2" fret="10" color="#ff8800" text="" chord="" order="6"/>
+			<note string="1" fret="9" color="#8000ff" text="" chord="" order="7"/>
+			<note string="1" fret="13" color="#8000ff" text="" chord="" order="8"/>
+			<note string="0" fret="13" color="#8000ff" text="" chord="" order="9"/>
+		</notes>
+	</project>
+	<project id="1vhgohp" title="Fm Arpegio Extendido 3" category="1xq0k1r" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up-down</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>Ab</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="8" color="#00aa00" text="" chord="" order="1"/>
+			<note string="4" fret="8" color="#00aa00" text="" chord="" order="2"/>
+			<note string="4" fret="11" color="#00aa00" text="" chord="" order="3"/>
+			<note string="3" fret="10" color="#ff8800" text="" chord="" order="4"/>
+			<note string="2" fret="10" color="#ff8800" text="" chord="" order="5"/>
+			<note string="2" fret="13" color="#ff8800" text="" chord="" order="6"/>
+			<note string="1" fret="13" color="#8000ff" text="" chord="" order="7"/>
+			<note string="0" fret="13" color="#8000ff" text="" chord="" order="8"/>
+			<note string="0" fret="16" color="#8000ff" text="" chord="" order="9"/>
+		</notes>
 	</project>
 </library>
