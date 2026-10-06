@@ -3253,7 +3253,7 @@ alert(resourceUrl);
 			if (isLocal){
 				element.src = resourceUrl;
 			}else{
-				element.src = "https://docs.google.com/viewer?embedded=true&url="+ baseURL + resourceUrl;
+				element.src = "https://docs.google.com/viewer?embedded=true&url=" + resourceUrl;
 			}
 
 			element.style.width = width + "%";
