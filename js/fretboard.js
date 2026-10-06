@@ -1320,7 +1320,15 @@ function drawPlayingMarker(x, y) {
 
 function drawNotes() {
 
-	restoreFretboardBackground();
+	if (isLocal) {
+
+		drawFretboard();
+
+	} else {
+
+		restoreFretboardBackground();
+
+	}
 
 	drawBarres();
 
@@ -1616,20 +1624,13 @@ function drawHoverMarker() {
 function drawNutHover() {
 
 	// Si no estamos sobre el NUT
-	if (hoverNut === null) {
-		return;
-	}
+	if (hoverNut === null) return;
 
-	// Si estamos sobre un traste,
-	// no dibujamos el hover del NUT.
-	if (hoverCell !== null) {
-		return;
-	}
+	// Si estamos sobre un traste,no dibujamos el hover del NUT.
+	if (hoverCell !== null) return;
 
 	// Si ya existe una nota en el NUT, tampoco dibujamos el hover.
-	if (nutNotes[hoverNut]) {
-		return;
-	}
+	if (nutNotes[hoverNut]) return;
 
 	const gap = 5;
 
@@ -2116,20 +2117,12 @@ function updateHoverCell(e) {
 
 	const cell = getCellFromMouse(e.offsetX,e.offsetY);
 
-	const sameCell =
-		hoverCell &&
-		cell &&
-		hoverCell.string === cell.string &&
-		hoverCell.fret === cell.fret;
+	const sameCell = hoverCell && cell && hoverCell.string === cell.string && hoverCell.fret === cell.fret;
 
-	if (sameCell) {
-		return;
-	}
+	if (sameCell) return;
 
 	// Si sales del área válida del diapasón, elimina el círculo.
-	if (!cell && hoverCell === null) {
-		return;
-	}
+	if (!cell && hoverCell === null) return;
 
 	hoverCell = cell;
 
@@ -2139,10 +2132,7 @@ function updateHoverCell(e) {
 
 function updateHoverNut(e) {
 
-	if (
-		window.innerWidth <= maxMediaScreenWidth ||
-		(editMode !== "note" && editMode !== "barre")
-	) {
+	if (isMobile || (editMode !== "note" && editMode !== "barre")) {
 
 		if (hoverNut !== null) {
 
@@ -2156,14 +2146,9 @@ function updateHoverNut(e) {
 
 	}
 
-	const nut = getNutStringFromMouse(
-		e.offsetX,
-		e.offsetY
-	);
+	const nut = getNutStringFromMouse(e.offsetX,e.offsetY);
 
-	if (nut === hoverNut) {
-		return;
-	}
+	if (nut === hoverNut) return;
 
 	hoverNut = nut;
 
