@@ -8,13 +8,13 @@ const isLocal = window.location.protocol === "file:" || window.location.hostname
 
 const repositoryURL = "https://github.com/nomadjazzguitar/lessons";
 
-let baseURL = "https://nomadjazzguitar.github.io/lessons/";
+let baseURL = "https://nomadjazzguitar.github.io/";
 
-let dataURL_Multimedia = "https://nomadjazzguitar.github.io/multimedia/";
-
-let dataURL = "";
+let dataURL_Multimedia = baseURL + "multimedia/";
 
 let dataURL_Images = "img/";
+
+let dataURL = "";
 
 if (isLocal) {
 	dataURL = baseURL; //Para cargar las librerias desde el servidor
@@ -26,13 +26,13 @@ if (isLocal) {
 	dataURL_Multimedia = "multimedia/";
 }
 
-const dataURL_Libraries = dataURL + "libraries/";
+const dataURL_Libraries = dataURL + "lessons/libraries/";
 
 const xmlLibraries = dataURL_Libraries + "libraries-index.xml";
 
 const xmlStudents = dataURL_Libraries + "students.xml";
 
-const dataURL_Samples = dataURL + "samples/";
+const dataURL_Samples = dataURL + "lessons/samples/";
 
 let xmlLibrary = dataURL_Libraries + "library-default.xml"; //Cargamos una libreria por defecto
 

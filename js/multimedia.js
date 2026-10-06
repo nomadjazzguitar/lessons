@@ -3123,12 +3123,7 @@ function createMultimediaElement(type, content, width) {
 		if (type === "link" || type === "iframe"){
 			resourceUrl = fileName;
 		}else{
-	
-			if (isLocal){
-				resourceUrl = dataURL_Multimedia.replace(baseURL,"") + type + "/" + fileName;
-			}else{
-				resourceUrl = dataURL_Multimedia + type + "/" + fileName;
-			}
+			resourceUrl = dataURL_Multimedia + type + "/" + fileName;
 		}
 	}
 
