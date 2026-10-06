@@ -3124,6 +3124,7 @@ function createMultimediaElement(type, content, width) {
 			resourceUrl = fileName;
 		}else{
 			resourceUrl = dataURL_Multimedia + type + "/" + fileName;
+alert(resourceUrl);
 		}
 	}
 
