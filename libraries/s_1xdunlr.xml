@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library version="5.2" id="s_1xdunlr" type="student" created="05/10/2026" modified="06/10/2026" level="1" name="Mis Clases online">
+	<desc></desc>
+	<categories>
+		<category id="y2j82d">2026 Oct 5</category>
+	</categories>
+	<project id="niplxe" title="D Natural Blues Solo Wes" category="y2j82d" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="wes-DNaturalBlues.pdf" width="100" />
+			<resource type="iframe" content="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/coX1T4Gl2UA?si=pWytTLu_wKBvEqpD&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="10fsrtb" title="Clasificación de Intervalos" category="y2j82d" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="Clasificación de intervalos.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="eotd5w" title="Los Modos Diatónicos" category="y2j82d" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="modos de la escala diatonica (mayor-menor).pdf" width="100" />
+		</resources>
+	</project>
+	<project id="1hy71ix" title="C Jonico (Mayor)" category="y2j82d" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="15"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="24"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="25"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="31"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="32"/>
+			<note string="4" fret="12" color="#0080ff" text="" chord="" order="33"/>
+			<note string="4" fret="14" color="#0080ff" text="" chord="" order="34"/>
+			<note string="4" fret="15" color="#0080ff" text="" chord="" order="35"/>
+		</notes>
+	</project>
+	<project id="1s72xe4" title="C Dorico (menor)" category="y2j82d" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>Bb</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="2"/>
+			<note string="4" fret="6" color="#0080ff" text="" chord="" order="3"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="4"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="5"/>
+			<note string="4" fret="12" color="#0080ff" text="" chord="" order="6"/>
+			<note string="4" fret="13" color="#0080ff" text="" chord="" order="7"/>
+			<note string="4" fret="15" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+	<project id="10azeg" title="C Frigio (menor)" category="y2j82d" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>Ab</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="4" color="#0080ff" text="" chord="" order="4"/>
+			<note string="4" fret="6" color="#0080ff" text="" chord="" order="5"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="6"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="7"/>
+			<note string="4" fret="11" color="#0080ff" text="" chord="" order="8"/>
+			<note string="4" fret="13" color="#0080ff" text="" chord="" order="9"/>
+			<note string="4" fret="15" color="#0080ff" text="" chord="" order="10"/>
+		</notes>
+	</project>
+	<project id="159kc2i" title="C Lidio (Mayor)" category="y2j82d" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>G</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="2"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="3"/>
+			<note string="4" fret="9" color="#0080ff" text="" chord="" order="4"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="5"/>
+			<note string="4" fret="12" color="#0080ff" text="" chord="" order="6"/>
+			<note string="4" fret="14" color="#0080ff" text="" chord="" order="7"/>
+			<note string="4" fret="15" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+	<project id="2llb0p" title="C Mixolidio (Mayor)" category="y2j82d" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>F</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="2"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="3"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="4"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="5"/>
+			<note string="4" fret="12" color="#0080ff" text="" chord="" order="6"/>
+			<note string="4" fret="13" color="#0080ff" text="" chord="" order="7"/>
+			<note string="4" fret="15" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+	<project id="65gyzv" title="C Eolico (menor)" category="y2j82d" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>Eb</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="2"/>
+			<note string="4" fret="6" color="#0080ff" text="" chord="" order="3"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="4"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="5"/>
+			<note string="4" fret="11" color="#0080ff" text="" chord="" order="6"/>
+			<note string="4" fret="13" color="#0080ff" text="" chord="" order="7"/>
+			<note string="4" fret="15" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+	<project id="pay5ju" title="C Locrio (menor)" category="y2j82d" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>90</bpm>
+			<key>Db</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="4" color="#0080ff" text="" chord="" order="2"/>
+			<note string="4" fret="6" color="#0080ff" text="" chord="" order="3"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="4"/>
+			<note string="4" fret="9" color="#0080ff" text="" chord="" order="5"/>
+			<note string="4" fret="11" color="#0080ff" text="" chord="" order="6"/>
+			<note string="4" fret="13" color="#0080ff" text="" chord="" order="7"/>
+			<note string="4" fret="15" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+</library>

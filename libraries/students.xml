@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students version="1.6">
+	<student id="s_1onds4h" n="Miguel Moreno" e="DULJykNvvxD8ZxLOwa6IiD/VW9xuL8xS73DsI5ZDeC4SpfI10sLA1VZAxxn77A6yj1htgSgZSTCpc945Waq9qrik" active="true" alta="29/09/2026" baja="" courses="" />
+	<student id="s_1xdunlr" n="Sergio Estella" e="h0Er+KmmJR77X9kjISryu1KMrJpNl0ZMCtO8G6e8xq2PcCXMlmTS5g+o9Pp8s3mbC2HTMtHy4iFAONJf6t60ncEkdlqSA/unHQ==" active="true" alta="05/10/2026" baja="" courses="" />
+</students>
