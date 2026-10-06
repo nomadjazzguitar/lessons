@@ -6,9 +6,9 @@
 
 const isLocal = window.location.protocol === "file:" || window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
 
-const repositoryURL = "https://github.com/nomadjazzguitar/lessons/";
+const repositoryURL = "https://github.com/nomadjazzguitar/lessons";
 
-let baseURL = repositoryURL;
+let baseURL = "https://nomadjazzguitar.github.io/lessons/";
 let dataURL = "";
 
 let dataURL_Images = "img/";
