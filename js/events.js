@@ -302,18 +302,6 @@ document.addEventListener("playerBeat", (e) => {
 			break;
 
 		case "stop":
-
-			if (isFretboardVisible) {
-				drawFretboard();
-				drawNotes();
-			}
-
-			if (isScoreVisible) scorePaint_stop();
-
-			resetPlaybackTimeline();
-
-			break;
-
 		case "end":
 
 			if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") {	
@@ -330,6 +318,7 @@ document.addEventListener("playerBeat", (e) => {
 
 			resetPlaybackTimeline();
 
+			workspaceMetronome.style.display = "none";
 			workspaceTimeInfo.style.display = "none";
 
 			setControlsEnabled(true);
@@ -1922,6 +1911,8 @@ btnLibraryHomeButton.addEventListener("click", () => {
 });
 
 btnLibraryAccess.addEventListener("click", () => {
+
+	showHome(!isHome);
 
 	openLibraryPanel();
 

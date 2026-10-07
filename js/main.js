@@ -376,14 +376,6 @@ function setControlsState() {
 
 
 	// --------------------------------
-	// FRETBOARD CONTROLS
-	// --------------------------------
-
-	workspaceControls.style.display = isMultimedia ? "none" : "flex";
-	workspaceMetronome.style.display = isMultimedia ? "none" : "flex";
-
-
-	// --------------------------------
 	// AUDIO / RENDER
 	// --------------------------------
 
@@ -520,8 +512,9 @@ function showHome(value){
 
 		if (projectType === "fretboard"){
 			workspaceControls.style.display = "flex";
-			workspaceMetronome.style.display = "flex";
-			workspaceTimeInfo.style.display = "flex"
+
+			workspaceMetronome.style.display = "none";//"flex";
+			workspaceTimeInfo.style.display = "none";//"flex"
 
 			if (isFretboardVisible) workspaceFretboard.style.display = "flex";
 			if (isScoreVisible) workspaceScore.style.display = "flex";
@@ -558,14 +551,6 @@ function showHome(value){
 
 		closeAllProjectCategories();
 
-		if (!isMobile){
-			if (isAdmin){
-				setMenu("libraries");
-			}else{
-				setMenu("metronome");
-			}
-		}
-
 		if (isMobile){
 
 			menuSelectorText.textContent = "MENÚ";
@@ -579,6 +564,14 @@ function showHome(value){
 	}
 
 	workspaceTitleText.innerHTML = txt;
+
+	if (!isMobile){
+		if (isAdmin){
+			setMenu("libraries");
+		}else{
+			setMenu("metronome");
+		}
+	}
 
 	isHome = value;
 
@@ -1485,9 +1478,13 @@ function setWorkspaceLayout(){
 
 	workspaceMultimedia.innerHTML = "";
 
+	workspaceMetronome.style.display = "none";
+	workspaceTimeInfo.style.display = "none";
+
 	if (projectType === "multimedia"){
 
 		workspaceMultimedia.style.display = "block";
+		workspaceControls.style.display = "none";
 		workspaceFretboard.style.display = "none";
 		workspaceScore.style.display = "none";
 
@@ -1498,6 +1495,8 @@ function setWorkspaceLayout(){
 		}else{
 			workspaceMultimedia.style.display = "none";
 		}
+
+		workspaceControls.style.display = "flex";
 
 		// Nunca permitir que ambos estén ocultos
 		if (!isScoreVisible && !isFretboardVisible) isFretboardVisible = true;

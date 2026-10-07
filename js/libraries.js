@@ -1031,11 +1031,9 @@ async function selectProject(project) {
 
 	updateSelectedProjectButton();
 
-	isHome = false;
-
 	await loadProject(project);
 
-	showHome(isHome);
+	if (isHome) showHome(false);
 
 }
 

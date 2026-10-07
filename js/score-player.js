@@ -778,7 +778,6 @@ async function playMusic(){
 		libraryWasOpen = !appMain.classList.contains("libraryHidden");
 		closeLibraryPanel();
 
-
 		if (isFretboardVisible) drawNotesAlpha(0.4);
 
 		await Tone.start();
@@ -819,6 +818,7 @@ async function playMusic(){
 
 		setPlayStopButton(btnPlayStop, false);
 
+		workspaceMetronome.style.display = "none";
 		workspaceTimeInfo.style.display = "none";
 
 		if (!isMobile && topControlsWasOpen) openTopControls();
