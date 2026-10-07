@@ -61,20 +61,14 @@ async function loadProject(project) {
 	// --------------------------------
 
 	fretboardType = project.settings?.fretboardType ?? "sequence";
-
 	fretCount = Math.max(5, Math.min(24, project.settings?.fretCount ?? 10));
 	displayMode = parseBoolean(project.settings?.displayMode, true);
 	inlays = parseBoolean(project.settings?.inlays, false);
 	orientation = project.settings?.orientation ?? "vertical";
 	rotated = parseBoolean(project.settings?.rotated, false);
 	fretboardStyle = project.settings?.fretboardStyle ?? "maple";
-
 	projectBar = project.settings?.bar ?? "4/4";
-	cmbBar.value = projectBar;
-
 	projectFigure = project.settings?.figure ?? 1;
-	cmbFigure.value = projectFigure;
-
 	tipoSecuencia = project.settings?.tipoSecuencia ?? "up";
 	direccion = parseBoolean(project.settings?.direccion, false);
 	countInBars = project.settings?.countInBars ?? 0;

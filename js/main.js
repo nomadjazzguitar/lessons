@@ -496,17 +496,26 @@ function setControlsState() {
 
 }
 
+function setHeaderProjectTitle(){
+
+	let txt = "";
+
+	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
+
+	txt = cat !== "" ? cat + " / " : "";
+	txt = projectTitle === "" ? txt + "Sin Título" : txt + projectTitle;
+	txt = "<i class='fa-solid fa-folder-open'></i>&nbsp;<span>"+ txt + "</span>";
+
+	return txt;
+}
+
 function showHome(value){
 
 	let txt = ""
 
 	if (value === false){
 
-		const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
-
-		txt = cat !== "" ? cat + " / " : "";
-		txt = projectTitle === "" ? txt + "Sin Título" : txt + projectTitle;
-		txt = "<i class='fa-solid fa-folder-open'></i>&nbsp;<span>"+ txt + "</span>";
+		txt = setHeaderProjectTitle();
 
 		workspaceHome.style.display = "none";
 
@@ -1032,6 +1041,9 @@ function resetControlsValues(state){
 	cmbBar.value = projectBar;
 	cmbFigure.value = projectFigure;
 
+	updateFigureOptions();
+	getBarGroups();
+
 	if (scoreScale !== "auto") {
 		cmbScoreScale.value = "zoom";
 		sliderScoreZoom.value = scoreScale;
@@ -1117,7 +1129,26 @@ function resetControlsValues(state){
 
 	setWorkspaceLayout();
 
-	loadArrayNotas();
+	workspaceTitleText.innerHTML = setHeaderProjectTitle();
+
+	if (state !== "init" && projectType === "fretboard"){
+
+		if (isFretboardVisible) resizeCanvas();
+
+		if (isScoreVisible) {
+
+			if (cmbFretboardType.value !== "chord"){
+				aSequence = buildOrderedSequence();
+			}else{
+				aChords = buildOrderedChords();
+			}
+
+			loadArrayNotas();
+
+			scoreRender();
+
+		}
+	}
 
 	renderMultimedia();
 
@@ -1219,9 +1250,11 @@ function updateFretNumberControls() {
 }
 
 function updateFigureOptions() {
+
     const previousValue = cmbFigure.value;
     const denominator = cmbBar.value.split("/")[1];
     cmbFigure.innerHTML = "";
+
     if (denominator === "4") {
         cmbFigure.innerHTML = `
             <option value="1">Negra</option>
@@ -1231,45 +1264,36 @@ function updateFigureOptions() {
     } else if (denominator === "8") {
         cmbFigure.innerHTML = `<option value="2">Corchea</option>`;
     }
+
     const option = cmbFigure.querySelector(`option[value="${previousValue}"]`);
     if (option) option.selected = true;
+
 }
 
-function setBarGroups() {
+function getBarGroups() {
 
-	if (projectFigure === 3) {
+    const time = cmbBar.value;
+    const [numerator, denominator] = time.split("/").map(Number);
 
-		if (projectBar === 2) {
-
-			cmbBar.value = "6/8";
-
-		} else if (projectBar === 3) {
-
-			cmbBar.value = "9/8";
-
-		} else if (projectBar === 4) {
-
-			cmbBar.value = "12/8";
-
-		}
-
-	} else if (projectFigure === 5) {
-
-		cmbBar.value = "5/8";
-
-	} else if (projectFigure === 7) {
-
-		cmbBar.value = "7/8";
-
-	} else {
-
-		cmbBar.value = projectBar + "/4";
-
-		cmbFigure.value = projectFigure;
-
-	}
-
-	updateFigureOptions();
+    if (denominator === 4) {
+        pBar = numerator;
+        pFigure = parseInt(cmbFigure.value, 10);
+    } else if (time === "6/8") {
+        pBar = 2;
+        pFigure = 3;
+    } else if (time === "9/8") {
+        pBar = 3;
+        pFigure = 3;
+    } else if (time === "12/8") {
+        pBar = 4;
+        pFigure = 3;
+    } else if (time === "5/8") {
+        pBar = 1;
+        pFigure = 5;
+    } else if (time === "7/8") {
+        pBar = 1;
+        pFigure = 7;
+    }
 
 }
 

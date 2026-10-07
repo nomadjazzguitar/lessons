@@ -679,7 +679,11 @@ colorPicker.addEventListener("change", () => {
 });
 
 cmbProjectCategory.addEventListener("change",(e)=>{
+
 	projectModified = true;
+
+	workspaceTitleText.innerHTML = setHeaderProjectTitle();
+
 });
 
 btnNewCategory.addEventListener("click", () => {
@@ -811,16 +815,13 @@ titleText.addEventListener("input", () => {
 
 	projectTitle = titleText.value.trim() || "Sin Título";
 
-	const cat = cmbProjectCategory.selectedIndex >= 0 ? cmbProjectCategory.options[cmbProjectCategory.selectedIndex].textContent : "";
-
-	workspaceTitleText.textContent = cat !== "" ? cat + " > " : "";
-	workspaceTitleText.textContent = workspaceTitleText.textContent + projectTitle;
+	workspaceTitleText.innerHTML = setHeaderProjectTitle();
 
 	if (cmbProjectType.value === "fretboard"){
 
-		if (isFretboardVisible) resizeCanvas();
+		if (isFretboardVisible && chkShowTitle.checked) resizeCanvas();
 
-		if (isScoreVisible) scoreRender();
+		if (isScoreVisible && chkScoreTitle.checked) scoreRender();
 	}
 
 });
@@ -1230,13 +1231,15 @@ btnMoreTempo.addEventListener("click", () => {
 
 cmbBar.addEventListener("change", function () {
 
-    updateFigureOptions();
-
     projectBar = cmbBar.value;
     projectFigure = cmbFigure.value;
 
-    metronome.setMeter(projectBar);
-    metronome.setSubdivision(projectFigure);
+    updateFigureOptions();
+
+    getBarGroups();
+
+    metronome.setMeter(pBar);
+    metronome.setSubdivision(pFigure);
 
     player.setGate(samplerGate.value);
 
@@ -1248,7 +1251,9 @@ cmbFigure.addEventListener("change", function () {
 
     projectFigure = cmbFigure.value;
 
-    metronome.setSubdivision(projectFigure);
+    getBarGroups();
+
+    metronome.setSubdivision(pFigure);
 
     player.setGate(samplerGate.value);
 
