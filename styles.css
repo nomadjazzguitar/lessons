@@ -695,9 +695,10 @@ html {
 	min-height:60px;
 	padding:0 8px;
 	box-sizing:border-box;
-	background:var(--color-back);
 	position:relative;
 	z-index:100;
+	background:var(--color-back);
+	border-bottom:1px solid var(--color-border);
 }
 
 #brand{
@@ -1054,9 +1055,7 @@ html {
 	padding:0 14px;
 	margin:0;
 	box-sizing:border-box;
-
 	background:var(--color-tools);
-	border-top:1px solid var(--color-border);
 }
 
 #topControls.isOpen{
@@ -1155,7 +1154,7 @@ html {
 	overflow:visible;
 
 	background:var(--color-back);
-	border-top:1px solid var(--color-border);
+
 	border-right:1px solid var(--color-border);
 }
 
@@ -1323,7 +1322,6 @@ html {
 	overflow:visible;
 
 	background:var(--color-fretboard-background);
-	border-top:1px solid var(--color-border);
 }
 
 /* ================================================== */
@@ -1346,6 +1344,7 @@ html {
 	box-sizing:border-box;
 
 	background:var(--color-fretboard-background);
+	border-bottom:1px solid var(--color-border);
 }
 
 #workspaceHeaderContainer[style*="display: none"]{
@@ -1388,8 +1387,7 @@ html {
 	margin:0;
 
 	box-sizing:border-box;
-
-	border-top:1px solid var(--color-border);
+	background:var(--color-tools);
 }
 
 /* ================================================== */
@@ -1412,6 +1410,7 @@ html {
 	padding-bottom:6px;
 
 	box-sizing:border-box;
+	background:var(--color-tools);
 }
 
 /* ================================================== */
@@ -1431,6 +1430,7 @@ html {
 	padding:0;
 
 	box-sizing:border-box;
+	background:var(--color-tools);
 }
 
 /* Timeline */
@@ -1519,9 +1519,12 @@ html {
 
 	background:var(--color-fretboard-background);
 
+	border-right:1px solid var(--color-back);
+}
+
+#workspaceMultimediaControls{
 	border-top:1px solid var(--color-border);
 	border-bottom:1px solid var(--color-back);
-	border-right:1px solid var(--color-back);
 }
 
 #workspaceHome{
@@ -1543,7 +1546,6 @@ html {
 
 	background:var(--color-fretboard-background);
 
-	border-top:1px solid var(--color-border);
 	border-bottom:1px solid var(--color-back);
 	border-right:1px solid var(--color-back);
 }
@@ -1759,8 +1761,6 @@ html {
 
 	background:var(--color-fretboard-background);
 
-	border-top:1px solid var(--color-border);
-	border-bottom:1px solid var(--color-back);
 	border-right:1px solid var(--color-back);
 }
 
@@ -1804,8 +1804,6 @@ html {
 
 	background:var(--color-fretboard-background);
 
-	border-top:1px solid var(--color-border);
-	border-bottom:1px solid var(--color-back);
 	border-right:1px solid var(--color-back);
 }
 
