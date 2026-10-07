@@ -710,8 +710,8 @@ function setPlayerValues(){
 
 	metronome.setBpm(bpm);
 	metronome.setVolume(-12);
-	metronome.setMeter(projectBar);
-	metronome.setSubdivision(projectFigure);
+	metronome.setMeter(pBar);
+	metronome.setSubdivision(pFigure);
 
 	setInstrument(currentInstrument);
 
@@ -818,7 +818,6 @@ async function playMusic(){
 
 		setPlayStopButton(btnPlayStop, false);
 
-		workspaceMetronome.style.display = "none";
 		workspaceTimeInfo.style.display = "none";
 
 		if (!isMobile && topControlsWasOpen) openTopControls();
@@ -852,7 +851,6 @@ async function metronomePlayStop(){
 
 		setPlayStopButton(btnPlayStopMetronome, false);
 
-		workspaceMetronome.style.display = "none";
 		workspaceTimeInfo.style.display = "none";
 
 	} else {
@@ -873,7 +871,6 @@ async function metronomePlayStop(){
 			player.setMetronomeOn(true);
 		}
 
-		workspaceMetronome.style.display = "flex";
 		workspaceTimeInfo.style.display = "flex";
 
 		metronome.start();

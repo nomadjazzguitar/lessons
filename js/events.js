@@ -187,16 +187,12 @@ document.addEventListener("metronomeBeat", (e) => {
 		case "restart":
 		case "stop":
 
-			workspaceMetronome.style.display = "none";
-
 			resetMetronomeTimeline();
 
 			break;
 
 		case "start":
 		case "tick":
-
-			workspaceMetronome.style.display = "flex";
 
 			updateMetronomeTimeline(beat, subBeat);
 
@@ -318,7 +314,6 @@ document.addEventListener("playerBeat", (e) => {
 
 			resetPlaybackTimeline();
 
-			workspaceMetronome.style.display = "none";
 			workspaceTimeInfo.style.display = "none";
 
 			setControlsEnabled(true);

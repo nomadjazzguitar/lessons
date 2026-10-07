@@ -286,7 +286,6 @@ function configureStudentControls(){
 
 	}
 
-	workspaceMetronome.style.display = "none";
 	workspaceTimeInfo.style.display = "none";
 
 	cursor.innerHTML = "";
@@ -522,8 +521,8 @@ function showHome(value){
 		if (projectType === "fretboard"){
 			workspaceControls.style.display = "flex";
 
-			workspaceMetronome.style.display = "none";//"flex";
-			workspaceTimeInfo.style.display = "none";//"flex"
+			workspaceMetronome.style.display = "flex";
+			workspaceTimeInfo.style.display = "none";
 
 			if (isFretboardVisible) workspaceFretboard.style.display = "flex";
 			if (isScoreVisible) workspaceScore.style.display = "flex";
@@ -1038,41 +1037,19 @@ function resetControlsValues(state){
 
 	noteText.value = "";
 
+	samplerGate.value = 100;
+
 	cmbBar.value = projectBar;
 	cmbFigure.value = projectFigure;
 
 	updateFigureOptions();
 	getBarGroups();
 
-	if (scoreScale !== "auto") {
-		cmbScoreScale.value = "zoom";
-		sliderScoreZoom.value = scoreScale;
-		scoreScale = parseFloat(scoreScale / 100);
-	}else{
-		cmbScoreScale.value = scoreScale; //auto
-		sliderScoreZoom.value = 50;
-	}
-	sliderScoreZoom.title = sliderScoreZoom.value + "%";
-
-	cmbTipoSecuencia.value = tipoSecuencia;
-
-	cmbCountIn.value = countInBars;
-
-	cmbPlayerRepeats.value = playerRepeats;
-
 	cmbSamplerInstrument.value = currentInstrument;
-
-	numberFrets.value = fretNumbers;
-	chkShowNumber.checked = showFretNumbers;
 
 	numBpm.value = bpm;
 	sliderBpm.value = bpm;
 	sliderBpm.title = bpm;
-
-	cmbKey.value = key;
-
-	cmbScoreStaves.value = scoreStaves;
-	cmbScoreLayout.value = scoreLayout;
 
 	chkPlayerSwing.checked = swing;
 	if (chkPlayerSwing.checked) chkMetronomeBeatSound.checked = false;
@@ -1090,8 +1067,29 @@ function resetControlsValues(state){
 	samplerVolume.value = 0;
 	samplerVolume.title = samplerVolume.value + " dB";
 
-	samplerGate.value = 100;
-	samplerVolume.title = "100";
+	if (scoreScale !== "auto") {
+		cmbScoreScale.value = "zoom";
+		sliderScoreZoom.value = scoreScale;
+		scoreScale = parseFloat(scoreScale / 100);
+	}else{
+		cmbScoreScale.value = scoreScale; //auto
+		sliderScoreZoom.value = 50;
+	}
+	sliderScoreZoom.title = sliderScoreZoom.value + "%";
+
+	cmbTipoSecuencia.value = tipoSecuencia;
+
+	cmbCountIn.value = countInBars;
+
+	cmbPlayerRepeats.value = playerRepeats;
+
+	numberFrets.value = fretNumbers;
+	chkShowNumber.checked = showFretNumbers;
+
+	cmbKey.value = key;
+
+	cmbScoreStaves.value = scoreStaves;
+	cmbScoreLayout.value = scoreLayout;
 
 	cmbProjectCategory.disabled = false;
 	btnNewCategory.disabled = false;
@@ -1502,13 +1500,13 @@ function setWorkspaceLayout(){
 
 	workspaceMultimedia.innerHTML = "";
 
-	workspaceMetronome.style.display = "none";
 	workspaceTimeInfo.style.display = "none";
 
 	if (projectType === "multimedia"){
 
 		workspaceMultimedia.style.display = "block";
 		workspaceControls.style.display = "none";
+		workspaceMetronome.style.display = "none";
 		workspaceFretboard.style.display = "none";
 		workspaceScore.style.display = "none";
 
@@ -1521,6 +1519,7 @@ function setWorkspaceLayout(){
 		}
 
 		workspaceControls.style.display = "flex";
+		workspaceMetronome.style.display = "flex";
 
 		// Nunca permitir que ambos estén ocultos
 		if (!isScoreVisible && !isFretboardVisible) isFretboardVisible = true;
