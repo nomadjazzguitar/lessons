@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="6.7" id="s_1onds4h" type="student" created="29/09/2026" modified="06/10/2026" level="1" name="Clases online">
+<library version="8.1" id="s_1onds4h" type="student" created="29/09/2026" modified="07/10/2026" level="1" name="Clases online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">2026 Sept 29</category>
@@ -267,10 +267,10 @@
 			<rotated>false</rotated>
 			<bar>4/4</bar>
 			<figure>1</figure>
-			<tipoSecuencia>up-down</tipoSecuencia>
+			<tipoSecuencia>up</tipoSecuencia>
 			<direccion>false</direccion>
-			<countInBars>1</countInBars>
-			<playerRepeats>2</playerRepeats>
+			<countInBars>0</countInBars>
+			<playerRepeats>1</playerRepeats>
 			<isFretboardVisible>true</isFretboardVisible>
 			<isScoreVisible>true</isScoreVisible>
 			<currentInstrument>piano</currentInstrument>
@@ -282,7 +282,7 @@
 			<scoreLayout>vertical</scoreLayout>
 			<scoreScale>auto</scoreScale>
 			<swing>false</swing>
-			<metronomeOn>true</metronomeOn>
+			<metronomeOn>false</metronomeOn>
 			<notation></notation>
 		</settings>
 		<notes>
@@ -308,10 +308,10 @@
 			<rotated>false</rotated>
 			<bar>4/4</bar>
 			<figure>1</figure>
-			<tipoSecuencia>up-down</tipoSecuencia>
+			<tipoSecuencia>up</tipoSecuencia>
 			<direccion>false</direccion>
-			<countInBars>1</countInBars>
-			<playerRepeats>2</playerRepeats>
+			<countInBars>0</countInBars>
+			<playerRepeats>1</playerRepeats>
 			<isFretboardVisible>true</isFretboardVisible>
 			<isScoreVisible>true</isScoreVisible>
 			<currentInstrument>piano</currentInstrument>
@@ -323,7 +323,7 @@
 			<scoreLayout>vertical</scoreLayout>
 			<scoreScale>auto</scoreScale>
 			<swing>false</swing>
-			<metronomeOn>true</metronomeOn>
+			<metronomeOn>false</metronomeOn>
 			<notation></notation>
 		</settings>
 		<notes>
@@ -349,10 +349,10 @@
 			<rotated>false</rotated>
 			<bar>4/4</bar>
 			<figure>1</figure>
-			<tipoSecuencia>up-down</tipoSecuencia>
+			<tipoSecuencia>up</tipoSecuencia>
 			<direccion>false</direccion>
-			<countInBars>1</countInBars>
-			<playerRepeats>2</playerRepeats>
+			<countInBars>0</countInBars>
+			<playerRepeats>1</playerRepeats>
 			<isFretboardVisible>true</isFretboardVisible>
 			<isScoreVisible>true</isScoreVisible>
 			<currentInstrument>piano</currentInstrument>
@@ -364,7 +364,7 @@
 			<scoreLayout>vertical</scoreLayout>
 			<scoreScale>auto</scoreScale>
 			<swing>false</swing>
-			<metronomeOn>true</metronomeOn>
+			<metronomeOn>false</metronomeOn>
 			<notation></notation>
 		</settings>
 		<notes>
@@ -377,6 +377,74 @@
 			<note string="1" fret="13" color="#8000ff" text="" chord="" order="7"/>
 			<note string="0" fret="13" color="#8000ff" text="" chord="" order="8"/>
 			<note string="0" fret="16" color="#8000ff" text="" chord="" order="9"/>
+		</notes>
+	</project>
+	<project id="1p62etw" title="Am Pattern" category="1xq0k1r" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>24</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>12/8</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>false</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>120</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="5" color="#ff0000" text="" chord="" order="1"/>
+			<note string="5" fret="8" color="#ff0000" text="" chord="" order="2"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="3"/>
+			<note string="5" fret="8" color="#ff0000" text="" chord="" order="4"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="5"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="" order="6"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="7"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="" order="8"/>
+			<note string="2" fret="5" color="#ff0000" text="" chord="" order="9"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="" order="10"/>
+			<note string="2" fret="5" color="#ff0000" text="" chord="" order="11"/>
+			<note string="1" fret="5" color="#ff0000" text="" chord="" order="12"/>
+			<note string="2" fret="5" color="#ff0000" text="" chord="" order="13"/>
+			<note string="1" fret="5" color="#ff0000" text="" chord="" order="14"/>
+			<note string="0" fret="5" color="#ff0000" text="" chord="" order="15"/>
+			<note string="1" fret="5" color="#ff0000" text="" chord="" order="16"/>
+			<note string="0" fret="5" color="#ff0000" text="" chord="" order="17"/>
+			<note string="0" fret="8" color="#ff0000" text="" chord="" order="18"/>
+			<note string="0" fret="8" color="#ff0000" text="" chord="" order="19"/>
+			<note string="0" fret="5" color="#ff0000" text="" chord="" order="20"/>
+			<note string="1" fret="5" color="#ff0000" text="" chord="" order="21"/>
+			<note string="0" fret="5" color="#ff0000" text="" chord="" order="22"/>
+			<note string="1" fret="5" color="#ff0000" text="" chord="" order="23"/>
+			<note string="2" fret="5" color="#ff0000" text="" chord="" order="24"/>
+			<note string="1" fret="5" color="#ff0000" text="" chord="" order="25"/>
+			<note string="2" fret="5" color="#ff0000" text="" chord="" order="26"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="" order="27"/>
+			<note string="2" fret="5" color="#ff0000" text="" chord="" order="28"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="" order="29"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="30"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="" order="31"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="32"/>
+			<note string="5" fret="8" color="#ff0000" text="" chord="" order="33"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="34"/>
+			<note string="5" fret="8" color="#ff0000" text="" chord="" order="35"/>
+			<note string="5" fret="5" color="#ff0000" text="" chord="" order="36"/>
 		</notes>
 	</project>
 </library>
