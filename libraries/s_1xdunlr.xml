@@ -6,8 +6,8 @@
 	</categories>
 	<project id="niplxe" title="D Natural Blues Solo Wes" category="y2j82d" projectType="multimedia">
 		<resources>
-			<resource type="pdf" content="wes-DNaturalBlues.pdf" width="100" />
-			<resource type="iframe" content="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/coX1T4Gl2UA?si=pWytTLu_wKBvEqpD&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" width="100" />
+			<resource type="pdf" content="wes-DNaturalBlues.pdf" width="60" />
+			<resource type="iframe" content="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/coX1T4Gl2UA?si=pWytTLu_wKBvEqpD&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" width="60" />
 		</resources>
 	</project>
 	<project id="10fsrtb" title="Clasificación de Intervalos" category="y2j82d" projectType="multimedia">
