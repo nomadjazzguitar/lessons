@@ -1462,7 +1462,7 @@ html {
 }
 
 .metronome_pulse.metronome_sub{
-    background:var(--color-border);
+    background:var(--color-back);
 }
 
 .metronome_pulse.metronome_current{
