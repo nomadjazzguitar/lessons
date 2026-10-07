@@ -300,15 +300,7 @@ document.addEventListener("playerBeat", (e) => {
 		case "stop":
 		case "end":
 
-			if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") {	
-				zoomCanvas();
-				fitCanvasWidth = !fitCanvasWidth;
-			}
-
-			if (isFretboardVisible) {
-				drawFretboard();
-				drawNotes();
-			}
+			if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") resizeCanvas();
 
 			if (isScoreVisible) scorePaint_stop();
 
@@ -1019,12 +1011,6 @@ btnRotate.addEventListener("click", () => {
 	if (isFretboardVisible) resizeCanvas();
 
 	if (isScoreVisible) scoreRender();
-
-});
-
-chkFretboardZoom.addEventListener("change", () => {
-
-	fitCanvasWidth = !fitCanvasWidth;
 
 });
 
@@ -1820,6 +1806,8 @@ btnSaveMultimediaText.addEventListener("click", () => {
 		});
 
 		createMultimediaElement("text",text,resourceWidthInput.value);
+
+		workspaceMultimedia.style.display = "block";
 
 		textAreaMultimedia.value = "";
 

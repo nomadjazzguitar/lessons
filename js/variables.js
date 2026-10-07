@@ -247,8 +247,6 @@ let neckRadius;
 let fretboardBackground = null;
 let fretboardPlaybackBackground = null;
 
-let fitCanvasWidth = false;
-
 
 /*==================================================
 	NOTAS

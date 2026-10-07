@@ -730,11 +730,6 @@ function setPlayerValues(){
 
 async function playMusic(){
 
-	if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") {	
-		zoomCanvas();
-		fitCanvasWidth = !fitCanvasWidth;
-	}
-
 	sequenceIndex = 0;
 
 	resetPlaybackTimeline();
@@ -778,6 +773,8 @@ async function playMusic(){
 		libraryWasOpen = !appMain.classList.contains("libraryHidden");
 		closeLibraryPanel();
 
+		if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") resizeCanvas(true);
+
 		if (isFretboardVisible) drawNotesAlpha(0.4);
 
 		await Tone.start();
@@ -811,6 +808,8 @@ async function playMusic(){
 		if (metronome.playing) {
 			metronome.stop();
 		}
+
+		if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") resizeCanvas();
 
 		if (isScoreVisible) scorePaint_stop();
 

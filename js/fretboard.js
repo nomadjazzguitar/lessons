@@ -5,6 +5,154 @@
 // RENDERIZADO PRINCIPAL
 // ============================================================
 
+function resizeCanvas(fitWidth = false) {
+
+	const isHorizontal = rotation === 90 || rotation === 270;
+
+	let leftMargin = marginX;
+	let rightMargin = marginX;
+	let topMargin = 12;
+	let bottomMargin = marginBottom;
+
+	//------------------------------------------------
+	// Título
+	//------------------------------------------------
+
+	if (chkShowTitle.checked) {
+
+		topMargin = 42;
+
+	}
+
+	//------------------------------------------------
+	// Números
+	//------------------------------------------------
+
+	if (showFretNumbers) {
+
+		//------------------------------------------------
+		// Números de trastes
+		//------------------------------------------------
+
+		if (rotation === 0) leftMargin = Math.max(leftMargin, 40);
+		if (rotation === 180) rightMargin = Math.max(rightMargin, 40);
+		if (rotation === 90) bottomMargin = Math.max(bottomMargin, 40);
+		if (rotation === 270) topMargin = Math.max(topMargin, 40);
+
+		//------------------------------------------------
+		// Números de cuerdas
+		//------------------------------------------------
+
+		if (rotation === 0 || rotation === 90) topMargin = Math.max(topMargin, 40);
+		if (rotation === 180 || rotation === 270) bottomMargin = Math.max(bottomMargin, 40);
+
+		//------------------------------------------------
+		// Margen lateral para números de cuerdas
+		//------------------------------------------------
+
+		if (rotation === 270) rightMargin = Math.max(rightMargin, 40);
+		if (rotation === 90) leftMargin = Math.max(leftMargin, 40);
+
+	}
+
+	//------------------------------------------------
+	// Título + números superiores
+	//------------------------------------------------
+
+	if (chkShowTitle.checked && showFretNumbers && (rotation === 0 || rotation === 90)) {
+
+		topMargin = 68;
+
+	}
+
+	//------------------------------------------------
+	// Dimensiones del mástil
+	//------------------------------------------------
+
+	const neckLength = getDynamicNeckLength();
+
+	if (isHorizontal) {
+
+		boardWidth = neckLength;
+		boardHeight = HORIZONTAL_HEIGHT;
+
+	} else {
+
+		boardWidth = VERTICAL_WIDTH;
+		boardHeight = neckLength;
+
+	}
+
+	//------------------------------------------------
+	// Canvas
+	//------------------------------------------------
+
+	canvas.width = Math.round(boardWidth + leftMargin + rightMargin);
+	canvas.height = Math.round(boardHeight + topMargin + bottomMargin);
+
+	boardleft = leftMargin;
+	boardtop = topMargin;
+
+	boardright = boardleft + boardWidth;
+	boardbottom = boardtop + boardHeight;
+
+	//------------------------------------------------
+	// Notas
+	//------------------------------------------------
+
+	if (cmbFretboardType.value !== "chord") {
+
+		aSequence = buildOrderedSequence();
+
+	} else {
+
+		aChords = buildOrderedChords();
+
+	}
+
+	loadArrayNotas();
+
+	//------------------------------------------------
+	// Pintado
+	//------------------------------------------------
+
+	drawFretboard();
+
+	drawNotes();
+
+	scrollToFretboardNut();
+
+	//------------------------------------------------
+	// Tamaño visual
+	//------------------------------------------------
+
+	if (fitWidth) {
+
+		const style = getComputedStyle(workspaceFretboard);
+
+		const availableWidth =
+			workspaceFretboard.clientWidth -
+			parseFloat(style.paddingLeft) -
+			parseFloat(style.paddingRight);
+
+		if (availableWidth > 0) {
+
+			const scale = availableWidth / canvas.width;
+
+			canvas.style.width = `${Math.floor(canvas.width * scale)}px`;
+			canvas.style.height = `${Math.floor(canvas.height * scale)}px`;
+
+		}
+
+	} else {
+
+		canvas.style.width = "";
+		canvas.style.height = "";
+
+	}
+
+}
+
 function drawFretboard() {
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
