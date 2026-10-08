@@ -1344,13 +1344,11 @@ sliderSamplerVolume.addEventListener("input", function () {
 
 });
 
-cmbSamplerInstrument.onchange = function () {
-
-	currentInstrument = this.value;
+cmbSamplerInstrument.addEventListener("change", function () {
 
 	setInstrument(this.value);
 
-};
+});
 
 samplerGate.addEventListener("input", function () {
 
