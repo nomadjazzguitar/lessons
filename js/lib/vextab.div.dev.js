@@ -24555,10 +24555,6 @@ window.vextabStart = async function(sel) {
 
     start(sel);
 
-    while (!document.querySelector(".vextab-auto svg")) {
-        await new Promise(r => setTimeout(r, 20));
-    }
-
 };
 /* --------------------------------------------------
 INICIO MODIFICACION JAZZ GUITAR NOMAD
