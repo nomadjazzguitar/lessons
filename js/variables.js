@@ -191,6 +191,10 @@ let projectModified = false;
 
 let isNewLibrary = false;
 
+let lastSearchText = "";
+let lastSearchIndex = -1;
+
+
 /*==================================================
 	IMÁGENES
 ==================================================*/

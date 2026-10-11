@@ -1769,15 +1769,31 @@ function setLibraryInfo(fileName){
 
 function searchProject(){
 
-	if (txtSearch.value.trim() === "") return;
+	const searchText = txtSearch.value.trim().toLowerCase();
 
-	const project = library.find(library => library.title?.includes(txtSearch.value.trim()));
+	if (searchText === "") return;
 
-	if (project){
-		selectProject(project);
-	}else{
-		showAlert("Ninguna actividad encontrada","info");
+	// Reiniciar la búsqueda si cambia el texto
+	if (searchText !== lastSearchText){
+		lastSearchText = searchText;
+		lastSearchIndex = -1;
 	}
+
+	// Buscar todos los proyectos que coincidan
+	const matchingProjects = library.filter(project =>
+		project.title?.toLowerCase().includes(searchText)
+	);
+
+	if (matchingProjects.length === 0){
+		showAlert("Ninguna actividad encontrada","info");
+		lastSearchIndex = -1;
+		return;
+	}
+
+	// Seleccionar el siguiente resultado
+	lastSearchIndex = (lastSearchIndex + 1) % matchingProjects.length;
+
+	selectProject(matchingProjects[lastSearchIndex]);
 
 }
 
