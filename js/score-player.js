@@ -1011,35 +1011,47 @@ function setInstrument(name) {
 //
 ////////////////////////////////////////////////////////////
 
+
 async function vexTab_render() {
 
-    // Esperar a que VexTab genere el SVG
-    while (!document.querySelector(".vextab-auto svg")) {
-        await new Promise(r => setTimeout(r, 50));
-    }
+	if (!scoreIsVisible()) return;
 
-    const div = document.querySelector(".vextab-auto .vex-canvas");
-    const svg = div.querySelector("svg");
+	const div = vexTab_container.querySelector(".vextab-auto .vex-canvas");
 
-    if (!svg) throw new Error("No se ha generado el SVG de VexTab.");
+	if (!div) return;
 
-    const year = new Date().getFullYear();
+	const svg = div.querySelector("svg");
 
-    if (chkScoreTitle.checked){
+	if (!svg) return;
 
-        vexTab_createHeaderFooter(svg,titleText.value.trim() || "Sin Título",`${year} - ${scoreFooter}`);
+	const viewBox = svg.getAttribute("viewBox");
 
-    }
+	if (viewBox && /NaN|Infinity/.test(viewBox)) {
+		console.warn("No se puede preparar un SVG con dimensiones inválidas:", viewBox);
+		return;
+	}
 
-    // Dejar únicamente el SVG dentro del contenedor
-    div.innerHTML = svg.outerHTML;
+	const year = new Date().getFullYear();
 
-    //Pintado de las notas
-    // Obtener el SVG REAL que ahora está dentro del DOM
-    const renderedSvg = div.querySelector("svg");
+	if (chkScoreTitle.checked) {
 
-    // Inicializar el pintado sobre el SVG visible
-    scorePaint_initScorePlayback(renderedSvg);
+		vexTab_createHeaderFooter(
+			svg,
+			titleText.value.trim() || "Sin Título",
+			`${year} - ${scoreFooter}`
+		);
+
+	}
+
+	// Dejar únicamente el SVG dentro del contenedor
+	div.innerHTML = svg.outerHTML;
+
+	// Obtener el SVG definitivo
+	const renderedSvg = div.querySelector("svg");
+
+	if (renderedSvg) {
+		scorePaint_initScorePlayback(renderedSvg);
+	}
 
 }
 
@@ -1719,38 +1731,79 @@ function vexTab_calcScale(scoreWidth){
 //
 ////////////////////////////////////////////////////////////
 
+
+function scoreIsVisible() {
+
+	if (workspaceScore.style.display === "none") return false;
+	if (!workspaceScore.isConnected) return false;
+	if (workspaceScore.getClientRects().length === 0) return false;
+
+	const rect = workspaceScore.getBoundingClientRect();
+
+	return rect.width > 0 && rect.height > 0;
+
+}
+
+
 async function scoreRender() {
 
-	let vexTabText = vexTab_generateVexTab(scoreArray,cmbKey.value,cmbBar.value,cmbFigure.value,cmbFretboardType.value);
+	if (!scoreIsVisible()) return;
 
-	//if (chkNoteAccidentals.checked && cmbScoreStaves.value !== "tablature") vexTabText = vexTab_convertStringFretToNotes(vexTabText);
+	const vexTabText = vexTab_generateVexTab(
+		scoreArray,
+		cmbKey.value,
+		cmbBar.value,
+		cmbFigure.value,
+		cmbFretboardType.value
+	);
 
-	vexTab_container.classList.remove("layout-left","layout-center");
+	vexTab_container.classList.remove("layout-left", "layout-center");
 
-	vexTab_container.classList.add(cmbScoreLayout.value === "vertical" ? "layout-center" : "layout-left");
+	vexTab_container.classList.add(
+		cmbScoreLayout.value === "vertical" ? "layout-center" : "layout-left"
+	);
 
 	vexTab_container.innerHTML = vexTabText;
 
-	// Volver a renderizar la partitura
+	// Iniciar el renderizado de VexTab
+	window.vextabStart(vexTab_container);
 
-	await window.vextabStart(vexTab_container);
+	// Esperar al SVG de este contenedor
+	while (
+		scoreIsVisible() &&
+		!vexTab_container.querySelector(".vextab-auto .vex-canvas svg")
+	) {
+		await new Promise(resolve => setTimeout(resolve, 20));
+	}
 
-	// Esperar a que termine y limpiar el SVG
+	if (!scoreIsVisible()) return;
 
+	const svg = vexTab_container.querySelector(".vextab-auto .vex-canvas svg");
+
+	if (!svg) return;
+
+	// Comprobar que el SVG tiene dimensiones válidas
+	const viewBox = svg.getAttribute("viewBox");
+
+	if (viewBox && /NaN|Infinity/.test(viewBox)) {
+		console.warn("VexTab ha generado un viewBox inválido:", viewBox);
+		return;
+	}
+
+	// Preparar el SVG y el pintado de las notas
 	await vexTab_render();
 
-	//------------------------------------------------
+	if (!scoreIsVisible()) return;
+
 	// Ajustar alineación cuando la partitura desborda
-	//------------------------------------------------
+	if (cmbScoreLayout.value === "vertical") {
 
-	if (cmbScoreLayout.value === "vertical" && vexTab_container) {
+		const renderedSvg = vexTab_container.querySelector("svg");
 
-		const svg = vexTab_container.querySelector("svg");
-
-		if (svg) {
+		if (renderedSvg) {
 
 			const containerWidth = vexTab_container.clientWidth;
-			const svgWidth = svg.getBoundingClientRect().width;
+			const svgWidth = renderedSvg.getBoundingClientRect().width;
 
 			if (svgWidth > containerWidth) {
 
@@ -1769,6 +1822,8 @@ async function scoreRender() {
 	}
 
 }
+
+
 
 
 

@@ -775,20 +775,15 @@ cmbDiapason.addEventListener("change", () => {
 
 btnShowLibraryPanel.addEventListener("click", () => {
 
-	if (isMobile) {
-		btnMenuSelector.click();
-	}
+	if (isMobile) btnMenuSelector.click();
 
 	if (appMain.classList.contains("libraryHidden")) {
-
 		openLibraryPanel();
-
 	}else{
-
 		closeLibraryPanel();
-
-//		if (!isMobile && isScoreVisible) scoreRender();
 	}
+
+	if (isScoreVisible) scoreRender();
 
 });
 

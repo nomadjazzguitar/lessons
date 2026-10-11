@@ -3146,7 +3146,11 @@ function createMultimediaElement(type, content, width) {
 			element = document.createElement("video");
 			element.src = resourceUrl;
 			element.controls = true;
-			element.controlsList.add("nodownload");
+			try {
+				element.controlsList.add("nodownload");
+			} catch (error) {
+				console.warn("No se ha podido desactivar la descarga del video:", error);
+			}
 			element.playsInline = true;
 
 			element.style.width = width + "%";
@@ -3174,7 +3178,11 @@ function createMultimediaElement(type, content, width) {
 
 			audio.src = resourceUrl;
 			audio.controls = true;
-			audio.controlsList = "nodownload";
+			try {
+				element.controlsList.add("nodownload");
+			} catch (error) {
+				console.warn("No se ha podido desactivar la descarga del audio:", error);
+			}
 
 			audio.addEventListener("contextmenu", event => {
 				event.preventDefault();

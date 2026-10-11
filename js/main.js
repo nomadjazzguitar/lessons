@@ -1093,13 +1093,9 @@ function resetControlsValues(state){
 	btnDelCategory.disabled = false;
 
 	if (state !== "loadProject"){
-
 		resetComboChords();
-
 	}else{
-
 		loadComboChords();
-
 	}
 
 	cmbProjectType.value = projectType;
