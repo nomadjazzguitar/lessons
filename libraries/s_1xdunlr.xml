@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="5.2" id="s_1xdunlr" type="student" created="05/10/2026" modified="06/10/2026" level="1" name="Mis Clases online">
+<library version="5.3" id="s_1xdunlr" type="student" created="05/10/2026" modified="12/10/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
 		<category id="y2j82d">2026 Oct 5</category>
 	</categories>
 	<project id="niplxe" title="D Natural Blues Solo Wes" category="y2j82d" projectType="multimedia">
 		<resources>
+			<resource type="audio" content="Wes Montgomery - D Natural Blues.mp3" width="60" />
 			<resource type="pdf" content="wes-DNaturalBlues.pdf" width="60" />
 			<resource type="iframe" content="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/coX1T4Gl2UA?si=pWytTLu_wKBvEqpD&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" width="60" />
 		</resources>
