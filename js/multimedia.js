@@ -3146,18 +3146,19 @@ function createMultimediaElement(type, content, width) {
 			element = document.createElement("video");
 			element.src = resourceUrl;
 			element.controls = true;
+			element.playsInline = true;
+
 			try {
 				element.controlsList.add("nodownload");
 			} catch (error) {
 				console.warn("No se ha podido desactivar la descarga del video:", error);
 			}
-			element.playsInline = true;
-
-			element.style.width = width + "%";
 
 			element.addEventListener("contextmenu", event => {
 				event.preventDefault();
 			});
+
+			element.style.width = width + "%";
 
 			break;
 
@@ -3178,6 +3179,7 @@ function createMultimediaElement(type, content, width) {
 
 			audio.src = resourceUrl;
 			audio.controls = true;
+/*
 			try {
 				element.controlsList.add("nodownload");
 			} catch (error) {
@@ -3187,7 +3189,7 @@ function createMultimediaElement(type, content, width) {
 			audio.addEventListener("contextmenu", event => {
 				event.preventDefault();
 			});
-
+*/
 			element.appendChild(audioLink);
 			element.appendChild(document.createElement("br"));
 			element.appendChild(audio);
