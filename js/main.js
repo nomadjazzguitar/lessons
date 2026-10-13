@@ -1118,6 +1118,8 @@ function resetControlsValues(state){
 
 	setEditMode("view");
 
+	if (projectType === "multimedia") setMenu("metronome");
+
 	setOrientation(orientation);
 
 	setWorkspaceLayout();
