@@ -388,7 +388,7 @@ const btnFretboard = document.getElementById("btnFretboard");
 const btnPlayer = document.getElementById("btnPlayer");
 const btnScore = document.getElementById("btnScore");
 const btnMetronome = document.getElementById("btnMetronome");
-const btnMultimedia = document.getElementById("btnMultimedia");
+const btnUtil = document.getElementById("btnUtil");
 
 const btnLibrariesPopUp = document.getElementById("btnLibrariesPopUp");
 const btnProyectosPopup = document.getElementById("btnProyectosPopup");
@@ -397,7 +397,7 @@ const btnFretboardPopup = document.getElementById("btnFretboardPopup");
 const btnPlayerPopup = document.getElementById("btnPlayerPopup");
 const btnScorePopup = document.getElementById("btnScorePopup");
 const btnMetronomePopup = document.getElementById("btnMetronomePopup");
-const btnMultimediaPopup = document.getElementById("btnMultimediaPopup");
+const btnUtilPopup = document.getElementById("btnUtilPopup");
 
 const btnMenuSelector = document.getElementById("btnMenuSelector");
 const menuPopup = document.getElementById("menuPopup");

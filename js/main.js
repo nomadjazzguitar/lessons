@@ -249,8 +249,8 @@ function configureStudentControls(){
 
 			setControlsEnabled(false);
 
-			btnMultimedia.style.display = "none";
-			btnMultimediaPopup.style.display = "none";
+			btnUtil.style.display = "none";
+			btnUtilPopup.style.display = "none";
 
 			btnFretboard.disabled = false;
 			btnFretboardPopup.disabled = false;
@@ -609,7 +609,7 @@ function setMenu(m, click = false){
 	btnPlayer.classList.remove("active");
 	btnScore.classList.remove("active");
 	btnMetronome.classList.remove("active");
-	btnMultimedia.classList.remove("active");
+	btnUtil.classList.remove("active");
 
 	[
 		topProject,
@@ -764,7 +764,7 @@ function setMenu(m, click = false){
 
 		case "util":
 
-			btnMultimedia.classList.add("active");
+			btnUtil.classList.add("active");
 
 			showMenuControls(
 				topImgFormat,

@@ -709,7 +709,7 @@ btnMetronome.addEventListener("click", () => {
 	setMenu("metronome",true);
 });
 
-btnMultimedia.addEventListener("click", () => {
+btnUtil.addEventListener("click", () => {
 	setMenu("util",true);
 });
 
