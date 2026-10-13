@@ -470,6 +470,8 @@ const topProjectGuest = document.getElementById("topProjectGuest");
 const topMultimedia = document.getElementById("topMultimedia");
 const topGuitarAmp = document.getElementById("topGuitarAmp");
 const topRepository = document.getElementById("topRepository");
+const topAudioEditor = document.getElementById("topAudioEditor");
+
 
 /*==================================================
 	REFERENCIAS DOM: BARRA DE HERRAMIENTAS
@@ -525,6 +527,7 @@ const btnSaveLibrary = document.getElementById("btnSaveLibrary");
 const btnProjectSearch = document.getElementById("btnProjectSearch");
 const txtSearch = document.getElementById("txtSearch");
 const labelLibraryId = document.getElementById("labelLibraryId");
+
 
 /*==================================================
 	REFERENCIAS DOM: WORKSPACE
@@ -644,8 +647,6 @@ const cmbMicrophone = document.getElementById("cmbMicrophone");
 const btnAbrirVideo = document.getElementById("btnAbrirVideo");
 const btnUploadFile = document.getElementById("btnUploadFile");
 
-const btnGuitarAmp = document.getElementById("btnGuitarAmp");
-
 const videoContainer = document.getElementById("videoContainer");
 const btnAudioMute = document.getElementById("btnAudioMute");
 const btnVideoMute = document.getElementById("btnVideoMute");
@@ -663,6 +664,9 @@ const textAreaMultimedia = document.getElementById("textAreaMultimedia");
 const resourceWidthInput = document.getElementById("resourceWidthInput");
 const multimediaDropZone = document.getElementById("multimediaDropZone");
 const btnUpload = document.getElementById("btnUpload");
+
+const btnGuitarAmp = document.getElementById("btnGuitarAmp");
+const btnAudioEditor = document.getElementById("btnAudioEditor");
 
 
 /*==================================================

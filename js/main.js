@@ -648,6 +648,7 @@ function setMenu(m, click = false){
 		topVideo,
 		topMultimedia,
 		topGuitarAmp,
+		topAudioEditor,
 		topProjectGuest,
 		topNewStudent,
 		topCatalogue,
@@ -761,7 +762,7 @@ function setMenu(m, click = false){
 
 			break;
 
-		case "multimedia":
+		case "util":
 
 			btnMultimedia.classList.add("active");
 
@@ -771,10 +772,11 @@ function setMenu(m, click = false){
 				topBuffer,
 				topAudio,
 				topVideo,
-				topGuitarAmp
+				topGuitarAmp,
+				topAudioEditor
 			);
 
-			menuSelectorText.textContent = "MULTIMEDIA";
+			menuSelectorText.textContent = "UTILIDADES";
 			menuSelectorIcon.className = "fa-solid fa-photo-film";
 
 			break;

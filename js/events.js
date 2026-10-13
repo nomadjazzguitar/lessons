@@ -710,7 +710,7 @@ btnMetronome.addEventListener("click", () => {
 });
 
 btnMultimedia.addEventListener("click", () => {
-	setMenu("multimedia",true);
+	setMenu("util",true);
 });
 
 btnMenuSelector.addEventListener("click", () => {
@@ -1753,6 +1753,13 @@ btnGuitarAmp.addEventListener("click", () => {
 	window.open("https://www.noise-box.es/#/amp", "_blank");
 
 });
+
+btnAudioEditor.addEventListener("click", () => {
+
+	window.open("https://audiomass.co/", "_blank");
+
+});
+
 
 btnUpload.addEventListener("click", () => {
 
