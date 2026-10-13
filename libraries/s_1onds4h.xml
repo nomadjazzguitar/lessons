@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="8.1" id="s_1onds4h" type="student" created="29/09/2026" modified="07/10/2026" level="1" name="Clases online">
+<library version="9.8" id="s_1onds4h" type="student" created="29/09/2026" modified="13/10/2026" level="1" name="Clases online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">2026 Sept 29</category>
 		<category id="1xq0k1r">2026 Oct 6</category>
+		<category id="1nldppu">2026 Oct 13</category>
 	</categories>
 	<project id="h0kg1r" title="Fm primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
@@ -446,5 +447,224 @@
 			<note string="5" fret="8" color="#ff0000" text="" chord="" order="35"/>
 			<note string="5" fret="5" color="#ff0000" text="" chord="" order="36"/>
 		</notes>
+	</project>
+	<project id="16deqb2" title="TAREA Arpegios triada" category="1nldppu" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;p&gt;1. Tocar los arpegios menores y mayores de las siguientes progresiones:&lt;/p&gt;
+&lt;p&gt;Am         Dm&lt;/p&gt;
+&lt;p&gt;Am         Em&lt;/p&gt;
+&lt;p&gt;2. Cambiar la progresión por cualquier acorde menor, aunque no tengan relación entre sí. Ejemplos&lt;/p&gt;
+&lt;p&gt;Gm         Em&lt;/p&gt;
+&lt;p&gt;Dm         Fm&lt;/p&gt;
+&lt;p&gt;3. Hacer lo mismo con acordes mayores&lt;/p&gt;
+&lt;p&gt;4. Tocar progresiones que contengan menores y mayores. Ejemplo:&lt;/p&gt;
+&lt;p&gt;Am         F         Dm         E&lt;/p&gt;]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="fic1iu" title="Notas Guía en IIm - V7 - Imaj7" category="1nldppu" projectType="fretboard">
+		<settings>
+			<fretboardType>chord</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>15</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>30</bpm>
+			<key>Eb</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="8" color="#00aa00" text="" chord="0" order="1"/>
+			<note string="2" fret="9" color="#00aa00" text="" chord="0" order="2"/>
+			<note string="3" fret="9" color="#00aa00" text="" chord="0" order="3"/>
+			<note string="5" fret="8" color="#0080ff" text="" chord="1" order="4"/>
+			<note string="2" fret="8" color="#0080ff" text="" chord="1" order="5"/>
+			<note string="3" fret="8" color="#0080ff" text="" chord="1" order="6"/>
+			<note string="4" fret="8" color="#ff0000" text="" chord="2" order="7"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="2" order="8"/>
+			<note string="2" fret="8" color="#ff0000" text="" chord="2" order="9"/>
+			<note string="5" fret="6" color="#ffffff" text="" chord="3" order="10"/>
+			<note string="3" fret="7" color="#ffffff" text="" chord="3" order="11"/>
+			<note string="2" fret="7" color="#ffffff" text="" chord="3" order="12"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Cmaj7      Cm7      F7      Bbmaj7]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="tvl1v" title="Notas Guía Turn Around 1" category="1nldppu" projectType="fretboard">
+		<settings>
+			<fretboardType>chord</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>15</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>30</bpm>
+			<key>G</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="7" color="#ffffff" text="" chord="0" order="1"/>
+			<note string="3" fret="7" color="#ffffff" text="" chord="0" order="2"/>
+			<note string="2" fret="7" color="#ffffff" text="" chord="0" order="3"/>
+			<note string="4" fret="7" color="#00aa00" text="" chord="1" order="4"/>
+			<note string="3" fret="6" color="#00aa00" text="" chord="1" order="5"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="1" order="6"/>
+			<note string="5" fret="5" color="#ffffff" text="" chord="2" order="7"/>
+			<note string="3" fret="5" color="#ffffff" text="" chord="2" order="8"/>
+			<note string="2" fret="5" color="#ffffff" text="" chord="2" order="9"/>
+			<note string="4" fret="5" color="#00aa00" text="" chord="3" order="10"/>
+			<note string="3" fret="4" color="#00aa00" text="" chord="3" order="11"/>
+			<note string="2" fret="5" color="#00aa00" text="" chord="3" order="12"/>
+			<note string="5" fret="3" color="#ff0000" text="" chord="4" order="13"/>
+			<note string="3" fret="4" color="#ff0000" text="" chord="4" order="14"/>
+			<note string="2" fret="4" color="#ff0000" text="" chord="4" order="15"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Bm7     E7     Am7     D7]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="13inw16" title="Notas Guía Turn Around 2" category="1nldppu" projectType="fretboard">
+		<settings>
+			<fretboardType>chord</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>15</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>30</bpm>
+			<key>G</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="7" color="#ffffff" text="" chord="0" order="1"/>
+			<note string="3" fret="7" color="#ffffff" text="" chord="0" order="2"/>
+			<note string="2" fret="7" color="#ffffff" text="" chord="0" order="3"/>
+			<note string="5" fret="6" color="#0080ff" text="" chord="1" order="4"/>
+			<note string="3" fret="6" color="#0080ff" text="" chord="1" order="5"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="1" order="6"/>
+			<note string="5" fret="5" color="#ffffff" text="" chord="2" order="7"/>
+			<note string="3" fret="5" color="#ffffff" text="" chord="2" order="8"/>
+			<note string="2" fret="5" color="#ffffff" text="" chord="2" order="9"/>
+			<note string="5" fret="4" color="#0080ff" text="" chord="3" order="10"/>
+			<note string="3" fret="4" color="#0080ff" text="" chord="3" order="11"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="3" order="12"/>
+			<note string="5" fret="3" color="#ff0000" text="" chord="4" order="13"/>
+			<note string="3" fret="4" color="#ff0000" text="" chord="4" order="14"/>
+			<note string="2" fret="4" color="#ff0000" text="" chord="4" order="15"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Bm7     Bb7 (A#7)     Am7     Ab7 (G#7)]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="14d47mx" title="Arpegio Final Ornithology" category="1nldppu" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>15</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>103</bpm>
+			<key>G</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="3" fret="9" color="#ffffff" text="" chord="" order="1"/>
+			<note string="2" fret="7" color="#ffffff" text="" chord="" order="2"/>
+			<note string="1" fret="7" color="#ffffff" text="" chord="" order="3"/>
+			<note string="2" fret="7" color="#ffffff" text="" chord="" order="4"/>
+			<note string="1" fret="6" color="#00aa00" text="" chord="" order="5"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="" order="6"/>
+			<note string="3" fret="9" color="#00aa00" text="" chord="" order="7"/>
+			<note string="3" fret="6" color="#00aa00" text="" chord="" order="8"/>
+			<note string="3" fret="7" color="#ffcc00" text="" chord="" order="9"/>
+			<note string="2" fret="5" color="#ffcc00" text="" chord="" order="10"/>
+			<note string="1" fret="5" color="#ffcc00" text="" chord="" order="11"/>
+			<note string="2" fret="5" color="#ffcc00" text="" chord="" order="12"/>
+			<note string="1" fret="4" color="#0080ff" text="" chord="" order="13"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="14"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="15"/>
+			<note string="3" fret="4" color="#0080ff" text="" chord="" order="16"/>
+			<note string="3" fret="5" color="#ff0000" text="" chord="" order="17"/>
+			<note string="4" fret="5" color="#ff0000" text="" chord="" order="18"/>
+		</notes>
+		<resources>
+			<resource type="text" content="Bm7           E7b9           Am7           D7b9&lt;br&gt;Esto sería la progresión (de arpegios) del turn around, usando en los dominantes la b9.&lt;br&gt;Cuando tenemos un acorde dominante con b9 tenemos dentro un acorde cuatriada disminuida.&lt;br&gt;Ejemplo: D7b9 = D (1) F# (3) A (5) C (b7) Eb (b9) = F# A C Eb = F#º7 Aº7 Cº7 Ebº7" width="100" />
+		</resources>
+	</project>
+	<project id="1e0nvqe" title="Ornithology partituras" category="1nldppu" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="ornithology (real book).pdf" width="60" />
+			<resource type="pdf" content="ornithology (aebersold).pdf" width="60" />
+		</resources>
 	</project>
 </library>
