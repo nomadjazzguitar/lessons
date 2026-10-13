@@ -1311,7 +1311,6 @@ function openLibraryPanel(){
 	appMain.classList.remove("libraryHidden");
 
 	btnShowLibraryPanel.title = "Ocultar lista";
-	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-left'></i>";
 
 	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
 	btnToggleLibraryPanel.innerHTML = btnShowLibraryPanel.innerHTML;
@@ -1322,7 +1321,6 @@ function closeLibraryPanel(){
 	appMain.classList.add("libraryHidden");
 
 	btnShowLibraryPanel.title = "Ver lista";
-	btnShowLibraryPanel.innerHTML = "<i class='fa-solid fa-angles-right'></i>";
 
 	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
 	btnToggleLibraryPanel.innerHTML = btnShowLibraryPanel.innerHTML;

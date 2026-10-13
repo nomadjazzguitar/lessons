@@ -798,37 +798,45 @@ async function playMusic(){
 
 	} else {
 
-		// IMPORTANTE:
-		// Cambiar el estado ANTES de player.stop() porque player.stop() puede emitir "playerBeat: stop".
+		stopMusic();
 
-		isPlaying = false;
-
-		player.stop();
-
-		if (metronome.playing) {
-			metronome.stop();
-		}
-
-		if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") resizeCanvas();
-
-		if (isScoreVisible) scorePaint_stop();
-
-		setControlsEnabled(true);
-
-		setPlayStopButton(btnPlayStop, false);
-
-		workspaceTimeInfo.style.display = "none";
-
-		if (!isMobile && topControlsWasOpen) openTopControls();
-		topControlsWasOpen = false;
-
-		if (!isMobile && libraryWasOpen && appMode !== "Shared") openLibraryPanel();
-		libraryWasOpen = false;
-
-		if (chkAutoScroll.checked) {
-			document.body.scrollTo({top: 0,left: 0,behavior: "smooth"});
-		}
 	}
+
+}
+
+function stopMusic(){
+
+	isPlaying = false;
+
+	// IMPORTANTE: Cambiar el estado ANTES de player.stop() porque player.stop() puede emitir "playerBeat: stop".
+
+	player.stop();
+
+	if (metronome.playing) metronome.stop();
+
+	if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") {
+		resizeCanvas();
+	}else{
+		if (isFretboardVisible) drawNotes();
+	}
+
+	if (isScoreVisible) scorePaint_stop();
+
+	setControlsEnabled(true);
+
+	setPlayStopButton(btnPlayStop, false);
+
+	resetPlaybackTimeline();
+
+	workspaceTimeInfo.style.display = "none";
+
+	if (!isMobile && topControlsWasOpen) openTopControls();
+	topControlsWasOpen = false;
+
+	if (!isMobile && libraryWasOpen && appMode !== "Shared") openLibraryPanel();
+	libraryWasOpen = false;
+
+	if (chkAutoScroll.checked) document.body.scrollTo({top: 0,left: 0,behavior: "smooth"});
 
 }
 

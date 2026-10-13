@@ -300,25 +300,7 @@ document.addEventListener("playerBeat", (e) => {
 		case "stop":
 		case "end":
 
-			if (isFretboardVisible && chkFretboardZoom.checked && orientation === "horizontal") resizeCanvas();
-
-			if (isScoreVisible) scorePaint_stop();
-
-			resetPlaybackTimeline();
-
-			workspaceTimeInfo.style.display = "none";
-
-			setControlsEnabled(true);
-
-			isPlaying = false;
-
-			setPlayStopButton(btnPlayStop, false);
-
-			if (!isMobile && topControlsWasOpen) openTopControls();
-			topControlsWasOpen = false;
-
-			if (!isMobile && libraryWasOpen && appMode !== "Shared") openLibraryPanel();
-			libraryWasOpen = false;
+			stopMusic();
 
 			break;
 
