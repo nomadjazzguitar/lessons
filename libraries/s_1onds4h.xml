@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="9.8" id="s_1onds4h" type="student" created="29/09/2026" modified="13/10/2026" level="1" name="Clases online">
+<library version="9.9" id="s_1onds4h" type="student" created="29/09/2026" modified="13/10/2026" level="1" name="Clases online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">2026 Sept 29</category>
@@ -448,17 +448,35 @@
 			<note string="5" fret="5" color="#ff0000" text="" chord="" order="36"/>
 		</notes>
 	</project>
+	<project id="1cqcw20" title="Resumen de la clase" category="1nldppu" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Resumen de la clase – 13/10/2026
+
+1. Contenidos trabajados
+- Arpegios: practicar la conexión entre arpegios de acordes menores (Am–Dm, por ejemplo) y después hacer lo mismo con acordes mayores. Trabajar distintas progresiones, buscando posiciones cercanas y notas comunes.
+- Notas guía: estudiar especialmente las terceras y séptimas de cada acorde. Practicar cómo se mueven entre acordes para definir la armonía, tanto al acompañar como al improvisar.
+- Progresiones II–V–I y turnaround: analizar su funcionamiento, las relaciones entre acordes y las sustituciones de tritono, prestando atención al movimiento cromático de las voces.
+- Análisis de temas: revisar la armonía y la melodía de Ornithology (según la transcripción de la clase), comparando distintas versiones y observando cómo la melodía resuelve sobre las notas guía.
+
+2. Tareas para practicar
+1. Practicar arpegios menores conectando dos acordes y, posteriormente, repetir el ejercicio con acordes mayores.
+2. Trabajar las progresiones con un looper o una base rítmica, tocando los arpegios sobre los cambios armónicos.
+3. Estudiar las notas guía de las progresiones II–V–I y de los turnarounds, siguiendo el movimiento de terceras y séptimas.
+4. Investigar las sustituciones de tritono y practicar cómo conducen las voces entre acordes.
+5. Escuchar las distintas versiones de Ornithology y, si hay tiempo, aprender la melodía.
+6. Preparar algún otro tema para trabajar en la próxima clase, como Ornithology.
+
+3. Material proporcionado
+- Jazz Guitar Nomad: ejemplos de progresiones y proyectos con ejercicios de notas guía, turnarounds y sustituciones de tritono.
+- Partituras y versiones de Ornithology: se compartirán para comparar la melodía y la armonía.
+- Herramientas de audio: se mostraron utilidades para grabar, cargar audios desde el ordenador o mediante URL y reducir la velocidad para estudiar solos.
+
+Objetivo principal: conectar los arpegios con las notas guía para comprender mejor los cambios armónicos y construir improvisaciones que definan claramente cada acorde.]]&gt;" width="100" />
+		</resources>
+	</project>
 	<project id="16deqb2" title="TAREA Arpegios triada" category="1nldppu" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;p&gt;1. Tocar los arpegios menores y mayores de las siguientes progresiones:&lt;/p&gt;
-&lt;p&gt;Am         Dm&lt;/p&gt;
-&lt;p&gt;Am         Em&lt;/p&gt;
-&lt;p&gt;2. Cambiar la progresión por cualquier acorde menor, aunque no tengan relación entre sí. Ejemplos&lt;/p&gt;
-&lt;p&gt;Gm         Em&lt;/p&gt;
-&lt;p&gt;Dm         Fm&lt;/p&gt;
-&lt;p&gt;3. Hacer lo mismo con acordes mayores&lt;/p&gt;
-&lt;p&gt;4. Tocar progresiones que contengan menores y mayores. Ejemplo:&lt;/p&gt;
-&lt;p&gt;Am         F         Dm         E&lt;/p&gt;]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[&lt;p&gt;1. Tocar los arpegios menores y mayores de las siguientes progresiones:&lt;/p&gt; &lt;p&gt;Am         Dm&lt;/p&gt; &lt;p&gt;Am         Em&lt;/p&gt; &lt;p&gt;2. Cambiar la progresión por cualquier acorde menor, aunque no tengan relación entre sí. Ejemplos&lt;/p&gt; &lt;p&gt;Gm         Em&lt;/p&gt; &lt;p&gt;Dm         Fm&lt;/p&gt; &lt;p&gt;3. Hacer lo mismo con acordes mayores&lt;/p&gt; &lt;p&gt;4. Tocar progresiones que contengan menores y mayores. Ejemplo:&lt;/p&gt; &lt;p&gt;Am         F         Dm         E&lt;/p&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
 	<project id="fic1iu" title="Notas Guía en IIm - V7 - Imaj7" category="1nldppu" projectType="fretboard">
