@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="10.0" id="s_1onds4h" type="student" created="29/09/2026" modified="13/10/2026" level="1" name="Clases online">
+<library version="10.1" id="s_1onds4h" type="student" created="29/09/2026" modified="13/10/2026" level="1" name="Clases online">
 	<desc></desc>
 	<categories>
-		<category id="1ay80if">2026 Sept 29</category>
-		<category id="1xq0k1r">2026 Oct 6</category>
-		<category id="1nldppu">2026 Oct 13</category>
+		<category id="1ay80if">29/09/2026</category>
+		<category id="1xq0k1r">06/10/2026</category>
+		<category id="1nldppu">13/10/2026</category>
 	</categories>
 	<project id="h0kg1r" title="Fm primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
@@ -448,32 +448,9 @@
 			<note string="5" fret="5" color="#ff0000" text="" chord="" order="36"/>
 		</notes>
 	</project>
-	<project id="j3a2sv" title="Resumen" category="1nldppu" projectType="multimedia">
+	<project id="j3a2sv" title="Resumen de clase" category="1nldppu" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 13/10/2026&lt;/h2&gt;
-&lt;h3&gt;1. Contenidos trabajados&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;Arpegios:&lt;/strong&gt; practicar la conexión entre arpegios de acordes menores (Am–Dm, por ejemplo) y después hacer lo mismo con acordes mayores. Trabajar distintas progresiones, buscando posiciones cercanas y notas comunes.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Notas guía:&lt;/strong&gt; estudiar especialmente las terceras y séptimas de cada acorde. Practicar cómo se mueven entre acordes para definir la armonía, tanto al acompañar como al improvisar.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Progresiones II–V–I y turnaround:&lt;/strong&gt; analizar su funcionamiento, las relaciones entre acordes y las sustituciones de tritono, prestando atención al movimiento cromático de las voces.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Análisis de temas:&lt;/strong&gt; revisar la armonía y la melodía de Ornithology, comparando distintas versiones y observando cómo la melodía resuelve sobre las notas guía.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;2. Tareas para practicar&lt;/h3&gt;
-&lt;ol&gt;
-    &lt;li&gt;Practicar arpegios menores conectando dos acordes y, posteriormente, repetir el ejercicio con acordes mayores.&lt;/li&gt;
-    &lt;li&gt;Trabajar las progresiones con un looper o una base rítmica, tocando los arpegios sobre los cambios armónicos.&lt;/li&gt;
-    &lt;li&gt;Estudiar las notas guía de las progresiones II–V–I y de los turnarounds, siguiendo el movimiento de terceras y séptimas.&lt;/li&gt;
-    &lt;li&gt;Investigar las sustituciones de tritono y practicar cómo conducen las voces entre acordes.&lt;/li&gt;
-    &lt;li&gt;Escuchar las distintas versiones de Ornithology y, si hay tiempo, aprender la melodía.&lt;/li&gt;
-    &lt;li&gt;Preparar algún otro tema para trabajar en la próxima clase, como Ornithology.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;3. Material proporcionado&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;Jazz Guitar Nomad:&lt;/strong&gt; ejemplos de progresiones y proyectos con ejercicios de notas guía, turnarounds y sustituciones de tritono.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Partituras y versiones de Ornithology:&lt;/strong&gt; se compartirán para comparar la melodía y la armonía.&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Herramientas de audio:&lt;/strong&gt; se mostraron utilidades para grabar, cargar audios desde el ordenador o mediante URL y reducir la velocidad para estudiar solos.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Objetivo principal:&lt;/strong&gt; conectar los arpegios con las notas guía para comprender mejor los cambios armónicos y construir improvisaciones que definan claramente cada acorde.&lt;/p&gt;]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 13/10/2026&lt;/h2&gt; &lt;h3&gt;1. Contenidos trabajados&lt;/h3&gt; &lt;ul&gt;     &lt;li&gt;&lt;strong&gt;Arpegios:&lt;/strong&gt; practicar la conexión entre arpegios de acordes menores (Am–Dm, por ejemplo) y después hacer lo mismo con acordes mayores. Trabajar distintas progresiones, buscando posiciones cercanas y notas comunes.&lt;/li&gt;     &lt;li&gt;&lt;strong&gt;Notas guía:&lt;/strong&gt; estudiar especialmente las terceras y séptimas de cada acorde. Practicar cómo se mueven entre acordes para definir la armonía, tanto al acompañar como al improvisar.&lt;/li&gt;     &lt;li&gt;&lt;strong&gt;Progresiones II–V–I y turnaround:&lt;/strong&gt; analizar su funcionamiento, las relaciones entre acordes y las sustituciones de tritono, prestando atención al movimiento cromático de las voces.&lt;/li&gt;     &lt;li&gt;&lt;strong&gt;Análisis de temas:&lt;/strong&gt; revisar la armonía y la melodía de Ornithology, comparando distintas versiones y observando cómo la melodía resuelve sobre las notas guía.&lt;/li&gt; &lt;/ul&gt; &lt;h3&gt;2. Tareas para practicar&lt;/h3&gt; &lt;ol&gt;     &lt;li&gt;Practicar arpegios menores conectando dos acordes y, posteriormente, repetir el ejercicio con acordes mayores.&lt;/li&gt;     &lt;li&gt;Trabajar las progresiones con un looper o una base rítmica, tocando los arpegios sobre los cambios armónicos.&lt;/li&gt;     &lt;li&gt;Estudiar las notas guía de las progresiones II–V–I y de los turnarounds, siguiendo el movimiento de terceras y séptimas.&lt;/li&gt;     &lt;li&gt;Investigar las sustituciones de tritono y practicar cómo conducen las voces entre acordes.&lt;/li&gt;     &lt;li&gt;Escuchar las distintas versiones de Ornithology y, si hay tiempo, aprender la melodía.&lt;/li&gt;     &lt;li&gt;Preparar algún otro tema para trabajar en la próxima clase, como Ornithology.&lt;/li&gt; &lt;/ol&gt; &lt;h3&gt;3. Material proporcionado&lt;/h3&gt; &lt;ul&gt;     &lt;li&gt;&lt;strong&gt;Jazz Guitar Nomad:&lt;/strong&gt; ejemplos de progresiones y proyectos con ejercicios de notas guía, turnarounds y sustituciones de tritono.&lt;/li&gt;     &lt;li&gt;&lt;strong&gt;Partituras y versiones de Ornithology:&lt;/strong&gt; se compartirán para comparar la melodía y la armonía.&lt;/li&gt;     &lt;li&gt;&lt;strong&gt;Herramientas de audio:&lt;/strong&gt; se mostraron utilidades para grabar, cargar audios desde el ordenador o mediante URL y reducir la velocidad para estudiar solos.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Objetivo principal:&lt;/strong&gt; conectar los arpegios con las notas guía para comprender mejor los cambios armónicos y construir improvisaciones que definan claramente cada acorde.&lt;/p&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
 	<project id="16deqb2" title="TAREA Arpegios triada" category="1nldppu" projectType="multimedia">
@@ -638,7 +615,7 @@
 			<inlays>true</inlays>
 			<rotated>false</rotated>
 			<bar>4/4</bar>
-			<figure>1</figure>
+			<figure>2</figure>
 			<tipoSecuencia>up</tipoSecuencia>
 			<direccion>false</direccion>
 			<countInBars>0</countInBars>
@@ -648,13 +625,13 @@
 			<currentInstrument>piano</currentInstrument>
 			<fretNumbers>1</fretNumbers>
 			<showFretNumbers>true</showFretNumbers>
-			<bpm>103</bpm>
+			<bpm>135</bpm>
 			<key>G</key>
 			<scoreStaves>all</scoreStaves>
 			<scoreLayout>vertical</scoreLayout>
 			<scoreScale>auto</scoreScale>
-			<swing>false</swing>
-			<metronomeOn>true</metronomeOn>
+			<swing>true</swing>
+			<metronomeOn>false</metronomeOn>
 			<notation></notation>
 		</settings>
 		<notes>
@@ -675,7 +652,6 @@
 			<note string="3" fret="7" color="#0080ff" text="" chord="" order="15"/>
 			<note string="3" fret="4" color="#0080ff" text="" chord="" order="16"/>
 			<note string="3" fret="5" color="#ff0000" text="" chord="" order="17"/>
-			<note string="4" fret="5" color="#ff0000" text="" chord="" order="18"/>
 		</notes>
 		<resources>
 			<resource type="text" content="Bm7           E7b9           Am7           D7b9&lt;br&gt;Esto sería la progresión (de arpegios) del turn around, usando en los dominantes la b9.&lt;br&gt;Cuando tenemos un acorde dominante con b9 tenemos dentro un acorde cuatriada disminuida.&lt;br&gt;Ejemplo: D7b9 = D (1) F# (3) A (5) C (b7) Eb (b9) = F# A C Eb = F#º7 Aº7 Cº7 Ebº7" width="100" />
