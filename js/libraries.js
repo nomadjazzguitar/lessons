@@ -1029,6 +1029,8 @@ async function selectProject(project) {
 
 	if (isHome) showHome(false);
 
+	if (projectType === "multimedia") setMenu("metronome");
+
 }
 
 async function saveCurrentProject() {

@@ -3136,7 +3136,23 @@ function createMultimediaElement(type, content, width) {
 
 			element.style.width = width + "%";
 
-			element.innerHTML = content.replace(/^<!\[CDATA\[|\]\]>$/g, "");
+			// Eliminar las etiquetas CDATA si existen
+			content = content.replace(/^<!\[CDATA\[|\]\]>$/g, "");
+
+			// Detectar si el contenido incluye HTML
+			const isHtml = /<\/?[a-z][\s\S]*?>/i.test(content);
+
+			if (isHtml){
+
+				element.innerHTML = content;
+				element.style.whiteSpace = "normal";
+
+			}else{
+
+				element.textContent = content;
+				element.style.whiteSpace = "pre-wrap";
+
+			}
 
 			break;
 

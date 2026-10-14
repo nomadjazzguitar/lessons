@@ -632,8 +632,8 @@ btnDelChord.addEventListener("click", () => {
 });
 
 btnImgDownload.addEventListener("click", () => {
-	downloadFretboard();
-	downloadScore();
+	if (isFretboardVisible) downloadFretboard();
+	if (isScoreVisible) downloadScore();
 });
 
 btnCopyScore.addEventListener("click", () => {
@@ -1779,11 +1779,11 @@ btnSaveMultimediaText.addEventListener("click", () => {
 
 	}else{
 
-		let xmlText = "<![CDATA[" + text + "]]>";
+		text = text.replace(/]]>/g, "");
 
 		multimediaResources.push({
 			type: "text",
-			content: xmlText,
+			content: "<![CDATA[" + text + "]]>",
 			width: resourceWidthInput.value
 		});
 

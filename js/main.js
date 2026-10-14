@@ -1118,8 +1118,6 @@ function resetControlsValues(state){
 
 	setEditMode("view");
 
-	if (projectType === "multimedia") setMenu("metronome");
-
 	setOrientation(orientation);
 
 	setWorkspaceLayout();
@@ -1315,7 +1313,6 @@ function openLibraryPanel(){
 	btnShowLibraryPanel.title = "Ocultar lista";
 
 	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
-	btnToggleLibraryPanel.innerHTML = btnShowLibraryPanel.innerHTML;
 }
 
 function closeLibraryPanel(){
@@ -1325,7 +1322,6 @@ function closeLibraryPanel(){
 	btnShowLibraryPanel.title = "Ver lista";
 
 	btnToggleLibraryPanel.title = btnShowLibraryPanel.title;
-	btnToggleLibraryPanel.innerHTML = btnShowLibraryPanel.innerHTML;
 
 }
 
