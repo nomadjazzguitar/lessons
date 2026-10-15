@@ -1730,9 +1730,15 @@ cmbMicrophone.addEventListener("change", async () => {
 
 });
 
-btnGuitarAmp.addEventListener("click", () => {
+btnGuitarAmp1.addEventListener("click", () => {
 
 	window.open("https://www.noise-box.es/#/amp", "_blank");
+
+});
+
+btnGuitarAmp2.addEventListener("click", () => {
+
+	window.open("https://eabelle.github.io/js-amplifier/", "_blank");
 
 });
 

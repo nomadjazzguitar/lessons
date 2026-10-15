@@ -665,7 +665,8 @@ const resourceWidthInput = document.getElementById("resourceWidthInput");
 const multimediaDropZone = document.getElementById("multimediaDropZone");
 const btnUpload = document.getElementById("btnUpload");
 
-const btnGuitarAmp = document.getElementById("btnGuitarAmp");
+const btnGuitarAmp1 = document.getElementById("btnGuitarAmp1");
+const btnGuitarAmp2 = document.getElementById("btnGuitarAmp2");
 const btnAudioEditor = document.getElementById("btnAudioEditor");
 
 
