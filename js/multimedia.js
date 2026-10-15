@@ -3367,17 +3367,26 @@ function createMultimediaElement(type, content, width) {
 
 		case "link":
 
-			element = document.createElement("iframe");
+			element = document.createElement("div");
 
-			element.className = "iframe-link";
+			const link = document.createElement("a");
+			link.href = resourceUrl;
+			link.innerHTML = "<i class='fa-solid fa-link'></i> " + resourceUrl;
+			link.target = "_blank";
+//			link.rel = "noopener noreferrer";
 
-			element.src = resourceUrl;
+			element.appendChild(link);
 
-			element.allowFullscreen = true;
+			const iframe = document.createElement("iframe");
+			iframe.className = "iframe-link";
+			iframe.src = resourceUrl;
+			iframe.allowFullscreen = true;
+
+			setIframeAspectRatio(iframe);
+
+			element.appendChild(iframe);
 
 			element.style.width = width + "%";
-
-			setIframeAspectRatio(element);
 
 			break;
 
