@@ -2626,10 +2626,15 @@ input[type="range"] {
 
 }
 
+#workspaceHome button{
+	background:var(--color-back);
+}
+
 .toolbarTop-Controls button:disabled,
 #workspaceHeader button:disabled,
 .libraryPanelHeader button:disabled,
 #videoContainer button:disabled{
+
 	opacity:0.45;
 	cursor:not-allowed;
 
