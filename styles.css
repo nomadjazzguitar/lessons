@@ -2059,9 +2059,10 @@ html {
 	padding: 0 4px;
 
 	border: 0;
-	border-radius: 4px;
 
 	background: transparent;
+
+	border-bottom: 1px solid var(--color-border);
 
 	color: var(--color-main-text);
 
@@ -2078,11 +2079,12 @@ html {
 
 .projectOpenButton.active {
 
-	border-left: 4px solid var(--color-text);
+	border-radius: 4px;
 
-	background: var(--color-highlight);
+	border: 1px solid var(--color-highlight);
+	border-left: 4px solid var(--color-highlight);
 
-	color: #fff;
+	color: var(--color-text);
 
 	padding-left: 4px;
 
@@ -2092,10 +2094,9 @@ html {
 
 .projectOpenButton:not(:disabled):hover {
 
-	background: var(--color-selected);
-
 	color: var(--color-text);
 
+	text-decoration:underline;
 	font-weight: 700;
 
 }
