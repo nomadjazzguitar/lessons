@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="5.4" id="s_1xdunlr" type="student" created="05/10/2026" modified="15/10/2026" level="1" name="Mis Clases online">
+<library version="5.5" id="s_1xdunlr" type="student" created="05/10/2026" modified="15/10/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
 		<category id="y2j82d">05/10/2026</category>
 	</categories>
-	<project id="cjg3cl" title="Resumen de clase" category="y2j82d" projectType="multimedia">
+	<project id="ld6ts5" title="Resumen de clase" category="y2j82d" projectType="multimedia">
 		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;Resumen de la clase - 05/10/2026&lt;/h1&gt;]]&gt;" width="100" />
 			<resource type="link" content="https://docs.google.com/document/d/1IjAOs04R28zx4sn8aJHcdU4G2zAEh3yiPSp0ucTtDC0/edit?tab=t.rf50nfnswuue" width="100" />
 		</resources>
 	</project>
