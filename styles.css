@@ -1739,6 +1739,9 @@ html {
 	font-size:14px;
 	display:inline-block;
 	margin:10px 0;
+	max-width:100%;
+	overflow-wrap:anywhere;
+	box-sizing:border-box;
 }
 
 /* ================================================== */
@@ -3313,6 +3316,10 @@ input[type="range"] {
 
 	#workspaceMultimedia .musicxml{
 		min-height:300px;
+	}
+
+	#workspaceMultimedia a{
+		font-size:12px;
 	}
 
 	#workspaceTitleText,
