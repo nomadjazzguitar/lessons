@@ -858,6 +858,8 @@ async function metronomePlayStop(){
 
 		setPlayStopButton(btnPlayStopMetronome, false);
 
+		if (projectType === "multimedia") workspaceMetronome.style.display = "none";
+
 		workspaceTimeInfo.style.display = "none";
 
 	} else {
@@ -878,6 +880,7 @@ async function metronomePlayStop(){
 			player.setMetronomeOn(true);
 		}
 
+		workspaceMetronome.style.display = "flex";
 		workspaceTimeInfo.style.display = "flex";
 
 		metronome.start();
