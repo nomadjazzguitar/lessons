@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="5.5" id="s_1xdunlr" type="student" created="05/10/2026" modified="15/10/2026" level="1" name="Mis Clases online">
+<library version="6.1" id="s_1xdunlr" type="student" created="05/10/2026" modified="19/10/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
+		<category id="c3gtir">Resumenes Google Meet</category>
 		<category id="y2j82d">05/10/2026</category>
+		<category id="vva5jx">19/10/2026</category>
 	</categories>
-	<project id="ld6ts5" title="Resumen de clase" category="y2j82d" projectType="multimedia">
+	<project id="ld6ts5" title="Resumenes de clases" category="c3gtir" projectType="multimedia">
 		<resources>
 			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;Resumen de la clase - 05/10/2026&lt;/h1&gt;]]&gt;" width="100" />
 			<resource type="link" content="https://docs.google.com/document/d/1IjAOs04R28zx4sn8aJHcdU4G2zAEh3yiPSp0ucTtDC0/edit?tab=t.rf50nfnswuue" width="100" />
@@ -306,5 +308,63 @@
 			<note string="4" fret="13" color="#0080ff" text="" chord="" order="7"/>
 			<note string="4" fret="15" color="#0080ff" text="" chord="" order="8"/>
 		</notes>
+	</project>
+	<project id="1ogvb3z" title="Resumen de clase" category="vva5jx" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase online – 19/10/2026&lt;/h2&gt;
+
+&lt;h3&gt;1. Armonía: triadas, cuatriadas y tensiones&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Repaso de las triadas mayores, menores, aumentadas y disminuidas, analizando su estructura interválica.&lt;/li&gt;
+	&lt;li&gt;Ampliación de las triadas mediante la incorporación de séptimas para formar cuatriadas, diferenciando acordes con séptima mayor, séptima menor, semidisminuidos y disminuidos.&lt;/li&gt;
+	&lt;li&gt;Introducción a las tensiones de los acordes: 9.ª, 11.ª y 13.ª, relacionadas con las notas de las escalas.&lt;/li&gt;
+	&lt;li&gt;Análisis de cómo cambian los acordes y sus tensiones según la escala o el modo utilizado: diatónica, menor armónica, menor melódica y mayor armónica.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;2. Modos y música modal&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Estudio del carácter sonoro de los modos mediante la interpretación y la escucha.&lt;/li&gt;
+	&lt;li&gt;Práctica de los modos utilizando una nota pedal en la tónica, para percibir cómo una sola nota puede modificar la sensación musical.&lt;/li&gt;
+	&lt;li&gt;Análisis de las diferencias expresivas entre los modos, especialmente el jónico, el lidio, el mixolidio y el dórico.&lt;/li&gt;
+	&lt;li&gt;Diferenciación entre música modal y tonal, prestando atención al centro tonal, al movimiento armónico y a las notas características de cada modo.&lt;/li&gt;
+	&lt;li&gt;Ejemplos de música modal y explicación del intercambio modal, entendido como la utilización de acordes procedentes de otros modos.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;3. Transcripción de un solo de jazz&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Revisión de la transcripción realizada y detección de errores en algunas notas y pasajes.&lt;/li&gt;
+	&lt;li&gt;Análisis auditivo de diferentes frases, prestando atención a los giros melódicos, las notas alteradas y el uso de acordes y escalas disminuidas y semidisminuidas.&lt;/li&gt;
+	&lt;li&gt;Presentación de AudioMass, un editor de audio que permite cargar archivos desde el ordenador o mediante una URL, reducir la velocidad de reproducción y ampliar la forma de onda para facilitar la escucha.&lt;/li&gt;
+	&lt;li&gt;Recomendación de trabajar primero la melodía del solo, sin octavas, y abordar estas por separado más adelante.&lt;/li&gt;
+	&lt;li&gt;Propuesta de completar el primer coro del solo para revisarlo posteriormente con un vídeo explicativo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Tareas para practicar&lt;/h3&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Consolidar las estructuras de las triadas y cuatriadas, así como sus distintas séptimas y tensiones.&lt;/li&gt;
+	&lt;li&gt;Practicar los modos sobre una nota pedal, explorando sus características sonoras y expresivas.&lt;/li&gt;
+	&lt;li&gt;Continuar la transcripción del primer coro del solo, utilizando AudioMass para ralentizar los pasajes difíciles.&lt;/li&gt;
+	&lt;li&gt;Revisar la transcripción con atención a las notas alteradas y a los pasajes que contienen acordes disminuidos y semidisminuidos.&lt;/li&gt;
+&lt;/ol&gt;]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="e3fdv" title="Tipos de acorde" category="vva5jx" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="Tipos de acordes (triada-cuatriada).pdf" width="100" />
+		</resources>
+	</project>
+	<project id="m0syr9" title="Solo Wes D Natural (coro 1)" category="vva5jx" projectType="multimedia">
+		<resources>
+			<resource type="video" content="20261019-20-35.webm" width="100" />
+		</resources>
+	</project>
+	<project id="19xywqh" title="Solo Wes D Natural (coro 1) SLOW" category="vva5jx" projectType="multimedia">
+		<resources>
+			<resource type="video" content="20261019-20-35 (slow).webm" width="100" />
+		</resources>
 	</project>
 </library>
