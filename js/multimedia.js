@@ -3176,6 +3176,8 @@ function createMultimediaElement(type, content, width) {
 
 			element.style.width = width + "%";
 
+			setIframeAspectRatio(element, "video");
+
 			break;
 
 
@@ -3399,7 +3401,19 @@ function createMultimediaElement(type, content, width) {
 
 			element.style.width = width + "%";
 
-			setIframeAspectRatio(element.querySelector("iframe"));
+			const i = element.querySelector("iframe");
+
+			if (i) {
+
+				const src = i.getAttribute("src") || "";
+
+				if (src.includes("youtu") || src.includes("vimeo")) {
+					setIframeAspectRatio(i, "video");
+				} else {
+					setIframeAspectRatio(i);
+				}
+
+			}
 
 			break;
 
@@ -3450,14 +3464,25 @@ async function loadMusicXMLFile(url, element) {
 
 }
 
-function setIframeAspectRatio(iframe){
+function setIframeAspectRatio(iframe, format = "A4"){
 
 	let width = parseFloat(iframe.getAttribute("width"));
 	let height = parseFloat(iframe.getAttribute("height"));
 
-	if (!width || !height) {
-		width = 560;
-		height = 315;
+	if (format === "A4") {
+
+		// Formato A4 horizontal
+		width = 297;
+		height = 210;
+
+	} else if (format === "video") {
+
+		// Formato vídeo 16/9
+		if (!width || !height) {
+			width = 560;
+			height = 315;
+		}
+
 	}
 
 	iframe.style.aspectRatio = `${width} / ${height}`;

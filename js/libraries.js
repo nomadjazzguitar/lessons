@@ -1031,6 +1031,8 @@ async function selectProject(project) {
 
 	if (projectType === "multimedia") setMenu("metronome");
 
+	document.body.scrollTo({top: 0,left: 0,behavior: "smooth"});
+
 }
 
 async function saveCurrentProject() {
