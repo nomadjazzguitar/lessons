@@ -1562,7 +1562,6 @@ html {
 #workspaceMultimedia > div,
 #workspaceMultimediaControls > div{
 	margin:10px 0;
-	text-align:center;
 }
 
 #workspaceMultimediaControls #textAreaMultimedia{
@@ -1742,6 +1741,7 @@ html {
 	max-width:100%;
 	overflow-wrap:anywhere;
 	box-sizing:border-box;
+	text-align:left;
 }
 
 /* ================================================== */
