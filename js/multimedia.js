@@ -3379,6 +3379,7 @@ function createMultimediaElement(type, content, width) {
 
 			element.appendChild(link);
 
+/*
 			const iframe = document.createElement("iframe");
 			iframe.className = "iframe-link";
 			iframe.src = resourceUrl;
@@ -3387,6 +3388,7 @@ function createMultimediaElement(type, content, width) {
 			setIframeAspectRatio(iframe);
 
 			element.appendChild(iframe);
+*/
 
 			element.style.width = width + "%";
 
