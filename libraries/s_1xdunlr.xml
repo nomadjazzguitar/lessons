@@ -8,7 +8,7 @@
 	</categories>
 	<project id="ld6ts5" title="Resumenes de clases" category="c3gtir" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;h1&gt;Resumenes de las clases online de Google Meet&lt;/h1&gt;]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumenes de las clases online de Google Meet&lt;/h2&gt;]]&gt;" width="100" />
 			<resource type="link" content="https://docs.google.com/document/d/1IjAOs04R28zx4sn8aJHcdU4G2zAEh3yiPSp0ucTtDC0/edit?tab=t.rf50nfnswuue" width="100" />
 		</resources>
 	</project>
@@ -336,7 +336,7 @@
 
 &lt;ul&gt;
 	&lt;li&gt;Revisión de la transcripción realizada y detección de errores en algunas notas y pasajes.&lt;/li&gt;
-	&lt;li&gt;Análisis auditivo de diferentes frases, prestando atención a los giros melódicos, las notas alteradas y el uso de acordes y escalas disminuidas y semidisminuidas.&lt;/li&gt;
+	&lt;li&gt;Análisis auditivo de diferentes frases, prestando atención a los giros melódicos, las notas alteradas y el uso de la escala semidisminuida en dominantes.&lt;/li&gt;
 	&lt;li&gt;Presentación de AudioMass, un editor de audio que permite cargar archivos desde el ordenador o mediante una URL, reducir la velocidad de reproducción y ampliar la forma de onda para facilitar la escucha.&lt;/li&gt;
 	&lt;li&gt;Recomendación de trabajar primero la melodía del solo, sin octavas, y abordar estas por separado más adelante.&lt;/li&gt;
 	&lt;li&gt;Propuesta de completar el primer coro del solo para revisarlo posteriormente con un vídeo explicativo.&lt;/li&gt;
