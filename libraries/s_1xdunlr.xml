@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="6.3" id="s_1xdunlr" type="student" created="05/10/2026" modified="20/10/2026" level="1" name="Mis Clases online">
+<library version="6.7" id="s_1xdunlr" type="student" created="05/10/2026" modified="26/10/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
 		<category id="c3gtir">Google Meet</category>
 		<category id="y2j82d">05/10/2026</category>
 		<category id="vva5jx">19/10/2026</category>
+		<category id="10793cf">26/10/2026</category>
 	</categories>
 	<project id="1phsmbb" title="Reuniones online" category="c3gtir" projectType="multimedia">
 		<resources>
@@ -333,6 +334,67 @@
 	<project id="19xywqh" title="Solo Wes D Natural (coro 1) SLOW" category="vva5jx" projectType="multimedia">
 		<resources>
 			<resource type="video" content="20261019-20-35 (slow).webm" width="100" />
+		</resources>
+	</project>
+	<project id="33gljm" title="Resumen de clase" category="10793cf" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 26/10/2026&lt;/h2&gt;
+
+&lt;h3&gt;1. Trabajo de frases de jazz sobre acordes dominantes&lt;/h3&gt;
+
+&lt;p&gt;Se trabajó la extracción de frases del solo y su adaptación a diferentes posiciones del mástil. El objetivo es aprenderlas a fondo y poder utilizarlas en distintos contextos armónicos.&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Practicar una frase sobre &lt;strong&gt;D7, G7 y A7&lt;/strong&gt; por separado.&lt;/li&gt;
+	&lt;li&gt;Aplicarla después a un blues de 12 compases en Re, utilizando los acordes de los grados I, IV y V.&lt;/li&gt;
+	&lt;li&gt;Buscar diferentes digitaciones y posiciones para tocar las frases sin depender de una única zona del mástil.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;2. Análisis del solo: arpegios y recursos melódicos&lt;/h3&gt;
+
+&lt;p&gt;Se analizaron diferentes fragmentos del solo, identificando arpegios mayores y menores, acordes de séptima, aproximaciones cromáticas y notas de tensión.&lt;/p&gt;
+
+&lt;p&gt;Se destacó la importancia de combinar &lt;strong&gt;arpegios, escalas y cromatismos&lt;/strong&gt;, en lugar de improvisar únicamente a partir de escalas. También se estudiaron frases habituales de jazz, movimientos de II–V y el uso de acordes disminuidos y escalas semidisminuidas como recursos de mayor dificultad.&lt;/p&gt;
+
+&lt;h3&gt;3. Lenguaje de blues&lt;/h3&gt;
+
+&lt;p&gt;Se trabajó el sonido característico del blues, especialmente el juego entre la tercera menor y la tercera mayor, las aproximaciones a la tercera y las frases típicas del estilo.&lt;/p&gt;
+
+&lt;p&gt;Se insistió en escuchar, cantar y memorizar las frases para interiorizar tanto su sonido como su relación con la armonía.&lt;/p&gt;
+
+&lt;h3&gt;4. Digitación y técnica&lt;/h3&gt;
+
+&lt;p&gt;Se exploraron distintas formas de ejecutar los arpegios del solo, buscando digitaciones cómodas y eficaces. También se plantearon alternativas para resolver algunos pasajes difíciles, incluyendo la posibilidad de utilizar &lt;em&gt;sweep picking&lt;/em&gt; cuando resulte conveniente.&lt;/p&gt;
+
+&lt;h3&gt;5. Conciencia de la armonía y los modos&lt;/h3&gt;
+
+&lt;p&gt;Se recordó la importancia de reconocer los cambios de acorde mientras se improvisa, para no perder la referencia armónica. También se retomó el trabajo de los modos mediante escalas diatónicas y un pedal sobre una nota tónica.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Tareas para practicar&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;&lt;strong&gt;Practicar las frases extraídas del solo:&lt;/strong&gt; aprenderlas de memoria, cantarlas y tocarlas en diferentes posiciones del mástil.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Trabajar los arpegios:&lt;/strong&gt; practicar los arpegios de los acordes del blues, tanto ascendentes como descendentes, conectándolos mediante notas comunes o de paso.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Tocar un blues de 12 compases en Re:&lt;/strong&gt; utilizar un acompañamiento de blues y tocar los arpegios de D7, G7 y A7, identificando auditivamente cada cambio armónico.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Aplicar las frases al blues:&lt;/strong&gt; incorporar las frases estudiadas sobre los acordes correspondientes, procurando no perder la estructura de los 12 compases.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Continuar la transcripción del solo:&lt;/strong&gt; utilizar el vídeo para reducir la velocidad y escuchar con detalle los pasajes difíciles, especialmente los arpegios más complejos y las frases de blues.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Repasar los modos:&lt;/strong&gt; revisar las posiciones de las escalas diatónicas y practicar diferentes modos sobre un pedal de Mi, escuchando las diferencias de sonoridad.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Objetivo principal:&lt;/strong&gt; interiorizar el lenguaje del solo y aprender a combinar arpegios, frases y recursos melódicos mientras se mantiene la conciencia de los cambios armónicos del blues.&lt;/p&gt;]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="gfxyys" title="Análisis coro 1 solo Wes D Natural" category="10793cf" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="wes-DNaturalBlues-analysis.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="1t6k2hz" title="D Blues Backing Track" category="10793cf" projectType="multimedia">
+		<resources>
+			<resource type="audio" content="D Blues.MP3" width="100" />
+			<resource type="video" content="D Blues.mp4" width="100" />
 		</resources>
 	</project>
 </library>
