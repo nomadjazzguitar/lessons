@@ -354,7 +354,7 @@
 	</project>
 	<project id="1b0ulto" title="E Lidio Backing Track" category="10793cf" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;p&gt;Trabaja sobre este backing track en Mi Lidio. Recuerda que el modo lidio es el IVº grado de la escala diatónica, por tanto, el Iº grado es B, es decir, es como tocar la escala de B mayor, pero el centro &apos;modal&apos; está en E.&lt;/p&gt;
+			<resource type="text" content="&lt;![CDATA[&lt;p&gt;Trabaja sobre este backing track en E Lidio. Recuerda que el modo lidio es el IVº grado de la escala diatónica, por tanto, el Iº grado es B, es decir, es como tocar la escala de B mayor, pero el centro &apos;modal&apos; está en E.&lt;/p&gt;
 &lt;p&gt;La progresión que oyes es Emaj7#11 y F#/E, es decir, el IVº y el Vº, pero con la nota pedal &apos;E&apos; en el bajo.&lt;/p&gt;]]&gt;" width="100" />
 			<resource type="audio" content="E Lidio.mp3" width="100" />
 		</resources>
