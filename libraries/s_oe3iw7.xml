@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library version="2.4" id="s_oe3iw7" type="student" created="27/10/2026" modified="27/10/2026" level="1" name="Mis Clases online">
+	<desc></desc>
+	<categories>
+		<category id="13g7yys">27/10/2026</category>
+	</categories>
+	<project id="pv5558" title="Resumen de clase" category="13g7yys" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 27/10/2026&lt;/h2&gt;  &lt;h3&gt;1. Estructura del blues mayor y menor&lt;/h3&gt;  &lt;p&gt;El profesor explicó la estructura del blues de 12 compases, organizada en tres bloques de cuatro compases: exposición (A), variación o reexposición (A&apos;) y conclusión (B). Se trabajó la función de los grados I, IV y V, y cómo el acorde dominante genera tensión antes de resolver en la tónica.&lt;/p&gt;  &lt;p&gt;Se estudiaron dos tipos de blues:&lt;/p&gt;  &lt;ul&gt;  &lt;li&gt;&lt;strong&gt;Blues mayor o dominante:&lt;/strong&gt; utiliza acordes de séptima dominante sobre los grados I, IV y V.&lt;/li&gt;  &lt;li&gt;&lt;strong&gt;Blues menor:&lt;/strong&gt; se basa en acordes menores y puede incorporar dominantes secundarios para crear tensión y preparar la resolución.&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Se practicaron ejemplos de ambos tipos en La, utilizando acompañamientos para tocar sobre los cambios armónicos.&lt;/p&gt;  &lt;h3&gt;2. Fraseo y construcción de melodías&lt;/h3&gt;  &lt;p&gt;Se analizó cómo construir frases musicales con sentido, siguiendo el esquema de exposición, variación y conclusión. El profesor mostró ejemplos de frases de blues organizadas en grupos de cuatro compases y explicó la importancia de repetir una idea introduciendo pequeñas variaciones y terminarla de forma coherente.&lt;/p&gt;  &lt;p&gt;El objetivo es dejar de tocar notas o escalas de manera aislada y empezar a construir frases que sigan la estructura armónica del blues.&lt;/p&gt;  &lt;h3&gt;3. Pentatónicas e improvisación&lt;/h3&gt;  &lt;p&gt;Se trabajó la aplicación de la pentatónica menor sobre el blues menor y se explicó cómo utilizarla también como punto de partida para improvisar sobre el blues mayor. Como recurso adicional, se propuso experimentar con la pentatónica mayor relativa para conseguir diferentes sonoridades.&lt;/p&gt;  &lt;p&gt;El profesor insistió en no añadir demasiadas dificultades al principio: es preferible dominar un patrón de la pentatónica, reconocer dónde se encuentra cada acorde y ganar seguridad antes de incorporar más recursos.&lt;/p&gt;  &lt;h3&gt;4. Ritmo y subdivisión en 12/8&lt;/h3&gt;  &lt;p&gt;Se practicó el fraseo sobre un acompañamiento de blues en 12/8, prestando atención al swing, a los tresillos y a las variaciones rítmicas. El profesor señaló que, al concentrarse demasiado en las notas y en cerrar las melodías, es fácil descuidar el ritmo.&lt;/p&gt;  &lt;p&gt;Para mejorar, se propuso trabajar con patrones sencillos, a un tempo cómodo y procurando terminar las frases dentro de cada grupo de cuatro compases.&lt;/p&gt;  &lt;h2&gt;Tareas para practicar&lt;/h2&gt;  &lt;ol&gt;  &lt;li&gt;   &lt;strong&gt;Blues mayor y menor en La:&lt;/strong&gt; practicar ambos sobre los acompañamientos proporcionados, siguiendo correctamente los 12 compases e identificando los grados I, IV y V.  &lt;/li&gt;  &lt;li&gt;   &lt;strong&gt;Pentatónica menor:&lt;/strong&gt; trabajar el patrón indicado en clase, primero de forma aislada y después sobre el acompañamiento de blues menor.  &lt;/li&gt;  &lt;li&gt;   &lt;strong&gt;Improvisación sobre blues mayor:&lt;/strong&gt; utilizar la pentatónica menor y experimentar también con la pentatónica mayor relativa, comparando las diferencias de sonoridad.  &lt;/li&gt;  &lt;li&gt;   &lt;strong&gt;Construcción de frases:&lt;/strong&gt; crear frases de cuatro compases con una idea inicial, una pequeña variación y una conclusión. Evitar encadenar notas sin una dirección melódica clara.  &lt;/li&gt;  &lt;li&gt;   &lt;strong&gt;Trabajo rítmico en 12/8:&lt;/strong&gt; practicar los tresillos y las variaciones rítmicas sobre el acompañamiento, empezando despacio y aumentando el tempo progresivamente.  &lt;/li&gt;  &lt;li&gt;   &lt;strong&gt;Practicar con el material de la plataforma:&lt;/strong&gt; utilizar los ejercicios de mástil y los backing tracks preparados por el profesor. Ajustar el tempo y las repeticiones según las necesidades de la práctica.  &lt;/li&gt; &lt;/ol&gt;  &lt;h3&gt;Objetivo principal&lt;/h3&gt;  &lt;p&gt;Consolidar las bases del blues mayor y menor para improvisar con mayor seguridad, aprendiendo a reconocer los cambios armónicos, utilizar la pentatónica con intención y construir frases musicales que combinen melodía, ritmo y sentido de resolución.&lt;/p&gt;]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="1t4qkf8" title="Blues de 12 compases" category="13g7yys" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="BLUESES.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="1ob2bqx" title="Singing the blues" category="13g7yys" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="Singing the Blues - Pages from Beginning Fingerstyle Blues.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="1mxt6o" title="Blues A - Backing Track" category="13g7yys" projectType="multimedia">
+		<resources>
+			<resource type="audio" content="Blues A.mp3" width="100" />
+			<resource type="video" content="Blues A.mp4" width="100" />
+		</resources>
+	</project>
+	<project id="1k372go" title="Blues Am - Backing Track" category="13g7yys" projectType="multimedia">
+		<resources>
+			<resource type="audio" content="Blues Am.mp3" width="100" />
+			<resource type="video" content="Blues Am.mp4" width="100" />
+		</resources>
+	</project>
+	<project id="kbgjsk" title="A menor pentatonica pattern 1" category="13g7yys" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>12/8</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>3</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>105</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="1"/>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="2"/>
+			<note string="1" fret="8" color="#0080ff" text="" chord="" order="3"/>
+			<note string="1" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="5"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="6"/>
+			<note string="1" fret="8" color="#0080ff" text="" chord="" order="7"/>
+			<note string="1" fret="5" color="#0080ff" text="" chord="" order="8"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="9"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="10"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="11"/>
+			<note string="3" fret="5" color="#0080ff" text="" chord="" order="12"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="13"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="14"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="15"/>
+			<note string="3" fret="5" color="#0080ff" text="" chord="" order="16"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="17"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="18"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="19"/>
+			<note string="3" fret="5" color="#0080ff" text="" chord="" order="20"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="21"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="22"/>
+			<note string="5" fret="8" color="#0080ff" text="" chord="" order="23"/>
+			<note string="5" fret="5" color="#0080ff" text="" chord="" order="24"/>
+			<note string="5" fret="5" color="#0080ff" text="" chord="" order="25"/>
+		</notes>
+	</project>
+	<project id="z2bo4n" title="A menor pentatonica pattern 2" category="13g7yys" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>12/8</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>3</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>105</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="10" color="#0080ff" text="" chord="" order="1"/>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="2"/>
+			<note string="1" fret="10" color="#0080ff" text="" chord="" order="3"/>
+			<note string="1" fret="8" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="9" color="#0080ff" text="" chord="" order="5"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="6"/>
+			<note string="1" fret="10" color="#0080ff" text="" chord="" order="7"/>
+			<note string="1" fret="8" color="#0080ff" text="" chord="" order="8"/>
+			<note string="2" fret="9" color="#0080ff" text="" chord="" order="9"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="10"/>
+			<note string="3" fret="10" color="#0080ff" text="" chord="" order="11"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="12"/>
+			<note string="2" fret="9" color="#0080ff" text="" chord="" order="13"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="14"/>
+			<note string="3" fret="10" color="#0080ff" text="" chord="" order="15"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="16"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="17"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="18"/>
+			<note string="3" fret="10" color="#0080ff" text="" chord="" order="19"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="20"/>
+			<note string="4" fret="10" color="#0080ff" text="" chord="" order="21"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="22"/>
+			<note string="5" fret="10" color="#0080ff" text="" chord="" order="23"/>
+			<note string="5" fret="8" color="#0080ff" text="" chord="" order="24"/>
+			<note string="5" fret="5" color="#0080ff" text="" chord="" order="25"/>
+		</notes>
+	</project>
+	<project id="v0cy0w" title="Blues menor. The thrill is gone" category="13g7yys" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Para el blues menor puedes escuchar versiones de la canción The thrill is gone de B.B. King, por ejemplo...]]&gt;" width="100" />
+			<resource type="iframe" content="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/kpC69qIe02E?si=vCa_bZeXd10GzTs9&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;/iframe&gt;" width="100" />
+		</resources>
+	</project>
+</library>
