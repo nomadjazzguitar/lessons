@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="10.1" id="s_1onds4h" type="student" created="29/09/2026" modified="13/10/2026" level="1" name="Mis Clases Online">
+<library version="10.5" id="s_1onds4h" type="student" created="29/09/2026" modified="31/10/2026" level="1" name="Mis Clases Online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">29/09/2026</category>
 		<category id="1xq0k1r">06/10/2026</category>
 		<category id="1nldppu">13/10/2026</category>
+		<category id="sd2mv5">31/10/2026</category>
 	</categories>
 	<project id="h0kg1r" title="Fm primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
@@ -661,6 +662,39 @@
 		<resources>
 			<resource type="pdf" content="ornithology (real book).pdf" width="100" />
 			<resource type="pdf" content="ornithology (aebersold).pdf" width="100" />
+		</resources>
+	</project>
+	<project id="6o8l7d" title="Resumen clase 2" category="sd2mv5" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de clase&lt;/h2&gt;
+&lt;p&gt;Hemos visto Take Five en Dm y hemos hablado de las triadas o cuatriadas en D eolico y dorico, pero mejor usar las del D dorico que serian las de la escala diatonica de C mayor. Cada una te dará un color o sonoridad, ya que indicen en las notas del acordes de Dm o sus teniones.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Tarea de triadas cuatriadas en improvisacion odal&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tocar las cuatriadas o triadas sobre Take Five y probar sonidos&lt;/li&gt;
+&lt;li&gt;Tocar ascendente cada cuatriadas en la 1º posicion, 2º posicion, etc...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;&lt;b&gt;Temas para ir mirando&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt; Ornithology&lt;/li&gt;
+&lt;li&gt; Four&lt;/li&gt;
+&lt;li&gt; Solar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;NOTA: Estos 3 teas tiene muchos cambios que son de Maj7 paso ahacer un II - V. Ejemplo:  Fmaj7     Fm7 Bb7     Ebmaj7     Ebm7 Ab7       Dbmaj7&lt;/p&gt;]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="tcshuw" title="Tema: Four" category="sd2mv5" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="four.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="awqkdy" title="Tema: Solar" category="sd2mv5" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="solar.pdf" width="100" />
 		</resources>
 	</project>
 </library>
