@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="6.8" id="s_1xdunlr" type="student" created="05/10/2026" modified="27/10/2026" level="1" name="Mis Clases online">
+<library version="8.9" id="s_1xdunlr" type="student" created="05/10/2026" modified="02/11/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
 		<category id="c3gtir">Google Meet</category>
 		<category id="y2j82d">05/10/2026</category>
 		<category id="vva5jx">19/10/2026</category>
 		<category id="10793cf">26/10/2026</category>
+		<category id="1ts872o">02/11/2026</category>
 	</categories>
 	<project id="1phsmbb" title="Reuniones online" category="c3gtir" projectType="multimedia">
 		<resources>
@@ -354,9 +355,348 @@
 	</project>
 	<project id="1b0ulto" title="E Lidio Backing Track" category="10793cf" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;p&gt;Trabaja sobre este backing track en E Lidio. Recuerda que el modo lidio es el IVº grado de la escala diatónica, por tanto, el Iº grado es B, es decir, es como tocar la escala de B mayor, pero el centro &apos;modal&apos; está en E.&lt;/p&gt;
-&lt;p&gt;La progresión que oyes es Emaj7#11 y F#/E, es decir, el IVº y el Vº, pero con la nota pedal &apos;E&apos; en el bajo.&lt;/p&gt;]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[&lt;p&gt;Trabaja sobre este backing track en E Lidio. Recuerda que el modo lidio es el IVº grado de la escala diatónica, por tanto, el Iº grado es B, es decir, es como tocar la escala de B mayor, pero el centro &apos;modal&apos; está en E.&lt;/p&gt; &lt;p&gt;La progresión que oyes es Emaj7#11 y F#/E, es decir, el IVº y el Vº, pero con la nota pedal &apos;E&apos; en el bajo.&lt;/p&gt;]]&gt;" width="100" />
 			<resource type="audio" content="E Lidio.mp3" width="100" />
+		</resources>
+	</project>
+	<project id="11gy57r" title="1. Patron penta menor a cuartas ASC" category="1ts872o" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>20</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>208</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="5" color="#00aa00" text="" chord="" order="1"/>
+			<note string="4" fret="5" color="#00aa00" text="" chord="" order="18"/>
+			<note string="5" fret="8" color="#00aa00" text="" chord="" order="19"/>
+			<note string="4" fret="7" color="#00aa00" text="" chord="" order="20"/>
+			<note string="4" fret="5" color="#00aa00" text="" chord="" order="21"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="" order="22"/>
+			<note string="4" fret="7" color="#00aa00" text="" chord="" order="23"/>
+			<note string="3" fret="7" color="#00aa00" text="" chord="" order="24"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="" order="25"/>
+			<note string="2" fret="5" color="#00aa00" text="" chord="" order="26"/>
+			<note string="3" fret="7" color="#00aa00" text="" chord="" order="27"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="" order="28"/>
+			<note string="2" fret="5" color="#00aa00" text="" chord="" order="29"/>
+			<note string="1" fret="5" color="#00aa00" text="" chord="" order="30"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="" order="31"/>
+			<note string="1" fret="8" color="#00aa00" text="" chord="" order="32"/>
+			<note string="1" fret="5" color="#00aa00" text="" chord="" order="33"/>
+			<note string="0" fret="5" color="#00aa00" text="" chord="" order="34"/>
+			<note string="1" fret="8" color="#00aa00" text="" chord="" order="35"/>
+			<note string="0" fret="8" color="#00aa00" text="" chord="" order="36"/>
+		</notes>
+	</project>
+	<project id="xq8w9" title="1. Patron penta menor a cuartas ASC" category="1ts872o" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>20</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>116</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="8" color="#00aa00" text="" chord="" order="1"/>
+			<note string="4" fret="7" color="#00aa00" text="" chord="" order="13"/>
+			<note string="5" fret="10" color="#00aa00" text="" chord="" order="14"/>
+			<note string="4" fret="10" color="#00aa00" text="" chord="" order="15"/>
+			<note string="4" fret="7" color="#00aa00" text="" chord="" order="16"/>
+			<note string="3" fret="7" color="#00aa00" text="" chord="" order="17"/>
+			<note string="4" fret="10" color="#00aa00" text="" chord="" order="18"/>
+			<note string="3" fret="10" color="#00aa00" text="" chord="" order="19"/>
+			<note string="3" fret="7" color="#00aa00" text="" chord="" order="21"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="" order="22"/>
+			<note string="3" fret="10" color="#00aa00" text="" chord="" order="23"/>
+			<note string="2" fret="9" color="#00aa00" text="" chord="" order="24"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="" order="25"/>
+			<note string="1" fret="8" color="#00aa00" text="" chord="" order="26"/>
+			<note string="2" fret="9" color="#00aa00" text="" chord="" order="27"/>
+			<note string="1" fret="10" color="#00aa00" text="" chord="" order="28"/>
+			<note string="1" fret="8" color="#00aa00" text="" chord="" order="29"/>
+			<note string="0" fret="8" color="#00aa00" text="" chord="" order="30"/>
+			<note string="1" fret="10" color="#00aa00" text="" chord="" order="31"/>
+			<note string="0" fret="10" color="#00aa00" text="" chord="" order="32"/>
+		</notes>
+	</project>
+	<project id="kp0oka" title="2. Patron penta menor a cuartas DESC" category="1ts872o" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>20</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>116</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="8" color="#0080ff" text="" chord="" order="1"/>
+			<note string="1" fret="8" color="#0080ff" text="" chord="" order="2"/>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="3"/>
+			<note string="1" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="1" fret="8" color="#0080ff" text="" chord="" order="5"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="6"/>
+			<note string="1" fret="5" color="#0080ff" text="" chord="" order="7"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="8"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="9"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="10"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="11"/>
+			<note string="3" fret="5" color="#0080ff" text="" chord="" order="12"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="13"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="14"/>
+			<note string="3" fret="5" color="#0080ff" text="" chord="" order="15"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="16"/>
+			<note string="4" fret="7" color="#0080ff" text="" chord="" order="17"/>
+			<note string="5" fret="8" color="#0080ff" text="" chord="" order="18"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="19"/>
+			<note string="5" fret="5" color="#0080ff" text="" chord="" order="20"/>
+		</notes>
+	</project>
+	<project id="1hn3x0v" title="3. Patron penta menor a cuartas ASC-DESC" category="1ts872o" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>20</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>67</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="5" color="#ff0000" text="" chord="" order="1"/>
+			<note string="4" fret="5" color="#ff0000" text="" chord="" order="2"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="5"/>
+			<note string="5" fret="8" color="#ff0000" text="" chord="" order="6"/>
+			<note string="4" fret="5" color="#ff0000" text="" chord="" order="7"/>
+			<note string="3" fret="5" color="#ff0000" text="" chord="" order="8"/>
+			<note string="3" fret="7" color="#ff0000" text="" chord="" order="9"/>
+			<note string="4" fret="7" color="#ff0000" text="" chord="" order="10"/>
+		</notes>
+	</project>
+	<project id="1l2u5d4" title="4. Patron penta menor a cuartas ASC-DESC" category="1ts872o" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>20</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>12/8</bar>
+			<figure>2</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>false</showFretNumbers>
+			<bpm>67</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="5" fret="5" color="#8000ff" text="" chord="" order="1"/>
+			<note string="4" fret="5" color="#8000ff" text="" chord="" order="2"/>
+			<note string="3" fret="5" color="#8000ff" text="" chord="" order="5"/>
+			<note string="5" fret="8" color="#8000ff" text="" chord="" order="6"/>
+			<note string="4" fret="7" color="#8000ff" text="" chord="" order="7"/>
+			<note string="3" fret="7" color="#8000ff" text="" chord="" order="8"/>
+			<note string="4" fret="5" color="#8000ff" text="" chord="" order="9"/>
+			<note string="3" fret="5" color="#8000ff" text="" chord="" order="10"/>
+			<note string="2" fret="5" color="#8000ff" text="" chord="" order="11"/>
+			<note string="4" fret="7" color="#8000ff" text="" chord="" order="12"/>
+			<note string="3" fret="7" color="#8000ff" text="" chord="" order="13"/>
+			<note string="2" fret="7" color="#8000ff" text="" chord="" order="14"/>
+			<note string="3" fret="5" color="#8000ff" text="" chord="" order="15"/>
+			<note string="2" fret="5" color="#8000ff" text="" chord="" order="16"/>
+			<note string="1" fret="5" color="#8000ff" text="" chord="" order="17"/>
+			<note string="3" fret="7" color="#8000ff" text="" chord="" order="18"/>
+			<note string="2" fret="7" color="#8000ff" text="" chord="" order="19"/>
+			<note string="1" fret="8" color="#8000ff" text="" chord="" order="20"/>
+			<note string="2" fret="5" color="#8000ff" text="" chord="" order="21"/>
+			<note string="1" fret="5" color="#8000ff" text="" chord="" order="22"/>
+			<note string="0" fret="5" color="#8000ff" text="" chord="" order="23"/>
+			<note string="2" fret="7" color="#8000ff" text="" chord="" order="24"/>
+			<note string="1" fret="8" color="#8000ff" text="" chord="" order="25"/>
+			<note string="0" fret="8" color="#8000ff" text="" chord="" order="26"/>
+			<note string="0" fret="5" color="#8000ff" text="" chord="" order="27"/>
+			<note string="1" fret="5" color="#8000ff" text="" chord="" order="28"/>
+			<note string="2" fret="5" color="#8000ff" text="" chord="" order="29"/>
+			<note string="1" fret="8" color="#8000ff" text="" chord="" order="30"/>
+			<note string="2" fret="7" color="#8000ff" text="" chord="" order="31"/>
+			<note string="3" fret="7" color="#8000ff" text="" chord="" order="32"/>
+			<note string="1" fret="5" color="#8000ff" text="" chord="" order="34"/>
+			<note string="2" fret="5" color="#8000ff" text="" chord="" order="35"/>
+			<note string="3" fret="5" color="#8000ff" text="" chord="" order="36"/>
+			<note string="2" fret="7" color="#8000ff" text="" chord="" order="37"/>
+			<note string="3" fret="7" color="#8000ff" text="" chord="" order="38"/>
+			<note string="4" fret="7" color="#8000ff" text="" chord="" order="39"/>
+			<note string="2" fret="5" color="#8000ff" text="" chord="" order="40"/>
+			<note string="3" fret="5" color="#8000ff" text="" chord="" order="41"/>
+			<note string="4" fret="5" color="#8000ff" text="" chord="" order="42"/>
+			<note string="3" fret="7" color="#8000ff" text="" chord="" order="43"/>
+			<note string="4" fret="7" color="#8000ff" text="" chord="" order="44"/>
+			<note string="5" fret="8" color="#8000ff" text="" chord="" order="45"/>
+			<note string="3" fret="5" color="#8000ff" text="" chord="" order="46"/>
+			<note string="4" fret="5" color="#8000ff" text="" chord="" order="47"/>
+			<note string="5" fret="5" color="#8000ff" text="" chord="" order="48"/>
+		</notes>
+	</project>
+	<project id="ts967r" title="Resumen de clase" category="1ts872o" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 02/11/2026&lt;/h2&gt;
+
+&lt;h3&gt;1. Improvisación modal y escala dórica&lt;/h3&gt;
+
+&lt;p&gt;Se analizó la sonoridad modal de temas como &lt;em&gt;Impressions&lt;/em&gt; y &lt;em&gt;So What&lt;/em&gt;, de John Coltrane. Se explicó cómo reconocer el modo dórico a partir de las notas de la armonía y cómo mantener una escala sobre un acorde durante varios compases antes de cambiar a otra tonalidad o centro modal.&lt;/p&gt;
+
+&lt;p&gt;Se relacionó el uso de la escala dórica con la improvisación y se comentó la posibilidad de utilizar otros modos, como el eólico, según las notas que aparezcan en la armonía.&lt;/p&gt;
+
+&lt;h3&gt;2. Intervalos aplicados a las escalas&lt;/h3&gt;
+
+&lt;p&gt;Se trabajó la diferencia entre tocar una escala por grado conjunto y hacerlo mediante saltos interválicos. Se repasaron los intervalos de segunda, tercera, cuarta, quinta, sexta y séptima, así como la relación inversa entre ellos:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Segundas y séptimas.&lt;/li&gt;
+	&lt;li&gt;Terceras y sextas.&lt;/li&gt;
+	&lt;li&gt;Cuartas y quintas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El profesor explicó cómo practicar las escalas mediante estos intervalos para ampliar los recursos melódicos y conseguir diferentes sonoridades. Se destacó especialmente el uso de las cuartas, que aportan un sonido más moderno y pueden generar una sensación de alejamiento de la tonalidad.&lt;/p&gt;
+
+&lt;h3&gt;3. Patrones de pentatónica menor por cuartas&lt;/h3&gt;
+
+&lt;p&gt;La parte principal de la clase se centró en crear patrones a partir de la pentatónica menor. Partiendo de la digitación habitual, se practicó la escala por grado conjunto incorporando saltos de cuarta o el intervalo más cercano cuando la escala no permitía mantener una cuarta exacta.&lt;/p&gt;
+
+&lt;p&gt;Se prepararon distintos patrones para trabajar en el mástil:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Patrón 1:&lt;/strong&gt; pentatónica menor con movimiento ascendente.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Patrón 2:&lt;/strong&gt; pentatónica menor con movimiento descendente.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Patrón 3:&lt;/strong&gt; combinación de movimientos ascendentes y descendentes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El profesor insistió en practicar estos ejercicios en las cinco posiciones de la pentatónica, empezando lentamente y prestando atención a las notas y a la digitación. También se propuso modificar el ritmo y probar los patrones con distintas subdivisiones, como los tresillos.&lt;/p&gt;
+
+&lt;p&gt;Se aclaró que no se trata de tocar constantemente por cuartas, sino de incorporar este recurso de manera puntual a la improvisación. Su uso continuado puede generar una sonoridad más avanzada y alejada de la tonalidad.&lt;/p&gt;
+
+&lt;h3&gt;4. Arpegios y recursos de improvisación&lt;/h3&gt;
+
+&lt;p&gt;Se analizaron varios recursos melódicos utilizados en la improvisación, especialmente los arpegios de Solmaj7 y Mim7. Se explicó la relación entre ambos acordes y cómo pueden compartir notas, lo que permite utilizar un mismo recurso sobre diferentes contextos armónicos.&lt;/p&gt;
+
+&lt;p&gt;También se comentó la aplicación de estos arpegios en progresiones II-V y sobre acordes dominantes, así como la importancia de modificar el ritmo de las frases. Se practicaron ejemplos con corcheas, tresillos y anticipaciones rítmicas para conseguir un fraseo más variado y cercano al de los músicos de referencia.&lt;/p&gt;
+
+&lt;h3&gt;5. Trabajo auditivo y uso de herramientas de práctica&lt;/h3&gt;
+
+&lt;p&gt;Se explicó cómo utilizar las herramientas de la plataforma para escuchar y estudiar fragmentos musicales. El procedimiento consiste en abrir el audio en el editor, seleccionar el fragmento que se quiere trabajar, reproducirlo en bucle y reducir la velocidad cuando sea necesario.&lt;/p&gt;
+
+&lt;p&gt;El profesor recomendó practicar los fragmentos primero con metrónomo y después con el audio original, ajustando la velocidad para facilitar el aprendizaje. El objetivo es memorizar las digitaciones, interiorizar los recursos melódicos y aprender a reproducir las frases de oído.&lt;/p&gt;
+
+&lt;h2&gt;Tareas para practicar&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;&lt;strong&gt;Patrones de pentatónica menor por cuartas:&lt;/strong&gt; practicar los patrones ascendentes, descendentes y combinados en las cinco posiciones del mástil.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Trabajo con metrónomo:&lt;/strong&gt; comenzar a un tempo cómodo y aumentar la velocidad progresivamente, probando también diferentes subdivisiones rítmicas.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Improvisación modal:&lt;/strong&gt; practicar sobre el acompañamiento de &lt;em&gt;So What&lt;/em&gt;, utilizando la pentatónica menor de Re y cambiando a la pentatónica menor de Mi cuando corresponda.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Práctica de intervalos:&lt;/strong&gt; experimentar con segundas, terceras y cuartas sobre las escalas, observando las diferencias de sonoridad y las posibilidades que ofrecen para construir frases.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Arpegios:&lt;/strong&gt; estudiar los recursos basados en Solmaj7 y Mim7, practicando distintas digitaciones y variaciones rítmicas.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Estudio de transcripciones:&lt;/strong&gt; seleccionar fragmentos que resulten interesantes, reproducirlos en bucle y reducir la velocidad para aprenderlos de oído y memorizar sus digitaciones.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Aplicación musical:&lt;/strong&gt; incorporar los patrones y arpegios estudiados a la improvisación, utilizándolos como recursos puntuales en lugar de aplicarlos continuamente.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Objetivo principal&lt;/h3&gt;
+
+&lt;p&gt;Ampliar el vocabulario melódico y rítmico para la improvisación mediante el estudio de intervalos, patrones de pentatónica menor por cuartas y arpegios. Consolidar estos recursos en las distintas posiciones del mástil y aprender a aplicarlos musicalmente sobre acompañamientos y progresiones armónicas, combinando el trabajo técnico con la escucha y el aprendizaje de frases de referencia.&lt;/p&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
 </library>
