@@ -2,8 +2,8 @@
 <library version="10.9" id="s_1onds4h" type="student" created="29/09/2026" modified="10/11/2026" level="1" name="Mis Clases Online">
 	<desc></desc>
 	<categories>
-		<category id="1ay80if">29/09/2026 Fm Arpegio I</category>
-		<category id="1xq0k1r">06/10/2026 Fm Arpegio II</category>
+		<category id="1ay80if">29/09/2026 Arpegio menor I</category>
+		<category id="1xq0k1r">06/10/2026 Arpegio menor II</category>
 		<category id="1nldppu">13/10/2026 Notas Guía</category>
 		<category id="sd2mv5">31/10/2026 Temas II-V-I</category>
 		<category id="1donhoo">10/11/2026 II-V-I</category>
@@ -715,7 +715,7 @@
 			<resource type="pdf" content="Pages from David Baker - II-V Miguel.pdf" width="100" />
 		</resources>
 	</project>
-	<project id="14lrhib" title="Frase arpegiado II-V" category="1donhoo" projectType="fretboard">
+	<project id="14lrhib" title="Frase arpegios II-V-I" category="1donhoo" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
