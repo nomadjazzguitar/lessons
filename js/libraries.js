@@ -1029,7 +1029,7 @@ async function selectProject(project) {
 
 	if (isHome) showHome(false);
 
-	if (projectType === "multimedia") setMenu("metronome");
+	if (projectType === "multimedia" && !isMobile) setMenu("metronome");
 
 	document.body.scrollTo({top: 0,left: 0,behavior: "smooth"});
 
