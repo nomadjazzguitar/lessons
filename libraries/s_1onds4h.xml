@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="10.5" id="s_1onds4h" type="student" created="29/09/2026" modified="31/10/2026" level="1" name="Mis Clases Online">
+<library version="10.9" id="s_1onds4h" type="student" created="29/09/2026" modified="10/11/2026" level="1" name="Mis Clases Online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">29/09/2026</category>
 		<category id="1xq0k1r">06/10/2026</category>
 		<category id="1nldppu">13/10/2026</category>
 		<category id="sd2mv5">31/10/2026</category>
+		<category id="1donhoo">10/11/2026</category>
 	</categories>
 	<project id="h0kg1r" title="Fm primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
@@ -666,25 +667,7 @@
 	</project>
 	<project id="6o8l7d" title="Resumen clase" category="sd2mv5" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de clase - 31/10/2026&lt;/h2&gt;
-&lt;p&gt;Hemos visto Take Five en Dm y hemos hablado de las triadas o cuatriadas en D eolico y dorico, pero mejor usar las del D dorico que serian las de la escala diatonica de C mayor. Cada una te dará un color o sonoridad, ya que indicen en las notas del acordes de Dm o sus tensiones.&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;Tarea de triadas cuatriadas en improvisacion modal&lt;/b&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Tocar las cuatriadas o triadas sobre Take Five y probar sonidos&lt;/li&gt;
-&lt;li&gt;Tocar ascendente cada cuatriada de la escala diatonica en la 1º posicion, 2º posicion, etc...&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;&lt;b&gt;Temas para ir mirando&lt;/b&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt; Ornithology&lt;/li&gt;
-&lt;li&gt; Four&lt;/li&gt;
-&lt;li&gt; Solar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;NOTA: Estos 3 temas tienen muchos cambios que son de Maj7 que pasa a hacer un II - V. Ejemplo:  Fmaj7,     Fm7 Bb7,     Ebmaj7,     Ebm7 Ab7,       Dbmaj7&lt;/p&gt;]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de clase - 31/10/2026&lt;/h2&gt; &lt;p&gt;Hemos visto Take Five en Dm y hemos hablado de las triadas o cuatriadas en D eolico y dorico, pero mejor usar las del D dorico que serian las de la escala diatonica de C mayor. Cada una te dará un color o sonoridad, ya que indicen en las notas del acordes de Dm o sus tensiones.&lt;/p&gt;  &lt;p&gt;&lt;b&gt;Tarea de triadas cuatriadas en improvisacion modal&lt;/b&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Tocar las cuatriadas o triadas sobre Take Five y probar sonidos&lt;/li&gt; &lt;li&gt;Tocar ascendente cada cuatriada de la escala diatonica en la 1º posicion, 2º posicion, etc...&lt;/li&gt; &lt;/ul&gt;  &lt;br&gt;  &lt;p&gt;&lt;b&gt;Temas para ir mirando&lt;/b&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt; Ornithology&lt;/li&gt; &lt;li&gt; Four&lt;/li&gt; &lt;li&gt; Solar&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;NOTA: Estos 3 temas tienen muchos cambios que son de Maj7 que pasa a hacer un II - V. Ejemplo:  Fmaj7,     Fm7 Bb7,     Ebmaj7,     Ebm7 Ab7,       Dbmaj7&lt;/p&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
 	<project id="tcshuw" title="Tema: Four" category="sd2mv5" projectType="multimedia">
@@ -695,6 +678,85 @@
 	<project id="awqkdy" title="Tema: Solar" category="sd2mv5" projectType="multimedia">
 		<resources>
 			<resource type="pdf" content="solar.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="fxhwp9" title="Frases II-V-I" category="1donhoo" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="Pages from David Baker - II-V Miguel.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="14lrhib" title="Frase arpegiado II-V" category="1donhoo" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>Ab</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="1"/>
+			<note string="2" fret="6" color="#0080ff" text="" chord="" order="2"/>
+			<note string="3" fret="8" color="#0080ff" text="" chord="" order="3"/>
+			<note string="3" fret="6" color="#0080ff" text="" chord="" order="4"/>
+			<note string="3" fret="5" color="#ff8800" text="" chord="" order="5"/>
+			<note string="3" fret="8" color="#ff8800" text="" chord="" order="6"/>
+			<note string="2" fret="8" color="#ff8800" text="" chord="" order="7"/>
+			<note string="2" fret="6" color="#ff8800" text="" chord="" order="8"/>
+			<note string="2" fret="5" color="#00aa00" text="" chord="" order="9"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Ejemplo de frase para IIm-V7-I Mayor usando arpegios.]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="ahzruz" title="Resumen clase" category="1donhoo" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 11/10/2026&lt;/h2&gt;
+
+&lt;h3&gt;1. Acompañamiento y comping en jazz&lt;/h3&gt;
+&lt;p&gt;Se revisó la interpretación de &lt;em&gt;Four&lt;/em&gt;, trabajando la melodía y el acompañamiento. El profesor explicó la importancia de desarrollar patrones de comping más variados, utilizando notas guía, bajos, acordes drop 2 y recursos rítmicos, dejando espacio al resto de instrumentos.&lt;/p&gt;
+
+&lt;h3&gt;2. Análisis armónico de «Four» y progresiones II-V&lt;/h3&gt;
+&lt;p&gt;Se analizó la armonía de &lt;em&gt;Four&lt;/em&gt;, prestando especial atención a las cadenas de progresiones II-V, los movimientos cromáticos y los acordes que no resuelven de manera convencional. Se explicó cómo reconocer estas unidades armónicas y adaptar la improvisación a los cambios de tonalidad.&lt;/p&gt;
+
+&lt;h3&gt;3. Frases de bebop y resolución armónica&lt;/h3&gt;
+&lt;p&gt;Se estudiaron ejemplos de frases de bebop extraídas de libros y grabaciones. El objetivo es seleccionar algunas ideas, aprenderlas en distintas digitaciones y tonalidades y utilizarlas sobre progresiones II-V. Se insistió especialmente en adaptar los finales de las frases para que resuelvan correctamente sobre el acorde siguiente.&lt;/p&gt;
+
+&lt;h3&gt;4. Improvisación y vocabulario musical&lt;/h3&gt;
+&lt;p&gt;Se trabajó la construcción de frases mediante arpegios y notas del acorde, buscando conectar los cambios armónicos a través de las notas más cercanas. También se recomendó escuchar diferentes versiones de los temas y extraer pequeñas frases de los solos para incorporarlas progresivamente al propio vocabulario musical.&lt;/p&gt;
+
+&lt;h2&gt;Tareas para practicar&lt;/h2&gt;
+&lt;ol&gt;
+	&lt;li&gt;&lt;strong&gt;Frases II-V:&lt;/strong&gt; estudiar las frases seleccionadas, practicarlas en diferentes posiciones, registros y tonalidades.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Resolución de frases:&lt;/strong&gt; trabajar especialmente la conexión entre los acordes y la llegada a las notas del acorde de resolución.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Frase arpegiada:&lt;/strong&gt; practicar el ejemplo de II-V-I mayor utilizando arpegios, trasladándolo a distintas tonalidades y posiciones.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Aplicación en temas:&lt;/strong&gt; incorporar estos recursos a temas como &lt;em&gt;Four&lt;/em&gt;, &lt;em&gt;Solar&lt;/em&gt; o &lt;em&gt;Blue Bossa&lt;/em&gt;.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Escucha y transcripción:&lt;/strong&gt; escuchar solos de jazz, identificar progresiones II-V y seleccionar frases interesantes para aprenderlas de oído.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Melodía de Four:&lt;/strong&gt; continuar trabajando la melodía y mejorar el acompañamiento, prestando atención al ritmo y al espacio dentro del grupo.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Objetivo principal&lt;/h3&gt;
+&lt;p&gt;Ampliar el vocabulario de improvisación bebop mediante el estudio de frases, arpegios y progresiones II-V, aprendiendo a adaptarlos a diferentes tonalidades y a resolverlos correctamente sobre los cambios armónicos.&lt;/p&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
 </library>
