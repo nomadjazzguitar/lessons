@@ -6,7 +6,7 @@
 		<category id="y2j82d">05/10/2026 D Natural Solo, Modos</category>
 		<category id="vva5jx">19/10/2026 D Natural Solo</category>
 		<category id="10793cf">26/10/2026 D Natural Análisis, Tracks</category>
-		<category id="1ts872o">02/11/2026 Patrones pentatónica</category>
+		<category id="1ts872o">02/11/2026 Patrones penta Cuartas</category>
 	</categories>
 	<project id="1phsmbb" title="Reuniones online" category="c3gtir" projectType="multimedia">
 		<resources>
@@ -426,7 +426,7 @@
 &lt;p&gt;Ampliar el vocabulario melódico y rítmico para la improvisación mediante el estudio de intervalos, patrones de pentatónica menor por cuartas y arpegios. Consolidar estos recursos en las distintas posiciones del mástil y aprender a aplicarlos musicalmente sobre acompañamientos y progresiones armónicas, combinando el trabajo técnico con la escucha y el aprendizaje de frases de referencia.&lt;/p&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
-	<project id="11gy57r" title="1. Patron penta menor a cuartas ASC" category="1ts872o" projectType="fretboard">
+	<project id="11gy57r" title="1. Patron pentatónica cuartas ASC" category="1ts872o" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
@@ -478,7 +478,7 @@
 			<note string="0" fret="8" color="#00aa00" text="" chord="" order="36"/>
 		</notes>
 	</project>
-	<project id="xq8w9" title="1. Patron penta menor a cuartas ASC" category="1ts872o" projectType="fretboard">
+	<project id="xq8w9" title="1. Patron pentatónica cuartas ASC" category="1ts872o" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
@@ -530,7 +530,7 @@
 			<note string="0" fret="10" color="#00aa00" text="" chord="" order="32"/>
 		</notes>
 	</project>
-	<project id="kp0oka" title="2. Patron penta menor a cuartas DESC" category="1ts872o" projectType="fretboard">
+	<project id="kp0oka" title="2. Patron pentatónica cuartas DESC" category="1ts872o" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
@@ -582,7 +582,7 @@
 			<note string="5" fret="5" color="#0080ff" text="" chord="" order="20"/>
 		</notes>
 	</project>
-	<project id="1hn3x0v" title="3. Patron penta menor a cuartas ASC-DESC" category="1ts872o" projectType="fretboard">
+	<project id="1hn3x0v" title="3. Patron pentatónica cuartas ASC-DESC" category="1ts872o" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
@@ -622,7 +622,7 @@
 			<note string="4" fret="7" color="#ff0000" text="" chord="" order="10"/>
 		</notes>
 	</project>
-	<project id="1l2u5d4" title="4. Patron penta menor a cuartas ASC-DESC" category="1ts872o" projectType="fretboard">
+	<project id="1l2u5d4" title="4. Patron pentatónica cuartas ASC-DESC" category="1ts872o" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
