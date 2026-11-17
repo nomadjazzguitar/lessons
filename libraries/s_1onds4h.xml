@@ -1116,7 +1116,48 @@
 			<resource type="text" content="&lt;![CDATA[Frase para Dm G7 Cmaj7 en 4º cuerda]]&gt;" width="100" />
 		</resources>
 	</project>
-	<project id="1mf7wsd" title="Dm7b5 G7 Cm (I)" category="1vo7y84" projectType="fretboard">
+	<project id="gzpooz" title="Dm7b5 G7 Cm (I)" category="1vo7y84" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>Eb</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="4" color="#00aa00" text="" chord="" order="1"/>
+			<note string="1" fret="6" color="#00aa00" text="" chord="" order="2"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#00aa00" text="" chord="" order="4"/>
+			<note string="2" fret="4" color="#0080ff" text="" chord="" order="5"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="6"/>
+			<note string="1" fret="8" color="#0080ff" text="" chord="" order="7"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="8"/>
+			<note string="1" fret="4" color="#ff0000" text="b3" chord="" order="9"/>
+		</notes>
+	</project>
+	<project id="1mf7wsd" title="Dm7b5 G7 Cm (II)" category="1vo7y84" projectType="fretboard">
 		<settings>
 			<fretboardType>sequence</fretboardType>
 			<orientation>horizontal</orientation>
@@ -1159,47 +1200,6 @@
 		<resources>
 			<resource type="text" content="&lt;![CDATA[Frase para Dm7b5 G7 Cm en 2º cuerda]]&gt;" width="100" />
 		</resources>
-	</project>
-	<project id="gzpooz" title="Dm7b5 G7 Cm (II)" category="1vo7y84" projectType="fretboard">
-		<settings>
-			<fretboardType>sequence</fretboardType>
-			<orientation>horizontal</orientation>
-			<fretboardStyle>maple</fretboardStyle>
-			<fretCount>16</fretCount>
-			<displayMode>true</displayMode>
-			<inlays>true</inlays>
-			<rotated>false</rotated>
-			<bar>4/4</bar>
-			<figure>1</figure>
-			<tipoSecuencia>up</tipoSecuencia>
-			<direccion>false</direccion>
-			<countInBars>1</countInBars>
-			<playerRepeats>1</playerRepeats>
-			<isFretboardVisible>true</isFretboardVisible>
-			<isScoreVisible>true</isScoreVisible>
-			<currentInstrument>piano</currentInstrument>
-			<fretNumbers>1</fretNumbers>
-			<showFretNumbers>true</showFretNumbers>
-			<bpm>130</bpm>
-			<key>Eb</key>
-			<scoreStaves>all</scoreStaves>
-			<scoreLayout>vertical</scoreLayout>
-			<scoreScale>auto</scoreScale>
-			<swing>false</swing>
-			<metronomeOn>false</metronomeOn>
-			<notation></notation>
-		</settings>
-		<notes>
-			<note string="0" fret="4" color="#00aa00" text="" chord="" order="1"/>
-			<note string="1" fret="6" color="#00aa00" text="" chord="" order="2"/>
-			<note string="2" fret="7" color="#00aa00" text="" chord="" order="3"/>
-			<note string="2" fret="5" color="#00aa00" text="" chord="" order="4"/>
-			<note string="2" fret="4" color="#0080ff" text="" chord="" order="5"/>
-			<note string="2" fret="7" color="#0080ff" text="" chord="" order="6"/>
-			<note string="1" fret="8" color="#0080ff" text="" chord="" order="7"/>
-			<note string="1" fret="6" color="#0080ff" text="" chord="" order="8"/>
-			<note string="1" fret="4" color="#ff0000" text="b3" chord="" order="9"/>
-		</notes>
 	</project>
 	<project id="jau32u" title="Solar Backing Tracks" category="1vo7y84" projectType="multimedia">
 		<resources>
