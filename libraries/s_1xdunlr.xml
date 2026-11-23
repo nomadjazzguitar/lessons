@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="10.1" id="s_1xdunlr" type="student" created="05/10/2026" modified="17/11/2026" level="1" name="Mis Clases online">
+<library version="10.4" id="s_1xdunlr" type="student" created="05/10/2026" modified="23/11/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
 		<category id="c3gtir">Google Meet</category>
@@ -8,14 +8,15 @@
 		<category id="10793cf">26/10/2026 D Natural Análisis, Tracks</category>
 		<category id="1ts872o">02/11/2026 Patrones Pentatónica Cuartas</category>
 		<category id="1tejhst">16/11/2026 Acordes por cuartas, Temas</category>
+		<category id="1u2rdds">20261123 - Repaso Modos y Blues. Test</category>
 	</categories>
-	<project id="1phsmbb" title="Reuniones online" category="c3gtir" projectType="multimedia">
+	<project id="1phsmbb" title="Acceso Reuniones Online" category="c3gtir" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Reuniones online en Google Meet&lt;/h2&gt;]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Acceso Reuniones Online en Google Meet&lt;/h2&gt;]]&gt;" width="100" />
 			<resource type="link" content="https://meet.google.com/sqj-qbzx-xyk" width="100" />
 		</resources>
 	</project>
-	<project id="ld6ts5" title="Resumenes de clases" category="c3gtir" projectType="multimedia">
+	<project id="ld6ts5" title="Resumenes de clases Google Meet" category="c3gtir" projectType="multimedia">
 		<resources>
 			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumenes de las clases online de Google Meet&lt;/h2&gt;]]&gt;" width="100" />
 			<resource type="link" content="https://docs.google.com/document/d/1IjAOs04R28zx4sn8aJHcdU4G2zAEh3yiPSp0ucTtDC0/edit?tab=t.rf50nfnswuue" width="100" />
@@ -776,6 +777,147 @@
 	<project id="ddgt1p" title="Formas de Blues" category="1tejhst" projectType="multimedia">
 		<resources>
 			<resource type="pdf" content="BLUESES.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="13e2cea" title="Resumen clase" category="1u2rdds" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de Clase – 23/11/2026&lt;/h2&gt;
+
+&lt;h3&gt;1. Armonía y estructuras del blues&lt;/h3&gt;
+&lt;p&gt;Se repasaron las principales formas del blues y sus diferencias:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Blues básico:&lt;/strong&gt; estructura basada en los grados I, IV y V.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Blues dominante:&lt;/strong&gt; incorpora dominantes secundarios, especialmente el dominante del IV grado, como ocurre en &lt;em&gt;D Natural Blues&lt;/em&gt;.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Turnaround:&lt;/strong&gt; se trabajaron las fórmulas 1-6-2-5 y 6-2-5, así como su función de cierre y enlace entre coros.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Blues menor:&lt;/strong&gt; basado principalmente en el I menor, con posibilidad de incorporar el IV menor y diferentes variantes en la conclusión.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Se analizaron también distintos ejemplos y temas, como &lt;em&gt;Blue Monk&lt;/em&gt;, &lt;em&gt;Mr. P.C.&lt;/em&gt;, &lt;em&gt;Equinox&lt;/em&gt; y &lt;em&gt;Afro Blue&lt;/em&gt;, diferenciando los blues tradicionales, los blues de jazz y los blues menores.&lt;/p&gt;
+
+&lt;h3&gt;2. Comprensión de los modos&lt;/h3&gt;
+&lt;p&gt;Se profundizó en la relación entre los modos y el centro tonal. Se explicó que no basta con tocar las notas de una escala: para conseguir el sonido de un modo es necesario que la armonía, el acompañamiento y la propia interpretación establezcan y refuercen un centro tonal.&lt;/p&gt;
+&lt;p&gt;Se trabajaron especialmente:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Dórico:&lt;/strong&gt; escala menor con sexta mayor. Se utilizó Re menor como ejemplo.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Eólico:&lt;/strong&gt; escala menor natural, correspondiente al sexto grado de la tonalidad mayor.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Frigio:&lt;/strong&gt; escala menor caracterizada por su segunda menor.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Lidio:&lt;/strong&gt; modo mayor con cuarta aumentada (#4).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Se compararon las estructuras interválicas de las escalas menores, prestando atención a las diferencias entre la segunda y la sexta, que son las notas características que permiten distinguir los modos.&lt;/p&gt;
+
+&lt;h3&gt;3. Pensar en intervalos y grados&lt;/h3&gt;
+&lt;p&gt;Se insistió en la importancia de dejar de pensar exclusivamente en nombres de notas y comenzar a visualizar las escalas mediante sus intervalos y grados. Este enfoque facilita la comprensión de las estructuras y su aplicación en cualquier tonalidad y posición del mástil.&lt;/p&gt;
+&lt;p&gt;También se trabajó la relación entre los modos y sus tonalidades mayores relativas, utilizando como recurso práctico la identificación de los grados de cada escala.&lt;/p&gt;
+
+&lt;h3&gt;4. Aplicación práctica y escucha&lt;/h3&gt;
+&lt;p&gt;Se utilizaron ejemplos musicales y bases de acompañamiento para experimentar con los diferentes sonidos modales. Se retomó el trabajo sobre Re menor dórico, practicando acordes e improvisación sobre un centro tonal estable.&lt;/p&gt;
+&lt;p&gt;Se comentaron además diferentes temas de blues y jazz para reconocer sus estructuras armónicas y comprender cómo se aplican estos conceptos en situaciones musicales reales.&lt;/p&gt;
+
+&lt;h3&gt;5. Trabajo para la próxima clase&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Repasar las distintas estructuras del blues: básico, dominante y menor.&lt;/li&gt;
+    &lt;li&gt;Practicar las progresiones de turnaround, especialmente 1-6-2-5 y 6-2-5.&lt;/li&gt;
+    &lt;li&gt;Estudiar las estructuras interválicas de los modos dórico, eólico, frigio y lidio.&lt;/li&gt;
+    &lt;li&gt;Practicar la improvisación sobre un acompañamiento estático en Re menor, experimentando con los sonidos dórico, eólico y frigio.&lt;/li&gt;
+    &lt;li&gt;Trabajar los acordes y las estructuras por cuartas en distintas posiciones del mástil.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Objetivo principal&lt;/h3&gt;
+&lt;p&gt;Comprender y aplicar las estructuras armónicas del blues y los principios de la música modal, desarrollando la capacidad de identificar los centros tonales y construir sonoridades mediante el uso consciente de intervalos y grados.&lt;/p&gt;]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="1p5oyiy" title="Preguntas Test Modal" category="1u2rdds" projectType="multimedia">
+		<resources>
+			<resource type="text" content="&lt;![CDATA[&lt;h3&gt;1. ¿Qué elemento determina principalmente que una escala suene en un modo concreto?&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. La armadura de la tonalidad&lt;/li&gt;
+    &lt;li&gt;B. El centro tonal establecido por la melodía y el acompañamiento&lt;/li&gt;
+    &lt;li&gt;C. La nota más aguda de la melodía&lt;/li&gt;
+    &lt;li&gt;D. La velocidad de ejecución&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;2. ¿Qué intervalo caracteriza especialmente al modo dórico frente al modo eólico, ambos menores?&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. La segunda menor&lt;/li&gt;
+    &lt;li&gt;B. La sexta mayor&lt;/li&gt;
+    &lt;li&gt;C. La cuarta aumentada&lt;/li&gt;
+    &lt;li&gt;D. La séptima mayor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;3. ¿Qué fórmula de intervalos corresponde al modo frigio?&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. 1 – 2 – 3 – 4 – 5 – 6 – 7&lt;/li&gt;
+    &lt;li&gt;B. 1 – 2 – b3 – 4 – 5 – 6 – b7&lt;/li&gt;
+    &lt;li&gt;C. 1 – b2 – b3 – 4 – 5 – b6 – b7&lt;/li&gt;
+    &lt;li&gt;D. 1 – 2 – 3 – #4 – 5 – 6 – 7&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;4. El modo lidio se caracteriza por tener una cuarta aumentada respecto a la tónica.&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. Verdadero&lt;/li&gt;
+    &lt;li&gt;B. Falso&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;5. Si improvisamos sobre un acorde de Dm y queremos obtener un sonido dórico, ¿qué nota debemos destacar frente al sonido menor natural?&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. Si natural&lt;/li&gt;
+    &lt;li&gt;B. Si bemol&lt;/li&gt;
+    &lt;li&gt;C. Mi bemol&lt;/li&gt;
+    &lt;li&gt;D. Do sostenido&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;6. ¿Qué afirmación describe mejor la diferencia entre tocar una escala y crear un sonido modal?&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. Tocar únicamente notas largas&lt;/li&gt;
+    &lt;li&gt;B. Utilizar las notas de una escala sin importar la armonía&lt;/li&gt;
+    &lt;li&gt;C. Establecer un centro tonal y destacar los intervalos característicos del modo&lt;/li&gt;
+    &lt;li&gt;D. Cambiar de acorde en cada compás&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;7. El modo eólico tiene sexta mayor, igual que el modo dórico.&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. Verdadero&lt;/li&gt;
+    &lt;li&gt;B. Falso&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;8. ¿Cuáles de estas características corresponden al modo dórico? (Selecciona todas las correctas)&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. Tercera menor&lt;/li&gt;
+    &lt;li&gt;B. Sexta mayor&lt;/li&gt;
+    &lt;li&gt;C. Segunda menor&lt;/li&gt;
+    &lt;li&gt;D. Séptima menor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;9. Si utilizamos las notas de Do mayor, pero establecemos Re como centro tonal y punto de reposo, ¿qué modo estamos utilizando?&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. Re eólico&lt;/li&gt;
+    &lt;li&gt;B. Re dórico&lt;/li&gt;
+    &lt;li&gt;C. Re frigio&lt;/li&gt;
+    &lt;li&gt;D. Re lidio&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;10. ¿Qué recurso puede ayudar a practicar la sonoridad modal en la guitarra?&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A. Improvisar sobre una progresión II–V–I que cambia continuamente de tonalidad&lt;/li&gt;
+    &lt;li&gt;B. Improvisar sobre un acompañamiento estático de Dm explorando diferentes modos&lt;/li&gt;
+    &lt;li&gt;C. Tocar únicamente arpegios mayores sobre cualquier acorde menor&lt;/li&gt;
+    &lt;li&gt;D. Cambiar de escala en cada nota del acorde&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;&lt;br&gt;
+&lt;h3&gt;Respuestas correctas&lt;/h3&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;&lt;strong&gt;D.&lt;/strong&gt; El centro tonal establecido por la melodía y el acompañamiento.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;B.&lt;/strong&gt; La sexta mayor.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;C.&lt;/strong&gt; 1 - b2 - b3 - 4 - 5 - b6 - b7.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Verdadero.&lt;/strong&gt; El modo lidio se caracteriza por su cuarta aumentada (#4).&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;B.&lt;/strong&gt; Si natural (B).&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;C.&lt;/strong&gt; Establecer un centro tonal y enfatizar los intervalos característicos del modo.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Falso.&lt;/strong&gt; El modo eólico tiene sexta menor, mientras que el dórico tiene sexta mayor.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;A, B y D.&lt;/strong&gt; Tercera menor, sexta mayor y séptima menor.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;B.&lt;/strong&gt; Re dórico.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;C.&lt;/strong&gt; Practicar sobre un acompañamiento estático en Re menor y explorar diferentes modos.&lt;/li&gt;
+&lt;/ol&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
 </library>
