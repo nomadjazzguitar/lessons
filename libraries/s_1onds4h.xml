@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="16.0" id="s_1onds4h" type="student" created="29/09/2026" modified="24/11/2026" level="1" name="Mis Clases online">
+<library version="16.1" id="s_1onds4h" type="student" created="29/09/2026" modified="24/11/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">29/09/2026 Arpegio menor I</category>
@@ -1645,6 +1645,11 @@
 	<project id="11xw6xv" title="Tema: Lady Bird" category="ownc11" projectType="multimedia">
 		<resources>
 			<resource type="pdf" content="Lady Bird.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="8hlyvt" title="Backing Track  Dm7-G7-C" category="ownc11" projectType="multimedia">
+		<resources>
+			<resource type="audio" content="Dm7-G7-Cmaj7.mp3" width="100" />
 		</resources>
 	</project>
 </library>
