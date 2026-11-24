@@ -1019,6 +1019,13 @@ async function selectProject(project) {
 
 	if (!project) return;
 
+	if (projectModified) {
+
+		if (!confirm("Hay cambios sin guardar que se perderán. ¿Deseas abrir el proyecto de todas maneras?")) {
+			return;
+		}
+	}
+
 	currentProjectId = project.id;
 
 	openProjectCategory(project.category);

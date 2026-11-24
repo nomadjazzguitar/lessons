@@ -1799,6 +1799,8 @@ btnSaveMultimediaText.addEventListener("click", () => {
 
 		textAreaMultimedia.value = "";
 
+		projectModified = true;
+
 	}
 
 });
