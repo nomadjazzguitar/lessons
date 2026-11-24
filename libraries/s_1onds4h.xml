@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="13.9" id="s_1onds4h" type="student" created="29/09/2026" modified="17/11/2026" level="1" name="Mis Clases Online">
+<library version="16.0" id="s_1onds4h" type="student" created="29/09/2026" modified="24/11/2026" level="1" name="Mis Clases online">
 	<desc></desc>
 	<categories>
 		<category id="1ay80if">29/09/2026 Arpegio menor I</category>
@@ -8,6 +8,7 @@
 		<category id="sd2mv5">31/10/2026 Temas II-V-I</category>
 		<category id="1donhoo">10/11/2026 Frases II-V-I</category>
 		<category id="1vo7y84">17/11/2026 Frases II-V-I</category>
+		<category id="ownc11">24/11/2026 Frases II-V-I. Aproximaciones</category>
 	</categories>
 	<project id="h0kg1r" title="Fm primera posicion" category="1ay80if" projectType="fretboard">
 		<settings>
@@ -737,31 +738,7 @@
 	</project>
 	<project id="ruabw7" title="Resumen de clase" category="1vo7y84" projectType="multimedia">
 		<resources>
-			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 17/11/2026&lt;/h2&gt;
-
-&lt;h3&gt;1. Frases de bebop sobre progresiones II-V-I&lt;/h3&gt;
-&lt;p&gt;Se trabajó la aplicación de una frase basada en arpegios sobre progresiones II-V-I. La frase parte de la quinta del acorde menor, conecta con el arpegio del dominante y resuelve en la tercera del acorde de tónica. También se explicó cómo adaptarla a progresiones menores, modificando la quinta del acorde semidisminuido.&lt;/p&gt;
-
-&lt;h3&gt;2. Digitaciones y aplicación práctica&lt;/h3&gt;
-&lt;p&gt;Se construyeron ocho digitaciones diferentes de la misma frase, utilizando distintos juegos de cuerdas y posiciones del mástil. El objetivo es aprender a localizar los arpegios y poder aplicar el recurso en cualquier tonalidad y en distintos temas con progresiones II-V.&lt;/p&gt;
-
-&lt;h3&gt;3. Desarrollo del lenguaje de improvisación&lt;/h3&gt;
-&lt;p&gt;Se insistió en la importancia de aprender frases de melodías bebop y solos, cantarlas, escucharlas y practicarlas hasta interiorizarlas. A partir de ellas se pueden crear variaciones y desarrollar un lenguaje propio de improvisación.&lt;/p&gt;
-
-&lt;h3&gt;4. Escucha y repertorio&lt;/h3&gt;
-&lt;p&gt;Se recomendó escuchar diferentes versiones de los estándares de jazz y explorar la discografía de guitarristas como Jimmy y Doug Raney, Jim Hall, Wes Montgomery, Pat Martino y Grant Green, entre otros. También se trabajó con bases de &lt;em&gt;Solar&lt;/em&gt; a distintas velocidades.&lt;/p&gt;
-
-&lt;h2&gt;Tareas para practicar&lt;/h2&gt;
-&lt;ul&gt;
-	&lt;li&gt;Estudiar las distintas digitaciones de la frase II-V-I en varias posiciones y juegos de cuerdas.&lt;/li&gt;
-	&lt;li&gt;Aplicar la frase a diferentes progresiones II-V, tanto mayores como menores, y trasladarla a otros temas.&lt;/li&gt;
-	&lt;li&gt;Aprender nuevas frases de melodías bebop y solos, cantarlas y practicar su adaptación a distintas tonalidades.&lt;/li&gt;
-	&lt;li&gt;Continuar trabajando la lectura de guitarra con los materiales enviados.&lt;/li&gt;
-	&lt;li&gt;Escuchar diferentes versiones de estándares y explorar la discografía de guitarristas de jazz.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Objetivo principal&lt;/h3&gt;
-&lt;p&gt;Interiorizar el lenguaje bebop mediante el estudio de frases basadas en arpegios y progresiones II-V-I, desarrollando la capacidad de adaptarlas a distintas tonalidades, posiciones y contextos musicales.&lt;/p&gt;]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[&lt;h2&gt;Resumen de la clase – 17/11/2026&lt;/h2&gt;  &lt;h3&gt;1. Frases de bebop sobre progresiones II-V-I&lt;/h3&gt; &lt;p&gt;Se trabajó la aplicación de una frase basada en arpegios sobre progresiones II-V-I. La frase parte de la quinta del acorde menor, conecta con el arpegio del dominante y resuelve en la tercera del acorde de tónica. También se explicó cómo adaptarla a progresiones menores, modificando la quinta del acorde semidisminuido.&lt;/p&gt;  &lt;h3&gt;2. Digitaciones y aplicación práctica&lt;/h3&gt; &lt;p&gt;Se construyeron ocho digitaciones diferentes de la misma frase, utilizando distintos juegos de cuerdas y posiciones del mástil. El objetivo es aprender a localizar los arpegios y poder aplicar el recurso en cualquier tonalidad y en distintos temas con progresiones II-V.&lt;/p&gt;  &lt;h3&gt;3. Desarrollo del lenguaje de improvisación&lt;/h3&gt; &lt;p&gt;Se insistió en la importancia de aprender frases de melodías bebop y solos, cantarlas, escucharlas y practicarlas hasta interiorizarlas. A partir de ellas se pueden crear variaciones y desarrollar un lenguaje propio de improvisación.&lt;/p&gt;  &lt;h3&gt;4. Escucha y repertorio&lt;/h3&gt; &lt;p&gt;Se recomendó escuchar diferentes versiones de los estándares de jazz y explorar la discografía de guitarristas como Jimmy y Doug Raney, Jim Hall, Wes Montgomery, Pat Martino y Grant Green, entre otros. También se trabajó con bases de &lt;em&gt;Solar&lt;/em&gt; a distintas velocidades.&lt;/p&gt;  &lt;h2&gt;Tareas para practicar&lt;/h2&gt; &lt;ul&gt;  &lt;li&gt;Estudiar las distintas digitaciones de la frase II-V-I en varias posiciones y juegos de cuerdas.&lt;/li&gt;  &lt;li&gt;Aplicar la frase a diferentes progresiones II-V, tanto mayores como menores, y trasladarla a otros temas.&lt;/li&gt;  &lt;li&gt;Aprender nuevas frases de melodías bebop y solos, cantarlas y practicar su adaptación a distintas tonalidades.&lt;/li&gt;  &lt;li&gt;Continuar trabajando la lectura de guitarra con los materiales enviados.&lt;/li&gt;  &lt;li&gt;Escuchar diferentes versiones de estándares y explorar la discografía de guitarristas de jazz.&lt;/li&gt; &lt;/ul&gt;  &lt;h3&gt;Objetivo principal&lt;/h3&gt; &lt;p&gt;Interiorizar el lenguaje bebop mediante el estudio de frases basadas en arpegios y progresiones II-V-I, desarrollando la capacidad de adaptarlas a distintas tonalidades, posiciones y contextos musicales.&lt;/p&gt;]]&gt;" width="100" />
 		</resources>
 	</project>
 	<project id="1vftfgm" title="1.1. Dm G7 Cmaj7" category="1vo7y84" projectType="fretboard">
@@ -1206,6 +1183,468 @@
 			<resource type="text" content="&lt;![CDATA[Solar Backing Tracks]]&gt;" width="100" />
 			<resource type="audio" content="88 - Solar.mp3" width="100" />
 			<resource type="audio" content="17 Solar(Melody).mp3" width="100" />
+		</resources>
+	</project>
+	<project id="3wtxsz" title="1.1. Dm7 G7 Cmaj7" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="1"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="2"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="4" color="#00aa00" text="" chord="" order="5"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="" order="6"/>
+			<note string="3" fret="3" color="#00aa00" text="" chord="" order="7"/>
+			<note string="4" fret="5" color="#00aa00" text="" chord="" order="8"/>
+			<note string="3" fret="2" color="#ff8800" text="" chord="" order="9"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Frase para Dm G7 Cmaj7]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="2foazp" title="1.2. Dm7 G7 Cmaj7" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="2"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="4" color="#00aa00" text="" chord="" order="5"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="" order="6"/>
+			<note string="3" fret="3" color="#00aa00" text="" chord="" order="7"/>
+			<note string="4" fret="5" color="#00aa00" text="" chord="" order="8"/>
+			<note string="3" fret="2" color="#ff8800" text="" chord="" order="9"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Frase para Dm G7 Cmaj7]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="1he8nuo" title="1.3. Dm7 G7 Cmaj7" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="1"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="2"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="4" color="#00aa00" text="" chord="" order="5"/>
+			<note string="2" fret="7" color="#00aa00" text="" chord="" order="6"/>
+			<note string="1" fret="8" color="#00aa00" text="" chord="" order="7"/>
+			<note string="1" fret="6" color="#00aa00" text="" chord="" order="8"/>
+			<note string="1" fret="5" color="#ff8800" text="" chord="" order="9"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Frase para Dm G7 Cmaj7]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="l1vc2t" title="3.0. Aprox cromatico" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="1"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="2"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="4" color="#00aa00" text="" chord="" order="5"/>
+			<note string="3" fret="8" color="#00aa00" text="" chord="" order="6"/>
+			<note string="3" fret="7" color="#00aa00" text="" chord="" order="7"/>
+			<note string="3" fret="6" color="#00aa00" text="" chord="" order="8"/>
+			<note string="3" fret="5" color="#ff8800" text="" chord="" order="9"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Frase para Dm G7 Cmaj7 con aproximacion cromatica]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="1c4bfu2" title="3.1. Aprox cromatico" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>false</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="4" color="#ffcc00" text="C" chord="" order="12"/>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="13"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="14"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="15"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="16"/>
+		</notes>
+	</project>
+	<project id="1u1vco5" title="3.1. Aprox cromatico" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>false</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="6" color="#ffcc00" text="C" chord="" order="1"/>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="2"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="4"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="5"/>
+		</notes>
+	</project>
+	<project id="iyhbm7" title="3.2. Aprox cromatico" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>false</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="4" color="#ffcc00" text="" chord="" order="3"/>
+			<note string="0" fret="6" color="#ffcc00" text="" chord="" order="4"/>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="5"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="6"/>
+			<note string="2" fret="7" color="#0080ff" text="" chord="" order="7"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="8"/>
+		</notes>
+	</project>
+	<project id="al5cvu" title="3.3. Aprox cromatico" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>false</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>130</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="0" fret="3" color="#ffcc00" text="" chord="" order="1"/>
+			<note string="0" fret="4" color="#ffcc00" text="" chord="" order="2"/>
+			<note string="0" fret="5" color="#0080ff" text="" chord="" order="3"/>
+			<note string="1" fret="6" color="#0080ff" text="" chord="" order="7"/>
+			<note string="1" fret="3" color="#0080ff" text="" chord="" order="8"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="9"/>
+		</notes>
+	</project>
+	<project id="161fj5d" title="2.1. Enclouser" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>false</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>77</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="4" fret="3" color="#ffcc00" text="" chord="" order="1"/>
+			<note string="4" fret="4" color="#ffcc00" text="" chord="" order="2"/>
+			<note string="4" fret="7" color="#ffcc00" text="" chord="" order="3"/>
+			<note string="4" fret="6" color="#ffcc00" text="" chord="" order="4"/>
+			<note string="4" fret="4" color="#ffcc00" text="" chord="" order="5"/>
+			<note string="4" fret="5" color="#0080ff" text="" chord="" order="6"/>
+			<note string="4" fret="8" color="#0080ff" text="" chord="" order="7"/>
+			<note string="3" fret="7" color="#0080ff" text="" chord="" order="8"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="9"/>
+		</notes>
+	</project>
+	<project id="pccvob" title="1.4. Dm7 G7 Cmaj7" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>1</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>85</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="3" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="2" fret="2" color="#0080ff" text="" chord="" order="2"/>
+			<note string="1" fret="3" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="1" fret="3" color="#00aa00" text="" chord="" order="5"/>
+			<note string="2" fret="4" color="#00aa00" text="" chord="" order="6"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="" order="7"/>
+			<note string="3" fret="3" color="#00aa00" text="" chord="" order="8"/>
+			<note string="3" fret="2" color="#ff8800" text="" chord="" order="9"/>
+		</notes>
+		<resources>
+			<resource type="text" content="&lt;![CDATA[Explora nuevas frases...]]&gt;" width="100" />
+		</resources>
+	</project>
+	<project id="1nvlk28" title="3.4. Aprox cromatico" category="ownc11" projectType="fretboard">
+		<settings>
+			<fretboardType>sequence</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>16</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>4/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>1</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>85</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>true</metronomeOn>
+			<notation></notation>
+		</settings>
+		<notes>
+			<note string="3" fret="3" color="#0080ff" text="" chord="" order="1"/>
+			<note string="2" fret="2" color="#0080ff" text="" chord="" order="2"/>
+			<note string="1" fret="3" color="#0080ff" text="" chord="" order="3"/>
+			<note string="2" fret="5" color="#0080ff" text="" chord="" order="4"/>
+			<note string="1" fret="3" color="#00aa00" text="" chord="" order="5"/>
+			<note string="2" fret="5" color="#00aa00" text="" chord="" order="6"/>
+			<note string="2" fret="2" color="#00aa00" text="" chord="" order="7"/>
+			<note string="2" fret="3" color="#00aa00" text="" chord="" order="8"/>
+			<note string="2" fret="4" color="#ff8800" text="" chord="" order="9"/>
+		</notes>
+	</project>
+	<project id="1bpzunp" title="Lectura" category="ownc11" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="Miguel-Pages Melodic Rhythms for Guitar.pdf" width="100" />
+		</resources>
+	</project>
+	<project id="11xw6xv" title="Tema: Lady Bird" category="ownc11" projectType="multimedia">
+		<resources>
+			<resource type="pdf" content="Lady Bird.pdf" width="100" />
 		</resources>
 	</project>
 </library>
