@@ -662,7 +662,7 @@
 	<project id="6n3mgb" title="2. Ejemplo acompañamiento con tensiones" category="7r90f9" projectType="multimedia">
 		<resources>
 			<resource type="video" content="20261124-13-48.webm" width="100" />
-			<resource type="text" content="&lt;![CDATA[Esto es un ejemplo de dos coros de blues mayor dominante usando las tensiones 9 y/ 13 para el I7 y IV7, y #9 y/#5 para el V7]]&gt;" width="100" />
+			<resource type="text" content="&lt;![CDATA[Esto es un ejemplo de dos coros de blues mayor dominante usando las tensiones 9 y/o 13 para el I7 y IV7, y #9 y/#5 para el V7]]&gt;" width="100" />
 		</resources>
 	</project>
 </library>
