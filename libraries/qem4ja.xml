@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library version="15.4" id="qem4ja" type="library" created="19/11/2026" modified="26/11/2026" level="3" name="Escala de tonos">
+<library version="15.6" id="qem4ja" type="library" created="19/11/2026" modified="27/11/2026" level="3" name="Escala de tonos">
 	<desc>Whole Tone Scale and Augmented chord</desc>
 	<categories>
 		<category id="1wfvnni">2026/11/19 Patrón G7+</category>
@@ -2547,6 +2547,118 @@
 			<note string="3" fret="13" color="#ff0000" text="" chord="5" order="22"/>
 			<note string="2" fret="12" color="#ff0000" text="" chord="5" order="23"/>
 			<note string="1" fret="14" color="#ff0000" text="" chord="5" order="24"/>
+		</notes>
+	</project>
+	<project id="1osih2i" title="3.7. Acordes cuatriada Forma IV" category="kq9gwn" projectType="fretboard">
+		<settings>
+			<fretboardType>chord</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>17</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>2/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>30</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="3" fret="3" color="#0080ff" text="" chord="0" order="1"/>
+			<note string="2" fret="4" color="#0080ff" text="" chord="0" order="2"/>
+			<note string="1" fret="2" color="#0080ff" text="" chord="0" order="3"/>
+			<note string="0" fret="3" color="#0080ff" text="" chord="0" order="4"/>
+			<note string="3" fret="5" color="#00aa00" text="" chord="1" order="5"/>
+			<note string="2" fret="6" color="#00aa00" text="" chord="1" order="6"/>
+			<note string="1" fret="4" color="#00aa00" text="" chord="1" order="7"/>
+			<note string="0" fret="5" color="#00aa00" text="" chord="1" order="8"/>
+			<note string="3" fret="7" color="#ffcc00" text="" chord="2" order="9"/>
+			<note string="2" fret="8" color="#ffcc00" text="" chord="2" order="10"/>
+			<note string="1" fret="6" color="#ffcc00" text="" chord="2" order="11"/>
+			<note string="0" fret="7" color="#ffcc00" text="" chord="2" order="12"/>
+			<note string="3" fret="9" color="#ff8800" text="" chord="3" order="13"/>
+			<note string="2" fret="10" color="#ff8800" text="" chord="3" order="14"/>
+			<note string="1" fret="8" color="#ff8800" text="" chord="3" order="15"/>
+			<note string="0" fret="9" color="#ff8800" text="" chord="3" order="16"/>
+			<note string="3" fret="11" color="#8000ff" text="" chord="4" order="19"/>
+			<note string="2" fret="12" color="#8000ff" text="" chord="4" order="20"/>
+			<note string="1" fret="10" color="#8000ff" text="" chord="4" order="21"/>
+			<note string="0" fret="11" color="#8000ff" text="" chord="4" order="22"/>
+			<note string="3" fret="13" color="#ff0000" text="" chord="5" order="23"/>
+			<note string="2" fret="14" color="#ff0000" text="" chord="5" order="24"/>
+			<note string="1" fret="12" color="#ff0000" text="" chord="5" order="25"/>
+			<note string="0" fret="13" color="#ff0000" text="" chord="5" order="27"/>
+		</notes>
+	</project>
+	<project id="4hl8ph" title="3.8. Acordes cuatriada Forma IV" category="kq9gwn" projectType="fretboard">
+		<settings>
+			<fretboardType>chord</fretboardType>
+			<orientation>horizontal</orientation>
+			<fretboardStyle>maple</fretboardStyle>
+			<fretCount>17</fretCount>
+			<displayMode>true</displayMode>
+			<inlays>true</inlays>
+			<rotated>false</rotated>
+			<bar>2/4</bar>
+			<figure>1</figure>
+			<tipoSecuencia>up</tipoSecuencia>
+			<direccion>false</direccion>
+			<countInBars>0</countInBars>
+			<playerRepeats>2</playerRepeats>
+			<isFretboardVisible>true</isFretboardVisible>
+			<isScoreVisible>true</isScoreVisible>
+			<currentInstrument>piano</currentInstrument>
+			<fretNumbers>1</fretNumbers>
+			<showFretNumbers>true</showFretNumbers>
+			<bpm>30</bpm>
+			<key>C</key>
+			<scoreStaves>all</scoreStaves>
+			<scoreLayout>vertical</scoreLayout>
+			<scoreScale>auto</scoreScale>
+			<swing>false</swing>
+			<metronomeOn>false</metronomeOn>
+			<notation>anglo</notation>
+		</settings>
+		<notes>
+			<note string="4" fret="4" color="#0080ff" text="" chord="0" order="1"/>
+			<note string="3" fret="5" color="#0080ff" text="" chord="0" order="2"/>
+			<note string="2" fret="2" color="#0080ff" text="" chord="0" order="3"/>
+			<note string="1" fret="4" color="#0080ff" text="" chord="0" order="4"/>
+			<note string="4" fret="6" color="#00aa00" text="" chord="1" order="5"/>
+			<note string="3" fret="7" color="#00aa00" text="" chord="1" order="6"/>
+			<note string="2" fret="4" color="#00aa00" text="" chord="1" order="7"/>
+			<note string="1" fret="6" color="#00aa00" text="" chord="1" order="8"/>
+			<note string="4" fret="8" color="#ffcc00" text="" chord="2" order="9"/>
+			<note string="3" fret="9" color="#ffcc00" text="" chord="2" order="10"/>
+			<note string="2" fret="6" color="#ffcc00" text="" chord="2" order="11"/>
+			<note string="1" fret="8" color="#ffcc00" text="" chord="2" order="12"/>
+			<note string="4" fret="10" color="#ff8800" text="" chord="3" order="13"/>
+			<note string="3" fret="11" color="#ff8800" text="" chord="3" order="14"/>
+			<note string="2" fret="8" color="#ff8800" text="" chord="3" order="15"/>
+			<note string="1" fret="10" color="#ff8800" text="" chord="3" order="16"/>
+			<note string="4" fret="12" color="#8000ff" text="" chord="4" order="17"/>
+			<note string="3" fret="13" color="#8000ff" text="" chord="4" order="18"/>
+			<note string="2" fret="10" color="#8000ff" text="" chord="4" order="19"/>
+			<note string="1" fret="12" color="#8000ff" text="" chord="4" order="20"/>
+			<note string="4" fret="14" color="#ff0000" text="" chord="5" order="21"/>
+			<note string="3" fret="15" color="#ff0000" text="" chord="5" order="22"/>
+			<note string="2" fret="12" color="#ff0000" text="" chord="5" order="24"/>
+			<note string="1" fret="14" color="#ff0000" text="" chord="5" order="25"/>
 		</notes>
 	</project>
 	<project id="uzg8sq" title="4.1. Patrón escala de tonos" category="kq9gwn" projectType="fretboard">
